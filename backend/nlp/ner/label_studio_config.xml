@@ -1,0 +1,17 @@
+<!--
+  Label Studio NER labeling config — EstateIQ NLP extraction (Stage A).
+  Entity set and BIO conventions documented in nlp/ner/schema.md.
+  Negation is intentionally NOT a label here — see schema.md section 3.
+-->
+<View>
+  <Labels name="label" toName="text">
+    <Label value="CITY" background="#e63946"/>
+    <Label value="AREA" background="#f4a261"/>
+    <Label value="PROPERTY_TYPE" background="#2a9d8f"/>
+    <Label value="BHK" background="#264653"/>
+    <Label value="BUDGET" background="#8ecae6"/>
+    <Label value="AMENITY" background="#6a4c93"/>
+    <Label value="FURNISHING" background="#ffb703"/>
+  </Labels>
+  <Text name="text" value="$text"/>
+</View>

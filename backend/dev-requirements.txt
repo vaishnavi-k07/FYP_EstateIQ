@@ -1,0 +1,8 @@
+# Dev-only dependencies for NER annotation tooling (Phase 3, Stage A).
+# Not required to run the backend app/API — install separately:
+#   pip install -r dev-requirements.txt
+# Kept out of requirements.txt because Label Studio pulls in a large,
+# unrelated dependency tree (Django, DRF, etc.) that production/runtime
+# code never needs.
+
+label-studio==1.16.0

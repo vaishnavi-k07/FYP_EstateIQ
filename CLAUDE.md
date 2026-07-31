@@ -28,13 +28,13 @@ EstateIQ is an AI-powered real estate **lead intelligence system**. A customer c
 
 ---
 
-## 3. Explicitly Out of Scope
+<!-- ## 3. Explicitly Out of Scope
 
 Do not build any of the following, even if convenient given the codebase:
 - Property recommendation or matching engine
 - Suggesting "next best action" or follow-up scripts to the lead
 - Property listing browsing/search UI for the end user
-- Payment or transaction processing
+- Payment or transaction processing -->
 
 ---
 
@@ -80,7 +80,7 @@ Customer clicks "Talk with Agent" (website widget)
 | Language | Python 3.11+ | Type hints required |
 | Backend / API | Flask | REST API, webhook receiver |
 | Voice AI | Vapi AI | Voice calls, STT, webhook integration |
-| NLP extraction | spaCy, regex, pandas, CSV lookup tables | Rule-based, no deep learning here |
+| NLP extraction | spaCy, regex, pandas, CSV lookup tables |
 | Sentiment & Intent | Fine-tuned DistilBERT (HuggingFace `transformers`) | Two-stage: pretrain on general sentiment corpus → domain-adapt on labeled real-estate transcripts. Tokenization uses DistilBERT's own tokenizer, not TF-IDF |
 | Lead Scoring | XGBoost | Explainable via SHAP; trained on NLP + intent + sentiment features |
 | Explainability | SHAP | Feature-level explanation per lead score |
@@ -178,12 +178,60 @@ This maps onto the previously agreed 8-week timeline (Jul 18 – Sep 14), adjust
 
 **Exit criteria:** both models beat a trivial baseline (majority class) by a clear margin on a held-out split; `predict.py` callable end-to-end on a raw transcript string.
 
-### Phase 3 — NLP Feature Extraction (Week 3, Jul 25–31, parallel-able with Phase 2)
-1. Build `nlp/preprocess.py`: cleaning, sentence segmentation via spaCy.
-2. Build `nlp/extractor.py`: rule-based + CSV-lookup extraction for city, area, property type, category, BHK, budget, amenities, furnishing.
-3. Handle synonyms/fuzzy matching (e.g. "2BHK", "2 bedroom", "two bhk" → `bhk: 2`).
-4. Handle missing values gracefully (return `null`/`None`, never fabricate).
-5. Unit test the extractor against the synthetic transcript set; measure extraction accuracy per field.
+### Phase 3 — NLP Feature Extraction (multilingual NER approach)
+The extraction module uses a fine-tuned multilingual token-classification
+model (MuRIL) rather than pure rules. The existing rule-based extractor is
+retained only as (a) a labeling bootstrap and (b) a fallback if annotation
+runs over time. Negation and context are handled by a thin post-processing
+rule layer on top of the model's entity output, not by the model alone.
+
+Entities: CITY, AREA, PROPERTY_TYPE, BHK, BUDGET, AMENITY, FURNISHING
+(BIO tagging scheme).
+
+Stage A — Label schema & annotation tooling
+1. Define the BIO tag set and a documented convention for negated spans
+   (negation resolved in post-processing, not as separate model labels).
+2. Set up Label Studio (open-source) with an NER span-labeling config for
+   these entities.
+Exit: schema documented; Label Studio running; one transcript hand-labeled
+end-to-end as the reference gold standard.
+
+Stage B — Bootstrap pre-labels from the existing rule extractor
+1. Adapt nlp/extractor.py to emit character-span annotations in Label
+   Studio import format over the synthetic transcript dataset.
+Exit: full synthetic set imported into Label Studio with rule-generated
+pre-annotations.
+
+Stage C — Annotate
+1. Hand-correct pre-labels, prioritizing correction effort on negation,
+   multi-city/context, and code-mixed (Hindi/Marathi/English) cases.
+2. Target 400 labeled transcripts; expand if time allows.
+Exit: labeled dataset exported; stratified train/val/test split created.
+
+Stage D — Train & evaluate
+1. Fine-tune MuRIL via AutoModelForTokenClassification on the labeled set.
+2. Evaluate with entity-level precision/recall/F1 (seqeval).
+3. Benchmark head-to-head against the rule-based extractor on the same
+   held-out test set to prove the NER model is actually better.
+Exit: per-entity F1 reported; NER-vs-rules comparison table produced.
+
+Stage E — Post-processing & integration
+1. Add a negation/context post-processing pass over model entity output.
+2. Add CSV-lookup normalization: map predicted CITY/AREA/PROPERTY_TYPE/
+   AMENITY spans to canonical IDs; convert BUDGET spans to numeric rupees
+   (lakh/crore/cr/exact-figure/spelled-out) for downstream lead scoring.
+3. Wrap in nlp/predict.py returning the SAME structured dict contract the
+   rest of the pipeline already expects.
+Exit: drop-in replacement for the rule extractor, identical output shape,
+measurably higher accuracy than rules on the test set.
+
+Fallback: if annotation runs long against the Sep 14 timeline, ship the
+fixed rule-based extractor for the demo and present the NER model as
+"accuracy improvement / future work."
+
+Exit criteria (phase): nlp/predict.py produces the exact structured JSON
+shape from the reference doc, with entity-level F1 measured per field and a
+documented improvement over the rule-based baseline.
 
 **Exit criteria:** extractor produces the exact structured JSON shape shown in the reference doc, with measured per-field accuracy on synthetic data.
 

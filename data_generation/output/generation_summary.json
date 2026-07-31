@@ -1,0 +1,33 @@
+{
+  "total": 700,
+  "city_counts": {
+    "Nashik": 406,
+    "Pune": 279
+  },
+  "negation_count": 149,
+  "code_mixed_count": 151,
+  "multi_city_count": 77,
+  "telegraphic_count": 70,
+  "rare_type_counts": {
+    "Warehouse": 45,
+    "Farm House": 45,
+    "Office Space": 45,
+    "Commercial Shop": 45,
+    "Residential Plot": 45
+  },
+  "budget_form_counts": {
+    "cr": 67,
+    "crore": 41,
+    "range": 60,
+    "lakh": 134,
+    "spelled_out": 53,
+    "exact": 55
+  },
+  "bhk_form_counts": {
+    "spaced": 45,
+    "bare": 52,
+    "worded": 32,
+    "1rk": 7,
+    "studio": 6
+  }
+}

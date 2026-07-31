@@ -1,0 +1,259 @@
+[
+  {
+    "id": 1,
+    "data": {
+      "text": "Agent: Hi, thanks for calling in! What kind of property are you looking for today?\nCustomer: Hi, I'm looking for a 2 BHK apartment in Baner, Pune. My budget is around 60 lakhs.\nAgent: Great, do you have any specific amenities in mind?\nCustomer: Yes, I would like a swimming pool and covered parking. Not a villa though, I really want an apartment. Also, I need it fully furnished.\nAgent: Understood, I'll note that down. Anything else?\nCustomer: Mujhe Wakad mein bhi dekhna hai, 3 BHK flat chahiye wahan, budget around 80 lakh, gym aur parking zaroor chahiye.\nAgent: Perfect, I've noted both options. Someone from our team will call you back soon."
+    },
+    "annotations": [
+      {
+        "id": 1,
+        "completed_by": 1,
+        "result": [
+          {
+            "value": {
+              "start": 115,
+              "end": 120,
+              "text": "2 BHK",
+              "labels": [
+                "BHK"
+              ]
+            },
+            "id": "gold_1",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 121,
+              "end": 130,
+              "text": "apartment",
+              "labels": [
+                "PROPERTY_TYPE"
+              ]
+            },
+            "id": "gold_2",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 134,
+              "end": 139,
+              "text": "Baner",
+              "labels": [
+                "AREA"
+              ]
+            },
+            "id": "gold_3",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 141,
+              "end": 145,
+              "text": "Pune",
+              "labels": [
+                "CITY"
+              ]
+            },
+            "id": "gold_4",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 167,
+              "end": 175,
+              "text": "60 lakhs",
+              "labels": [
+                "BUDGET"
+              ]
+            },
+            "id": "gold_5",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 265,
+              "end": 278,
+              "text": "swimming pool",
+              "labels": [
+                "AMENITY"
+              ]
+            },
+            "id": "gold_6",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 283,
+              "end": 298,
+              "text": "covered parking",
+              "labels": [
+                "AMENITY"
+              ]
+            },
+            "id": "gold_7",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 306,
+              "end": 311,
+              "text": "villa",
+              "labels": [
+                "PROPERTY_TYPE"
+              ]
+            },
+            "id": "gold_8",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 337,
+              "end": 346,
+              "text": "apartment",
+              "labels": [
+                "PROPERTY_TYPE"
+              ]
+            },
+            "id": "gold_9",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 364,
+              "end": 379,
+              "text": "fully furnished",
+              "labels": [
+                "FURNISHING"
+              ]
+            },
+            "id": "gold_10",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 452,
+              "end": 457,
+              "text": "Wakad",
+              "labels": [
+                "AREA"
+              ]
+            },
+            "id": "gold_11",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 479,
+              "end": 484,
+              "text": "3 BHK",
+              "labels": [
+                "BHK"
+              ]
+            },
+            "id": "gold_12",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 485,
+              "end": 489,
+              "text": "flat",
+              "labels": [
+                "PROPERTY_TYPE"
+              ]
+            },
+            "id": "gold_13",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 519,
+              "end": 526,
+              "text": "80 lakh",
+              "labels": [
+                "BUDGET"
+              ]
+            },
+            "id": "gold_14",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 528,
+              "end": 531,
+              "text": "gym",
+              "labels": [
+                "AMENITY"
+              ]
+            },
+            "id": "gold_15",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          },
+          {
+            "value": {
+              "start": 536,
+              "end": 543,
+              "text": "parking",
+              "labels": [
+                "AMENITY"
+              ]
+            },
+            "id": "gold_16",
+            "from_name": "label",
+            "to_name": "text",
+            "type": "labels",
+            "origin": "manual"
+          }
+        ],
+        "was_cancelled": false,
+        "ground_truth": true,
+        "lead_time": null
+      }
+    ]
+  }
+]
