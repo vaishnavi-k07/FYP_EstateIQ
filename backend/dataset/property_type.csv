@@ -1,0 +1,51 @@
+property_type_id,property_type_name,category
+PT001,Apartment,Residential
+PT002,Flat,Residential
+PT003,Villa,Residential
+PT004,Independent House,Residential
+PT005,Row House,Residential
+PT006,Penthouse,Residential
+PT007,Studio Apartment,Residential
+PT008,Duplex,Residential
+PT009,Triplex,Residential
+PT010,Farm House,Agricultural
+PT011,Bungalow,Residential
+PT012,Residential Plot,Residential
+PT013,Commercial Shop,Commercial
+PT014,Office Space,Commercial
+PT015,Coworking Space,Commercial
+PT016,Retail Store,Commercial
+PT017,Showroom,Commercial
+PT018,Warehouse,Industrial
+PT019,Godown,Industrial
+PT020,Industrial Shed,Industrial
+PT021,Factory,Industrial
+PT022,Industrial Plot,Industrial
+PT023,Agricultural Land,Agricultural
+PT024,Farm Land,Agricultural
+PT025,Tea Estate,Agricultural
+PT026,Coffee Plantation,Agricultural
+PT027,Mixed Use Building,Mixed Use
+PT028,Hotel,Commercial
+PT029,Resort,Commercial
+PT030,PG Accommodation,Residential
+PT031,Hostel,Residential
+PT032,Serviced Apartment,Residential
+PT033,Builder Floor,Residential
+PT034,Condominium,Residential
+PT035,Townhouse,Residential
+PT036,Gated Community Villa,Residential
+PT037,Holiday Home,Residential
+PT038,Beach House,Residential
+PT039,Lake View Villa,Residential
+PT040,Hill View Cottage,Residential
+PT041,Luxury Apartment,Residential
+PT042,Affordable Apartment,Residential
+PT043,Office Floor,Commercial
+PT044,IT Park Office,Commercial
+PT045,Business Center,Commercial
+PT046,Clinic Space,Commercial
+PT047,Hospital Building,Commercial
+PT048,School Building,Commercial
+PT049,Mall Space,Commercial
+PT050,Multiplex Property,Commercial

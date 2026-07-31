@@ -1,0 +1,101 @@
+amenity_id,amenity_name,category,description
+AM001,24x7 Security,Security,Round the clock security personnel ensuring safety of residents and visitors at all times
+AM002,CCTV Surveillance,Security,Continuous camera monitoring installed across common areas for enhanced safety and surveillance
+AM003,Security Guard,Security,Trained personnel stationed at entry points to monitor and control access
+AM004,Intercom,Security,In-house communication system connecting residents with security desk and other units
+AM005,Fire Alarm,Security,Automated system that detects smoke or fire and alerts residents immediately
+AM006,Fire Extinguisher,Security,Portable firefighting equipment placed strategically for emergency fire control situations
+AM007,Smoke Detector,Security,Sensor device installed to detect smoke and prevent potential fire hazards
+AM008,Video Door Phone,Security,Device allowing residents to see and verify visitors before granting entry
+AM009,Biometric Access,Security,Fingerprint or facial recognition system controlling secure entry into the premises
+AM010,Smart Lock,Smart Home,Digital locking system allowing keyless entry through mobile app or code
+AM011,Swimming Pool,Recreation,Dedicated pool area for residents to relax and enjoy leisure swimming
+AM012,Kids Pool,Recreation,Shallow pool designed specifically for safe recreational use by children
+AM013,Club House,Recreation,Common facility offering indoor games lounge and social gathering spaces
+AM014,Community Hall,Recreation,Large hall available for hosting events celebrations and community gatherings
+AM015,Party Lawn,Recreation,Open lawn area designed for hosting outdoor parties and social functions
+AM016,Garden,Outdoor,Green open space within the property for relaxation and fresh air
+AM017,Landscaped Garden,Outdoor,Professionally designed garden featuring plants pathways and aesthetic greenery arrangements
+AM018,Jogging Track,Fitness,Dedicated pathway designed for residents to jog and exercise outdoors
+AM019,Walking Track,Fitness,Paved track within the premises meant for daily walking exercise
+AM020,Indoor Games,Recreation,Facility offering table tennis carrom chess and other indoor recreational games
+AM021,Outdoor Sports Area,Recreation,Open space designated for multiple outdoor sports and physical activities
+AM022,Basketball Court,Fitness,Dedicated court equipped for playing basketball within the community premises
+AM023,Tennis Court,Fitness,Professional court facility designed for residents to play tennis matches
+AM024,Badminton Court,Fitness,Indoor or outdoor court designed specifically for playing badminton games
+AM025,Cricket Pitch,Fitness,Open ground facility allowing residents to play and practice cricket
+AM026,Gym,Fitness,Fully equipped fitness center offering cardio and strength training equipment
+AM027,Yoga Room,Fitness,Dedicated peaceful space designed for practicing yoga and meditation sessions
+AM028,Spa,Fitness,Wellness facility offering relaxation and therapeutic treatments for residents
+AM029,Sauna,Fitness,Heated room facility designed to promote relaxation and detoxification therapy
+AM030,Children's Play Area,Children's Facilities,Safe outdoor space equipped with swings slides and play equipment for kids
+AM031,Day Care Center,Children's Facilities,On-site facility providing supervised care and activities for young children
+AM032,Senior Citizen Park,Outdoor,Dedicated park space designed with seating and greenery for elderly residents
+AM033,Lift,Basic,Elevator facility providing convenient vertical movement between multiple building floors
+AM034,High-Speed Elevator,Basic,Fast and efficient elevator system reducing wait time in tall buildings
+AM035,Power Backup,Basic,Generator based backup system ensuring uninterrupted electricity during power outages
+AM036,Water Supply,Basic,Reliable and continuous water supply system provided across the property
+AM037,Rainwater Harvesting,Eco-Friendly,Sustainable system that collects and stores rainwater for reuse purposes
+AM038,Solar Panels,Eco-Friendly,Renewable energy system installed to generate electricity using sunlight
+AM039,Waste Management,Eco-Friendly,Organized system for segregating and disposing household and community waste responsibly
+AM040,Sewage Treatment Plant,Eco-Friendly,On-site facility that treats wastewater for safe disposal or reuse
+AM041,Covered Parking,Parking,Sheltered parking space protecting vehicles from sun and rain exposure
+AM042,Open Parking,Parking,Uncovered designated parking area available for residents and visitor vehicles
+AM043,Visitor Parking,Parking,Separate parking space allocated specifically for guests and visiting vehicles
+AM044,EV Charging Station,Parking,Dedicated charging point provided for electric vehicles within the parking area
+AM045,Bicycle Parking,Parking,Designated space allowing residents to safely park and store bicycles
+AM046,Wi-Fi,Smart Home,High-speed wireless internet connectivity available across common and private areas
+AM047,Broadband Ready,Smart Home,Infrastructure pre-installed to support high-speed broadband internet connections easily
+AM048,Smart Home Automation,Smart Home,Integrated system allowing residents to control lights appliances and security remotely
+AM049,Central Air Conditioning,Basic,Building wide cooling system providing consistent temperature control across units
+AM050,Air Conditioning,Basic,Individual cooling units installed to regulate indoor temperature comfortably
+AM051,Modular Kitchen,Convenience,Pre-installed kitchen setup offering organized storage and modern fittings
+AM052,Shopping Complex,Convenience,Nearby retail complex offering multiple stores for everyday shopping needs
+AM053,ATM,Convenience,On-site automated teller machine providing easy access to banking services
+AM054,Medical Center,Convenience,On-site clinic offering basic healthcare and emergency medical assistance
+AM055,Pharmacy,Convenience,Nearby store providing easy access to medicines and healthcare products
+AM056,Restaurant,Convenience,On-site dining facility offering food and beverage services to residents
+AM057,Cafeteria,Convenience,Casual dining space offering quick meals and refreshments within the premises
+AM058,Convenience Store,Convenience,Small on-site store offering daily essentials and grocery items
+AM059,Pet Park,Outdoor,Dedicated open area allowing residents to walk and play with pets
+AM060,Pet Friendly Area,Outdoor,Designated zones within the property that welcome and accommodate pets
+AM061,Terrace Garden,Outdoor,Rooftop green space designed for relaxation and scenic views
+AM062,Rooftop Lounge,Recreation,Elevated social space offering seating and views for residents to unwind
+AM063,Balcony,Basic,Private outdoor extension attached to individual units for fresh air
+AM064,Private Garden,Outdoor,Exclusive green space attached to individual homes for personal use
+AM065,Conference Room,Convenience,Dedicated meeting space equipped for professional discussions and presentations
+AM066,Business Center,Convenience,Shared workspace offering facilities for professional and administrative tasks
+AM067,Coworking Space,Convenience,Shared flexible workspace designed for professionals and remote working residents
+AM068,Reception Area,Basic,Front desk facility managing visitor entry and resident assistance queries
+AM069,Generator Backup,Basic,Standby power generator ensuring continuous electricity supply during outages
+AM070,Maintenance Staff,Convenience,Dedicated personnel handling repairs and upkeep of property infrastructure
+AM071,Housekeeping,Convenience,Professional cleaning service maintaining hygiene across common and private areas
+AM072,Laundry Service,Convenience,On-site facility offering washing and ironing services for residents
+AM073,Amphitheatre,Recreation,Open air seating structure designed for community events and performances
+AM074,Multipurpose Hall,Recreation,Versatile indoor space used for events meetings and social gatherings
+AM075,Library,Recreation,Quiet reading space stocked with books for residents and children
+AM076,Mini Theatre,Recreation,Private screening room equipped for watching movies within the community
+AM077,Skating Rink,Fitness,Dedicated open space designed for residents to practice skating activities
+AM078,Squash Court,Fitness,Enclosed court facility designed specifically for playing squash matches
+AM079,Meditation Zone,Fitness,Tranquil designated space encouraging mindfulness and stress relieving meditation practices
+AM080,Barbeque Area,Recreation,Outdoor space equipped with grilling stations for social cookouts
+AM081,Guest House,Convenience,On-site accommodation facility available for hosting visiting friends or family
+AM082,Concierge Service,Convenience,Dedicated staff assisting residents with errands bookings and daily requirements
+AM083,Valet Parking,Parking,Assisted parking service allowing staff to park vehicles for residents
+AM084,Water Softener Plant,Basic,System that treats hard water to improve quality for household use
+AM085,Fire Sprinkler System,Security,Automated water dispensing system designed to control fires effectively
+AM086,Boom Barrier,Security,Automated gate barrier controlling vehicle entry and exit at premises
+AM087,Access Control System,Security,Electronic system regulating and monitoring entry into restricted building areas
+AM088,Emergency Alarm System,Security,Alert mechanism enabling residents to signal security during urgent situations
+AM089,Toddler Play Zone,Children's Facilities,Soft flooring area with safe equipment designed for toddlers to play
+AM090,Kids Zone,Children's Facilities,Dedicated indoor space offering age appropriate activities and games for children
+AM091,School Bus Pickup Point,Children's Facilities,Designated safe zone within the property for children's school transport pickup
+AM092,Creche Facility,Children's Facilities,On-site childcare service allowing parents to leave children under supervision
+AM093,Organic Waste Composter,Eco-Friendly,On-site unit converting organic waste into compost for garden use
+AM094,Energy Efficient Lighting,Eco-Friendly,LED based lighting system installed to reduce overall energy consumption
+AM095,Green Building Certification,Eco-Friendly,Property built following sustainable construction practices recognized by environmental standards
+AM096,Vertical Garden,Eco-Friendly,Wall mounted greenery installation improving air quality and visual appeal
+AM097,Electric Vehicle Fleet,Smart Home,Shared electric vehicles provided for residents to use within locality
+AM098,Video Surveillance App,Smart Home,Mobile application allowing residents to view live security camera feeds remotely
+AM099,Digital Payment Kiosk,Convenience,On-site kiosk enabling residents to pay maintenance and bills digitally
+AM100,Multi-Level Car Parking,Parking,Structured parking facility offering multiple floors to accommodate more vehicles
