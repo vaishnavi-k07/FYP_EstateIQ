@@ -1,0 +1,17 @@
+[
+  "O",
+  "B-CITY",
+  "I-CITY",
+  "B-AREA",
+  "I-AREA",
+  "B-PROPERTY_TYPE",
+  "I-PROPERTY_TYPE",
+  "B-BHK",
+  "I-BHK",
+  "B-BUDGET",
+  "I-BUDGET",
+  "B-AMENITY",
+  "I-AMENITY",
+  "B-FURNISHING",
+  "I-FURNISHING"
+]

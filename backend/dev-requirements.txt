@@ -6,3 +6,6 @@
 # code never needs.
 
 label-studio==1.16.0
+
+# Test suite (tests/). Run the fast tests with:  pytest -m "not slow"
+pytest==9.1.1

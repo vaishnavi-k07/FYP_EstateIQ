@@ -14,4 +14,17 @@
     <Label value="FURNISHING" background="#ffb703"/>
   </Labels>
   <Text name="text" value="$text"/>
+
+  <!--
+    Stage C review gate. Label Studio disables the Update button when an
+    annotation is unchanged, so a pre-label that is already correct cannot be
+    submitted and never gets a lead_time — leaving it indistinguishable from a
+    task nobody opened. Ticking this box is itself a change, which re-enables
+    Update, and it records the reviewer's confirmation explicitly rather than
+    inferring it. Read by is_reviewed() in export_dataset.py.
+  -->
+  <Header value="Mark this once you have checked the spans above:"/>
+  <Choices name="review_status" toName="text" choice="single" showInLine="true">
+    <Choice value="Reviewed" background="#2a9d8f"/>
+  </Choices>
 </View>

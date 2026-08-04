@@ -1,0 +1,21 @@
+{
+  "tasks": 400,
+  "spans": 2245,
+  "label_counts": {
+    "PROPERTY_TYPE": 294,
+    "AREA": 234,
+    "CITY": 536,
+    "BUDGET": 283,
+    "AMENITY": 586,
+    "FURNISHING": 216,
+    "BHK": 96
+  },
+  "offset_mismatches": [],
+  "unknown_labels": [],
+  "out_of_bounds": [],
+  "whitespace_spans": [],
+  "text_differs_from_pool": [],
+  "overlaps": 2,
+  "tasks_without_spans": [],
+  "passed": true
+}

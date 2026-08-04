@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Clean full requirement",
+    "shows": "All seven fields pulled from one natural conversation",
+    "point_out": "Every field on the right came from free-flowing speech - nothing was a form.",
+    "expect": "city=Pune, area=Baner, property_type=Apartment, bhk=2, budget=60 lakhs -> 6000000, furnishing=Fully Furnished, amenities include Swimming Pool + Gym",
+    "turns": [
+      ["assistant", "Hi, thanks for calling EstateIQ! What kind of property are you looking for?"],
+      ["user", "Hi, we're looking to buy a 2 BHK apartment in Baner, Pune."],
+      ["assistant", "Great. Do you have a budget in mind?"],
+      ["user", "Around 60 lakhs."],
+      ["assistant", "Any preferences on furnishing or amenities?"],
+      ["user", "Fully furnished would be ideal, and we'd really like a swimming pool and a gym in the society."]
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Code-mixed Hindi / English call",
+    "shows": "Multilingual extraction - MuRIL handles Hinglish that English-only rules miss",
+    "point_out": "The sentence mixes Hindi and English mid-phrase. A plain English model would lose the requirement here.",
+    "expect": "area=Wakad, city=Pune (inferred from area), bhk=3, budget=80 lakh -> 8000000, amenities include Gym + Parking",
+    "turns": [
+      ["assistant", "Namaste! Aap kis type ki property dhoondh rahe hain?"],
+      ["user", "Mujhe Wakad mein 3 BHK flat chahiye."],
+      ["assistant", "Budget kitna soch rahe hain aap?"],
+      ["user", "Budget around 80 lakh hai, aur gym aur parking zaroor chahiye."]
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Negation - what the caller ruled OUT",
+    "shows": "The system separates the rejection from the requirement",
+    "point_out": "The caller says 'villa' out loud - but as a rejection. A naive keyword match would record Villa. We record the apartment, and log the villa as rejected.",
+    "expect": "property_type=Apartment (NOT Villa), negated lists villa, city=Pune, area=Kothrud, budget=75 lakhs -> 7500000",
+    "turns": [
+      ["assistant", "What sort of property are you after?"],
+      ["user", "Not a villa, we want an apartment in Kothrud, Pune."],
+      ["assistant", "Understood. And the budget?"],
+      ["user", "About 75 lakhs, semi furnished is fine."]
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Multi-city - caller's location vs. target city",
+    "shows": "Two cities in one call; the system picks the one being shopped in",
+    "point_out": "Mumbai and Nashik are both mentioned. Mumbai is where they live; Nashik is where they're buying. The system picks Nashik.",
+    "expect": "city=Nashik (NOT Mumbai), area=Gangapur Road, bhk=3, budget=one crore twenty lakhs -> 12000000",
+    "turns": [
+      ["assistant", "Hello! How can I help with your property search?"],
+      ["user", "I'm currently based in Mumbai, but we want to buy in Nashik."],
+      ["assistant", "Any particular area?"],
+      ["user", "Gangapur Road, a 3 BHK. Budget is around one crore twenty lakhs."]
+    ]
+  }
+]

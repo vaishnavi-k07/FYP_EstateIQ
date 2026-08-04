@@ -55,15 +55,25 @@ P_TELEGRAPHIC = 0.10
 FURNISHING_OPTIONS = ["Furnished", "Semi Furnished", "Fully Furnished", "Unfurnished"]
 NO_BHK_CATEGORIES = {"Commercial", "Industrial", "Agricultural", "Mixed Use"}
 
-# Surface-form phrasing variety for the 5 rare types, which have no entries
-# in property_type_synonyms.csv. These affect only how the sentence reads —
-# ground_truth.property_type always stores the canonical CSV name.
-RARE_TYPE_SURFACE_FORMS: Dict[str, List[str]] = {
+# Residential types that are self-describing about room count, so pairing
+# them with a BHK number is a contradiction ("studio apartment, 2 BHK").
+# Studio-ness is carried by PROPERTY_TYPE alone; BHK stays null. This is
+# also what nlp/ner/schema.md requires — BHK means *bedroom count*, and a
+# studio has none, so "studio" is never a BHK surface form.
+NO_BHK_PROPERTY_TYPES = {"Studio Apartment"}
+
+# Surface-form phrasing variety for types with no entries in
+# property_type_synonyms.csv (the 5 rare types, plus Studio Apartment which
+# absorbed the studio phrasings that used to live in generate_bhk). These
+# affect only how the sentence reads — ground_truth.property_type always
+# stores the canonical CSV name.
+EXTRA_SURFACE_FORMS: Dict[str, List[str]] = {
     "Warehouse": ["warehouse", "godown-type space", "warehouse unit"],
     "Farm House": ["farm house", "farmhouse", "weekend farm house"],
     "Office Space": ["office space", "office", "small office"],
     "Commercial Shop": ["commercial shop", "shop", "retail shop"],
     "Residential Plot": ["residential plot", "plot", "piece of land"],
+    "Studio Apartment": ["studio apartment", "studio", "compact studio", "studio flat"],
 }
 
 NUM_WORDS = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five"}
@@ -117,28 +127,68 @@ OPENERS = [
     "Agent: Good afternoon, thanks for calling. What can I help you find today?",
     "Agent: Hello! So, tell me — what kind of place are you hoping to find?",
     "Agent: Hi, welcome! Let's start with the basics — what are you looking for?",
+    "Agent: Hi, good morning! How can I help you with your property search?",
+    "Agent: Hello, you've reached the sales desk. What sort of property did you have in mind?",
+    "Agent: Hi! Before we get into details — what are you hoping to find?",
+    "Agent: Thanks for getting in touch. Tell me what you're after and I'll take it from there.",
+    "Agent: Hello there. Let's see what we can find for you — what's the requirement?",
+    "Agent: Hi, thanks for your time. Walk me through what you're looking for.",
+    "Agent: Good to hear from you! What kind of place are we hunting for?",
+    "Agent: Hello, how can I help today — buying, renting, or still deciding?",
+    "Agent: Hi! Give me a quick idea of what you need and I'll note it all down.",
+    "Agent: Hello, thanks for the call. What's on your wishlist?",
 ]
 
+# Customer's opening framing. Each ends on a comma, dash, or 'so' because
+# the main requirement clause is appended capitalized right after it.
 SENTIMENT_OPENERS = {
     "Enthusiastic": [
         "Hi! We're really excited to finally look into this —",
         "Hey there, thanks for picking up! So,",
         "Hi, great, this is perfect timing —",
+        "Hello! Yes, we've been waiting to start this, so",
+        "Hi, so glad I got through —",
+        "Hey! Right, so here's the plan —",
+        "Hi there, we've been looking forward to this call, so",
+        "Oh hi, brilliant — okay so,",
+        "Hello! We're quite keen on this, so",
+        "Hi, wonderful, let me tell you what we want —",
     ],
     "Neutral": [
         "Hi, so basically,",
         "Hello, yes so",
         "Hi, okay so",
+        "Hello. Right, so",
+        "Hi there. So, the requirement is,",
+        "Yes, hello — so",
+        "Hi, sure. Basically,",
+        "Hello, okay. To give you the details,",
+        "Hi. Let me just lay it out —",
+        "Yeah, hi. So essentially,",
     ],
     "Hesitant": [
         "Um, hi, we're not entirely sure yet, but",
         "Hi... we're still exploring options, but roughly,",
         "Hello, we're just starting to look around, so",
+        "Hi, um, this is all quite new to us, but",
+        "Hello... we haven't fully decided, but broadly,",
+        "Hi, sorry, we're a bit unclear ourselves, but",
+        "Um, hello. We might be jumping the gun here, but",
+        "Hi, we're only at the thinking stage really, so",
+        "Hello, I hope this isn't premature, but",
+        "Hi... give me a second. Okay, so roughly,",
     ],
     "Frustrated": [
         "Hi, I've called before about this and no one got back to me, but anyway,",
         "Yeah hi, look, I don't have much time, but",
         "Hi, this is actually my second time calling, so quickly —",
+        "Hello — right, let's not go round in circles again.",
+        "Yeah, hi. I'll keep this short because I've explained it already —",
+        "Hi, honestly I've been passed around a fair bit, so just noting it once:",
+        "Look, hi. Third call now, so briefly —",
+        "Yeah hello. I'm short on patience today, so straight to it —",
+        "Hi. I did fill in your form, but clearly that went nowhere, so",
+        "Right, hi. Let me repeat what I told the last person —",
     ],
 }
 
@@ -147,48 +197,92 @@ FOLLOWUP_QUESTIONS = {
         "Agent: Any particular area you're targeting?",
         "Agent: Do you have a specific locality in mind?",
         "Agent: Is there a neighbourhood you're leaning towards?",
+        "Agent: Which part of the city suits you best?",
+        "Agent: Any locality preference at all, even a rough one?",
+        "Agent: Are you fixed on a particular pocket, or open across the city?",
     ],
     "property_type": [
         "Agent: What kind of property did you have in mind?",
         "Agent: And what type of property are we talking about?",
+        "Agent: Is this for a flat, a house, something else?",
+        "Agent: What sort of property should I be looking at for you?",
+        "Agent: And the property type — any preference there?",
     ],
     "bhk": [
         "Agent: How many bedrooms are you thinking — a 2 BHK, 3 BHK?",
         "Agent: What configuration works for you, BHK-wise?",
         "Agent: And how many bedrooms do you need?",
+        "Agent: Size-wise, what configuration are you after?",
+        "Agent: Do you know roughly how many rooms you'd need?",
+        "Agent: Any thoughts on the layout — how many bedrooms?",
     ],
     "budget": [
         "Agent: What budget range did you have in mind?",
         "Agent: Do you have a budget figure in mind?",
         "Agent: And roughly what's your budget looking like?",
+        "Agent: What sort of price bracket should I work within?",
+        "Agent: Have you set a ceiling on the budget?",
+        "Agent: Ballpark figure on budget, if you have one?",
     ],
     "amenities": [
         "Agent: Any specific amenities you're looking for?",
         "Agent: Is there anything particular you need, like parking or a gym?",
         "Agent: Any must-have facilities?",
+        "Agent: Anything on the amenities side that matters to you?",
+        "Agent: Are there facilities you'd consider non-negotiable?",
+        "Agent: Anything specific you'd want in the building itself?",
     ],
     "furnishing": [
         "Agent: Would you prefer it furnished or unfurnished?",
         "Agent: And furnishing-wise, any preference?",
+        "Agent: Do you want it move-in ready or bare?",
+        "Agent: Should I look at furnished options as well?",
+        "Agent: Any view on furnishing?",
     ],
 }
 
+# Customer non-answers. Sampled without replacement within a single
+# transcript so the same non-answer never appears twice in one call.
 DEFLECTIONS = {
     "Enthusiastic": [
         "Customer: Oh, haven't decided that part yet, but I'll figure it out soon!",
         "Customer: Not sure yet, honestly, but open to suggestions!",
+        "Customer: Ooh, good question — no idea yet, but I'm flexible!",
+        "Customer: Haven't got that far, but tell me what people usually go for!",
+        "Customer: We're easy on that one, surprise us!",
+        "Customer: Still working that bit out, but nothing's ruled out!",
+        "Customer: Honestly no clue there yet — happy to be guided!",
+        "Customer: That one's still up in the air, but we'll sort it out!",
     ],
     "Neutral": [
         "Customer: Not decided yet, we'll figure that out later.",
         "Customer: No preference there, whatever works.",
+        "Customer: Haven't thought about that one, to be honest.",
+        "Customer: That's flexible, we can decide later.",
+        "Customer: No strong view on that.",
+        "Customer: We'll come back to that once the rest is clear.",
+        "Customer: Nothing fixed there yet.",
+        "Customer: Leave that open for now.",
     ],
     "Hesitant": [
         "Customer: Um, we haven't really thought about that yet.",
         "Customer: Not sure, we're still figuring things out.",
+        "Customer: Hmm... I'd have to check with my family on that one.",
+        "Customer: I don't want to say something wrong, so let me get back to you.",
+        "Customer: That's... honestly, I'm not sure yet.",
+        "Customer: We haven't sat down and discussed that part properly.",
+        "Customer: Sorry, I really can't say at this point.",
+        "Customer: Maybe? I'd rather not commit to that yet.",
     ],
     "Frustrated": [
         "Customer: I don't know, can we just move on?",
         "Customer: Not decided, look, can someone just call me back about this?",
+        "Customer: I've no answer for that right now.",
+        "Customer: Does it matter at this stage? Let's skip it.",
+        "Customer: No idea. Next question.",
+        "Customer: I'd rather sort that out with whoever actually calls me.",
+        "Customer: Haven't decided, and I'm not deciding on this call.",
+        "Customer: Can we park that one, please?",
     ],
 }
 
@@ -196,18 +290,35 @@ CLOSERS_GENERIC = [
     "Agent: Thanks for sharing all that, our team will get back to you shortly.",
     "Agent: Perfect, I've noted everything down. Someone will follow up with you soon.",
     "Agent: Got it, thank you. We'll be in touch shortly with the next steps.",
+    "Agent: That's all noted. Someone from the team will pick this up soon.",
+    "Agent: Lovely, I have what I need. We'll revert shortly.",
+    "Agent: Right, that's logged. Expect to hear from us soon.",
+    "Agent: Thank you, this is all captured. We'll be in touch.",
+    "Agent: Appreciate the details — I'll pass them to the right person.",
 ]
 CLOSERS_SCHEDULE_VISIT = [
     "Agent: Sure, I'll get someone to set up a site visit and confirm a time with you.",
     "Agent: Great, I'll pass this along so our team can arrange a visit at a convenient time.",
+    "Agent: Noted, I'll have the team block a slot and confirm the timing with you.",
+    "Agent: Understood, someone will coordinate the site visit directly with you.",
+    "Agent: Right, I'll arrange for a visit to be scheduled and you'll get a confirmation.",
+    "Agent: Perfect, I'll flag this for a viewing and we'll fix a time shortly.",
 ]
 CLOSERS_CALLBACK = [
     "Agent: No problem, I'll make sure someone calls you back at a convenient time.",
     "Agent: Understood, we'll have someone reach out to you soon.",
+    "Agent: Sure, I've marked this for a callback — someone will ring you.",
+    "Agent: That's fine, I'll get the team to phone you back shortly.",
+    "Agent: Noted, expect a call from our side soon.",
+    "Agent: Absolutely, someone will get back to you on this number.",
 ]
 CLOSERS_FRUSTRATED = [
     "Agent: I understand, I'm sorry for the trouble — I'll flag this so someone follows up personally.",
     "Agent: I hear you, let me make sure this gets prioritized and someone calls you back soon.",
+    "Agent: That's fair, and I apologise. I'm escalating this so it doesn't get lost again.",
+    "Agent: Sorry you've had to chase — I'm marking this urgent for follow-up.",
+    "Agent: Completely understand the frustration. I'll personally see that someone responds.",
+    "Agent: Apologies for the run-around. I'm putting this at the top of the list.",
 ]
 
 # {type_bhk} placeholder = the property-type+BHK clause text; filled separately.
@@ -420,21 +531,27 @@ def render_property_type(rng, lookups: LookupTables, canonical: str) -> str:
     """Returns a surface phrase for a property type. ground_truth always
     stores `canonical`, regardless of which surface form is chosen here.
     """
-    if canonical in RARE_TYPE_SURFACE_FORMS:
-        return rng.choice(RARE_TYPE_SURFACE_FORMS[canonical])
+    if canonical in EXTRA_SURFACE_FORMS:
+        return rng.choice(EXTRA_SURFACE_FORMS[canonical])
     options = [canonical.lower()] + lookups.canonical_to_synonyms.get(canonical, [])
     return rng.choice(options)
 
 
 def generate_bhk(rng) -> Tuple[Any, str, str]:
-    """Returns (ground_truth_bhk, phrase, form_tag)."""
+    """Returns (ground_truth_bhk, phrase, form_tag).
+
+    Phrases are article-free ("1 RK", not "a 1 RK") because every calling
+    template already supplies its own article — "looking for a {bhk_phrase}
+    {property_type}" would otherwise render "a a 1RK".
+
+    There is no "Studio" BHK value: a studio has no bedroom count, so it is
+    represented as the property type "Studio Apartment" instead (see
+    NO_BHK_PROPERTY_TYPES).
+    """
     roll = rng.random()
-    if roll < 0.07:
-        phrase = rng.choice(["a 1RK", "1 RK", "just a 1RK setup", "a 1 RK unit"])
+    if roll < 0.10:
+        phrase = rng.choice(["1RK", "1 RK", "1RK setup", "1 RK unit"])
         return "1RK", phrase, "1rk"
-    if roll < 0.13:
-        phrase = rng.choice(["a studio apartment", "a studio", "a compact studio"])
-        return "Studio", phrase, "studio"
 
     n = int(rng.choice([1, 2, 3, 4, 5], p=[0.10, 0.40, 0.35, 0.12, 0.03]))
     subform = rng.choice(["spaced", "bare", "worded"], p=[0.50, 0.35, 0.15])
@@ -454,8 +571,6 @@ def generate_bhk(rng) -> Tuple[Any, str, str]:
 def generate_code_mixed_bhk_phrase(rng, bhk_value: Any) -> str:
     if bhk_value == "1RK":
         return rng.choice(["1RK", "ek RK"])
-    if bhk_value == "Studio":
-        return rng.choice(["studio", "chota studio"])
     n = bhk_value
     if rng.random() < 0.4:
         return f"{HINDI_NUM_WORDS[n]} BHK"
@@ -615,6 +730,12 @@ def build_transcript(
         # BHK (bedroom count) doesn't apply to non-residential property —
         # a warehouse, shop, or plot doesn't get described in bedrooms.
         revealed["bhk"] = False
+    if property_type in NO_BHK_PROPERTY_TYPES and revealed["property_type"]:
+        # "Studio apartment, 2 BHK" is self-contradictory. Suppressed only
+        # when the type is actually stated: if it never surfaces in the
+        # text, ground_truth.property_type is None too, so a BHK number
+        # contradicts nothing.
+        revealed["bhk"] = False
 
     bhk_value = bhk_phrase = bhk_form = None
     if revealed["bhk"]:
@@ -758,9 +879,13 @@ def render_dialogue(
     missing_fields = [f for f in ("area", "property_type", "bhk", "budget", "amenities", "furnishing") if not revealed[f]]
     n_followups = 0 if is_telegraphic else int(rng.choice([0, 1, 2], p=[0.4, 0.4, 0.2]))
     rng.shuffle(missing_fields) if missing_fields else None
+    # Drawn without replacement so a caller never gives the identical
+    # non-answer twice in one call.
+    deflection_pool = list(DEFLECTIONS[sentiment])
+    rng.shuffle(deflection_pool)
     for field in missing_fields[:n_followups]:
         turns.append(str(rng.choice(FOLLOWUP_QUESTIONS[field])))
-        turns.append(str(rng.choice(DEFLECTIONS[sentiment])))
+        turns.append(str(deflection_pool.pop()))
 
     if intent == "Schedule Visit":
         closer_bank = CLOSERS_SCHEDULE_VISIT

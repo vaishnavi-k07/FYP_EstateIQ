@@ -16,18 +16,17 @@
     "Residential Plot": 45
   },
   "budget_form_counts": {
-    "cr": 67,
+    "cr": 65,
     "crore": 41,
-    "range": 60,
-    "lakh": 134,
-    "spelled_out": 53,
-    "exact": 55
+    "range": 61,
+    "lakh": 136,
+    "exact": 57,
+    "spelled_out": 51
   },
   "bhk_form_counts": {
-    "spaced": 45,
-    "bare": 52,
-    "worded": 32,
-    "1rk": 7,
-    "studio": 6
+    "bare": 53,
+    "spaced": 44,
+    "worded": 33,
+    "1rk": 7
   }
 }
