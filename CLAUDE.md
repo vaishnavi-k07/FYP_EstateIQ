@@ -81,7 +81,7 @@ Customer clicks "Talk with Agent" (website widget)
 | Backend / API | Flask | REST API, webhook receiver |
 | Voice AI | Vapi AI | Voice calls, STT, webhook integration |
 | NLP extraction | spaCy, regex, pandas, CSV lookup tables |
-| Sentiment & Intent | Fine-tuned DistilBERT (HuggingFace `transformers`) | Two-stage: pretrain on general sentiment corpus → domain-adapt on labeled real-estate transcripts. Tokenization uses DistilBERT's own tokenizer, not TF-IDF |
+| Sentiment & Intent | Fine-tuned DistilBERT (HuggingFace `transformers`) | Two-stage: encoder warm-start on a general sentiment corpus (SST-2) → domain fine-tune on labeled real-estate transcripts. **Sentiment is 4-class** (Enthusiastic/Neutral/Hesitant/Frustrated), **intent is 6-class** — see Phase 2 for why. Tokenization uses DistilBERT's own tokenizer, not TF-IDF |
 | Lead Scoring | XGBoost | Explainable via SHAP; trained on NLP + intent + sentiment features |
 | Explainability | SHAP | Feature-level explanation per lead score |
 | Database | PostgreSQL (SQLAlchemy ORM) | Swap to SQLite only for local dev if needed |
@@ -164,19 +164,52 @@ This maps onto the previously agreed 8-week timeline (Jul 18 – Sep 14), adjust
 1. Scaffold the folder structure above; set up Flask app skeleton, Postgres, SQLAlchemy models (`Lead`, `Transcript`, `User`).
 2. Build `locations.csv`, `property_type.csv`, `amenities.csv` for the Nashik/Pune company (multiple named developments across both cities).
 3. Build the synthetic call-transcript dataset generator: 60% Nashik / 40% Pune, varied intents (buy/rent/invest/inquiry/schedule visit/callback), varied sentiment tone, varied completeness (some customers give full requirements, some vague/incomplete — this matters for scoring realism later).
-4. Source a general-purpose public sentiment dataset (e.g. SST-2 / IMDB / Twitter sentiment) for DistilBERT stage-1 pretraining.
+4. Source a general-purpose public sentiment dataset for DistilBERT stage-1 pretraining. **Done — SST-2** (`stanfordnlp/sst2` via HuggingFace `datasets`); fetched and profiled by `backend/sentiment_intent/prepare_data.py`.
 5. Define the DB schema for a "lead record" end to end (raw transcript → extracted features → intent → sentiment → score → category → status).
 
 **Exit criteria:** DB migrations run cleanly; synthetic dataset (≥ a few hundred transcripts) generated and stored; general sentiment dataset downloaded and inspected.
 
 ### Phase 2 — Sentiment & Intent Model (Week 2, Jul 25–31)
-1. Stage 1: fine-tune DistilBERT on the general sentiment dataset (Positive/Neutral/Negative).
-2. Stage 2: domain-adapt on the labeled synthetic real-estate transcripts.
-3. Train a second DistilBERT head (or a separate lightweight classifier on top of DistilBERT embeddings) for intent classification (Buy / Rent / Inquiry / Schedule Visit / Investment / Commercial / Request Callback).
-4. Evaluate both (accuracy, F1, confusion matrix); save artifacts + metrics to `models_store/`.
+
+**Label schemes (decided — do not silently change):**
+
+*Sentiment — 4 classes:* `Enthusiastic / Neutral / Hesitant / Frustrated`.
+Deliberately **not** collapsed to Positive/Neutral/Negative. The downstream
+consumer is lead scoring, and the two "negative-ish" states carry opposite
+business meaning: a Hesitant caller is an unconverted-but-live lead worth a
+callback, while a Frustrated caller is a retention/escalation signal.
+Collapsing them to a single "Negative" would destroy exactly the distinction
+the lead score exists to make. The 4 classes are what the synthetic dataset
+is labeled with, so stage-2 needs no relabeling.
+
+*Intent — 6 classes:* `Buy / Rent / Inquiry / Schedule Visit / Investment /
+Request Callback`. **"Commercial" is deliberately excluded**: it describes
+the *property*, not the *customer's intent*. It is already captured as the
+`category` column in `dataset/property_type.csv` (Commercial covers Office
+Space, Warehouse, Commercial Shop, etc.) and surfaces in the NLP extractor's
+output as `category`. Modelling it as an intent would double-encode a
+property attribute as a behavioural one and make the intent classes
+non-mutually-exclusive (a caller can want to *buy* a *commercial* shop).
+
+**Steps:**
+1. Stage 1 — **encoder warm-start only**: fine-tune DistilBERT on the general
+   public sentiment corpus (SST-2). The stage-1 classification head is
+   discarded; only the adapted encoder weights carry forward. The general
+   corpus label space (binary pos/neg) intentionally does **not** need to
+   match the 4-class domain scheme, because nothing but the encoder transfers.
+2. Stage 2 — replace the head with a fresh 4-way classifier and fine-tune on
+   the labeled synthetic real-estate transcripts (`metadata.sentiment`).
+3. Train a second DistilBERT head (or a lightweight classifier over DistilBERT
+   embeddings) for 6-way intent classification (`metadata.intent`).
+4. Evaluate both (accuracy, macro-F1, confusion matrix); save artifacts +
+   metrics to `models_store/`. Report macro-F1, not just accuracy — with 4 and
+   6 near-balanced classes, per-class recall is what matters for scoring.
 5. Wrap both in `sentiment_intent/predict.py` returning a structured dict: `{"sentiment": "...", "sentiment_confidence": ..., "intent": "...", "intent_confidence": ...}`.
 
-**Exit criteria:** both models beat a trivial baseline (majority class) by a clear margin on a held-out split; `predict.py` callable end-to-end on a raw transcript string.
+**Exit criteria:** both models beat the majority-class baseline (sentiment
+26.3%, intent 17.7% — measured, see `sentiment_intent/data_report.json`) by a
+clear margin on a held-out split; `predict.py` callable end-to-end on a raw
+transcript string.
 
 ### Phase 3 — NLP Feature Extraction (multilingual NER approach)
 The extraction module uses a fine-tuned multilingual token-classification
@@ -264,7 +297,9 @@ documented improvement over the rule-based baseline.
 2. Wire in role-based auth gate.
 3. Status-update action on the Lead Detail page (feeds back into future model retraining).
 
-**Exit criteria:** a sales agent can log in, see the lead list sorted by score, open a lead, understand why it scored the way it did, and mark it Contacted/Converted/Lost.
+**Exit criteria:** a sales agent can log in, see the lead list sorted
+
+
 
 ### Phase 8 — Testing & Evaluation (Week 8, Sep 2–7)
 1. Unit tests per module (NLP extractor, sentiment/intent predict, lead scoring).
@@ -293,5 +328,8 @@ documented improvement over the rule-based baseline.
 
 - **Confirmed:** sentiment & intent use fine-tuned DistilBERT, not TF-IDF + Logistic Regression.
 - **Confirmed:** no property recommendation or follow-up-suggestion feature — lead scoring/prioritization only.
+- **Confirmed (Phase 2 sentiment scheme):** 4 classes — Enthusiastic/Neutral/Hesitant/Frustrated — kept instead of collapsing to Positive/Neutral/Negative. Hesitant and Frustrated mean opposite things to a sales team, and the lead score needs that distinction. The general corpus is used as an **encoder warm-start only**, so its binary label space is irrelevant to the final head.
+- **Confirmed (Phase 2 intent scheme):** 6 classes — Buy/Rent/Inquiry/Schedule Visit/Investment/Request Callback. "Commercial" dropped from the intent taxonomy: it is a property attribute (already `category` in `property_type.csv`), not a customer intent, and keeping it would make the intent classes non-mutually-exclusive.
+- **Confirmed (stage-1 corpus):** SST-2 (`stanfordnlp/sst2`). Chosen over IMDB because its sentences are short and conversational (mean ~10 words), which is far closer to a call-transcript utterance than a multi-paragraph movie review. **Caveat:** SST-2's `test` split is unlabeled (GLUE held-out, all labels `-1`) — use `validation` (872 rows) for stage-1 eval, or carve a dev split from `train`.
 - **Bootstrap labeling risk (Phase 4):** since there's no real conversion history at project start, the initial lead-scoring ground truth is a documented heuristic on synthetic data. Call this out explicitly in the final report as a limitation, with real agent-marked outcomes (Phase 7 status updates) as the path to a truer model post-launch.
 - **Not yet decided:** exact deployment host for Phase 9 (Render vs Railway vs EC2) — revisit once Phase 8 is complete and budget/time is clearer.

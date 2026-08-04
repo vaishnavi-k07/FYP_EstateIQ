@@ -7,6 +7,14 @@ spacy==3.8.7
 scikit-learn==1.7.1
 nltk==3.9.1
 
+# Transformers stack — MuRIL NER (Phase 3) + DistilBERT sentiment/intent (Phase 2)
+# torch is a large download (~2.5 GB with CUDA). For a CPU-only install:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+torch==2.13.0
+transformers==5.14.1
+datasets==5.0.1
+seqeval==1.2.2
+
 # Web Framework
 Flask==3.1.2
 Flask-Cors==6.0.1
@@ -18,8 +26,13 @@ shap==0.48.0
 matplotlib==3.10.5
 plotly==6.3.0
 
-# Machine Learning
+# Machine Learning — lead scoring (Phase 4)
 joblib==1.5.1
+xgboost==3.4.0
+
+# Database (Phase 5+ persistence; not used by Phases 2-4, which train from files)
+SQLAlchemy==2.0.51
+psycopg[binary]==3.3.4
 
 # Environment Variables
 python-dotenv==1.1.1

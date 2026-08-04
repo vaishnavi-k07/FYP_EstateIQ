@@ -1,13 +1,13 @@
 {
   "total": 700,
   "city_counts": {
-    "Nashik": 406,
-    "Pune": 279
+    "Pune": 282,
+    "Nashik": 400
   },
-  "negation_count": 149,
-  "code_mixed_count": 151,
-  "multi_city_count": 77,
-  "telegraphic_count": 70,
+  "negation_count": 132,
+  "code_mixed_count": 143,
+  "multi_city_count": 75,
+  "telegraphic_count": 67,
   "rare_type_counts": {
     "Warehouse": 45,
     "Farm House": 45,
@@ -16,17 +16,17 @@
     "Residential Plot": 45
   },
   "budget_form_counts": {
-    "cr": 65,
-    "crore": 41,
-    "range": 61,
-    "lakh": 136,
-    "exact": 57,
-    "spelled_out": 51
+    "exact": 73,
+    "spelled_out": 67,
+    "range": 62,
+    "lakh": 125,
+    "crore": 38,
+    "cr": 49
   },
   "bhk_form_counts": {
-    "bare": 53,
-    "spaced": 44,
-    "worded": 33,
-    "1rk": 7
+    "bare": 40,
+    "1rk": 17,
+    "worded": 23,
+    "spaced": 53
   }
 }

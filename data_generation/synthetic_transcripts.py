@@ -18,11 +18,20 @@ import itertools
 import json
 import logging
 import re
+import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 import pandas as pd
 from numpy.random import default_rng
+
+# Importable both as `python data_generation/synthetic_transcripts.py` (which
+# puts only this directory on sys.path) and as `data_generation.synthetic_transcripts`.
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
+
+from data_generation import phrase_pools as _pools  # noqa: E402
 
 logger = logging.getLogger(__name__)
 
@@ -140,57 +149,9 @@ OPENERS = [
 ]
 
 # Customer's opening framing. Each ends on a comma, dash, or 'so' because
-# the main requirement clause is appended capitalized right after it.
-SENTIMENT_OPENERS = {
-    "Enthusiastic": [
-        "Hi! We're really excited to finally look into this —",
-        "Hey there, thanks for picking up! So,",
-        "Hi, great, this is perfect timing —",
-        "Hello! Yes, we've been waiting to start this, so",
-        "Hi, so glad I got through —",
-        "Hey! Right, so here's the plan —",
-        "Hi there, we've been looking forward to this call, so",
-        "Oh hi, brilliant — okay so,",
-        "Hello! We're quite keen on this, so",
-        "Hi, wonderful, let me tell you what we want —",
-    ],
-    "Neutral": [
-        "Hi, so basically,",
-        "Hello, yes so",
-        "Hi, okay so",
-        "Hello. Right, so",
-        "Hi there. So, the requirement is,",
-        "Yes, hello — so",
-        "Hi, sure. Basically,",
-        "Hello, okay. To give you the details,",
-        "Hi. Let me just lay it out —",
-        "Yeah, hi. So essentially,",
-    ],
-    "Hesitant": [
-        "Um, hi, we're not entirely sure yet, but",
-        "Hi... we're still exploring options, but roughly,",
-        "Hello, we're just starting to look around, so",
-        "Hi, um, this is all quite new to us, but",
-        "Hello... we haven't fully decided, but broadly,",
-        "Hi, sorry, we're a bit unclear ourselves, but",
-        "Um, hello. We might be jumping the gun here, but",
-        "Hi, we're only at the thinking stage really, so",
-        "Hello, I hope this isn't premature, but",
-        "Hi... give me a second. Okay, so roughly,",
-    ],
-    "Frustrated": [
-        "Hi, I've called before about this and no one got back to me, but anyway,",
-        "Yeah hi, look, I don't have much time, but",
-        "Hi, this is actually my second time calling, so quickly —",
-        "Hello — right, let's not go round in circles again.",
-        "Yeah, hi. I'll keep this short because I've explained it already —",
-        "Hi, honestly I've been passed around a fair bit, so just noting it once:",
-        "Look, hi. Third call now, so briefly —",
-        "Yeah hello. I'm short on patience today, so straight to it —",
-        "Hi. I did fill in your form, but clearly that went nowhere, so",
-        "Right, hi. Let me repeat what I told the last person —",
-    ],
-}
+# the main requirement clause is appended capitalized right after it. Greetings
+# are shared across all four tones; only the tone clause carries the label.
+SENTIMENT_OPENERS = _pools.SENTIMENT_OPENERS
 
 FOLLOWUP_QUESTIONS = {
     "area": [
@@ -243,48 +204,7 @@ FOLLOWUP_QUESTIONS = {
 
 # Customer non-answers. Sampled without replacement within a single
 # transcript so the same non-answer never appears twice in one call.
-DEFLECTIONS = {
-    "Enthusiastic": [
-        "Customer: Oh, haven't decided that part yet, but I'll figure it out soon!",
-        "Customer: Not sure yet, honestly, but open to suggestions!",
-        "Customer: Ooh, good question — no idea yet, but I'm flexible!",
-        "Customer: Haven't got that far, but tell me what people usually go for!",
-        "Customer: We're easy on that one, surprise us!",
-        "Customer: Still working that bit out, but nothing's ruled out!",
-        "Customer: Honestly no clue there yet — happy to be guided!",
-        "Customer: That one's still up in the air, but we'll sort it out!",
-    ],
-    "Neutral": [
-        "Customer: Not decided yet, we'll figure that out later.",
-        "Customer: No preference there, whatever works.",
-        "Customer: Haven't thought about that one, to be honest.",
-        "Customer: That's flexible, we can decide later.",
-        "Customer: No strong view on that.",
-        "Customer: We'll come back to that once the rest is clear.",
-        "Customer: Nothing fixed there yet.",
-        "Customer: Leave that open for now.",
-    ],
-    "Hesitant": [
-        "Customer: Um, we haven't really thought about that yet.",
-        "Customer: Not sure, we're still figuring things out.",
-        "Customer: Hmm... I'd have to check with my family on that one.",
-        "Customer: I don't want to say something wrong, so let me get back to you.",
-        "Customer: That's... honestly, I'm not sure yet.",
-        "Customer: We haven't sat down and discussed that part properly.",
-        "Customer: Sorry, I really can't say at this point.",
-        "Customer: Maybe? I'd rather not commit to that yet.",
-    ],
-    "Frustrated": [
-        "Customer: I don't know, can we just move on?",
-        "Customer: Not decided, look, can someone just call me back about this?",
-        "Customer: I've no answer for that right now.",
-        "Customer: Does it matter at this stage? Let's skip it.",
-        "Customer: No idea. Next question.",
-        "Customer: I'd rather sort that out with whoever actually calls me.",
-        "Customer: Haven't decided, and I'm not deciding on this call.",
-        "Customer: Can we park that one, please?",
-    ],
-}
+DEFLECTIONS = _pools.DEFLECTIONS
 
 CLOSERS_GENERIC = [
     "Agent: Thanks for sharing all that, our team will get back to you shortly.",
@@ -399,14 +319,9 @@ FURNISHING_PHRASES = [
     "we'd prefer it {furnishing_lower}",
 ]
 
-INTENT_PHRASES = {
-    "Buy": ["we're looking to buy", "we want to purchase this outright", "this is for buying, not renting"],
-    "Rent": ["we're looking to rent", "this would be on rent", "just for rent, not buying"],
-    "Investment": ["this is purely as an investment", "we're buying this as an investment property", "looking at this from an investment angle"],
-    "Inquiry": ["just gathering some information for now", "we're only inquiring at this stage", "just exploring options right now"],
-    "Schedule Visit": ["we'd like to schedule a site visit", "can we set up a visit to see the place", "we want to actually go see a property"],
-    "Request Callback": ["could someone call me back about this", "please have someone get back to me", "I'd prefer a callback to discuss this"],
-}
+# Intent phrasings: built from frames shared by every intent, so the frame
+# carries no label signal. See data_generation/phrase_pools.py.
+INTENT_PHRASES = _pools.INTENT_PHRASES
 
 NEGATION_PROPERTY_TEMPLATES = [
     "Not {neg_article} {neg_type}, more like {pos_article} {pos_type}.",

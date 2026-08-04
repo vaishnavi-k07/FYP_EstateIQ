@@ -1,0 +1,163 @@
+{
+  "general_corpus": {
+    "name": "stanfordnlp/sst2",
+    "role": "stage-1 encoder warm-start only; head is discarded",
+    "class_names": [
+      "negative",
+      "positive"
+    ],
+    "splits": {
+      "train": {
+        "rows": 67349,
+        "labeled": true,
+        "counts": {
+          "negative": 29780,
+          "positive": 37569
+        },
+        "proportions": {
+          "negative": 0.4422,
+          "positive": 0.5578
+        }
+      },
+      "validation": {
+        "rows": 872,
+        "labeled": true,
+        "counts": {
+          "negative": 428,
+          "positive": 444
+        },
+        "proportions": {
+          "negative": 0.4908,
+          "positive": 0.5092
+        }
+      },
+      "test": {
+        "rows": 1821,
+        "labeled": false,
+        "counts": {},
+        "proportions": {}
+      }
+    },
+    "train_sentence_words": {
+      "mean": 9.4,
+      "median": 7.0,
+      "p95": 26.0,
+      "max": 52.0
+    },
+    "usable_eval_split": "validation"
+  },
+  "synthetic_corpus": {
+    "path": "data_generation/output/synthetic_transcripts.jsonl",
+    "total": 700,
+    "sentiment": {
+      "total": 700,
+      "n_classes": 4,
+      "counts": {
+        "Enthusiastic": 184,
+        "Neutral": 181,
+        "Hesitant": 171,
+        "Frustrated": 164
+      },
+      "proportions": {
+        "Enthusiastic": 0.2629,
+        "Neutral": 0.2586,
+        "Hesitant": 0.2443,
+        "Frustrated": 0.2343
+      },
+      "majority_baseline": 0.2629,
+      "imbalance_ratio": 1.12,
+      "expected_classes": [
+        "Enthusiastic",
+        "Neutral",
+        "Hesitant",
+        "Frustrated"
+      ],
+      "missing_classes": [],
+      "unexpected_classes": []
+    },
+    "intent": {
+      "total": 700,
+      "n_classes": 6,
+      "counts": {
+        "Request Callback": 124,
+        "Buy": 123,
+        "Inquiry": 117,
+        "Schedule Visit": 115,
+        "Investment": 114,
+        "Rent": 107
+      },
+      "proportions": {
+        "Request Callback": 0.1771,
+        "Buy": 0.1757,
+        "Inquiry": 0.1671,
+        "Schedule Visit": 0.1643,
+        "Investment": 0.1629,
+        "Rent": 0.1529
+      },
+      "majority_baseline": 0.1771,
+      "imbalance_ratio": 1.16,
+      "expected_classes": [
+        "Buy",
+        "Rent",
+        "Inquiry",
+        "Schedule Visit",
+        "Investment",
+        "Request Callback"
+      ],
+      "missing_classes": [],
+      "unexpected_classes": []
+    },
+    "completeness": {
+      "total": 700,
+      "n_classes": 3,
+      "counts": {
+        "full": 269,
+        "partial": 263,
+        "vague": 168
+      },
+      "proportions": {
+        "full": 0.3843,
+        "partial": 0.3757,
+        "vague": 0.24
+      },
+      "majority_baseline": 0.3843,
+      "imbalance_ratio": 1.6
+    },
+    "sentiment_x_intent": {
+      "cells_populated": 24,
+      "cells_possible": 24,
+      "min_cell": 23,
+      "max_cell": 42
+    },
+    "length_words": {
+      "full_transcript": {
+        "mean": 73.1,
+        "median": 74.0,
+        "p95": 105.0,
+        "max": 125.0
+      },
+      "customer_turns_only": {
+        "mean": 38.0,
+        "median": 39.0,
+        "p95": 62.0,
+        "max": 78.0
+      }
+    }
+  },
+  "label_schemes": {
+    "sentiment": [
+      "Enthusiastic",
+      "Neutral",
+      "Hesitant",
+      "Frustrated"
+    ],
+    "intent": [
+      "Buy",
+      "Rent",
+      "Inquiry",
+      "Schedule Visit",
+      "Investment",
+      "Request Callback"
+    ]
+  }
+}
