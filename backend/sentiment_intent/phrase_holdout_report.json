@@ -3,6 +3,46 @@
     "task": "sentiment",
     "held_out_phrases": {
       "Enthusiastic": [
+        "Hi, matlab bahut excited hain hum, thoda jaldi shuru karna hai, so",
+        "Hello, matlab bahut excited hain hum, thoda jaldi shuru karna hai, so",
+        "Hi there, matlab bahut excited hain hum, thoda jaldi shuru karna hai, so",
+        "Hey there, matlab bahut excited hain hum, thoda jaldi shuru karna hai, so",
+        "Yeah, hi. Matlab bahut excited hain hum, thoda jaldi shuru karna hai, so",
+        "Um, hi. Matlab bahut excited hain hum, thoda jaldi shuru karna hai, so",
+        "Hello! Yes, matlab bahut excited hain hum, thoda jaldi shuru karna hai, so",
+        "Oh, hi. Matlab bahut excited hain hum, thoda jaldi shuru karna hai, so",
+        "Hi, thanks for picking up. Matlab bahut excited hain hum, thoda jaldi shuru karna hai, so",
+        "Haan, hello. Matlab bahut excited hain hum, thoda jaldi shuru karna hai, so",
+        "Hi, honestly this is the best news we've had all week, so",
+        "Hello, honestly this is the best news we've had all week, so",
+        "Hi there, honestly this is the best news we've had all week, so",
+        "Hey there, honestly this is the best news we've had all week, so",
+        "Yeah, hi. Honestly this is the best news we've had all week, so",
+        "Um, hi. Honestly this is the best news we've had all week, so",
+        "Hello! Yes, honestly this is the best news we've had all week, so",
+        "Oh, hi. Honestly this is the best news we've had all week, so",
+        "Hi, thanks for picking up. Honestly this is the best news we've had all week, so",
+        "Haan, hello. Honestly this is the best news we've had all week, so",
+        "Hi, I don't have much time today, so quickly, though I'm thrilled we're finally doing this,",
+        "Hello, I don't have much time today, so quickly, though I'm thrilled we're finally doing this,",
+        "Hi there, I don't have much time today, so quickly, though I'm thrilled we're finally doing this,",
+        "Hey there, I don't have much time today, so quickly, though I'm thrilled we're finally doing this,",
+        "Yeah, hi. I don't have much time today, so quickly, though I'm thrilled we're finally doing this,",
+        "Um, hi. I don't have much time today, so quickly, though I'm thrilled we're finally doing this,",
+        "Hello! Yes, I don't have much time today, so quickly, though I'm thrilled we're finally doing this,",
+        "Oh, hi. I don't have much time today, so quickly, though I'm thrilled we're finally doing this,",
+        "Hi, thanks for picking up. I don't have much time today, so quickly, though I'm thrilled we're finally doing this,",
+        "Haan, hello. I don't have much time today, so quickly, though I'm thrilled we're finally doing this,",
+        "Hi, we're quite keen to get going, so",
+        "Hello, we're quite keen to get going, so",
+        "Hi there, we're quite keen to get going, so",
+        "Hey there, we're quite keen to get going, so",
+        "Yeah, hi. We're quite keen to get going, so",
+        "Um, hi. We're quite keen to get going, so",
+        "Hello! Yes, we're quite keen to get going, so",
+        "Oh, hi. We're quite keen to get going, so",
+        "Hi, thanks for picking up. We're quite keen to get going, so",
+        "Haan, hello. We're quite keen to get going, so",
         "Hi, it's great to finally be doing this, so",
         "Hello, it's great to finally be doing this, so",
         "Hi there, it's great to finally be doing this, so",
@@ -13,16 +53,16 @@
         "Oh, hi. It's great to finally be doing this, so",
         "Hi, thanks for picking up. It's great to finally be doing this, so",
         "Haan, hello. It's great to finally be doing this, so",
-        "Hi, bahut excited hain hum, so",
-        "Hello, bahut excited hain hum, so",
-        "Hi there, bahut excited hain hum, so",
-        "Hey there, bahut excited hain hum, so",
-        "Yeah, hi. Bahut excited hain hum, so",
-        "Um, hi. Bahut excited hain hum, so",
-        "Hello! Yes, bahut excited hain hum, so",
-        "Oh, hi. Bahut excited hain hum, so",
-        "Hi, thanks for picking up. Bahut excited hain hum, so",
-        "Haan, hello. Bahut excited hain hum, so",
+        "Hi, we've finally decided to go ahead, so",
+        "Hello, we've finally decided to go ahead, so",
+        "Hi there, we've finally decided to go ahead, so",
+        "Hey there, we've finally decided to go ahead, so",
+        "Yeah, hi. We've finally decided to go ahead, so",
+        "Um, hi. We've finally decided to go ahead, so",
+        "Hello! Yes, we've finally decided to go ahead, so",
+        "Oh, hi. We've finally decided to go ahead, so",
+        "Hi, thanks for picking up. We've finally decided to go ahead, so",
+        "Haan, hello. We've finally decided to go ahead, so",
         "Hi, we're really excited about this, so",
         "Hello, we're really excited about this, so",
         "Hi there, we're really excited about this, so",
@@ -33,28 +73,78 @@
         "Oh, hi. We're really excited about this, so",
         "Hi, thanks for picking up. We're really excited about this, so",
         "Haan, hello. We're really excited about this, so",
-        "Customer: No idea yet, but I'm totally open to suggestions!",
-        "Customer: Honestly, no idea yet, but I'm totally open to suggestions!",
-        "Customer: Hmm, no idea yet, but I'm totally open to suggestions!",
-        "Customer: Look, no idea yet, but I'm totally open to suggestions!",
-        "Customer: Well, no idea yet, but I'm totally open to suggestions!",
-        "Customer: Haven't got that far, but tell me what people usually go for!",
-        "Customer: Honestly, haven't got that far, but tell me what people usually go for!",
-        "Customer: Hmm, haven't got that far, but tell me what people usually go for!",
-        "Customer: Look, haven't got that far, but tell me what people usually go for!",
-        "Customer: Well, haven't got that far, but tell me what people usually go for!"
+        "Customer: Can someone call me back on that? I'd really enjoy talking it through.",
+        "Customer: Honestly, can someone call me back on that? I'd really enjoy talking it through.",
+        "Customer: Hmm, can someone call me back on that? I'd really enjoy talking it through.",
+        "Customer: Look, can someone call me back on that? I'd really enjoy talking it through.",
+        "Customer: Well, can someone call me back on that? I'd really enjoy talking it through.",
+        "Customer: I've already explained most of what matters, and I'm happy to go over it again!",
+        "Customer: Honestly, I've already explained most of what matters, and I'm happy to go over it again!",
+        "Customer: Hmm, I've already explained most of what matters, and I'm happy to go over it again!",
+        "Customer: Look, I've already explained most of what matters, and I'm happy to go over it again!",
+        "Customer: Well, I've already explained most of what matters, and I'm happy to go over it again!",
+        "Customer: Not sure yet, and honestly that's half the fun of it!",
+        "Customer: Honestly, not sure yet, and honestly that's half the fun of it!",
+        "Customer: Hmm, not sure yet, and honestly that's half the fun of it!",
+        "Customer: Look, not sure yet, and honestly that's half the fun of it!",
+        "Customer: Well, not sure yet, and honestly that's half the fun of it!",
+        "Customer: That one's up in the air, but we'll sort it out!",
+        "Customer: Honestly, that one's up in the air, but we'll sort it out!",
+        "Customer: Hmm, that one's up in the air, but we'll sort it out!",
+        "Customer: Look, that one's up in the air, but we'll sort it out!",
+        "Customer: Well, that one's up in the air, but we'll sort it out!"
       ],
       "Neutral": [
-        "Hi, seedha seedha bataata hoon,",
-        "Hello, seedha seedha bataata hoon,",
-        "Hi there, seedha seedha bataata hoon,",
-        "Hey there, seedha seedha bataata hoon,",
-        "Yeah, hi. Seedha seedha bataata hoon,",
-        "Um, hi. Seedha seedha bataata hoon,",
-        "Hello! Yes, seedha seedha bataata hoon,",
-        "Oh, hi. Seedha seedha bataata hoon,",
-        "Hi, thanks for picking up. Seedha seedha bataata hoon,",
-        "Haan, hello. Seedha seedha bataata hoon,",
+        "Hi, seedha seedha bataata hoon, matlab abhi bahut clear hai,",
+        "Hello, seedha seedha bataata hoon, matlab abhi bahut clear hai,",
+        "Hi there, seedha seedha bataata hoon, matlab abhi bahut clear hai,",
+        "Hey there, seedha seedha bataata hoon, matlab abhi bahut clear hai,",
+        "Yeah, hi. Seedha seedha bataata hoon, matlab abhi bahut clear hai,",
+        "Um, hi. Seedha seedha bataata hoon, matlab abhi bahut clear hai,",
+        "Hello! Yes, seedha seedha bataata hoon, matlab abhi bahut clear hai,",
+        "Oh, hi. Seedha seedha bataata hoon, matlab abhi bahut clear hai,",
+        "Hi, thanks for picking up. Seedha seedha bataata hoon, matlab abhi bahut clear hai,",
+        "Haan, hello. Seedha seedha bataata hoon, matlab abhi bahut clear hai,",
+        "Hi, we're in no rush, so I'll just give you the facts,",
+        "Hello, we're in no rush, so I'll just give you the facts,",
+        "Hi there, we're in no rush, so I'll just give you the facts,",
+        "Hey there, we're in no rush, so I'll just give you the facts,",
+        "Yeah, hi. We're in no rush, so I'll just give you the facts,",
+        "Um, hi. We're in no rush, so I'll just give you the facts,",
+        "Hello! Yes, we're in no rush, so I'll just give you the facts,",
+        "Oh, hi. We're in no rush, so I'll just give you the facts,",
+        "Hi, thanks for picking up. We're in no rush, so I'll just give you the facts,",
+        "Haan, hello. We're in no rush, so I'll just give you the facts,",
+        "Hi, here's what we need,",
+        "Hello, here's what we need,",
+        "Hi there, here's what we need,",
+        "Hey there, here's what we need,",
+        "Yeah, hi. Here's what we need,",
+        "Um, hi. Here's what we need,",
+        "Hello! Yes, here's what we need,",
+        "Oh, hi. Here's what we need,",
+        "Hi, thanks for picking up. Here's what we need,",
+        "Haan, hello. Here's what we need,",
+        "Hi, I don't have much time, so quickly, let me just list it out,",
+        "Hello, I don't have much time, so quickly, let me just list it out,",
+        "Hi there, I don't have much time, so quickly, let me just list it out,",
+        "Hey there, I don't have much time, so quickly, let me just list it out,",
+        "Yeah, hi. I don't have much time, so quickly, let me just list it out,",
+        "Um, hi. I don't have much time, so quickly, let me just list it out,",
+        "Hello! Yes, I don't have much time, so quickly, let me just list it out,",
+        "Oh, hi. I don't have much time, so quickly, let me just list it out,",
+        "Hi, thanks for picking up. I don't have much time, so quickly, let me just list it out,",
+        "Haan, hello. I don't have much time, so quickly, let me just list it out,",
+        "Hi, we're keen enough to be calling, but I'll stick to the details,",
+        "Hello, we're keen enough to be calling, but I'll stick to the details,",
+        "Hi there, we're keen enough to be calling, but I'll stick to the details,",
+        "Hey there, we're keen enough to be calling, but I'll stick to the details,",
+        "Yeah, hi. We're keen enough to be calling, but I'll stick to the details,",
+        "Um, hi. We're keen enough to be calling, but I'll stick to the details,",
+        "Hello! Yes, we're keen enough to be calling, but I'll stick to the details,",
+        "Oh, hi. We're keen enough to be calling, but I'll stick to the details,",
+        "Hi, thanks for picking up. We're keen enough to be calling, but I'll stick to the details,",
+        "Haan, hello. We're keen enough to be calling, but I'll stick to the details,",
         "Hi, just to state it plainly,",
         "Hello, just to state it plainly,",
         "Hi there, just to state it plainly,",
@@ -65,48 +155,78 @@
         "Oh, hi. Just to state it plainly,",
         "Hi, thanks for picking up. Just to state it plainly,",
         "Haan, hello. Just to state it plainly,",
-        "Hi, so essentially,",
-        "Hello, so essentially,",
-        "Hi there, so essentially,",
-        "Hey there, so essentially,",
-        "Yeah, hi. So essentially,",
-        "Um, hi. So essentially,",
-        "Hello! Yes, so essentially,",
-        "Oh, hi. So essentially,",
-        "Hi, thanks for picking up. So essentially,",
-        "Haan, hello. So essentially,",
-        "Customer: Haven't thought about that one.",
-        "Customer: Honestly, haven't thought about that one.",
-        "Customer: Hmm, haven't thought about that one.",
-        "Customer: Look, haven't thought about that one.",
-        "Customer: Well, haven't thought about that one.",
-        "Customer: That's flexible, we can decide later.",
-        "Customer: Honestly, that's flexible, we can decide later.",
-        "Customer: Hmm, that's flexible, we can decide later.",
-        "Customer: Look, that's flexible, we can decide later.",
-        "Customer: Well, that's flexible, we can decide later."
+        "Hi, to give you the details,",
+        "Hello, to give you the details,",
+        "Hi there, to give you the details,",
+        "Hey there, to give you the details,",
+        "Yeah, hi. To give you the details,",
+        "Um, hi. To give you the details,",
+        "Hello! Yes, to give you the details,",
+        "Oh, hi. To give you the details,",
+        "Hi, thanks for picking up. To give you the details,",
+        "Haan, hello. To give you the details,",
+        "Customer: Not decided yet, we'll figure that out later.",
+        "Customer: Honestly, not decided yet, we'll figure that out later.",
+        "Customer: Hmm, not decided yet, we'll figure that out later.",
+        "Customer: Look, not decided yet, we'll figure that out later.",
+        "Customer: Well, not decided yet, we'll figure that out later.",
+        "Customer: Still working that out, I'll send it across later.",
+        "Customer: Honestly, still working that out, I'll send it across later.",
+        "Customer: Hmm, still working that out, I'll send it across later.",
+        "Customer: Look, still working that out, I'll send it across later.",
+        "Customer: Well, still working that out, I'll send it across later.",
+        "Customer: I'd have to check with my family, then I'll confirm it.",
+        "Customer: Honestly, I'd have to check with my family, then I'll confirm it.",
+        "Customer: Hmm, I'd have to check with my family, then I'll confirm it.",
+        "Customer: Look, I'd have to check with my family, then I'll confirm it.",
+        "Customer: Well, I'd have to check with my family, then I'll confirm it.",
+        "Customer: We'll come back to that once the rest is clear.",
+        "Customer: Honestly, we'll come back to that once the rest is clear.",
+        "Customer: Hmm, we'll come back to that once the rest is clear.",
+        "Customer: Look, we'll come back to that once the rest is clear.",
+        "Customer: Well, we'll come back to that once the rest is clear."
       ],
       "Hesitant": [
-        "Hi, this is all quite new to us, but",
-        "Hello, this is all quite new to us, but",
-        "Hi there, this is all quite new to us, but",
-        "Hey there, this is all quite new to us, but",
-        "Yeah, hi. This is all quite new to us, but",
-        "Um, hi. This is all quite new to us, but",
-        "Hello! Yes, this is all quite new to us, but",
-        "Oh, hi. This is all quite new to us, but",
-        "Hi, thanks for picking up. This is all quite new to us, but",
-        "Haan, hello. This is all quite new to us, but",
-        "Hi, we're not entirely sure yet, but",
-        "Hello, we're not entirely sure yet, but",
-        "Hi there, we're not entirely sure yet, but",
-        "Hey there, we're not entirely sure yet, but",
-        "Yeah, hi. We're not entirely sure yet, but",
-        "Um, hi. We're not entirely sure yet, but",
-        "Hello! Yes, we're not entirely sure yet, but",
-        "Oh, hi. We're not entirely sure yet, but",
-        "Hi, thanks for picking up. We're not entirely sure yet, but",
-        "Haan, hello. We're not entirely sure yet, but",
+        "Hi, abhi pakka decide nahi kiya hai, hum thoda unsure hain, but",
+        "Hello, abhi pakka decide nahi kiya hai, hum thoda unsure hain, but",
+        "Hi there, abhi pakka decide nahi kiya hai, hum thoda unsure hain, but",
+        "Hey there, abhi pakka decide nahi kiya hai, hum thoda unsure hain, but",
+        "Yeah, hi. Abhi pakka decide nahi kiya hai, hum thoda unsure hain, but",
+        "Um, hi. Abhi pakka decide nahi kiya hai, hum thoda unsure hain, but",
+        "Hello! Yes, abhi pakka decide nahi kiya hai, hum thoda unsure hain, but",
+        "Oh, hi. Abhi pakka decide nahi kiya hai, hum thoda unsure hain, but",
+        "Hi, thanks for picking up. Abhi pakka decide nahi kiya hai, hum thoda unsure hain, but",
+        "Haan, hello. Abhi pakka decide nahi kiya hai, hum thoda unsure hain, but",
+        "Hi, we're only at the thinking stage and probably waiting a bit, but",
+        "Hello, we're only at the thinking stage and probably waiting a bit, but",
+        "Hi there, we're only at the thinking stage and probably waiting a bit, but",
+        "Hey there, we're only at the thinking stage and probably waiting a bit, but",
+        "Yeah, hi. We're only at the thinking stage and probably waiting a bit, but",
+        "Um, hi. We're only at the thinking stage and probably waiting a bit, but",
+        "Hello! Yes, we're only at the thinking stage and probably waiting a bit, but",
+        "Oh, hi. We're only at the thinking stage and probably waiting a bit, but",
+        "Hi, thanks for picking up. We're only at the thinking stage and probably waiting a bit, but",
+        "Haan, hello. We're only at the thinking stage and probably waiting a bit, but",
+        "Hi, we haven't fully decided, but",
+        "Hello, we haven't fully decided, but",
+        "Hi there, we haven't fully decided, but",
+        "Hey there, we haven't fully decided, but",
+        "Yeah, hi. We haven't fully decided, but",
+        "Um, hi. We haven't fully decided, but",
+        "Hello! Yes, we haven't fully decided, but",
+        "Oh, hi. We haven't fully decided, but",
+        "Hi, thanks for picking up. We haven't fully decided, but",
+        "Haan, hello. We haven't fully decided, but",
+        "Hi, we're still weighing things up, but",
+        "Hello, we're still weighing things up, but",
+        "Hi there, we're still weighing things up, but",
+        "Hey there, we're still weighing things up, but",
+        "Yeah, hi. We're still weighing things up, but",
+        "Um, hi. We're still weighing things up, but",
+        "Hello! Yes, we're still weighing things up, but",
+        "Oh, hi. We're still weighing things up, but",
+        "Hi, thanks for picking up. We're still weighing things up, but",
+        "Haan, hello. We're still weighing things up, but",
         "Hi, we're a bit unclear ourselves, but",
         "Hello, we're a bit unclear ourselves, but",
         "Hi there, we're a bit unclear ourselves, but",
@@ -117,28 +237,108 @@
         "Oh, hi. We're a bit unclear ourselves, but",
         "Hi, thanks for picking up. We're a bit unclear ourselves, but",
         "Haan, hello. We're a bit unclear ourselves, but",
-        "Customer: I don't want to say something wrong, so let me get back to you.",
-        "Customer: Honestly, I don't want to say something wrong, so let me get back to you.",
-        "Customer: Hmm, I don't want to say something wrong, so let me get back to you.",
-        "Customer: Look, I don't want to say something wrong, so let me get back to you.",
-        "Customer: Well, I don't want to say something wrong, so let me get back to you.",
-        "Customer: We might change our mind on that, so I'd rather not commit.",
-        "Customer: Honestly, we might change our mind on that, so I'd rather not commit.",
-        "Customer: Hmm, we might change our mind on that, so I'd rather not commit.",
-        "Customer: Look, we might change our mind on that, so I'd rather not commit.",
-        "Customer: Well, we might change our mind on that, so I'd rather not commit."
+        "Hi, quickly, we're keen but we've not decided, so",
+        "Hello, quickly, we're keen but we've not decided, so",
+        "Hi there, quickly, we're keen but we've not decided, so",
+        "Hey there, quickly, we're keen but we've not decided, so",
+        "Yeah, hi. Quickly, we're keen but we've not decided, so",
+        "Um, hi. Quickly, we're keen but we've not decided, so",
+        "Hello! Yes, quickly, we're keen but we've not decided, so",
+        "Oh, hi. Quickly, we're keen but we've not decided, so",
+        "Hi, thanks for picking up. Quickly, we're keen but we've not decided, so",
+        "Haan, hello. Quickly, we're keen but we've not decided, so",
+        "Hi, I almost didn't make this call, honestly, but",
+        "Hello, I almost didn't make this call, honestly, but",
+        "Hi there, I almost didn't make this call, honestly, but",
+        "Hey there, I almost didn't make this call, honestly, but",
+        "Yeah, hi. I almost didn't make this call, honestly, but",
+        "Um, hi. I almost didn't make this call, honestly, but",
+        "Hello! Yes, I almost didn't make this call, honestly, but",
+        "Oh, hi. I almost didn't make this call, honestly, but",
+        "Hi, thanks for picking up. I almost didn't make this call, honestly, but",
+        "Haan, hello. I almost didn't make this call, honestly, but",
+        "Customer: I'd have to check with my family on that one.",
+        "Customer: Honestly, I'd have to check with my family on that one.",
+        "Customer: Hmm, I'd have to check with my family on that one.",
+        "Customer: Look, I'd have to check with my family on that one.",
+        "Customer: Well, I'd have to check with my family on that one.",
+        "Customer: No idea yet, and that worries me a little honestly.",
+        "Customer: Honestly, no idea yet, and that worries me a little honestly.",
+        "Customer: Hmm, no idea yet, and that worries me a little honestly.",
+        "Customer: Look, no idea yet, and that worries me a little honestly.",
+        "Customer: Well, no idea yet, and that worries me a little honestly.",
+        "Customer: Haven't decided, and I'd rather not guess at it.",
+        "Customer: Honestly, haven't decided, and I'd rather not guess at it.",
+        "Customer: Hmm, haven't decided, and I'd rather not guess at it.",
+        "Customer: Look, haven't decided, and I'd rather not guess at it.",
+        "Customer: Well, haven't decided, and I'd rather not guess at it.",
+        "Customer: Can someone call me back about that? I'd like to think it over first.",
+        "Customer: Honestly, can someone call me back about that? I'd like to think it over first.",
+        "Customer: Hmm, can someone call me back about that? I'd like to think it over first.",
+        "Customer: Look, can someone call me back about that? I'd like to think it over first.",
+        "Customer: Well, can someone call me back about that? I'd like to think it over first."
       ],
       "Frustrated": [
-        "Hi, I'm losing patience here, so",
-        "Hello, I'm losing patience here, so",
-        "Hi there, I'm losing patience here, so",
-        "Hey there, I'm losing patience here, so",
-        "Yeah, hi. I'm losing patience here, so",
-        "Um, hi. I'm losing patience here, so",
-        "Hello! Yes, I'm losing patience here, so",
-        "Oh, hi. I'm losing patience here, so",
-        "Hi, thanks for picking up. I'm losing patience here, so",
-        "Haan, hello. I'm losing patience here, so",
+        "Hi, abhi tak kuch nahi hua, bahut time waste ho gaya, main thak gaya hoon, dekhiye thoda serious lijiye, so",
+        "Hello, abhi tak kuch nahi hua, bahut time waste ho gaya, main thak gaya hoon, dekhiye thoda serious lijiye, so",
+        "Hi there, abhi tak kuch nahi hua, bahut time waste ho gaya, main thak gaya hoon, dekhiye thoda serious lijiye, so",
+        "Hey there, abhi tak kuch nahi hua, bahut time waste ho gaya, main thak gaya hoon, dekhiye thoda serious lijiye, so",
+        "Yeah, hi. Abhi tak kuch nahi hua, bahut time waste ho gaya, main thak gaya hoon, dekhiye thoda serious lijiye, so",
+        "Um, hi. Abhi tak kuch nahi hua, bahut time waste ho gaya, main thak gaya hoon, dekhiye thoda serious lijiye, so",
+        "Hello! Yes, abhi tak kuch nahi hua, bahut time waste ho gaya, main thak gaya hoon, dekhiye thoda serious lijiye, so",
+        "Oh, hi. Abhi tak kuch nahi hua, bahut time waste ho gaya, main thak gaya hoon, dekhiye thoda serious lijiye, so",
+        "Hi, thanks for picking up. Abhi tak kuch nahi hua, bahut time waste ho gaya, main thak gaya hoon, dekhiye thoda serious lijiye, so",
+        "Haan, hello. Abhi tak kuch nahi hua, bahut time waste ho gaya, main thak gaya hoon, dekhiye thoda serious lijiye, so",
+        "Hi, I've been waiting a week for someone to call, so",
+        "Hello, I've been waiting a week for someone to call, so",
+        "Hi there, I've been waiting a week for someone to call, so",
+        "Hey there, I've been waiting a week for someone to call, so",
+        "Yeah, hi. I've been waiting a week for someone to call, so",
+        "Um, hi. I've been waiting a week for someone to call, so",
+        "Hello! Yes, I've been waiting a week for someone to call, so",
+        "Oh, hi. I've been waiting a week for someone to call, so",
+        "Hi, thanks for picking up. I've been waiting a week for someone to call, so",
+        "Haan, hello. I've been waiting a week for someone to call, so",
+        "Hi, let me repeat what I told the last person I was waiting on,",
+        "Hello, let me repeat what I told the last person I was waiting on,",
+        "Hi there, let me repeat what I told the last person I was waiting on,",
+        "Hey there, let me repeat what I told the last person I was waiting on,",
+        "Yeah, hi. Let me repeat what I told the last person I was waiting on,",
+        "Um, hi. Let me repeat what I told the last person I was waiting on,",
+        "Hello! Yes, let me repeat what I told the last person I was waiting on,",
+        "Oh, hi. Let me repeat what I told the last person I was waiting on,",
+        "Hi, thanks for picking up. Let me repeat what I told the last person I was waiting on,",
+        "Haan, hello. Let me repeat what I told the last person I was waiting on,",
+        "Hi, I was excited and quite keen at the start and much less so now, so",
+        "Hello, I was excited and quite keen at the start and much less so now, so",
+        "Hi there, I was excited and quite keen at the start and much less so now, so",
+        "Hey there, I was excited and quite keen at the start and much less so now, so",
+        "Yeah, hi. I was excited and quite keen at the start and much less so now, so",
+        "Um, hi. I was excited and quite keen at the start and much less so now, so",
+        "Hello! Yes, I was excited and quite keen at the start and much less so now, so",
+        "Oh, hi. I was excited and quite keen at the start and much less so now, so",
+        "Hi, thanks for picking up. I was excited and quite keen at the start and much less so now, so",
+        "Haan, hello. I was excited and quite keen at the start and much less so now, so",
+        "Hi, to give you the details yet again,",
+        "Hello, to give you the details yet again,",
+        "Hi there, to give you the details yet again,",
+        "Hey there, to give you the details yet again,",
+        "Yeah, hi. To give you the details yet again,",
+        "Um, hi. To give you the details yet again,",
+        "Hello! Yes, to give you the details yet again,",
+        "Oh, hi. To give you the details yet again,",
+        "Hi, thanks for picking up. To give you the details yet again,",
+        "Haan, hello. To give you the details yet again,",
+        "Hi, we're still exploring options only because nobody here has helped, so",
+        "Hello, we're still exploring options only because nobody here has helped, so",
+        "Hi there, we're still exploring options only because nobody here has helped, so",
+        "Hey there, we're still exploring options only because nobody here has helped, so",
+        "Yeah, hi. We're still exploring options only because nobody here has helped, so",
+        "Um, hi. We're still exploring options only because nobody here has helped, so",
+        "Hello! Yes, we're still exploring options only because nobody here has helped, so",
+        "Oh, hi. We're still exploring options only because nobody here has helped, so",
+        "Hi, thanks for picking up. We're still exploring options only because nobody here has helped, so",
+        "Haan, hello. We're still exploring options only because nobody here has helped, so",
         "Hi, this is my second time calling, so",
         "Hello, this is my second time calling, so",
         "Hi there, this is my second time calling, so",
@@ -149,71 +349,71 @@
         "Oh, hi. This is my second time calling, so",
         "Hi, thanks for picking up. This is my second time calling, so",
         "Haan, hello. This is my second time calling, so",
-        "Hi, nobody got back to me last time, so",
-        "Hello, nobody got back to me last time, so",
-        "Hi there, nobody got back to me last time, so",
-        "Hey there, nobody got back to me last time, so",
-        "Yeah, hi. Nobody got back to me last time, so",
-        "Um, hi. Nobody got back to me last time, so",
-        "Hello! Yes, nobody got back to me last time, so",
-        "Oh, hi. Nobody got back to me last time, so",
-        "Hi, thanks for picking up. Nobody got back to me last time, so",
-        "Haan, hello. Nobody got back to me last time, so",
-        "Customer: Haven't decided, and I'm not deciding on this call.",
-        "Customer: Honestly, haven't decided, and I'm not deciding on this call.",
-        "Customer: Hmm, haven't decided, and I'm not deciding on this call.",
-        "Customer: Look, haven't decided, and I'm not deciding on this call.",
-        "Customer: Well, haven't decided, and I'm not deciding on this call.",
+        "Customer: Haven't decided, and I'm not deciding on this call!",
+        "Customer: Honestly, haven't decided, and I'm not deciding on this call!",
+        "Customer: Hmm, haven't decided, and I'm not deciding on this call!",
+        "Customer: Look, haven't decided, and I'm not deciding on this call!",
+        "Customer: Well, haven't decided, and I'm not deciding on this call!",
+        "Customer: Still working that out, same as the last time somebody asked.",
+        "Customer: Honestly, still working that out, same as the last time somebody asked.",
+        "Customer: Hmm, still working that out, same as the last time somebody asked.",
+        "Customer: Look, still working that out, same as the last time somebody asked.",
+        "Customer: Well, still working that out, same as the last time somebody asked.",
         "Customer: Not decided, can someone just call me back about this?",
         "Customer: Honestly, not decided, can someone just call me back about this?",
         "Customer: Hmm, not decided, can someone just call me back about this?",
         "Customer: Look, not decided, can someone just call me back about this?",
-        "Customer: Well, not decided, can someone just call me back about this?"
+        "Customer: Well, not decided, can someone just call me back about this?",
+        "Customer: Does this really need answering right now?",
+        "Customer: Honestly, does this really need answering right now?",
+        "Customer: Hmm, does this really need answering right now?",
+        "Customer: Look, does this really need answering right now?",
+        "Customer: Well, does this really need answering right now?"
       ]
     },
     "partition": {
-      "train_eligible": 371,
-      "held_out": 127,
-      "dropped_mixed": 202,
-      "train": 260,
-      "validation": 56,
-      "test_in_distribution": 55,
+      "train_eligible": 460,
+      "held_out": 175,
+      "dropped_mixed": 255,
+      "train": 322,
+      "validation": 69,
+      "test_in_distribution": 69,
       "held_out_class_counts": {
-        "Enthusiastic": 42,
-        "Neutral": 29,
-        "Frustrated": 25,
-        "Hesitant": 31
+        "Neutral": 44,
+        "Enthusiastic": 45,
+        "Hesitant": 46,
+        "Frustrated": 40
       }
     },
     "model_dir": "C:\\Users\\Parth\\FYP_EstateIQ\\backend\\models_store\\sentiment_intent\\holdout\\sentiment",
     "in_distribution_metrics": {
-      "accuracy": 0.7272727272727273,
-      "macro_f1": 0.7066137566137567,
-      "weighted_f1": 0.7215392015392015,
+      "accuracy": 0.7246376811594203,
+      "macro_f1": 0.7130842440439964,
+      "weighted_f1": 0.7139441093315548,
       "per_class": {
         "Enthusiastic": {
-          "precision": 0.7777777777777778,
-          "recall": 0.8235294117647058,
-          "f1-score": 0.8,
-          "support": 17.0
+          "precision": 0.6875,
+          "recall": 0.6111111111111112,
+          "f1-score": 0.6470588235294118,
+          "support": 18.0
         },
         "Neutral": {
-          "precision": 0.7333333333333333,
-          "recall": 0.8461538461538461,
-          "f1-score": 0.7857142857142857,
-          "support": 13.0
+          "precision": 0.8095238095238095,
+          "recall": 1.0,
+          "f1-score": 0.8947368421052632,
+          "support": 17.0
         },
         "Hesitant": {
-          "precision": 0.7692307692307693,
-          "recall": 0.7142857142857143,
-          "f1-score": 0.7407407407407407,
-          "support": 14.0
+          "precision": 0.7272727272727273,
+          "recall": 0.5,
+          "f1-score": 0.5925925925925926,
+          "support": 16.0
         },
         "Frustrated": {
-          "precision": 0.5555555555555556,
-          "recall": 0.45454545454545453,
-          "f1-score": 0.5,
-          "support": 11.0
+          "precision": 0.6666666666666666,
+          "recall": 0.7777777777777778,
+          "f1-score": 0.717948717948718,
+          "support": 18.0
         }
       },
       "confusion_matrix": {
@@ -226,60 +426,60 @@
         "rows_are_true": true,
         "matrix": [
           [
-            14,
-            0,
-            1,
-            2
-          ],
-          [
-            0,
             11,
-            1,
-            1
-          ],
-          [
             2,
             1,
-            10,
-            1
+            4
           ],
           [
-            2,
+            0,
+            17,
+            0,
+            0
+          ],
+          [
             3,
-            1,
-            5
+            2,
+            8,
+            3
+          ],
+          [
+            2,
+            0,
+            2,
+            14
           ]
         ]
       }
     },
     "held_out_metrics": {
-      "accuracy": 0.5196850393700787,
-      "macro_f1": 0.5021999073723211,
-      "weighted_f1": 0.5177746017822042,
+      "accuracy": 0.4742857142857143,
+      "macro_f1": 0.4779588079529422,
+      "weighted_f1": 0.4831897616508446,
       "per_class": {
         "Enthusiastic": {
-          "precision": 0.4888888888888889,
-          "recall": 0.5238095238095238,
-          "f1-score": 0.5057471264367817,
-          "support": 42.0
+          "precision": 0.68,
+          "recall": 0.37777777777777777,
+          "f1-score": 0.4857142857142857,
+          "support": 45.0
         },
         "Neutral": {
-          "precision": 0.8125,
-          "recall": 0.4482758620689655,
-          "f1-score": 0.5777777777777777,
-          "support": 29.0
+          "precision": 0.5777777777777777,
+          "recall": 0.5909090909090909,
+          "f1-score": 0.5842696629213483,
+          "support": 44.0
         },
         "Hesitant": {
-          "precision": 0.6923076923076923,
-          "recall": 0.8709677419354839,
-          "f1-score": 0.7714285714285715,
-          "support": 31.0
+          "precision": 0.5416666666666666,
+          "recall": 0.5652173913043478,
+          "f1-score": 0.5531914893617021,
+          "support": 46.0
         },
         "Frustrated": {
-          "precision": 0.14814814814814814,
-          "recall": 0.16,
-          "f1-score": 0.15384615384615385,
-          "support": 25.0
+          "precision": 0.24561403508771928,
+          "recall": 0.35,
+          "f1-score": 0.28865979381443296,
+          "support": 40.0
         }
       },
       "confusion_matrix": {
@@ -292,63 +492,66 @@
         "rows_are_true": true,
         "matrix": [
           [
-            22,
-            1,
+            17,
             2,
-            17
-          ],
-          [
-            2,
-            13,
-            8,
-            6
+            7,
+            19
           ],
           [
             4,
-            0,
-            27,
-            0
+            26,
+            3,
+            11
           ],
           [
-            17,
-            2,
-            2,
-            4
+            3,
+            4,
+            26,
+            13
+          ],
+          [
+            1,
+            13,
+            12,
+            14
           ]
         ]
       }
     },
-    "generalisation_gap_macro_f1": 0.20441384924143557,
-    "negated_phrasing_metrics": {
-      "in_distribution": {
-        "n": 10,
-        "accuracy": 0.9,
-        "macro_f1": 0.8666666666666666,
-        "weighted_f1": 0.8933333333333333,
+    "generalisation_gap_macro_f1": 0.23512543609105419,
+    "comparable_gap": {
+      "telegraphic_excluded_from_corpus": true,
+      "in_distribution_n": 69,
+      "in_distribution_telegraphic_n": 0,
+      "held_out_telegraphic_n": 0,
+      "in_distribution_metrics_excluding_telegraphic": {
+        "accuracy": 0.7246376811594203,
+        "macro_f1": 0.7130842440439964,
+        "weighted_f1": 0.7139441093315548,
         "per_class": {
           "Enthusiastic": {
-            "precision": 1.0,
-            "recall": 1.0,
-            "f1-score": 1.0,
-            "support": 4.0
+            "precision": 0.6875,
+            "recall": 0.6111111111111112,
+            "f1-score": 0.6470588235294118,
+            "support": 18.0
           },
           "Neutral": {
-            "precision": 0.6666666666666666,
+            "precision": 0.8095238095238095,
             "recall": 1.0,
-            "f1-score": 0.8,
-            "support": 2.0
+            "f1-score": 0.8947368421052632,
+            "support": 17.0
           },
           "Hesitant": {
-            "precision": 1.0,
-            "recall": 1.0,
-            "f1-score": 1.0,
-            "support": 2.0
+            "precision": 0.7272727272727273,
+            "recall": 0.5,
+            "f1-score": 0.5925925925925926,
+            "support": 16.0
           },
           "Frustrated": {
-            "precision": 1.0,
-            "recall": 0.5,
-            "f1-score": 0.6666666666666666,
-            "support": 2.0
+            "precision": 0.6666666666666666,
+            "recall": 0.7777777777777778,
+            "f1-score": 0.717948717948718,
+            "support": 18.0
           }
         },
         "confusion_matrix": {
@@ -361,61 +564,131 @@
           "rows_are_true": true,
           "matrix": [
             [
-              4,
+              11,
+              2,
+              1,
+              4
+            ],
+            [
               0,
+              17,
               0,
               0
             ],
             [
-              0,
+              3,
               2,
-              0,
-              0
+              8,
+              3
             ],
             [
-              0,
+              2,
               0,
               2,
+              14
+            ]
+          ]
+        }
+      },
+      "generalisation_gap_macro_f1": 0.23512543609105419
+    },
+    "negated_phrasing_metrics": {
+      "in_distribution": {
+        "n": 8,
+        "accuracy": 0.625,
+        "macro_f1": 0.6666666666666666,
+        "weighted_f1": 0.6041666666666666,
+        "per_class": {
+          "Enthusiastic": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1-score": 0.6666666666666666,
+            "support": 2.0
+          },
+          "Neutral": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "Hesitant": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1-score": 0.5,
+            "support": 2.0
+          },
+          "Frustrated": {
+            "precision": 1.0,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.5,
+            "support": 3.0
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "Enthusiastic",
+            "Neutral",
+            "Hesitant",
+            "Frustrated"
+          ],
+          "rows_are_true": true,
+          "matrix": [
+            [
+              2,
+              0,
+              0,
               0
             ],
             [
               0,
               1,
               0,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
               1
             ]
           ]
         }
       },
       "held_out": {
-        "n": 22,
-        "accuracy": 0.4090909090909091,
-        "macro_f1": 0.2638888888888889,
-        "weighted_f1": 0.3939393939393939,
+        "n": 27,
+        "accuracy": 0.3333333333333333,
+        "macro_f1": 0.30634920634920637,
+        "weighted_f1": 0.3419165196942974,
         "per_class": {
           "Enthusiastic": {
-            "precision": 0.125,
-            "recall": 0.25,
-            "f1-score": 0.16666666666666666,
-            "support": 4.0
+            "precision": 0.42857142857142855,
+            "recall": 0.375,
+            "f1-score": 0.4,
+            "support": 8.0
           },
           "Neutral": {
-            "precision": 0.0,
-            "recall": 0.0,
-            "f1-score": 0.0,
-            "support": 3.0
+            "precision": 0.5,
+            "recall": 0.4,
+            "f1-score": 0.4444444444444444,
+            "support": 5.0
           },
           "Hesitant": {
-            "precision": 0.8888888888888888,
-            "recall": 0.8888888888888888,
-            "f1-score": 0.8888888888888888,
-            "support": 9.0
-          },
-          "Frustrated": {
             "precision": 0.0,
             "recall": 0.0,
             "f1-score": 0.0,
-            "support": 6.0
+            "support": 4.0
+          },
+          "Frustrated": {
+            "precision": 0.36363636363636365,
+            "recall": 0.4,
+            "f1-score": 0.38095238095238093,
+            "support": 10.0
           }
         },
         "confusion_matrix": {
@@ -428,28 +701,28 @@
           "rows_are_true": true,
           "matrix": [
             [
+              3,
+              0,
               1,
-              0,
-              0,
-              3
+              4
             ],
             [
-              1,
+              2,
+              2,
               0,
-              1,
               1
             ],
             [
               1,
-              0,
-              8,
-              0
-            ],
-            [
-              5,
               1,
               0,
-              0
+              2
+            ],
+            [
+              1,
+              1,
+              4,
+              4
             ]
           ]
         }
@@ -458,33 +731,33 @@
     "baselines": {
       "in_distribution": {
         "majority": {
-          "accuracy": 0.3090909090909091,
-          "macro_f1": 0.11805555555555555,
-          "weighted_f1": 0.14595959595959593,
+          "accuracy": 0.2608695652173913,
+          "macro_f1": 0.10344827586206896,
+          "weighted_f1": 0.10794602698650674,
           "per_class": {
             "Enthusiastic": {
-              "precision": 0.3090909090909091,
-              "recall": 1.0,
-              "f1-score": 0.4722222222222222,
-              "support": 17.0
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 18.0
             },
             "Neutral": {
               "precision": 0.0,
               "recall": 0.0,
               "f1-score": 0.0,
-              "support": 13.0
+              "support": 17.0
             },
             "Hesitant": {
               "precision": 0.0,
               "recall": 0.0,
               "f1-score": 0.0,
-              "support": 14.0
+              "support": 16.0
             },
             "Frustrated": {
-              "precision": 0.0,
-              "recall": 0.0,
-              "f1-score": 0.0,
-              "support": 11.0
+              "precision": 0.2608695652173913,
+              "recall": 1.0,
+              "f1-score": 0.41379310344827586,
+              "support": 18.0
             }
           },
           "confusion_matrix": {
@@ -497,61 +770,61 @@
             "rows_are_true": true,
             "matrix": [
               [
-                17,
                 0,
                 0,
-                0
+                0,
+                18
               ],
               [
-                13,
                 0,
                 0,
-                0
+                0,
+                17
               ],
               [
-                14,
                 0,
                 0,
-                0
+                0,
+                16
               ],
               [
-                11,
                 0,
                 0,
-                0
+                0,
+                18
               ]
             ]
           },
-          "majority_class": "Enthusiastic"
+          "majority_class": "Frustrated"
         },
         "template_visible_only": {
-          "accuracy": 0.8909090909090909,
-          "macro_f1": 0.8975,
-          "weighted_f1": 0.8936363636363636,
+          "accuracy": 0.9565217391304348,
+          "macro_f1": 0.9559202059202059,
+          "weighted_f1": 0.9571111484154962,
           "per_class": {
             "Enthusiastic": {
-              "precision": 0.7391304347826086,
+              "precision": 1.0,
               "recall": 1.0,
-              "f1-score": 0.85,
-              "support": 17.0
+              "f1-score": 1.0,
+              "support": 18.0
             },
             "Neutral": {
-              "precision": 1.0,
-              "recall": 0.9230769230769231,
-              "f1-score": 0.96,
-              "support": 13.0
+              "precision": 0.85,
+              "recall": 1.0,
+              "f1-score": 0.918918918918919,
+              "support": 17.0
             },
             "Hesitant": {
               "precision": 1.0,
-              "recall": 0.7857142857142857,
-              "f1-score": 0.88,
-              "support": 14.0
+              "recall": 0.875,
+              "f1-score": 0.9333333333333333,
+              "support": 16.0
             },
             "Frustrated": {
               "precision": 1.0,
-              "recall": 0.8181818181818182,
-              "f1-score": 0.9,
-              "support": 11.0
+              "recall": 0.9444444444444444,
+              "f1-score": 0.9714285714285714,
+              "support": 18.0
             }
           },
           "confusion_matrix": {
@@ -564,63 +837,63 @@
             "rows_are_true": true,
             "matrix": [
               [
+                18,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
                 17,
                 0,
-                0,
                 0
               ],
               [
-                1,
-                12,
                 0,
-                0
-              ],
-              [
-                3,
-                0,
-                11,
-                0
-              ],
-              [
                 2,
+                14,
+                0
+              ],
+              [
                 0,
+                1,
                 0,
-                9
+                17
               ]
             ]
           },
-          "template_hit_rate": 0.8727
+          "template_hit_rate": 1.0
         }
       },
       "held_out": {
         "majority": {
-          "accuracy": 0.33070866141732286,
-          "macro_f1": 0.1242603550295858,
-          "weighted_f1": 0.16437590271630245,
+          "accuracy": 0.22857142857142856,
+          "macro_f1": 0.09302325581395349,
+          "weighted_f1": 0.0850498338870432,
           "per_class": {
             "Enthusiastic": {
-              "precision": 0.33070866141732286,
-              "recall": 1.0,
-              "f1-score": 0.4970414201183432,
-              "support": 42.0
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 45.0
             },
             "Neutral": {
               "precision": 0.0,
               "recall": 0.0,
               "f1-score": 0.0,
-              "support": 29.0
+              "support": 44.0
             },
             "Hesitant": {
               "precision": 0.0,
               "recall": 0.0,
               "f1-score": 0.0,
-              "support": 31.0
+              "support": 46.0
             },
             "Frustrated": {
-              "precision": 0.0,
-              "recall": 0.0,
-              "f1-score": 0.0,
-              "support": 25.0
+              "precision": 0.22857142857142856,
+              "recall": 1.0,
+              "f1-score": 0.37209302325581395,
+              "support": 40.0
             }
           },
           "confusion_matrix": {
@@ -633,61 +906,61 @@
             "rows_are_true": true,
             "matrix": [
               [
-                42,
                 0,
                 0,
-                0
+                0,
+                45
               ],
               [
-                29,
                 0,
                 0,
-                0
+                0,
+                44
               ],
               [
-                31,
                 0,
                 0,
-                0
+                0,
+                46
               ],
               [
-                25,
                 0,
                 0,
-                0
+                0,
+                40
               ]
             ]
           },
-          "majority_class": "Enthusiastic"
+          "majority_class": "Frustrated"
         },
         "template_visible_only": {
-          "accuracy": 0.33070866141732286,
-          "macro_f1": 0.1242603550295858,
-          "weighted_f1": 0.16437590271630245,
+          "accuracy": 0.26285714285714284,
+          "macro_f1": 0.10747663551401869,
+          "weighted_f1": 0.11300400534045395,
           "per_class": {
             "Enthusiastic": {
-              "precision": 0.33070866141732286,
-              "recall": 1.0,
-              "f1-score": 0.4970414201183432,
-              "support": 42.0
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 45.0
             },
             "Neutral": {
               "precision": 0.0,
               "recall": 0.0,
               "f1-score": 0.0,
-              "support": 29.0
+              "support": 44.0
             },
             "Hesitant": {
-              "precision": 0.0,
-              "recall": 0.0,
-              "f1-score": 0.0,
-              "support": 31.0
+              "precision": 0.27380952380952384,
+              "recall": 1.0,
+              "f1-score": 0.42990654205607476,
+              "support": 46.0
             },
             "Frustrated": {
               "precision": 0.0,
               "recall": 0.0,
               "f1-score": 0.0,
-              "support": 25.0
+              "support": 40.0
             }
           },
           "confusion_matrix": {
@@ -700,61 +973,61 @@
             "rows_are_true": true,
             "matrix": [
               [
-                42,
                 0,
                 0,
+                45,
                 0
               ],
               [
-                29,
                 0,
                 0,
+                37,
+                7
+              ],
+              [
+                0,
+                0,
+                46,
                 0
               ],
               [
-                31,
                 0,
                 0,
-                0
-              ],
-              [
-                25,
-                0,
-                0,
+                40,
                 0
               ]
             ]
           },
-          "template_hit_rate": 0.0
+          "template_hit_rate": 0.04
         },
         "template_full_pool": {
-          "accuracy": 1.0,
-          "macro_f1": 1.0,
-          "weighted_f1": 1.0,
+          "accuracy": 0.9714285714285714,
+          "macro_f1": 0.9698924731182796,
+          "weighted_f1": 0.9712442396313364,
           "per_class": {
             "Enthusiastic": {
               "precision": 1.0,
               "recall": 1.0,
               "f1-score": 1.0,
-              "support": 42.0
+              "support": 45.0
             },
             "Neutral": {
-              "precision": 1.0,
+              "precision": 0.8979591836734694,
               "recall": 1.0,
-              "f1-score": 1.0,
-              "support": 29.0
+              "f1-score": 0.946236559139785,
+              "support": 44.0
             },
             "Hesitant": {
               "precision": 1.0,
               "recall": 1.0,
               "f1-score": 1.0,
-              "support": 31.0
+              "support": 46.0
             },
             "Frustrated": {
               "precision": 1.0,
-              "recall": 1.0,
-              "f1-score": 1.0,
-              "support": 25.0
+              "recall": 0.875,
+              "f1-score": 0.9333333333333333,
+              "support": 40.0
             }
           },
           "confusion_matrix": {
@@ -767,28 +1040,28 @@
             "rows_are_true": true,
             "matrix": [
               [
-                42,
+                45,
                 0,
                 0,
                 0
               ],
               [
                 0,
-                29,
+                44,
                 0,
                 0
               ],
               [
                 0,
                 0,
-                31,
+                46,
                 0
               ],
               [
                 0,
+                5,
                 0,
-                0,
-                25
+                35
               ]
             ]
           },
@@ -801,24 +1074,29 @@
     "task": "intent",
     "held_out_phrases": {
       "Buy": [
-        "humko purchase karna hai",
-        "hum purchase karna chahte hain",
-        "basically purchase karna hai",
+        "humko buy karna hai",
+        "hum buy karna chahte hain",
+        "basically buy karna hai",
         "we're interested in a purchase",
         "this is about a purchase",
         "our focus is a purchase",
         "we're thinking about a purchase"
       ],
       "Rent": [
-        "we're interested in a rental",
-        "this is about a rental",
-        "our focus is a rental",
-        "we're thinking about a rental",
-        "humko rent karna hai",
-        "hum rent karna chahte hain",
-        "basically rent karna hai"
+        "humko rent par lena hai",
+        "hum rent par lena chahte hain",
+        "basically rent par lena hai",
+        "we're looking to rent",
+        "we want to rent",
+        "the plan is to rent",
+        "we're hoping to rent",
+        "we'd like to rent",
+        "we intend to rent"
       ],
       "Inquiry": [
+        "humko information lena hai",
+        "hum information lena chahte hain",
+        "basically information lena hai",
         "we're interested in gathering information",
         "this is about gathering information",
         "our focus is gathering information",
@@ -827,13 +1105,7 @@
         "we want to just get some information, not rent",
         "we don't want to see the place, we want to just get some information",
         "it's gathering information, definitely not investing",
-        "this is for gathering information, not a callback",
-        "we're looking to understand the options",
-        "we want to understand the options",
-        "the plan is to understand the options",
-        "we're hoping to understand the options",
-        "we'd like to understand the options",
-        "we intend to understand the options"
+        "this is for gathering information, not a callback"
       ],
       "Schedule Visit": [
         "humko property dekhna hai",
@@ -853,17 +1125,15 @@
         "humko investment karna hai",
         "hum investment karna chahte hain",
         "basically investment karna hai",
-        "we're interested in investing",
-        "this is about investing",
-        "our focus is investing",
-        "we're thinking about investing",
-        "this is for investing, not buying",
-        "we want to invest, not rent",
-        "we don't want to just get some information, we want to invest",
-        "it's investing, definitely not a site visit",
-        "this is for investing, not a callback"
+        "we're interested in an investment",
+        "this is about an investment",
+        "our focus is an investment",
+        "we're thinking about an investment"
       ],
       "Request Callback": [
+        "humko call back karwana hai",
+        "hum call back karwana chahte hain",
+        "basically call back karwana hai",
         "we're interested in a callback",
         "this is about a callback",
         "our focus is a callback",
@@ -872,72 +1142,66 @@
         "we want to get a callback, not rent",
         "we don't want to just get some information, we want to get a callback",
         "it's a callback, definitely not a site visit",
-        "this is for a callback, not investing",
-        "we're looking to get a callback",
-        "we want to get a callback",
-        "the plan is to get a callback",
-        "we're hoping to get a callback",
-        "we'd like to get a callback",
-        "we intend to get a callback"
+        "this is for a callback, not investing"
       ]
     },
     "partition": {
-      "train_eligible": 475,
-      "held_out": 207,
-      "dropped_mixed": 18,
-      "train": 333,
-      "validation": 73,
-      "test_in_distribution": 69,
+      "train_eligible": 574,
+      "held_out": 277,
+      "dropped_mixed": 39,
+      "train": 401,
+      "validation": 86,
+      "test_in_distribution": 87,
       "held_out_class_counts": {
-        "Rent": 29,
-        "Schedule Visit": 31,
-        "Request Callback": 36,
-        "Inquiry": 51,
-        "Investment": 32,
-        "Buy": 28
+        "Request Callback": 65,
+        "Buy": 38,
+        "Rent": 41,
+        "Inquiry": 41,
+        "Schedule Visit": 53,
+        "Investment": 39
       }
     },
     "model_dir": "C:\\Users\\Parth\\FYP_EstateIQ\\backend\\models_store\\sentiment_intent\\holdout\\intent",
     "in_distribution_metrics": {
-      "accuracy": 0.855072463768116,
-      "macro_f1": 0.8401538180848527,
-      "weighted_f1": 0.8543515055658983,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0,
       "per_class": {
         "Buy": {
-          "precision": 0.9285714285714286,
-          "recall": 0.8666666666666667,
-          "f1-score": 0.896551724137931,
-          "support": 15.0
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 17.0
         },
         "Rent": {
-          "precision": 0.7857142857142857,
-          "recall": 0.9166666666666666,
-          "f1-score": 0.8461538461538461,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
           "support": 12.0
         },
         "Inquiry": {
-          "precision": 0.8333333333333334,
-          "recall": 0.625,
-          "f1-score": 0.7142857142857143,
-          "support": 8.0
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 15.0
         },
         "Schedule Visit": {
-          "precision": 0.7857142857142857,
-          "recall": 0.9166666666666666,
-          "f1-score": 0.8461538461538461,
-          "support": 12.0
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 16.0
         },
         "Investment": {
           "precision": 1.0,
-          "recall": 0.9230769230769231,
-          "f1-score": 0.96,
-          "support": 13.0
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 16.0
         },
         "Request Callback": {
-          "precision": 0.7777777777777778,
-          "recall": 0.7777777777777778,
-          "f1-score": 0.7777777777777778,
-          "support": 9.0
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 11.0
         }
       },
       "confusion_matrix": {
@@ -952,96 +1216,96 @@
         "rows_are_true": true,
         "matrix": [
           [
-            13,
+            17,
             0,
-            0,
-            2,
-            0,
-            0
-          ],
-          [
-            1,
-            11,
             0,
             0,
             0,
             0
           ],
           [
-            0,
-            1,
-            5,
-            1,
-            0,
-            1
-          ],
-          [
-            0,
-            0,
-            0,
-            11,
-            0,
-            1
-          ],
-          [
-            0,
-            1,
-            0,
             0,
             12,
+            0,
+            0,
+            0,
             0
           ],
           [
             0,
-            1,
-            1,
+            0,
+            15,
             0,
             0,
-            7
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            16,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            16,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            11
           ]
         ]
       }
     },
     "held_out_metrics": {
-      "accuracy": 0.8792270531400966,
-      "macro_f1": 0.8637841914348535,
-      "weighted_f1": 0.8688653924722116,
+      "accuracy": 0.9350180505415162,
+      "macro_f1": 0.9326230067642279,
+      "weighted_f1": 0.9308213288901966,
       "per_class": {
         "Buy": {
-          "precision": 0.9032258064516129,
+          "precision": 1.0,
           "recall": 1.0,
-          "f1-score": 0.9491525423728814,
-          "support": 28.0
+          "f1-score": 1.0,
+          "support": 38.0
         },
         "Rent": {
-          "precision": 0.725,
+          "precision": 0.8723404255319149,
           "recall": 1.0,
-          "f1-score": 0.8405797101449275,
-          "support": 29.0
+          "f1-score": 0.9318181818181818,
+          "support": 41.0
         },
         "Inquiry": {
-          "precision": 0.9183673469387755,
-          "recall": 0.8823529411764706,
-          "f1-score": 0.9,
-          "support": 51.0
+          "precision": 0.82,
+          "recall": 1.0,
+          "f1-score": 0.9010989010989011,
+          "support": 41.0
         },
         "Schedule Visit": {
-          "precision": 0.9333333333333333,
-          "recall": 0.45161290322580644,
-          "f1-score": 0.6086956521739131,
-          "support": 31.0
+          "precision": 1.0,
+          "recall": 0.660377358490566,
+          "f1-score": 0.7954545454545454,
+          "support": 53.0
         },
         "Investment": {
-          "precision": 0.8857142857142857,
-          "recall": 0.96875,
-          "f1-score": 0.9253731343283582,
-          "support": 32.0
+          "precision": 0.9512195121951219,
+          "recall": 1.0,
+          "f1-score": 0.975,
+          "support": 39.0
         },
         "Request Callback": {
-          "precision": 0.9459459459459459,
-          "recall": 0.9722222222222222,
-          "f1-score": 0.958904109589041,
-          "support": 36.0
+          "precision": 0.9848484848484849,
+          "recall": 1.0,
+          "f1-score": 0.9923664122137404,
+          "support": 65.0
         }
       },
       "confusion_matrix": {
@@ -1056,7 +1320,7 @@
         "rows_are_true": true,
         "matrix": [
           [
-            28,
+            38,
             0,
             0,
             0,
@@ -1065,51 +1329,54 @@
           ],
           [
             0,
-            29,
+            41,
             0,
             0,
             0,
             0
           ],
           [
-            1,
             0,
-            45,
-            1,
-            4,
+            0,
+            41,
+            0,
+            0,
             0
           ],
           [
             0,
-            11,
-            4,
-            14,
-            0,
-            2
+            6,
+            9,
+            35,
+            2,
+            1
           ],
           [
-            1,
             0,
             0,
             0,
-            31,
+            0,
+            39,
             0
           ],
           [
-            1,
             0,
             0,
             0,
             0,
-            35
+            0,
+            65
           ]
         ]
       }
     },
-    "generalisation_gap_macro_f1": -0.023630373350000844,
-    "negated_phrasing_metrics": {
-      "in_distribution": {
-        "n": 8,
+    "generalisation_gap_macro_f1": 0.06737699323577206,
+    "comparable_gap": {
+      "telegraphic_excluded_from_corpus": true,
+      "in_distribution_n": 87,
+      "in_distribution_telegraphic_n": 0,
+      "held_out_telegraphic_n": 0,
+      "in_distribution_metrics_excluding_telegraphic": {
         "accuracy": 1.0,
         "macro_f1": 1.0,
         "weighted_f1": 1.0,
@@ -1118,37 +1385,145 @@
             "precision": 1.0,
             "recall": 1.0,
             "f1-score": 1.0,
-            "support": 2.0
+            "support": 17.0
           },
           "Rent": {
             "precision": 1.0,
             "recall": 1.0,
             "f1-score": 1.0,
-            "support": 3.0
+            "support": 12.0
           },
           "Inquiry": {
             "precision": 1.0,
             "recall": 1.0,
             "f1-score": 1.0,
-            "support": 1.0
+            "support": 15.0
           },
           "Schedule Visit": {
             "precision": 1.0,
             "recall": 1.0,
             "f1-score": 1.0,
-            "support": 1.0
+            "support": 16.0
           },
           "Investment": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 16.0
+          },
+          "Request Callback": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 11.0
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "Buy",
+            "Rent",
+            "Inquiry",
+            "Schedule Visit",
+            "Investment",
+            "Request Callback"
+          ],
+          "rows_are_true": true,
+          "matrix": [
+            [
+              17,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              12,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              15,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              16,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              16,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              11
+            ]
+          ]
+        }
+      },
+      "generalisation_gap_macro_f1": 0.06737699323577206
+    },
+    "negated_phrasing_metrics": {
+      "in_distribution": {
+        "n": 13,
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "weighted_f1": 1.0,
+        "per_class": {
+          "Buy": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 4.0
+          },
+          "Rent": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 2.0
+          },
+          "Inquiry": {
             "precision": 0.0,
             "recall": 0.0,
             "f1-score": 0.0,
             "support": 0.0
           },
+          "Schedule Visit": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 2.0
+          },
+          "Investment": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
           "Request Callback": {
             "precision": 1.0,
             "recall": 1.0,
             "f1-score": 1.0,
-            "support": 1.0
+            "support": 2.0
           }
         },
         "confusion_matrix": {
@@ -1163,35 +1538,43 @@
           "rows_are_true": true,
           "matrix": [
             [
+              4,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
               2,
               0,
               0,
               0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
               0,
               0
             ],
             [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
               0,
               3,
-              0,
-              0,
-              0,
-              0
-            ],
-            [
-              0,
-              0,
-              1,
-              0,
-              0,
-              0
-            ],
-            [
-              0,
-              0,
-              0,
-              1,
-              0,
               0
             ],
             [
@@ -1200,30 +1583,22 @@
               0,
               0,
               0,
-              0
-            ],
-            [
-              0,
-              0,
-              0,
-              0,
-              0,
-              1
+              2
             ]
           ]
         }
       },
       "held_out": {
-        "n": 42,
-        "accuracy": 0.8571428571428571,
-        "macro_f1": 0.8331082831856826,
-        "weighted_f1": 0.8638881389876525,
+        "n": 47,
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "weighted_f1": 1.0,
         "per_class": {
           "Buy": {
-            "precision": 0.4,
+            "precision": 1.0,
             "recall": 1.0,
-            "f1-score": 0.5714285714285714,
-            "support": 2.0
+            "f1-score": 1.0,
+            "support": 3.0
           },
           "Rent": {
             "precision": 1.0,
@@ -1232,28 +1607,28 @@
             "support": 3.0
           },
           "Inquiry": {
-            "precision": 0.9166666666666666,
-            "recall": 0.9166666666666666,
-            "f1-score": 0.9166666666666666,
-            "support": 12.0
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 10.0
           },
           "Schedule Visit": {
             "precision": 1.0,
-            "recall": 0.5714285714285714,
-            "f1-score": 0.7272727272727273,
-            "support": 7.0
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 10.0
           },
           "Investment": {
             "precision": 1.0,
-            "recall": 0.8888888888888888,
-            "f1-score": 0.9411764705882353,
-            "support": 9.0
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
           },
           "Request Callback": {
-            "precision": 0.8,
-            "recall": 0.8888888888888888,
-            "f1-score": 0.8421052631578947,
-            "support": 9.0
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 18.0
           }
         },
         "confusion_matrix": {
@@ -1268,7 +1643,7 @@
           "rows_are_true": true,
           "matrix": [
             [
-              2,
+              3,
               0,
               0,
               0,
@@ -1284,9 +1659,9 @@
               0
             ],
             [
-              1,
               0,
-              11,
+              0,
+              10,
               0,
               0,
               0
@@ -1294,26 +1669,26 @@
             [
               0,
               0,
-              1,
-              4,
               0,
-              2
-            ],
-            [
-              1,
+              10,
               0,
-              0,
-              0,
-              8,
               0
             ],
             [
-              1,
               0,
               0,
               0,
               0,
-              8
+              3,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              18
             ]
           ]
         }
@@ -1322,15 +1697,15 @@
     "baselines": {
       "in_distribution": {
         "majority": {
-          "accuracy": 0.21739130434782608,
-          "macro_f1": 0.05952380952380953,
-          "weighted_f1": 0.07763975155279504,
+          "accuracy": 0.19540229885057472,
+          "macro_f1": 0.05448717948717949,
+          "weighted_f1": 0.0638815207780725,
           "per_class": {
             "Buy": {
-              "precision": 0.21739130434782608,
+              "precision": 0.19540229885057472,
               "recall": 1.0,
-              "f1-score": 0.35714285714285715,
-              "support": 15.0
+              "f1-score": 0.3269230769230769,
+              "support": 17.0
             },
             "Rent": {
               "precision": 0.0,
@@ -1342,25 +1717,25 @@
               "precision": 0.0,
               "recall": 0.0,
               "f1-score": 0.0,
-              "support": 8.0
+              "support": 15.0
             },
             "Schedule Visit": {
               "precision": 0.0,
               "recall": 0.0,
               "f1-score": 0.0,
-              "support": 12.0
+              "support": 16.0
             },
             "Investment": {
               "precision": 0.0,
               "recall": 0.0,
               "f1-score": 0.0,
-              "support": 13.0
+              "support": 16.0
             },
             "Request Callback": {
               "precision": 0.0,
               "recall": 0.0,
               "f1-score": 0.0,
-              "support": 9.0
+              "support": 11.0
             }
           },
           "confusion_matrix": {
@@ -1375,6 +1750,22 @@
             "rows_are_true": true,
             "matrix": [
               [
+                17,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                12,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
                 15,
                 0,
                 0,
@@ -1383,7 +1774,7 @@
                 0
               ],
               [
-                12,
+                16,
                 0,
                 0,
                 0,
@@ -1391,7 +1782,7 @@
                 0
               ],
               [
-                8,
+                16,
                 0,
                 0,
                 0,
@@ -1399,23 +1790,7 @@
                 0
               ],
               [
-                12,
-                0,
-                0,
-                0,
-                0,
-                0
-              ],
-              [
-                13,
-                0,
-                0,
-                0,
-                0,
-                0
-              ],
-              [
-                9,
+                11,
                 0,
                 0,
                 0,
@@ -1427,45 +1802,45 @@
           "majority_class": "Buy"
         },
         "template_visible_only": {
-          "accuracy": 0.8840579710144928,
-          "macro_f1": 0.8844579886170275,
-          "weighted_f1": 0.888514103712094,
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "weighted_f1": 1.0,
           "per_class": {
             "Buy": {
-              "precision": 0.6521739130434783,
+              "precision": 1.0,
               "recall": 1.0,
-              "f1-score": 0.7894736842105263,
-              "support": 15.0
+              "f1-score": 1.0,
+              "support": 17.0
             },
             "Rent": {
               "precision": 1.0,
-              "recall": 0.9166666666666666,
-              "f1-score": 0.9565217391304348,
+              "recall": 1.0,
+              "f1-score": 1.0,
               "support": 12.0
             },
             "Inquiry": {
               "precision": 1.0,
-              "recall": 0.625,
-              "f1-score": 0.7692307692307693,
-              "support": 8.0
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 15.0
             },
             "Schedule Visit": {
               "precision": 1.0,
-              "recall": 0.9166666666666666,
-              "f1-score": 0.9565217391304348,
-              "support": 12.0
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 16.0
             },
             "Investment": {
               "precision": 1.0,
-              "recall": 0.9230769230769231,
-              "f1-score": 0.96,
-              "support": 13.0
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 16.0
             },
             "Request Callback": {
               "precision": 1.0,
-              "recall": 0.7777777777777778,
-              "f1-score": 0.875,
-              "support": 9.0
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 11.0
             }
           },
           "confusion_matrix": {
@@ -1480,99 +1855,99 @@
             "rows_are_true": true,
             "matrix": [
               [
+                17,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                12,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
                 15,
                 0,
                 0,
+                0
+              ],
+              [
                 0,
+                0,
+                0,
+                16,
                 0,
                 0
               ],
               [
-                1,
-                11,
                 0,
                 0,
                 0,
+                0,
+                16,
                 0
               ],
               [
-                3,
-                0,
-                5,
-                0,
-                0,
-                0
-              ],
-              [
-                1,
-                0,
-                0,
-                11,
-                0,
-                0
-              ],
-              [
-                1,
-                0,
-                0,
-                0,
-                12,
-                0
-              ],
-              [
-                2,
                 0,
                 0,
                 0,
                 0,
-                7
+                0,
+                11
               ]
             ]
           },
-          "template_hit_rate": 0.8551
+          "template_hit_rate": 1.0
         }
       },
       "held_out": {
         "majority": {
-          "accuracy": 0.13526570048309178,
-          "macro_f1": 0.03971631205673759,
-          "weighted_f1": 0.03223352862575805,
+          "accuracy": 0.1371841155234657,
+          "macro_f1": 0.04021164021164021,
+          "weighted_f1": 0.033098389777090134,
           "per_class": {
             "Buy": {
-              "precision": 0.13526570048309178,
+              "precision": 0.1371841155234657,
               "recall": 1.0,
-              "f1-score": 0.23829787234042554,
-              "support": 28.0
+              "f1-score": 0.24126984126984127,
+              "support": 38.0
             },
             "Rent": {
               "precision": 0.0,
               "recall": 0.0,
               "f1-score": 0.0,
-              "support": 29.0
+              "support": 41.0
             },
             "Inquiry": {
               "precision": 0.0,
               "recall": 0.0,
               "f1-score": 0.0,
-              "support": 51.0
+              "support": 41.0
             },
             "Schedule Visit": {
               "precision": 0.0,
               "recall": 0.0,
               "f1-score": 0.0,
-              "support": 31.0
+              "support": 53.0
             },
             "Investment": {
               "precision": 0.0,
               "recall": 0.0,
               "f1-score": 0.0,
-              "support": 32.0
+              "support": 39.0
             },
             "Request Callback": {
               "precision": 0.0,
               "recall": 0.0,
               "f1-score": 0.0,
-              "support": 36.0
+              "support": 65.0
             }
           },
           "confusion_matrix": {
@@ -1587,7 +1962,7 @@
             "rows_are_true": true,
             "matrix": [
               [
-                28,
+                38,
                 0,
                 0,
                 0,
@@ -1595,7 +1970,7 @@
                 0
               ],
               [
-                29,
+                41,
                 0,
                 0,
                 0,
@@ -1603,7 +1978,7 @@
                 0
               ],
               [
-                51,
+                41,
                 0,
                 0,
                 0,
@@ -1611,7 +1986,7 @@
                 0
               ],
               [
-                31,
+                53,
                 0,
                 0,
                 0,
@@ -1619,7 +1994,7 @@
                 0
               ],
               [
-                32,
+                39,
                 0,
                 0,
                 0,
@@ -1627,7 +2002,7 @@
                 0
               ],
               [
-                36,
+                65,
                 0,
                 0,
                 0,
@@ -1639,45 +2014,45 @@
           "majority_class": "Buy"
         },
         "template_visible_only": {
-          "accuracy": 0.2463768115942029,
-          "macro_f1": 0.06589147286821705,
-          "weighted_f1": 0.09740478597910346,
+          "accuracy": 0.23465703971119134,
+          "macro_f1": 0.06335282651072124,
+          "weighted_f1": 0.08919712035805519,
           "per_class": {
             "Buy": {
               "precision": 0.0,
               "recall": 0.0,
               "f1-score": 0.0,
-              "support": 28.0
+              "support": 38.0
             },
             "Rent": {
               "precision": 0.0,
               "recall": 0.0,
               "f1-score": 0.0,
-              "support": 29.0
+              "support": 41.0
             },
             "Inquiry": {
-              "precision": 0.2463768115942029,
-              "recall": 1.0,
-              "f1-score": 0.3953488372093023,
-              "support": 51.0
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 41.0
             },
             "Schedule Visit": {
               "precision": 0.0,
               "recall": 0.0,
               "f1-score": 0.0,
-              "support": 31.0
+              "support": 53.0
             },
             "Investment": {
               "precision": 0.0,
               "recall": 0.0,
               "f1-score": 0.0,
-              "support": 32.0
+              "support": 39.0
             },
             "Request Callback": {
-              "precision": 0.0,
-              "recall": 0.0,
-              "f1-score": 0.0,
-              "support": 36.0
+              "precision": 0.23465703971119134,
+              "recall": 1.0,
+              "f1-score": 0.38011695906432746,
+              "support": 65.0
             }
           },
           "confusion_matrix": {
@@ -1694,50 +2069,50 @@
               [
                 0,
                 0,
-                28,
                 0,
                 0,
-                0
+                0,
+                38
               ],
               [
                 0,
                 0,
-                29,
                 0,
                 0,
-                0
+                0,
+                41
               ],
               [
                 0,
                 0,
-                51,
                 0,
                 0,
-                0
+                0,
+                41
               ],
               [
                 0,
                 0,
-                31,
                 0,
                 0,
-                0
+                0,
+                53
               ],
               [
                 0,
                 0,
-                32,
                 0,
                 0,
-                0
+                0,
+                39
               ],
               [
                 0,
                 0,
-                36,
                 0,
                 0,
-                0
+                0,
+                65
               ]
             ]
           },
@@ -1752,37 +2127,37 @@
               "precision": 1.0,
               "recall": 1.0,
               "f1-score": 1.0,
-              "support": 28.0
+              "support": 38.0
             },
             "Rent": {
               "precision": 1.0,
               "recall": 1.0,
               "f1-score": 1.0,
-              "support": 29.0
+              "support": 41.0
             },
             "Inquiry": {
               "precision": 1.0,
               "recall": 1.0,
               "f1-score": 1.0,
-              "support": 51.0
+              "support": 41.0
             },
             "Schedule Visit": {
               "precision": 1.0,
               "recall": 1.0,
               "f1-score": 1.0,
-              "support": 31.0
+              "support": 53.0
             },
             "Investment": {
               "precision": 1.0,
               "recall": 1.0,
               "f1-score": 1.0,
-              "support": 32.0
+              "support": 39.0
             },
             "Request Callback": {
               "precision": 1.0,
               "recall": 1.0,
               "f1-score": 1.0,
-              "support": 36.0
+              "support": 65.0
             }
           },
           "confusion_matrix": {
@@ -1797,7 +2172,7 @@
             "rows_are_true": true,
             "matrix": [
               [
-                28,
+                38,
                 0,
                 0,
                 0,
@@ -1806,7 +2181,7 @@
               ],
               [
                 0,
-                29,
+                41,
                 0,
                 0,
                 0,
@@ -1815,7 +2190,7 @@
               [
                 0,
                 0,
-                51,
+                41,
                 0,
                 0,
                 0
@@ -1824,7 +2199,7 @@
                 0,
                 0,
                 0,
-                31,
+                53,
                 0,
                 0
               ],
@@ -1833,7 +2208,7 @@
                 0,
                 0,
                 0,
-                32,
+                39,
                 0
               ],
               [
@@ -1842,7 +2217,7 @@
                 0,
                 0,
                 0,
-                36
+                65
               ]
             ]
           },

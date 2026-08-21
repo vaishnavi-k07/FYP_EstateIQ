@@ -53,6 +53,12 @@ def main() -> int:
     )
     parser.add_argument("--warmstart-dir", type=Path, default=WARMSTART_DIR)
     parser.add_argument("--output-dir", type=Path, default=None)
+    parser.add_argument(
+        "--no-pointer",
+        action="store_true",
+        help="Save the artifact but leave intent_latest.json alone, so the "
+             "run can be reviewed before predict.py starts serving it.",
+    )
     args = parser.parse_args()
 
     if hasattr(sys.stdout, "reconfigure"):
@@ -70,7 +76,7 @@ def main() -> int:
         text_field=args.text_field,
         warmstart_dir=None if args.no_warmstart else str(args.warmstart_dir),
     )
-    fine_tune(config, args.output_dir)
+    fine_tune(config, args.output_dir, update_pointer=not args.no_pointer)
     return 0
 
 

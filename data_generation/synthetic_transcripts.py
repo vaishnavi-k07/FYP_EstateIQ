@@ -39,8 +39,14 @@ DATASET_DIR = Path(__file__).resolve().parent.parent / "backend" / "dataset"
 OUTPUT_DIR = Path(__file__).resolve().parent / "output"
 
 SEED = 42
-INITIAL_POOL_SIZE = 700
-MAX_POOL_SIZE = 800
+# Raised from 700. The phrase-holdout diagnostic withholds a third of each
+# class's phrasings and drops every transcript that mixes held-out and visible
+# ones, which left only 260 sentiment training transcripts — a third of what
+# the production head trains on, so its scores were pessimistic for reasons
+# unrelated to the confound it exists to measure. Widening the phrase pools
+# does not change that ratio (a third is a third), so the pool itself grows.
+INITIAL_POOL_SIZE = 1000
+MAX_POOL_SIZE = 1150
 
 TARGET_CITIES = ["Nashik", "Pune"]
 CITY_WEIGHTS = [0.6, 0.4]  # 60% Nashik / 40% Pune
@@ -603,6 +609,7 @@ def build_transcript(
     force_code_mixed: Optional[bool] = None,
     force_multi_city: Optional[bool] = None,
     force_telegraphic: Optional[bool] = None,
+    sentiment_dealer: Optional["BalancedDealer"] = None,
 ) -> Dict[str, Any]:
     city = str(rng.choice(TARGET_CITIES, p=CITY_WEIGHTS))
     areas = lookups.areas_by_city[city]
@@ -618,7 +625,7 @@ def build_transcript(
     is_rare = property_type in RARE_TYPES
 
     intent = str(rng.choice(INTENTS))
-    sentiment = str(rng.choice(SENTIMENTS))
+    sentiment = sentiment_dealer.next() if sentiment_dealer else str(rng.choice(SENTIMENTS))
     completeness = str(rng.choice(["full", "partial", "vague"], p=[0.35, 0.40, 0.25]))
 
     is_code_mixed = bool(rng.random() < P_CODE_MIX) if force_code_mixed is None else force_code_mixed
@@ -929,14 +936,41 @@ def build_negation_clause(rng, lookups, target, property_type, property_surface,
 # Pool assembly
 # --------------------------------------------------------------------------
 
+class BalancedDealer:
+    """Deals labels in shuffled blocks, keeping every class within one of even.
+
+    An independent uniform draw per transcript left sentiment at 210/167/164/159
+    over 700 transcripts — a 51-transcript spread between the largest and
+    smallest class, on top of which the rare-type reservations and the
+    hard-case top-ups drew again. That is enough head-room for a model to fall
+    back on the majority class whenever the phrasing is unfamiliar, which is
+    exactly the behaviour the phrase-holdout test is trying to detect. Dealing
+    from a reshuffled block of the four labels removes the slack without
+    removing the shuffling.
+    """
+
+    def __init__(self, labels: List[str], rng) -> None:
+        self._labels = list(labels)
+        self._rng = rng
+        self._block: List[str] = []
+
+    def next(self) -> str:
+        if not self._block:
+            self._block = list(self._labels)
+            self._rng.shuffle(self._block)
+        return self._block.pop()
+
+
 def flag_counter(pool: List[Dict[str, Any]], key: str) -> int:
     return sum(1 for t in pool if t["metadata"]["flags"][key])
 
 
-def top_up(pool, rng, lookups, flag_key, minimum, force_kwarg, id_gen):
+def top_up(pool, rng, lookups, flag_key, minimum, force_kwarg, id_gen, sentiment_dealer=None):
     count = flag_counter(pool, flag_key)
     while count < minimum and len(pool) < MAX_POOL_SIZE:
-        pool.append(build_transcript(rng, lookups, **{force_kwarg: True}))
+        pool.append(build_transcript(
+            rng, lookups, sentiment_dealer=sentiment_dealer, **{force_kwarg: True}
+        ))
         count += 1
     if count < minimum:
         logger.warning("Could not reach %s minimum of %d (got %d) within MAX_POOL_SIZE=%d",
@@ -948,24 +982,35 @@ def top_up(pool, rng, lookups, flag_key, minimum, force_kwarg, id_gen):
 def generate_pool(seed: int = SEED, initial_size: int = INITIAL_POOL_SIZE) -> List[Dict[str, Any]]:
     rng = default_rng(seed)
     lookups = LookupTables()
+    # One dealer for the whole pool, so the reserved rare-type transcripts and
+    # the hard-case top-ups stay inside the same balanced rotation as the
+    # general pool rather than each drawing independently.
+    sentiment_dealer = BalancedDealer(SENTIMENTS, rng)
 
     pool: List[Dict[str, Any]] = []
 
     for rare_type in RARE_TYPES:
         for _ in range(RARE_TYPE_MIN_EACH):
-            pool.append(build_transcript(rng, lookups, forced_property_type=rare_type))
+            pool.append(build_transcript(
+                rng, lookups, forced_property_type=rare_type,
+                sentiment_dealer=sentiment_dealer,
+            ))
     logger.info("Reserved %d rare-type transcripts (%d each x %d types)",
                 len(pool), RARE_TYPE_MIN_EACH, len(RARE_TYPES))
 
     remaining = max(0, initial_size - len(pool))
     for _ in range(remaining):
-        pool.append(build_transcript(rng, lookups))
+        pool.append(build_transcript(rng, lookups, sentiment_dealer=sentiment_dealer))
     logger.info("Generated %d general-pool transcripts, total pool = %d", remaining, len(pool))
 
-    top_up(pool, rng, lookups, "has_negation", NEGATION_MIN, "force_negation", None)
-    top_up(pool, rng, lookups, "is_code_mixed", CODE_MIX_MIN, "force_code_mixed", None)
-    top_up(pool, rng, lookups, "is_multi_city", MULTI_CITY_MIN, "force_multi_city", None)
-    top_up(pool, rng, lookups, "is_telegraphic", TELEGRAPHIC_MIN, "force_telegraphic", None)
+    for flag_key, minimum, force_kwarg in (
+        ("has_negation", NEGATION_MIN, "force_negation"),
+        ("is_code_mixed", CODE_MIX_MIN, "force_code_mixed"),
+        ("is_multi_city", MULTI_CITY_MIN, "force_multi_city"),
+        ("is_telegraphic", TELEGRAPHIC_MIN, "force_telegraphic"),
+    ):
+        top_up(pool, rng, lookups, flag_key, minimum, force_kwarg, None,
+               sentiment_dealer=sentiment_dealer)
 
     rng.shuffle(pool)
     return pool
@@ -993,6 +1038,12 @@ def summarize(pool: List[Dict[str, Any]]) -> Dict[str, Any]:
     return {
         "total": total,
         "city_counts": city_counts,
+        "sentiment_counts": {
+            s: sum(1 for t in pool if t["metadata"]["sentiment"] == s) for s in SENTIMENTS
+        },
+        "intent_counts": {
+            i: sum(1 for t in pool if t["metadata"]["intent"] == i) for i in INTENTS
+        },
         "negation_count": flag_counter(pool, "has_negation"),
         "code_mixed_count": flag_counter(pool, "is_code_mixed"),
         "multi_city_count": flag_counter(pool, "is_multi_city"),

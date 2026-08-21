@@ -1,0 +1,5723 @@
+{
+  "corpus": "v4",
+  "seed": 42,
+  "partition": {
+    "train": 560,
+    "seen_idea_test": 120,
+    "unseen_idea_test": 416
+  },
+  "emotion-distilroberta": {
+    "model_id": "j-hartmann/emotion-english-distilroberta-base",
+    "language": "english",
+    "note": "7-way Ekman emotions, DistilRoBERTa. Closest in size to our baseline.",
+    "source_labels": [
+      "anger",
+      "disgust",
+      "fear",
+      "joy",
+      "neutral",
+      "sadness",
+      "surprise"
+    ],
+    "mappings": {
+      "apriori": {
+        "joy": "Enthusiastic",
+        "surprise": "Enthusiastic",
+        "neutral": "Neutral",
+        "fear": "Hesitant",
+        "sadness": "Hesitant",
+        "anger": "Frustrated",
+        "disgust": "Frustrated"
+      },
+      "fitted": {
+        "anger": "Hesitant",
+        "disgust": "Hesitant",
+        "fear": "Frustrated",
+        "joy": "Enthusiastic",
+        "neutral": "Neutral",
+        "sadness": "Frustrated",
+        "surprise": "Enthusiastic"
+      }
+    },
+    "results": {
+      "apriori": {
+        "seen_idea_test": {
+          "accuracy": 0.23333333333333334,
+          "macro_f1": 0.1222943722943723,
+          "weighted_f1": 0.12229437229437229,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.3333333333333333,
+              "recall": 0.03333333333333333,
+              "f1-score": 0.06060606060606061,
+              "support": 30.0
+            },
+            "Neutral": {
+              "precision": 0.23636363636363636,
+              "recall": 0.8666666666666667,
+              "f1-score": 0.37142857142857144,
+              "support": 30.0
+            },
+            "Hesitant": {
+              "precision": 0.2,
+              "recall": 0.03333333333333333,
+              "f1-score": 0.05714285714285714,
+              "support": 30.0
+            },
+            "Frustrated": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 30.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                1,
+                29,
+                0,
+                0
+              ],
+              [
+                1,
+                26,
+                3,
+                0
+              ],
+              [
+                0,
+                27,
+                1,
+                2
+              ],
+              [
+                1,
+                28,
+                1,
+                0
+              ]
+            ]
+          },
+          "n": 120,
+          "reachable_tones": [
+            "Enthusiastic",
+            "Frustrated",
+            "Hesitant",
+            "Neutral"
+          ],
+          "by_style": {
+            "clean": {
+              "n": 71,
+              "accuracy": 0.2676056338028169,
+              "macro_f1": 0.13214285714285715,
+              "weighted_f1": 0.13400402414486923,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.5,
+                  "recall": 0.05555555555555555,
+                  "f1-score": 0.1,
+                  "support": 18.0
+                },
+                "Neutral": {
+                  "precision": 0.2727272727272727,
+                  "recall": 1.0,
+                  "f1-score": 0.42857142857142855,
+                  "support": 18.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 19.0
+                },
+                "Frustrated": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 16.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    1,
+                    17,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    18,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    17,
+                    0,
+                    2
+                  ],
+                  [
+                    1,
+                    14,
+                    1,
+                    0
+                  ]
+                ]
+              }
+            },
+            "messy": {
+              "n": 49,
+              "accuracy": 0.1836734693877551,
+              "macro_f1": 0.10476190476190475,
+              "weighted_f1": 0.0999028182701652,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 12.0
+                },
+                "Neutral": {
+                  "precision": 0.18181818181818182,
+                  "recall": 0.6666666666666666,
+                  "f1-score": 0.2857142857142857,
+                  "support": 12.0
+                },
+                "Hesitant": {
+                  "precision": 0.25,
+                  "recall": 0.09090909090909091,
+                  "f1-score": 0.13333333333333333,
+                  "support": 11.0
+                },
+                "Frustrated": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 14.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    0,
+                    12,
+                    0,
+                    0
+                  ],
+                  [
+                    1,
+                    8,
+                    3,
+                    0
+                  ],
+                  [
+                    0,
+                    10,
+                    1,
+                    0
+                  ],
+                  [
+                    0,
+                    14,
+                    0,
+                    0
+                  ]
+                ]
+              }
+            }
+          },
+          "by_register": {
+            "code-mixed": {
+              "n": 47,
+              "accuracy": 0.23404255319148937,
+              "macro_f1": 0.09649122807017543,
+              "weighted_f1": 0.11496827174318776,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 13.0
+                },
+                "Neutral": {
+                  "precision": 0.2558139534883721,
+                  "recall": 0.7857142857142857,
+                  "f1-score": 0.38596491228070173,
+                  "support": 14.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 10.0
+                },
+                "Frustrated": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 10.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    0,
+                    13,
+                    0,
+                    0
+                  ],
+                  [
+                    1,
+                    11,
+                    2,
+                    0
+                  ],
+                  [
+                    0,
+                    10,
+                    0,
+                    0
+                  ],
+                  [
+                    1,
+                    9,
+                    0,
+                    0
+                  ]
+                ]
+              }
+            },
+            "english": {
+              "n": 73,
+              "accuracy": 0.2328767123287671,
+              "macro_f1": 0.13987835399569293,
+              "weighted_f1": 0.1289198884081093,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 1.0,
+                  "recall": 0.058823529411764705,
+                  "f1-score": 0.1111111111111111,
+                  "support": 17.0
+                },
+                "Neutral": {
+                  "precision": 0.22388059701492538,
+                  "recall": 0.9375,
+                  "f1-score": 0.3614457831325301,
+                  "support": 16.0
+                },
+                "Hesitant": {
+                  "precision": 0.3333333333333333,
+                  "recall": 0.05,
+                  "f1-score": 0.08695652173913043,
+                  "support": 20.0
+                },
+                "Frustrated": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 20.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    1,
+                    16,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    15,
+                    1,
+                    0
+                  ],
+                  [
+                    0,
+                    17,
+                    1,
+                    2
+                  ],
+                  [
+                    0,
+                    19,
+                    1,
+                    0
+                  ]
+                ]
+              }
+            }
+          }
+        },
+        "unseen_idea_test": {
+          "accuracy": 0.2764423076923077,
+          "macro_f1": 0.1744403348257738,
+          "weighted_f1": 0.17444033482577379,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.8333333333333334,
+              "recall": 0.04807692307692308,
+              "f1-score": 0.09090909090909091,
+              "support": 104.0
+            },
+            "Neutral": {
+              "precision": 0.26170798898071623,
+              "recall": 0.9134615384615384,
+              "f1-score": 0.4068522483940043,
+              "support": 104.0
+            },
+            "Hesitant": {
+              "precision": 0.32608695652173914,
+              "recall": 0.14423076923076922,
+              "f1-score": 0.2,
+              "support": 104.0
+            },
+            "Frustrated": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 104.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                5,
+                86,
+                13,
+                0
+              ],
+              [
+                0,
+                95,
+                9,
+                0
+              ],
+              [
+                0,
+                88,
+                15,
+                1
+              ],
+              [
+                1,
+                94,
+                9,
+                0
+              ]
+            ]
+          },
+          "n": 416,
+          "reachable_tones": [
+            "Enthusiastic",
+            "Frustrated",
+            "Hesitant",
+            "Neutral"
+          ],
+          "by_style": {
+            "clean": {
+              "n": 208,
+              "accuracy": 0.27884615384615385,
+              "macro_f1": 0.16334911139142488,
+              "weighted_f1": 0.16334911139142488,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 1.0,
+                  "recall": 0.057692307692307696,
+                  "f1-score": 0.10909090909090909,
+                  "support": 52.0
+                },
+                "Neutral": {
+                  "precision": 0.2562814070351759,
+                  "recall": 0.9807692307692307,
+                  "f1-score": 0.4063745019920319,
+                  "support": 52.0
+                },
+                "Hesitant": {
+                  "precision": 0.6666666666666666,
+                  "recall": 0.07692307692307693,
+                  "f1-score": 0.13793103448275862,
+                  "support": 52.0
+                },
+                "Frustrated": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 52.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    3,
+                    49,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    51,
+                    1,
+                    0
+                  ],
+                  [
+                    0,
+                    48,
+                    4,
+                    0
+                  ],
+                  [
+                    0,
+                    51,
+                    1,
+                    0
+                  ]
+                ]
+              }
+            },
+            "messy": {
+              "n": 208,
+              "accuracy": 0.27403846153846156,
+              "macro_f1": 0.1798162787293222,
+              "weighted_f1": 0.17981627872932218,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.6666666666666666,
+                  "recall": 0.038461538461538464,
+                  "f1-score": 0.07272727272727272,
+                  "support": 52.0
+                },
+                "Neutral": {
+                  "precision": 0.2682926829268293,
+                  "recall": 0.8461538461538461,
+                  "f1-score": 0.4074074074074074,
+                  "support": 52.0
+                },
+                "Hesitant": {
+                  "precision": 0.275,
+                  "recall": 0.21153846153846154,
+                  "f1-score": 0.2391304347826087,
+                  "support": 52.0
+                },
+                "Frustrated": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 52.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    2,
+                    37,
+                    13,
+                    0
+                  ],
+                  [
+                    0,
+                    44,
+                    8,
+                    0
+                  ],
+                  [
+                    0,
+                    40,
+                    11,
+                    1
+                  ],
+                  [
+                    1,
+                    43,
+                    8,
+                    0
+                  ]
+                ]
+              }
+            }
+          },
+          "by_register": {
+            "code-mixed": {
+              "n": 128,
+              "accuracy": 0.21875,
+              "macro_f1": 0.12323366645175156,
+              "weighted_f1": 0.12323366645175156,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 1.0,
+                  "recall": 0.03125,
+                  "f1-score": 0.06060606060606061,
+                  "support": 32.0
+                },
+                "Neutral": {
+                  "precision": 0.22321428571428573,
+                  "recall": 0.78125,
+                  "f1-score": 0.3472222222222222,
+                  "support": 32.0
+                },
+                "Hesitant": {
+                  "precision": 0.13333333333333333,
+                  "recall": 0.0625,
+                  "f1-score": 0.0851063829787234,
+                  "support": 32.0
+                },
+                "Frustrated": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 32.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    1,
+                    26,
+                    5,
+                    0
+                  ],
+                  [
+                    0,
+                    25,
+                    7,
+                    0
+                  ],
+                  [
+                    0,
+                    30,
+                    2,
+                    0
+                  ],
+                  [
+                    0,
+                    31,
+                    1,
+                    0
+                  ]
+                ]
+              }
+            },
+            "english": {
+              "n": 288,
+              "accuracy": 0.3020833333333333,
+              "macro_f1": 0.19743995521746582,
+              "weighted_f1": 0.19743995521746582,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.8,
+                  "recall": 0.05555555555555555,
+                  "f1-score": 0.1038961038961039,
+                  "support": 72.0
+                },
+                "Neutral": {
+                  "precision": 0.2788844621513944,
+                  "recall": 0.9722222222222222,
+                  "f1-score": 0.43343653250773995,
+                  "support": 72.0
+                },
+                "Hesitant": {
+                  "precision": 0.41935483870967744,
+                  "recall": 0.18055555555555555,
+                  "f1-score": 0.2524271844660194,
+                  "support": 72.0
+                },
+                "Frustrated": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 72.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    4,
+                    60,
+                    8,
+                    0
+                  ],
+                  [
+                    0,
+                    70,
+                    2,
+                    0
+                  ],
+                  [
+                    0,
+                    58,
+                    13,
+                    1
+                  ],
+                  [
+                    1,
+                    63,
+                    8,
+                    0
+                  ]
+                ]
+              }
+            }
+          }
+        }
+      },
+      "fitted": {
+        "seen_idea_test": {
+          "accuracy": 0.25,
+          "macro_f1": 0.1535443722943723,
+          "weighted_f1": 0.1535443722943723,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.3333333333333333,
+              "recall": 0.03333333333333333,
+              "f1-score": 0.06060606060606061,
+              "support": 30.0
+            },
+            "Neutral": {
+              "precision": 0.23636363636363636,
+              "recall": 0.8666666666666667,
+              "f1-score": 0.37142857142857144,
+              "support": 30.0
+            },
+            "Hesitant": {
+              "precision": 1.0,
+              "recall": 0.06666666666666667,
+              "f1-score": 0.125,
+              "support": 30.0
+            },
+            "Frustrated": {
+              "precision": 0.2,
+              "recall": 0.03333333333333333,
+              "f1-score": 0.05714285714285714,
+              "support": 30.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                1,
+                29,
+                0,
+                0
+              ],
+              [
+                1,
+                26,
+                0,
+                3
+              ],
+              [
+                0,
+                27,
+                2,
+                1
+              ],
+              [
+                1,
+                28,
+                0,
+                1
+              ]
+            ]
+          },
+          "n": 120,
+          "reachable_tones": [
+            "Enthusiastic",
+            "Frustrated",
+            "Hesitant",
+            "Neutral"
+          ],
+          "by_style": {
+            "clean": {
+              "n": 71,
+              "accuracy": 0.30985915492957744,
+              "macro_f1": 0.20917366946778712,
+              "weighted_f1": 0.21148853907760287,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.5,
+                  "recall": 0.05555555555555555,
+                  "f1-score": 0.1,
+                  "support": 18.0
+                },
+                "Neutral": {
+                  "precision": 0.2727272727272727,
+                  "recall": 1.0,
+                  "f1-score": 0.42857142857142855,
+                  "support": 18.0
+                },
+                "Hesitant": {
+                  "precision": 1.0,
+                  "recall": 0.10526315789473684,
+                  "f1-score": 0.19047619047619047,
+                  "support": 19.0
+                },
+                "Frustrated": {
+                  "precision": 1.0,
+                  "recall": 0.0625,
+                  "f1-score": 0.11764705882352941,
+                  "support": 16.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    1,
+                    17,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    18,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    17,
+                    2,
+                    0
+                  ],
+                  [
+                    1,
+                    14,
+                    0,
+                    1
+                  ]
+                ]
+              }
+            },
+            "messy": {
+              "n": 49,
+              "accuracy": 0.16326530612244897,
+              "macro_f1": 0.07142857142857142,
+              "weighted_f1": 0.06997084548104957,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 12.0
+                },
+                "Neutral": {
+                  "precision": 0.18181818181818182,
+                  "recall": 0.6666666666666666,
+                  "f1-score": 0.2857142857142857,
+                  "support": 12.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 11.0
+                },
+                "Frustrated": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 14.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    0,
+                    12,
+                    0,
+                    0
+                  ],
+                  [
+                    1,
+                    8,
+                    0,
+                    3
+                  ],
+                  [
+                    0,
+                    10,
+                    0,
+                    1
+                  ],
+                  [
+                    0,
+                    14,
+                    0,
+                    0
+                  ]
+                ]
+              }
+            }
+          },
+          "by_register": {
+            "code-mixed": {
+              "n": 47,
+              "accuracy": 0.23404255319148937,
+              "macro_f1": 0.09649122807017543,
+              "weighted_f1": 0.11496827174318776,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 13.0
+                },
+                "Neutral": {
+                  "precision": 0.2558139534883721,
+                  "recall": 0.7857142857142857,
+                  "f1-score": 0.38596491228070173,
+                  "support": 14.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 10.0
+                },
+                "Frustrated": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 10.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    0,
+                    13,
+                    0,
+                    0
+                  ],
+                  [
+                    1,
+                    11,
+                    0,
+                    2
+                  ],
+                  [
+                    0,
+                    10,
+                    0,
+                    0
+                  ],
+                  [
+                    1,
+                    9,
+                    0,
+                    0
+                  ]
+                ]
+              }
+            },
+            "english": {
+              "n": 73,
+              "accuracy": 0.2602739726027397,
+              "macro_f1": 0.18533289945023834,
+              "weighted_f1": 0.17873308890624132,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 1.0,
+                  "recall": 0.058823529411764705,
+                  "f1-score": 0.1111111111111111,
+                  "support": 17.0
+                },
+                "Neutral": {
+                  "precision": 0.22388059701492538,
+                  "recall": 0.9375,
+                  "f1-score": 0.3614457831325301,
+                  "support": 16.0
+                },
+                "Hesitant": {
+                  "precision": 1.0,
+                  "recall": 0.1,
+                  "f1-score": 0.18181818181818182,
+                  "support": 20.0
+                },
+                "Frustrated": {
+                  "precision": 0.3333333333333333,
+                  "recall": 0.05,
+                  "f1-score": 0.08695652173913043,
+                  "support": 20.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    1,
+                    16,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    15,
+                    0,
+                    1
+                  ],
+                  [
+                    0,
+                    17,
+                    2,
+                    1
+                  ],
+                  [
+                    0,
+                    19,
+                    0,
+                    1
+                  ]
+                ]
+              }
+            }
+          }
+        },
+        "unseen_idea_test": {
+          "accuracy": 0.2644230769230769,
+          "macro_f1": 0.15920223958767857,
+          "weighted_f1": 0.15920223958767854,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.8333333333333334,
+              "recall": 0.04807692307692308,
+              "f1-score": 0.09090909090909091,
+              "support": 104.0
+            },
+            "Neutral": {
+              "precision": 0.26170798898071623,
+              "recall": 0.9134615384615384,
+              "f1-score": 0.4068522483940043,
+              "support": 104.0
+            },
+            "Hesitant": {
+              "precision": 1.0,
+              "recall": 0.009615384615384616,
+              "f1-score": 0.01904761904761905,
+              "support": 104.0
+            },
+            "Frustrated": {
+              "precision": 0.1956521739130435,
+              "recall": 0.08653846153846154,
+              "f1-score": 0.12,
+              "support": 104.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                5,
+                86,
+                0,
+                13
+              ],
+              [
+                0,
+                95,
+                0,
+                9
+              ],
+              [
+                0,
+                88,
+                1,
+                15
+              ],
+              [
+                1,
+                94,
+                0,
+                9
+              ]
+            ]
+          },
+          "n": 416,
+          "reachable_tones": [
+            "Enthusiastic",
+            "Frustrated",
+            "Hesitant",
+            "Neutral"
+          ],
+          "by_style": {
+            "clean": {
+              "n": 208,
+              "accuracy": 0.2644230769230769,
+              "macro_f1": 0.13748704242590765,
+              "weighted_f1": 0.13748704242590765,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 1.0,
+                  "recall": 0.057692307692307696,
+                  "f1-score": 0.10909090909090909,
+                  "support": 52.0
+                },
+                "Neutral": {
+                  "precision": 0.2562814070351759,
+                  "recall": 0.9807692307692307,
+                  "f1-score": 0.4063745019920319,
+                  "support": 52.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 52.0
+                },
+                "Frustrated": {
+                  "precision": 0.16666666666666666,
+                  "recall": 0.019230769230769232,
+                  "f1-score": 0.034482758620689655,
+                  "support": 52.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    3,
+                    49,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    51,
+                    0,
+                    1
+                  ],
+                  [
+                    0,
+                    48,
+                    0,
+                    4
+                  ],
+                  [
+                    0,
+                    51,
+                    0,
+                    1
+                  ]
+                ]
+              }
+            },
+            "messy": {
+              "n": 208,
+              "accuracy": 0.2644230769230769,
+              "macro_f1": 0.17294589316738618,
+              "weighted_f1": 0.17294589316738618,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.6666666666666666,
+                  "recall": 0.038461538461538464,
+                  "f1-score": 0.07272727272727272,
+                  "support": 52.0
+                },
+                "Neutral": {
+                  "precision": 0.2682926829268293,
+                  "recall": 0.8461538461538461,
+                  "f1-score": 0.4074074074074074,
+                  "support": 52.0
+                },
+                "Hesitant": {
+                  "precision": 1.0,
+                  "recall": 0.019230769230769232,
+                  "f1-score": 0.03773584905660377,
+                  "support": 52.0
+                },
+                "Frustrated": {
+                  "precision": 0.2,
+                  "recall": 0.15384615384615385,
+                  "f1-score": 0.17391304347826086,
+                  "support": 52.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    2,
+                    37,
+                    0,
+                    13
+                  ],
+                  [
+                    0,
+                    44,
+                    0,
+                    8
+                  ],
+                  [
+                    0,
+                    40,
+                    1,
+                    11
+                  ],
+                  [
+                    1,
+                    43,
+                    0,
+                    8
+                  ]
+                ]
+              }
+            }
+          },
+          "by_register": {
+            "code-mixed": {
+              "n": 128,
+              "accuracy": 0.2109375,
+              "macro_f1": 0.11259536857941113,
+              "weighted_f1": 0.11259536857941113,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 1.0,
+                  "recall": 0.03125,
+                  "f1-score": 0.06060606060606061,
+                  "support": 32.0
+                },
+                "Neutral": {
+                  "precision": 0.22321428571428573,
+                  "recall": 0.78125,
+                  "f1-score": 0.3472222222222222,
+                  "support": 32.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 32.0
+                },
+                "Frustrated": {
+                  "precision": 0.06666666666666667,
+                  "recall": 0.03125,
+                  "f1-score": 0.0425531914893617,
+                  "support": 32.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    1,
+                    26,
+                    0,
+                    5
+                  ],
+                  [
+                    0,
+                    25,
+                    0,
+                    7
+                  ],
+                  [
+                    0,
+                    30,
+                    0,
+                    2
+                  ],
+                  [
+                    0,
+                    31,
+                    0,
+                    1
+                  ]
+                ]
+              }
+            },
+            "english": {
+              "n": 288,
+              "accuracy": 0.2881944444444444,
+              "macro_f1": 0.18001742562576478,
+              "weighted_f1": 0.18001742562576478,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.8,
+                  "recall": 0.05555555555555555,
+                  "f1-score": 0.1038961038961039,
+                  "support": 72.0
+                },
+                "Neutral": {
+                  "precision": 0.2788844621513944,
+                  "recall": 0.9722222222222222,
+                  "f1-score": 0.43343653250773995,
+                  "support": 72.0
+                },
+                "Hesitant": {
+                  "precision": 1.0,
+                  "recall": 0.013888888888888888,
+                  "f1-score": 0.0273972602739726,
+                  "support": 72.0
+                },
+                "Frustrated": {
+                  "precision": 0.25806451612903225,
+                  "recall": 0.1111111111111111,
+                  "f1-score": 0.1553398058252427,
+                  "support": 72.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    4,
+                    60,
+                    0,
+                    8
+                  ],
+                  [
+                    0,
+                    70,
+                    0,
+                    2
+                  ],
+                  [
+                    0,
+                    58,
+                    1,
+                    13
+                  ],
+                  [
+                    1,
+                    63,
+                    0,
+                    8
+                  ]
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "goemotions-roberta": {
+    "model_id": "SamLowe/roberta-base-go_emotions",
+    "language": "english",
+    "note": "28-way GoEmotions, RoBERTa-base. The finest-grained fold available.",
+    "source_labels": [
+      "admiration",
+      "amusement",
+      "anger",
+      "annoyance",
+      "approval",
+      "caring",
+      "confusion",
+      "curiosity",
+      "desire",
+      "disappointment",
+      "disapproval",
+      "disgust",
+      "embarrassment",
+      "excitement",
+      "fear",
+      "gratitude",
+      "grief",
+      "joy",
+      "love",
+      "nervousness",
+      "optimism",
+      "pride",
+      "realization",
+      "relief",
+      "remorse",
+      "sadness",
+      "surprise",
+      "neutral"
+    ],
+    "mappings": {
+      "apriori": {
+        "excitement": "Enthusiastic",
+        "joy": "Enthusiastic",
+        "admiration": "Enthusiastic",
+        "optimism": "Enthusiastic",
+        "desire": "Enthusiastic",
+        "love": "Enthusiastic",
+        "amusement": "Enthusiastic",
+        "gratitude": "Enthusiastic",
+        "pride": "Enthusiastic",
+        "relief": "Enthusiastic",
+        "approval": "Enthusiastic",
+        "caring": "Enthusiastic",
+        "neutral": "Neutral",
+        "realization": "Neutral",
+        "confusion": "Hesitant",
+        "curiosity": "Hesitant",
+        "nervousness": "Hesitant",
+        "fear": "Hesitant",
+        "embarrassment": "Hesitant",
+        "surprise": "Hesitant",
+        "sadness": "Hesitant",
+        "grief": "Hesitant",
+        "remorse": "Hesitant",
+        "anger": "Frustrated",
+        "annoyance": "Frustrated",
+        "disappointment": "Frustrated",
+        "disapproval": "Frustrated",
+        "disgust": "Frustrated"
+      },
+      "fitted": {
+        "admiration": "Enthusiastic",
+        "amusement": "Frustrated",
+        "anger": "Frustrated",
+        "annoyance": "Hesitant",
+        "approval": "Enthusiastic",
+        "caring": "Enthusiastic",
+        "confusion": "Hesitant",
+        "curiosity": "Frustrated",
+        "desire": "Enthusiastic",
+        "disappointment": "Frustrated",
+        "disapproval": "Hesitant",
+        "disgust": "Frustrated",
+        "embarrassment": "Frustrated",
+        "excitement": "Enthusiastic",
+        "fear": "Frustrated",
+        "gratitude": "Neutral",
+        "grief": "Frustrated",
+        "joy": "Enthusiastic",
+        "love": "Enthusiastic",
+        "nervousness": "Frustrated",
+        "optimism": "Enthusiastic",
+        "pride": "Enthusiastic",
+        "realization": "Hesitant",
+        "relief": "Enthusiastic",
+        "remorse": "Frustrated",
+        "sadness": "Frustrated",
+        "surprise": "Frustrated",
+        "neutral": "Neutral"
+      }
+    },
+    "results": {
+      "apriori": {
+        "seen_idea_test": {
+          "accuracy": 0.25,
+          "macro_f1": 0.185940872648782,
+          "weighted_f1": 0.185940872648782,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.23529411764705882,
+              "recall": 0.13333333333333333,
+              "f1-score": 0.1702127659574468,
+              "support": 30.0
+            },
+            "Neutral": {
+              "precision": 0.24705882352941178,
+              "recall": 0.7,
+              "f1-score": 0.3652173913043478,
+              "support": 30.0
+            },
+            "Hesitant": {
+              "precision": 0.2777777777777778,
+              "recall": 0.16666666666666666,
+              "f1-score": 0.20833333333333334,
+              "support": 30.0
+            },
+            "Frustrated": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 30.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                4,
+                24,
+                2,
+                0
+              ],
+              [
+                3,
+                21,
+                6,
+                0
+              ],
+              [
+                5,
+                20,
+                5,
+                0
+              ],
+              [
+                5,
+                20,
+                5,
+                0
+              ]
+            ]
+          },
+          "n": 120,
+          "reachable_tones": [
+            "Enthusiastic",
+            "Frustrated",
+            "Hesitant",
+            "Neutral"
+          ],
+          "by_style": {
+            "clean": {
+              "n": 71,
+              "accuracy": 0.30985915492957744,
+              "macro_f1": 0.22374847374847373,
+              "weighted_f1": 0.23123355517721714,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.2,
+                  "recall": 0.1111111111111111,
+                  "f1-score": 0.14285714285714285,
+                  "support": 18.0
+                },
+                "Neutral": {
+                  "precision": 0.2962962962962963,
+                  "recall": 0.8888888888888888,
+                  "f1-score": 0.4444444444444444,
+                  "support": 18.0
+                },
+                "Hesitant": {
+                  "precision": 0.5714285714285714,
+                  "recall": 0.21052631578947367,
+                  "f1-score": 0.3076923076923077,
+                  "support": 19.0
+                },
+                "Frustrated": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 16.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    2,
+                    15,
+                    1,
+                    0
+                  ],
+                  [
+                    2,
+                    16,
+                    0,
+                    0
+                  ],
+                  [
+                    4,
+                    11,
+                    4,
+                    0
+                  ],
+                  [
+                    2,
+                    12,
+                    2,
+                    0
+                  ]
+                ]
+              }
+            },
+            "messy": {
+              "n": 49,
+              "accuracy": 0.16326530612244897,
+              "macro_f1": 0.13349838655836208,
+              "weighted_f1": 0.1289186421202508,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.2857142857142857,
+                  "recall": 0.16666666666666666,
+                  "f1-score": 0.21052631578947367,
+                  "support": 12.0
+                },
+                "Neutral": {
+                  "precision": 0.16129032258064516,
+                  "recall": 0.4166666666666667,
+                  "f1-score": 0.23255813953488372,
+                  "support": 12.0
+                },
+                "Hesitant": {
+                  "precision": 0.09090909090909091,
+                  "recall": 0.09090909090909091,
+                  "f1-score": 0.09090909090909091,
+                  "support": 11.0
+                },
+                "Frustrated": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 14.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    2,
+                    9,
+                    1,
+                    0
+                  ],
+                  [
+                    1,
+                    5,
+                    6,
+                    0
+                  ],
+                  [
+                    1,
+                    9,
+                    1,
+                    0
+                  ],
+                  [
+                    3,
+                    8,
+                    3,
+                    0
+                  ]
+                ]
+              }
+            }
+          },
+          "by_register": {
+            "code-mixed": {
+              "n": 47,
+              "accuracy": 0.23404255319148937,
+              "macro_f1": 0.12631578947368421,
+              "weighted_f1": 0.14826427771556552,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.16666666666666666,
+                  "recall": 0.07692307692307693,
+                  "f1-score": 0.10526315789473684,
+                  "support": 13.0
+                },
+                "Neutral": {
+                  "precision": 0.2777777777777778,
+                  "recall": 0.7142857142857143,
+                  "f1-score": 0.4,
+                  "support": 14.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 10.0
+                },
+                "Frustrated": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 10.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    1,
+                    12,
+                    0,
+                    0
+                  ],
+                  [
+                    1,
+                    10,
+                    3,
+                    0
+                  ],
+                  [
+                    2,
+                    8,
+                    0,
+                    0
+                  ],
+                  [
+                    2,
+                    6,
+                    2,
+                    0
+                  ]
+                ]
+              }
+            },
+            "english": {
+              "n": 73,
+              "accuracy": 0.2602739726027397,
+              "macro_f1": 0.21394438894438894,
+              "weighted_f1": 0.20710750436777833,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.2727272727272727,
+                  "recall": 0.17647058823529413,
+                  "f1-score": 0.21428571428571427,
+                  "support": 17.0
+                },
+                "Neutral": {
+                  "precision": 0.22448979591836735,
+                  "recall": 0.6875,
+                  "f1-score": 0.3384615384615385,
+                  "support": 16.0
+                },
+                "Hesitant": {
+                  "precision": 0.38461538461538464,
+                  "recall": 0.25,
+                  "f1-score": 0.30303030303030304,
+                  "support": 20.0
+                },
+                "Frustrated": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 20.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    3,
+                    12,
+                    2,
+                    0
+                  ],
+                  [
+                    2,
+                    11,
+                    3,
+                    0
+                  ],
+                  [
+                    3,
+                    12,
+                    5,
+                    0
+                  ],
+                  [
+                    3,
+                    14,
+                    3,
+                    0
+                  ]
+                ]
+              }
+            }
+          }
+        },
+        "unseen_idea_test": {
+          "accuracy": 0.2932692307692308,
+          "macro_f1": 0.2367918639392086,
+          "weighted_f1": 0.23679186393920856,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.3333333333333333,
+              "recall": 0.20192307692307693,
+              "f1-score": 0.25149700598802394,
+              "support": 104.0
+            },
+            "Neutral": {
+              "precision": 0.27099236641221375,
+              "recall": 0.6826923076923077,
+              "f1-score": 0.3879781420765027,
+              "support": 104.0
+            },
+            "Hesitant": {
+              "precision": 0.32967032967032966,
+              "recall": 0.28846153846153844,
+              "f1-score": 0.3076923076923077,
+              "support": 104.0
+            },
+            "Frustrated": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 104.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                21,
+                64,
+                19,
+                0
+              ],
+              [
+                15,
+                71,
+                18,
+                0
+              ],
+              [
+                8,
+                66,
+                30,
+                0
+              ],
+              [
+                19,
+                61,
+                24,
+                0
+              ]
+            ]
+          },
+          "n": 416,
+          "reachable_tones": [
+            "Enthusiastic",
+            "Frustrated",
+            "Hesitant",
+            "Neutral"
+          ],
+          "by_style": {
+            "clean": {
+              "n": 208,
+              "accuracy": 0.2980769230769231,
+              "macro_f1": 0.23012995896032834,
+              "weighted_f1": 0.2301299589603283,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.3235294117647059,
+                  "recall": 0.21153846153846154,
+                  "f1-score": 0.2558139534883721,
+                  "support": 52.0
+                },
+                "Neutral": {
+                  "precision": 0.26582278481012656,
+                  "recall": 0.8076923076923077,
+                  "f1-score": 0.4,
+                  "support": 52.0
+                },
+                "Hesitant": {
+                  "precision": 0.5625,
+                  "recall": 0.17307692307692307,
+                  "f1-score": 0.2647058823529412,
+                  "support": 52.0
+                },
+                "Frustrated": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 52.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    11,
+                    40,
+                    1,
+                    0
+                  ],
+                  [
+                    8,
+                    42,
+                    2,
+                    0
+                  ],
+                  [
+                    5,
+                    38,
+                    9,
+                    0
+                  ],
+                  [
+                    10,
+                    38,
+                    4,
+                    0
+                  ]
+                ]
+              }
+            },
+            "messy": {
+              "n": 208,
+              "accuracy": 0.28846153846153844,
+              "macro_f1": 0.23735427836477707,
+              "weighted_f1": 0.2373542783647771,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.3448275862068966,
+                  "recall": 0.19230769230769232,
+                  "f1-score": 0.24691358024691357,
+                  "support": 52.0
+                },
+                "Neutral": {
+                  "precision": 0.27884615384615385,
+                  "recall": 0.5576923076923077,
+                  "f1-score": 0.3717948717948718,
+                  "support": 52.0
+                },
+                "Hesitant": {
+                  "precision": 0.28,
+                  "recall": 0.40384615384615385,
+                  "f1-score": 0.33070866141732286,
+                  "support": 52.0
+                },
+                "Frustrated": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 52.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    10,
+                    24,
+                    18,
+                    0
+                  ],
+                  [
+                    7,
+                    29,
+                    16,
+                    0
+                  ],
+                  [
+                    3,
+                    28,
+                    21,
+                    0
+                  ],
+                  [
+                    9,
+                    23,
+                    20,
+                    0
+                  ]
+                ]
+              }
+            }
+          },
+          "by_register": {
+            "code-mixed": {
+              "n": 128,
+              "accuracy": 0.2265625,
+              "macro_f1": 0.17546296296296293,
+              "weighted_f1": 0.17546296296296293,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.22727272727272727,
+                  "recall": 0.15625,
+                  "f1-score": 0.18518518518518517,
+                  "support": 32.0
+                },
+                "Neutral": {
+                  "precision": 0.2159090909090909,
+                  "recall": 0.59375,
+                  "f1-score": 0.31666666666666665,
+                  "support": 32.0
+                },
+                "Hesitant": {
+                  "precision": 0.2777777777777778,
+                  "recall": 0.15625,
+                  "f1-score": 0.2,
+                  "support": 32.0
+                },
+                "Frustrated": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 32.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    5,
+                    21,
+                    6,
+                    0
+                  ],
+                  [
+                    7,
+                    19,
+                    6,
+                    0
+                  ],
+                  [
+                    1,
+                    26,
+                    5,
+                    0
+                  ],
+                  [
+                    9,
+                    22,
+                    1,
+                    0
+                  ]
+                ]
+              }
+            },
+            "english": {
+              "n": 288,
+              "accuracy": 0.3229166666666667,
+              "macro_f1": 0.2626944136392844,
+              "weighted_f1": 0.2626944136392844,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.3902439024390244,
+                  "recall": 0.2222222222222222,
+                  "f1-score": 0.2831858407079646,
+                  "support": 72.0
+                },
+                "Neutral": {
+                  "precision": 0.2988505747126437,
+                  "recall": 0.7222222222222222,
+                  "f1-score": 0.42276422764227645,
+                  "support": 72.0
+                },
+                "Hesitant": {
+                  "precision": 0.3424657534246575,
+                  "recall": 0.3472222222222222,
+                  "f1-score": 0.3448275862068966,
+                  "support": 72.0
+                },
+                "Frustrated": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 72.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    16,
+                    43,
+                    13,
+                    0
+                  ],
+                  [
+                    8,
+                    52,
+                    12,
+                    0
+                  ],
+                  [
+                    7,
+                    40,
+                    25,
+                    0
+                  ],
+                  [
+                    10,
+                    39,
+                    23,
+                    0
+                  ]
+                ]
+              }
+            }
+          }
+        }
+      },
+      "fitted": {
+        "seen_idea_test": {
+          "accuracy": 0.25,
+          "macro_f1": 0.1974939029518123,
+          "weighted_f1": 0.19749390295181227,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.2,
+              "recall": 0.1,
+              "f1-score": 0.13333333333333333,
+              "support": 30.0
+            },
+            "Neutral": {
+              "precision": 0.24705882352941178,
+              "recall": 0.7,
+              "f1-score": 0.3652173913043478,
+              "support": 30.0
+            },
+            "Hesitant": {
+              "precision": 0.6666666666666666,
+              "recall": 0.06666666666666667,
+              "f1-score": 0.12121212121212122,
+              "support": 30.0
+            },
+            "Frustrated": {
+              "precision": 0.23529411764705882,
+              "recall": 0.13333333333333333,
+              "f1-score": 0.1702127659574468,
+              "support": 30.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                3,
+                24,
+                0,
+                3
+              ],
+              [
+                3,
+                21,
+                0,
+                6
+              ],
+              [
+                4,
+                20,
+                2,
+                4
+              ],
+              [
+                5,
+                20,
+                1,
+                4
+              ]
+            ]
+          },
+          "n": 120,
+          "reachable_tones": [
+            "Enthusiastic",
+            "Frustrated",
+            "Hesitant",
+            "Neutral"
+          ],
+          "by_style": {
+            "clean": {
+              "n": 71,
+              "accuracy": 0.28169014084507044,
+              "macro_f1": 0.19852369852369853,
+              "weighted_f1": 0.2013198069536098,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.125,
+                  "recall": 0.05555555555555555,
+                  "f1-score": 0.07692307692307693,
+                  "support": 18.0
+                },
+                "Neutral": {
+                  "precision": 0.2962962962962963,
+                  "recall": 0.8888888888888888,
+                  "f1-score": 0.4444444444444444,
+                  "support": 18.0
+                },
+                "Hesitant": {
+                  "precision": 0.6666666666666666,
+                  "recall": 0.10526315789473684,
+                  "f1-score": 0.18181818181818182,
+                  "support": 19.0
+                },
+                "Frustrated": {
+                  "precision": 0.16666666666666666,
+                  "recall": 0.0625,
+                  "f1-score": 0.09090909090909091,
+                  "support": 16.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    1,
+                    15,
+                    0,
+                    2
+                  ],
+                  [
+                    2,
+                    16,
+                    0,
+                    0
+                  ],
+                  [
+                    3,
+                    11,
+                    2,
+                    3
+                  ],
+                  [
+                    2,
+                    12,
+                    1,
+                    1
+                  ]
+                ]
+              }
+            },
+            "messy": {
+              "n": 49,
+              "accuracy": 0.20408163265306123,
+              "macro_f1": 0.17077111383108934,
+              "weighted_f1": 0.17708190742637323,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.2857142857142857,
+                  "recall": 0.16666666666666666,
+                  "f1-score": 0.21052631578947367,
+                  "support": 12.0
+                },
+                "Neutral": {
+                  "precision": 0.16129032258064516,
+                  "recall": 0.4166666666666667,
+                  "f1-score": 0.23255813953488372,
+                  "support": 12.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 11.0
+                },
+                "Frustrated": {
+                  "precision": 0.2727272727272727,
+                  "recall": 0.21428571428571427,
+                  "f1-score": 0.24,
+                  "support": 14.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    2,
+                    9,
+                    0,
+                    1
+                  ],
+                  [
+                    1,
+                    5,
+                    0,
+                    6
+                  ],
+                  [
+                    1,
+                    9,
+                    0,
+                    1
+                  ],
+                  [
+                    3,
+                    8,
+                    0,
+                    3
+                  ]
+                ]
+              }
+            }
+          },
+          "by_register": {
+            "code-mixed": {
+              "n": 47,
+              "accuracy": 0.2765957446808511,
+              "macro_f1": 0.19298245614035087,
+              "weighted_f1": 0.2050018663680478,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.16666666666666666,
+                  "recall": 0.07692307692307693,
+                  "f1-score": 0.10526315789473684,
+                  "support": 13.0
+                },
+                "Neutral": {
+                  "precision": 0.2777777777777778,
+                  "recall": 0.7142857142857143,
+                  "f1-score": 0.4,
+                  "support": 14.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 10.0
+                },
+                "Frustrated": {
+                  "precision": 0.4,
+                  "recall": 0.2,
+                  "f1-score": 0.26666666666666666,
+                  "support": 10.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    1,
+                    12,
+                    0,
+                    0
+                  ],
+                  [
+                    1,
+                    10,
+                    0,
+                    3
+                  ],
+                  [
+                    2,
+                    8,
+                    0,
+                    0
+                  ],
+                  [
+                    2,
+                    6,
+                    0,
+                    2
+                  ]
+                ]
+              }
+            },
+            "english": {
+              "n": 73,
+              "accuracy": 0.2328767123287671,
+              "macro_f1": 0.1978051839464883,
+              "weighted_f1": 0.1919045219223897,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.2222222222222222,
+                  "recall": 0.11764705882352941,
+                  "f1-score": 0.15384615384615385,
+                  "support": 17.0
+                },
+                "Neutral": {
+                  "precision": 0.22448979591836735,
+                  "recall": 0.6875,
+                  "f1-score": 0.3384615384615385,
+                  "support": 16.0
+                },
+                "Hesitant": {
+                  "precision": 0.6666666666666666,
+                  "recall": 0.1,
+                  "f1-score": 0.17391304347826086,
+                  "support": 20.0
+                },
+                "Frustrated": {
+                  "precision": 0.16666666666666666,
+                  "recall": 0.1,
+                  "f1-score": 0.125,
+                  "support": 20.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    2,
+                    12,
+                    0,
+                    3
+                  ],
+                  [
+                    2,
+                    11,
+                    0,
+                    3
+                  ],
+                  [
+                    2,
+                    12,
+                    2,
+                    4
+                  ],
+                  [
+                    3,
+                    14,
+                    1,
+                    2
+                  ]
+                ]
+              }
+            }
+          }
+        },
+        "unseen_idea_test": {
+          "accuracy": 0.28846153846153844,
+          "macro_f1": 0.2436420318236342,
+          "weighted_f1": 0.2436420318236342,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.35,
+              "recall": 0.20192307692307693,
+              "f1-score": 0.25609756097560976,
+              "support": 104.0
+            },
+            "Neutral": {
+              "precision": 0.27099236641221375,
+              "recall": 0.6826923076923077,
+              "f1-score": 0.3879781420765027,
+              "support": 104.0
+            },
+            "Hesitant": {
+              "precision": 0.8333333333333334,
+              "recall": 0.04807692307692308,
+              "f1-score": 0.09090909090909091,
+              "support": 104.0
+            },
+            "Frustrated": {
+              "precision": 0.26136363636363635,
+              "recall": 0.22115384615384615,
+              "f1-score": 0.23958333333333334,
+              "support": 104.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                21,
+                64,
+                0,
+                19
+              ],
+              [
+                12,
+                71,
+                0,
+                21
+              ],
+              [
+                8,
+                66,
+                5,
+                25
+              ],
+              [
+                19,
+                61,
+                1,
+                23
+              ]
+            ]
+          },
+          "n": 416,
+          "reachable_tones": [
+            "Enthusiastic",
+            "Frustrated",
+            "Hesitant",
+            "Neutral"
+          ],
+          "by_style": {
+            "clean": {
+              "n": 208,
+              "accuracy": 0.28365384615384615,
+              "macro_f1": 0.2149891774891775,
+              "weighted_f1": 0.21498917748917748,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.34375,
+                  "recall": 0.21153846153846154,
+                  "f1-score": 0.2619047619047619,
+                  "support": 52.0
+                },
+                "Neutral": {
+                  "precision": 0.26582278481012656,
+                  "recall": 0.8076923076923077,
+                  "f1-score": 0.4,
+                  "support": 52.0
+                },
+                "Hesitant": {
+                  "precision": 0.75,
+                  "recall": 0.057692307692307696,
+                  "f1-score": 0.10714285714285714,
+                  "support": 52.0
+                },
+                "Frustrated": {
+                  "precision": 0.21428571428571427,
+                  "recall": 0.057692307692307696,
+                  "f1-score": 0.09090909090909091,
+                  "support": 52.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    11,
+                    40,
+                    0,
+                    1
+                  ],
+                  [
+                    6,
+                    42,
+                    0,
+                    4
+                  ],
+                  [
+                    5,
+                    38,
+                    3,
+                    6
+                  ],
+                  [
+                    10,
+                    38,
+                    1,
+                    3
+                  ]
+                ]
+              }
+            },
+            "messy": {
+              "n": 208,
+              "accuracy": 0.2932692307692308,
+              "macro_f1": 0.25333231583231586,
+              "weighted_f1": 0.25333231583231586,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.35714285714285715,
+                  "recall": 0.19230769230769232,
+                  "f1-score": 0.25,
+                  "support": 52.0
+                },
+                "Neutral": {
+                  "precision": 0.27884615384615385,
+                  "recall": 0.5576923076923077,
+                  "f1-score": 0.3717948717948718,
+                  "support": 52.0
+                },
+                "Hesitant": {
+                  "precision": 1.0,
+                  "recall": 0.038461538461538464,
+                  "f1-score": 0.07407407407407407,
+                  "support": 52.0
+                },
+                "Frustrated": {
+                  "precision": 0.2702702702702703,
+                  "recall": 0.38461538461538464,
+                  "f1-score": 0.31746031746031744,
+                  "support": 52.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    10,
+                    24,
+                    0,
+                    18
+                  ],
+                  [
+                    6,
+                    29,
+                    0,
+                    17
+                  ],
+                  [
+                    3,
+                    28,
+                    2,
+                    19
+                  ],
+                  [
+                    9,
+                    23,
+                    0,
+                    20
+                  ]
+                ]
+              }
+            }
+          },
+          "by_register": {
+            "code-mixed": {
+              "n": 128,
+              "accuracy": 0.1953125,
+              "macro_f1": 0.13762023677395485,
+              "weighted_f1": 0.13762023677395485,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.2631578947368421,
+                  "recall": 0.15625,
+                  "f1-score": 0.19607843137254902,
+                  "support": 32.0
+                },
+                "Neutral": {
+                  "precision": 0.2159090909090909,
+                  "recall": 0.59375,
+                  "f1-score": 0.31666666666666665,
+                  "support": 32.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 32.0
+                },
+                "Frustrated": {
+                  "precision": 0.047619047619047616,
+                  "recall": 0.03125,
+                  "f1-score": 0.03773584905660377,
+                  "support": 32.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    5,
+                    21,
+                    0,
+                    6
+                  ],
+                  [
+                    4,
+                    19,
+                    0,
+                    9
+                  ],
+                  [
+                    1,
+                    26,
+                    0,
+                    5
+                  ],
+                  [
+                    9,
+                    22,
+                    0,
+                    1
+                  ]
+                ]
+              }
+            },
+            "english": {
+              "n": 288,
+              "accuracy": 0.3298611111111111,
+              "macro_f1": 0.28767548978632435,
+              "weighted_f1": 0.2876754897863243,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.3902439024390244,
+                  "recall": 0.2222222222222222,
+                  "f1-score": 0.2831858407079646,
+                  "support": 72.0
+                },
+                "Neutral": {
+                  "precision": 0.2988505747126437,
+                  "recall": 0.7222222222222222,
+                  "f1-score": 0.42276422764227645,
+                  "support": 72.0
+                },
+                "Hesitant": {
+                  "precision": 0.8333333333333334,
+                  "recall": 0.06944444444444445,
+                  "f1-score": 0.1282051282051282,
+                  "support": 72.0
+                },
+                "Frustrated": {
+                  "precision": 0.3283582089552239,
+                  "recall": 0.3055555555555556,
+                  "f1-score": 0.31654676258992803,
+                  "support": 72.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    16,
+                    43,
+                    0,
+                    13
+                  ],
+                  [
+                    8,
+                    52,
+                    0,
+                    12
+                  ],
+                  [
+                    7,
+                    40,
+                    5,
+                    20
+                  ],
+                  [
+                    10,
+                    39,
+                    1,
+                    22
+                  ]
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "xlmr-sentiment": {
+    "model_id": "cardiffnlp/twitter-xlm-roberta-base-sentiment",
+    "language": "multilingual",
+    "note": "3-way sentiment, XLM-R. Multilingual, but cannot express the Hesitant/Frustrated split that the whole tone scheme exists for.",
+    "source_labels": [
+      "negative",
+      "neutral",
+      "positive"
+    ],
+    "mappings": {
+      "apriori": {
+        "positive": "Enthusiastic",
+        "neutral": "Neutral",
+        "negative": "Frustrated"
+      },
+      "fitted": {
+        "negative": "Frustrated",
+        "neutral": "Neutral",
+        "positive": "Enthusiastic"
+      }
+    },
+    "results": {
+      "apriori": {
+        "seen_idea_test": {
+          "accuracy": 0.275,
+          "macro_f1": 0.18644878982633667,
+          "weighted_f1": 0.18644878982633667,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 30.0
+            },
+            "Neutral": {
+              "precision": 0.2876712328767123,
+              "recall": 0.7,
+              "f1-score": 0.4077669902912621,
+              "support": 30.0
+            },
+            "Hesitant": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 30.0
+            },
+            "Frustrated": {
+              "precision": 0.2926829268292683,
+              "recall": 0.4,
+              "f1-score": 0.3380281690140845,
+              "support": 30.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                0,
+                20,
+                0,
+                10
+              ],
+              [
+                2,
+                21,
+                0,
+                7
+              ],
+              [
+                3,
+                15,
+                0,
+                12
+              ],
+              [
+                1,
+                17,
+                0,
+                12
+              ]
+            ]
+          },
+          "n": 120,
+          "reachable_tones": [
+            "Enthusiastic",
+            "Frustrated",
+            "Neutral"
+          ],
+          "by_style": {
+            "clean": {
+              "n": 71,
+              "accuracy": 0.29577464788732394,
+              "macro_f1": 0.19241071428571427,
+              "weighted_f1": 0.186317907444668,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 18.0
+                },
+                "Neutral": {
+                  "precision": 0.3076923076923077,
+                  "recall": 0.8888888888888888,
+                  "f1-score": 0.45714285714285713,
+                  "support": 18.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 19.0
+                },
+                "Frustrated": {
+                  "precision": 0.3125,
+                  "recall": 0.3125,
+                  "f1-score": 0.3125,
+                  "support": 16.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    0,
+                    14,
+                    0,
+                    4
+                  ],
+                  [
+                    1,
+                    16,
+                    0,
+                    1
+                  ],
+                  [
+                    2,
+                    11,
+                    0,
+                    6
+                  ],
+                  [
+                    0,
+                    11,
+                    0,
+                    5
+                  ]
+                ]
+              }
+            },
+            "messy": {
+              "n": 49,
+              "accuracy": 0.24489795918367346,
+              "macro_f1": 0.1655011655011655,
+              "weighted_f1": 0.17677560534703393,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 12.0
+                },
+                "Neutral": {
+                  "precision": 0.23809523809523808,
+                  "recall": 0.4166666666666667,
+                  "f1-score": 0.30303030303030304,
+                  "support": 12.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 11.0
+                },
+                "Frustrated": {
+                  "precision": 0.28,
+                  "recall": 0.5,
+                  "f1-score": 0.358974358974359,
+                  "support": 14.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    0,
+                    6,
+                    0,
+                    6
+                  ],
+                  [
+                    1,
+                    5,
+                    0,
+                    6
+                  ],
+                  [
+                    1,
+                    4,
+                    0,
+                    6
+                  ],
+                  [
+                    1,
+                    6,
+                    0,
+                    7
+                  ]
+                ]
+              }
+            }
+          },
+          "by_register": {
+            "code-mixed": {
+              "n": 47,
+              "accuracy": 0.23404255319148937,
+              "macro_f1": 0.16442307692307692,
+              "weighted_f1": 0.169721767594108,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 13.0
+                },
+                "Neutral": {
+                  "precision": 0.2692307692307692,
+                  "recall": 0.5,
+                  "f1-score": 0.35,
+                  "support": 14.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 10.0
+                },
+                "Frustrated": {
+                  "precision": 0.25,
+                  "recall": 0.4,
+                  "f1-score": 0.3076923076923077,
+                  "support": 10.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    0,
+                    7,
+                    0,
+                    6
+                  ],
+                  [
+                    2,
+                    7,
+                    0,
+                    5
+                  ],
+                  [
+                    2,
+                    7,
+                    0,
+                    1
+                  ],
+                  [
+                    1,
+                    5,
+                    0,
+                    4
+                  ]
+                ]
+              }
+            },
+            "english": {
+              "n": 73,
+              "accuracy": 0.3013698630136986,
+              "macro_f1": 0.2,
+              "weighted_f1": 0.1948249619482496,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 17.0
+                },
+                "Neutral": {
+                  "precision": 0.2978723404255319,
+                  "recall": 0.875,
+                  "f1-score": 0.4444444444444444,
+                  "support": 16.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 20.0
+                },
+                "Frustrated": {
+                  "precision": 0.32,
+                  "recall": 0.4,
+                  "f1-score": 0.35555555555555557,
+                  "support": 20.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    0,
+                    13,
+                    0,
+                    4
+                  ],
+                  [
+                    0,
+                    14,
+                    0,
+                    2
+                  ],
+                  [
+                    1,
+                    8,
+                    0,
+                    11
+                  ],
+                  [
+                    0,
+                    12,
+                    0,
+                    8
+                  ]
+                ]
+              }
+            }
+          }
+        },
+        "unseen_idea_test": {
+          "accuracy": 0.32211538461538464,
+          "macro_f1": 0.2616725997007687,
+          "weighted_f1": 0.26167259970076867,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.5526315789473685,
+              "recall": 0.20192307692307693,
+              "f1-score": 0.29577464788732394,
+              "support": 104.0
+            },
+            "Neutral": {
+              "precision": 0.2923076923076923,
+              "recall": 0.7307692307692307,
+              "f1-score": 0.4175824175824176,
+              "support": 104.0
+            },
+            "Hesitant": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 104.0
+            },
+            "Frustrated": {
+              "precision": 0.3135593220338983,
+              "recall": 0.3557692307692308,
+              "f1-score": 0.3333333333333333,
+              "support": 104.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                21,
+                57,
+                0,
+                26
+              ],
+              [
+                8,
+                76,
+                0,
+                20
+              ],
+              [
+                5,
+                64,
+                0,
+                35
+              ],
+              [
+                4,
+                63,
+                0,
+                37
+              ]
+            ]
+          },
+          "n": 416,
+          "reachable_tones": [
+            "Enthusiastic",
+            "Frustrated",
+            "Neutral"
+          ],
+          "by_style": {
+            "clean": {
+              "n": 208,
+              "accuracy": 0.3173076923076923,
+              "macro_f1": 0.24728186190312607,
+              "weighted_f1": 0.24728186190312604,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.5789473684210527,
+                  "recall": 0.21153846153846154,
+                  "f1-score": 0.30985915492957744,
+                  "support": 52.0
+                },
+                "Neutral": {
+                  "precision": 0.2875816993464052,
+                  "recall": 0.8461538461538461,
+                  "f1-score": 0.4292682926829268,
+                  "support": 52.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 52.0
+                },
+                "Frustrated": {
+                  "precision": 0.3055555555555556,
+                  "recall": 0.21153846153846154,
+                  "f1-score": 0.25,
+                  "support": 52.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    11,
+                    31,
+                    0,
+                    10
+                  ],
+                  [
+                    4,
+                    44,
+                    0,
+                    4
+                  ],
+                  [
+                    2,
+                    39,
+                    0,
+                    11
+                  ],
+                  [
+                    2,
+                    39,
+                    0,
+                    11
+                  ]
+                ]
+              }
+            },
+            "messy": {
+              "n": 208,
+              "accuracy": 0.3269230769230769,
+              "macro_f1": 0.268066391402012,
+              "weighted_f1": 0.268066391402012,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.5263157894736842,
+                  "recall": 0.19230769230769232,
+                  "f1-score": 0.28169014084507044,
+                  "support": 52.0
+                },
+                "Neutral": {
+                  "precision": 0.29906542056074764,
+                  "recall": 0.6153846153846154,
+                  "f1-score": 0.4025157232704403,
+                  "support": 52.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 52.0
+                },
+                "Frustrated": {
+                  "precision": 0.3170731707317073,
+                  "recall": 0.5,
+                  "f1-score": 0.3880597014925373,
+                  "support": 52.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    10,
+                    26,
+                    0,
+                    16
+                  ],
+                  [
+                    4,
+                    32,
+                    0,
+                    16
+                  ],
+                  [
+                    3,
+                    25,
+                    0,
+                    24
+                  ],
+                  [
+                    2,
+                    24,
+                    0,
+                    26
+                  ]
+                ]
+              }
+            }
+          },
+          "by_register": {
+            "code-mixed": {
+              "n": 128,
+              "accuracy": 0.359375,
+              "macro_f1": 0.3059486157890413,
+              "weighted_f1": 0.3059486157890413,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.4583333333333333,
+                  "recall": 0.34375,
+                  "f1-score": 0.39285714285714285,
+                  "support": 32.0
+                },
+                "Neutral": {
+                  "precision": 0.3225806451612903,
+                  "recall": 0.625,
+                  "f1-score": 0.425531914893617,
+                  "support": 32.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 32.0
+                },
+                "Frustrated": {
+                  "precision": 0.35714285714285715,
+                  "recall": 0.46875,
+                  "f1-score": 0.40540540540540543,
+                  "support": 32.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    11,
+                    10,
+                    0,
+                    11
+                  ],
+                  [
+                    6,
+                    20,
+                    0,
+                    6
+                  ],
+                  [
+                    4,
+                    18,
+                    0,
+                    10
+                  ],
+                  [
+                    3,
+                    14,
+                    0,
+                    15
+                  ]
+                ]
+              }
+            },
+            "english": {
+              "n": 288,
+              "accuracy": 0.3055555555555556,
+              "macro_f1": 0.23616756291174895,
+              "weighted_f1": 0.23616756291174898,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.7142857142857143,
+                  "recall": 0.1388888888888889,
+                  "f1-score": 0.23255813953488372,
+                  "support": 72.0
+                },
+                "Neutral": {
+                  "precision": 0.2828282828282828,
+                  "recall": 0.7777777777777778,
+                  "f1-score": 0.4148148148148148,
+                  "support": 72.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 72.0
+                },
+                "Frustrated": {
+                  "precision": 0.2894736842105263,
+                  "recall": 0.3055555555555556,
+                  "f1-score": 0.2972972972972973,
+                  "support": 72.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    10,
+                    47,
+                    0,
+                    15
+                  ],
+                  [
+                    2,
+                    56,
+                    0,
+                    14
+                  ],
+                  [
+                    1,
+                    46,
+                    0,
+                    25
+                  ],
+                  [
+                    1,
+                    49,
+                    0,
+                    22
+                  ]
+                ]
+              }
+            }
+          }
+        }
+      },
+      "fitted": {
+        "seen_idea_test": {
+          "accuracy": 0.275,
+          "macro_f1": 0.18644878982633667,
+          "weighted_f1": 0.18644878982633667,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 30.0
+            },
+            "Neutral": {
+              "precision": 0.2876712328767123,
+              "recall": 0.7,
+              "f1-score": 0.4077669902912621,
+              "support": 30.0
+            },
+            "Hesitant": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 30.0
+            },
+            "Frustrated": {
+              "precision": 0.2926829268292683,
+              "recall": 0.4,
+              "f1-score": 0.3380281690140845,
+              "support": 30.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                0,
+                20,
+                0,
+                10
+              ],
+              [
+                2,
+                21,
+                0,
+                7
+              ],
+              [
+                3,
+                15,
+                0,
+                12
+              ],
+              [
+                1,
+                17,
+                0,
+                12
+              ]
+            ]
+          },
+          "n": 120,
+          "reachable_tones": [
+            "Enthusiastic",
+            "Frustrated",
+            "Neutral"
+          ],
+          "by_style": {
+            "clean": {
+              "n": 71,
+              "accuracy": 0.29577464788732394,
+              "macro_f1": 0.19241071428571427,
+              "weighted_f1": 0.186317907444668,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 18.0
+                },
+                "Neutral": {
+                  "precision": 0.3076923076923077,
+                  "recall": 0.8888888888888888,
+                  "f1-score": 0.45714285714285713,
+                  "support": 18.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 19.0
+                },
+                "Frustrated": {
+                  "precision": 0.3125,
+                  "recall": 0.3125,
+                  "f1-score": 0.3125,
+                  "support": 16.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    0,
+                    14,
+                    0,
+                    4
+                  ],
+                  [
+                    1,
+                    16,
+                    0,
+                    1
+                  ],
+                  [
+                    2,
+                    11,
+                    0,
+                    6
+                  ],
+                  [
+                    0,
+                    11,
+                    0,
+                    5
+                  ]
+                ]
+              }
+            },
+            "messy": {
+              "n": 49,
+              "accuracy": 0.24489795918367346,
+              "macro_f1": 0.1655011655011655,
+              "weighted_f1": 0.17677560534703393,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 12.0
+                },
+                "Neutral": {
+                  "precision": 0.23809523809523808,
+                  "recall": 0.4166666666666667,
+                  "f1-score": 0.30303030303030304,
+                  "support": 12.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 11.0
+                },
+                "Frustrated": {
+                  "precision": 0.28,
+                  "recall": 0.5,
+                  "f1-score": 0.358974358974359,
+                  "support": 14.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    0,
+                    6,
+                    0,
+                    6
+                  ],
+                  [
+                    1,
+                    5,
+                    0,
+                    6
+                  ],
+                  [
+                    1,
+                    4,
+                    0,
+                    6
+                  ],
+                  [
+                    1,
+                    6,
+                    0,
+                    7
+                  ]
+                ]
+              }
+            }
+          },
+          "by_register": {
+            "code-mixed": {
+              "n": 47,
+              "accuracy": 0.23404255319148937,
+              "macro_f1": 0.16442307692307692,
+              "weighted_f1": 0.169721767594108,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 13.0
+                },
+                "Neutral": {
+                  "precision": 0.2692307692307692,
+                  "recall": 0.5,
+                  "f1-score": 0.35,
+                  "support": 14.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 10.0
+                },
+                "Frustrated": {
+                  "precision": 0.25,
+                  "recall": 0.4,
+                  "f1-score": 0.3076923076923077,
+                  "support": 10.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    0,
+                    7,
+                    0,
+                    6
+                  ],
+                  [
+                    2,
+                    7,
+                    0,
+                    5
+                  ],
+                  [
+                    2,
+                    7,
+                    0,
+                    1
+                  ],
+                  [
+                    1,
+                    5,
+                    0,
+                    4
+                  ]
+                ]
+              }
+            },
+            "english": {
+              "n": 73,
+              "accuracy": 0.3013698630136986,
+              "macro_f1": 0.2,
+              "weighted_f1": 0.1948249619482496,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 17.0
+                },
+                "Neutral": {
+                  "precision": 0.2978723404255319,
+                  "recall": 0.875,
+                  "f1-score": 0.4444444444444444,
+                  "support": 16.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 20.0
+                },
+                "Frustrated": {
+                  "precision": 0.32,
+                  "recall": 0.4,
+                  "f1-score": 0.35555555555555557,
+                  "support": 20.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    0,
+                    13,
+                    0,
+                    4
+                  ],
+                  [
+                    0,
+                    14,
+                    0,
+                    2
+                  ],
+                  [
+                    1,
+                    8,
+                    0,
+                    11
+                  ],
+                  [
+                    0,
+                    12,
+                    0,
+                    8
+                  ]
+                ]
+              }
+            }
+          }
+        },
+        "unseen_idea_test": {
+          "accuracy": 0.32211538461538464,
+          "macro_f1": 0.2616725997007687,
+          "weighted_f1": 0.26167259970076867,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.5526315789473685,
+              "recall": 0.20192307692307693,
+              "f1-score": 0.29577464788732394,
+              "support": 104.0
+            },
+            "Neutral": {
+              "precision": 0.2923076923076923,
+              "recall": 0.7307692307692307,
+              "f1-score": 0.4175824175824176,
+              "support": 104.0
+            },
+            "Hesitant": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 104.0
+            },
+            "Frustrated": {
+              "precision": 0.3135593220338983,
+              "recall": 0.3557692307692308,
+              "f1-score": 0.3333333333333333,
+              "support": 104.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                21,
+                57,
+                0,
+                26
+              ],
+              [
+                8,
+                76,
+                0,
+                20
+              ],
+              [
+                5,
+                64,
+                0,
+                35
+              ],
+              [
+                4,
+                63,
+                0,
+                37
+              ]
+            ]
+          },
+          "n": 416,
+          "reachable_tones": [
+            "Enthusiastic",
+            "Frustrated",
+            "Neutral"
+          ],
+          "by_style": {
+            "clean": {
+              "n": 208,
+              "accuracy": 0.3173076923076923,
+              "macro_f1": 0.24728186190312607,
+              "weighted_f1": 0.24728186190312604,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.5789473684210527,
+                  "recall": 0.21153846153846154,
+                  "f1-score": 0.30985915492957744,
+                  "support": 52.0
+                },
+                "Neutral": {
+                  "precision": 0.2875816993464052,
+                  "recall": 0.8461538461538461,
+                  "f1-score": 0.4292682926829268,
+                  "support": 52.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 52.0
+                },
+                "Frustrated": {
+                  "precision": 0.3055555555555556,
+                  "recall": 0.21153846153846154,
+                  "f1-score": 0.25,
+                  "support": 52.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    11,
+                    31,
+                    0,
+                    10
+                  ],
+                  [
+                    4,
+                    44,
+                    0,
+                    4
+                  ],
+                  [
+                    2,
+                    39,
+                    0,
+                    11
+                  ],
+                  [
+                    2,
+                    39,
+                    0,
+                    11
+                  ]
+                ]
+              }
+            },
+            "messy": {
+              "n": 208,
+              "accuracy": 0.3269230769230769,
+              "macro_f1": 0.268066391402012,
+              "weighted_f1": 0.268066391402012,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.5263157894736842,
+                  "recall": 0.19230769230769232,
+                  "f1-score": 0.28169014084507044,
+                  "support": 52.0
+                },
+                "Neutral": {
+                  "precision": 0.29906542056074764,
+                  "recall": 0.6153846153846154,
+                  "f1-score": 0.4025157232704403,
+                  "support": 52.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 52.0
+                },
+                "Frustrated": {
+                  "precision": 0.3170731707317073,
+                  "recall": 0.5,
+                  "f1-score": 0.3880597014925373,
+                  "support": 52.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    10,
+                    26,
+                    0,
+                    16
+                  ],
+                  [
+                    4,
+                    32,
+                    0,
+                    16
+                  ],
+                  [
+                    3,
+                    25,
+                    0,
+                    24
+                  ],
+                  [
+                    2,
+                    24,
+                    0,
+                    26
+                  ]
+                ]
+              }
+            }
+          },
+          "by_register": {
+            "code-mixed": {
+              "n": 128,
+              "accuracy": 0.359375,
+              "macro_f1": 0.3059486157890413,
+              "weighted_f1": 0.3059486157890413,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.4583333333333333,
+                  "recall": 0.34375,
+                  "f1-score": 0.39285714285714285,
+                  "support": 32.0
+                },
+                "Neutral": {
+                  "precision": 0.3225806451612903,
+                  "recall": 0.625,
+                  "f1-score": 0.425531914893617,
+                  "support": 32.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 32.0
+                },
+                "Frustrated": {
+                  "precision": 0.35714285714285715,
+                  "recall": 0.46875,
+                  "f1-score": 0.40540540540540543,
+                  "support": 32.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    11,
+                    10,
+                    0,
+                    11
+                  ],
+                  [
+                    6,
+                    20,
+                    0,
+                    6
+                  ],
+                  [
+                    4,
+                    18,
+                    0,
+                    10
+                  ],
+                  [
+                    3,
+                    14,
+                    0,
+                    15
+                  ]
+                ]
+              }
+            },
+            "english": {
+              "n": 288,
+              "accuracy": 0.3055555555555556,
+              "macro_f1": 0.23616756291174895,
+              "weighted_f1": 0.23616756291174898,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.7142857142857143,
+                  "recall": 0.1388888888888889,
+                  "f1-score": 0.23255813953488372,
+                  "support": 72.0
+                },
+                "Neutral": {
+                  "precision": 0.2828282828282828,
+                  "recall": 0.7777777777777778,
+                  "f1-score": 0.4148148148148148,
+                  "support": 72.0
+                },
+                "Hesitant": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 72.0
+                },
+                "Frustrated": {
+                  "precision": 0.2894736842105263,
+                  "recall": 0.3055555555555556,
+                  "f1-score": 0.2972972972972973,
+                  "support": 72.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    10,
+                    47,
+                    0,
+                    15
+                  ],
+                  [
+                    2,
+                    56,
+                    0,
+                    14
+                  ],
+                  [
+                    1,
+                    46,
+                    0,
+                    25
+                  ],
+                  [
+                    1,
+                    49,
+                    0,
+                    22
+                  ]
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "xlm-emo": {
+    "model_id": "MilaNLProc/xlm-emo-t",
+    "language": "multilingual",
+    "note": "4-way multilingual emotion, XLM-R. The multilingual option that still has an emotion label space.",
+    "source_labels": [
+      "anger",
+      "fear",
+      "joy",
+      "sadness"
+    ],
+    "mappings": {
+      "apriori": {
+        "joy": "Enthusiastic",
+        "fear": "Hesitant",
+        "sadness": "Hesitant",
+        "anger": "Frustrated"
+      },
+      "fitted": {
+        "anger": "Frustrated",
+        "fear": "Hesitant",
+        "joy": "Enthusiastic",
+        "sadness": "Hesitant"
+      }
+    },
+    "results": {
+      "apriori": {
+        "seen_idea_test": {
+          "accuracy": 0.2916666666666667,
+          "macro_f1": 0.24298025777414076,
+          "weighted_f1": 0.24298025777414078,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.28125,
+              "recall": 0.6,
+              "f1-score": 0.3829787234042553,
+              "support": 30.0
+            },
+            "Neutral": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 30.0
+            },
+            "Hesitant": {
+              "precision": 0.36363636363636365,
+              "recall": 0.26666666666666666,
+              "f1-score": 0.3076923076923077,
+              "support": 30.0
+            },
+            "Frustrated": {
+              "precision": 0.2647058823529412,
+              "recall": 0.3,
+              "f1-score": 0.28125,
+              "support": 30.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                18,
+                0,
+                6,
+                6
+              ],
+              [
+                20,
+                0,
+                1,
+                9
+              ],
+              [
+                12,
+                0,
+                8,
+                10
+              ],
+              [
+                14,
+                0,
+                7,
+                9
+              ]
+            ]
+          },
+          "n": 120,
+          "reachable_tones": [
+            "Enthusiastic",
+            "Frustrated",
+            "Hesitant"
+          ],
+          "by_style": {
+            "clean": {
+              "n": 71,
+              "accuracy": 0.30985915492957744,
+              "macro_f1": 0.24765512265512266,
+              "weighted_f1": 0.25022864459484173,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.28888888888888886,
+                  "recall": 0.7222222222222222,
+                  "f1-score": 0.4126984126984127,
+                  "support": 18.0
+                },
+                "Neutral": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 18.0
+                },
+                "Hesitant": {
+                  "precision": 0.42857142857142855,
+                  "recall": 0.3157894736842105,
+                  "f1-score": 0.36363636363636365,
+                  "support": 19.0
+                },
+                "Frustrated": {
+                  "precision": 0.25,
+                  "recall": 0.1875,
+                  "f1-score": 0.21428571428571427,
+                  "support": 16.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    13,
+                    0,
+                    3,
+                    2
+                  ],
+                  [
+                    14,
+                    0,
+                    1,
+                    3
+                  ],
+                  [
+                    9,
+                    0,
+                    6,
+                    4
+                  ],
+                  [
+                    9,
+                    0,
+                    4,
+                    3
+                  ]
+                ]
+              }
+            },
+            "messy": {
+              "n": 49,
+              "accuracy": 0.2653061224489796,
+              "macro_f1": 0.2166100735710243,
+              "weighted_f1": 0.22149844657727266,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.2631578947368421,
+                  "recall": 0.4166666666666667,
+                  "f1-score": 0.3225806451612903,
+                  "support": 12.0
+                },
+                "Neutral": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 12.0
+                },
+                "Hesitant": {
+                  "precision": 0.25,
+                  "recall": 0.18181818181818182,
+                  "f1-score": 0.21052631578947367,
+                  "support": 11.0
+                },
+                "Frustrated": {
+                  "precision": 0.2727272727272727,
+                  "recall": 0.42857142857142855,
+                  "f1-score": 0.3333333333333333,
+                  "support": 14.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    5,
+                    0,
+                    3,
+                    4
+                  ],
+                  [
+                    6,
+                    0,
+                    0,
+                    6
+                  ],
+                  [
+                    3,
+                    0,
+                    2,
+                    6
+                  ],
+                  [
+                    5,
+                    0,
+                    3,
+                    6
+                  ]
+                ]
+              }
+            }
+          },
+          "by_register": {
+            "code-mixed": {
+              "n": 47,
+              "accuracy": 0.2553191489361702,
+              "macro_f1": 0.2278295376121463,
+              "weighted_f1": 0.21162797527274863,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.21739130434782608,
+                  "recall": 0.38461538461538464,
+                  "f1-score": 0.2777777777777778,
+                  "support": 13.0
+                },
+                "Neutral": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 14.0
+                },
+                "Hesitant": {
+                  "precision": 0.2727272727272727,
+                  "recall": 0.3,
+                  "f1-score": 0.2857142857142857,
+                  "support": 10.0
+                },
+                "Frustrated": {
+                  "precision": 0.3076923076923077,
+                  "recall": 0.4,
+                  "f1-score": 0.34782608695652173,
+                  "support": 10.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    5,
+                    0,
+                    5,
+                    3
+                  ],
+                  [
+                    9,
+                    0,
+                    1,
+                    4
+                  ],
+                  [
+                    5,
+                    0,
+                    3,
+                    2
+                  ],
+                  [
+                    4,
+                    0,
+                    2,
+                    4
+                  ]
+                ]
+              }
+            },
+            "english": {
+              "n": 73,
+              "accuracy": 0.3150684931506849,
+              "macro_f1": 0.2536897365636615,
+              "weighted_f1": 0.2595938539573428,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.3170731707317073,
+                  "recall": 0.7647058823529411,
+                  "f1-score": 0.4482758620689655,
+                  "support": 17.0
+                },
+                "Neutral": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 16.0
+                },
+                "Hesitant": {
+                  "precision": 0.45454545454545453,
+                  "recall": 0.25,
+                  "f1-score": 0.3225806451612903,
+                  "support": 20.0
+                },
+                "Frustrated": {
+                  "precision": 0.23809523809523808,
+                  "recall": 0.25,
+                  "f1-score": 0.24390243902439024,
+                  "support": 20.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    13,
+                    0,
+                    1,
+                    3
+                  ],
+                  [
+                    11,
+                    0,
+                    0,
+                    5
+                  ],
+                  [
+                    7,
+                    0,
+                    5,
+                    8
+                  ],
+                  [
+                    10,
+                    0,
+                    5,
+                    5
+                  ]
+                ]
+              }
+            }
+          }
+        },
+        "unseen_idea_test": {
+          "accuracy": 0.3485576923076923,
+          "macro_f1": 0.2907542570330777,
+          "weighted_f1": 0.2907542570330777,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.3073770491803279,
+              "recall": 0.7211538461538461,
+              "f1-score": 0.43103448275862066,
+              "support": 104.0
+            },
+            "Neutral": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 104.0
+            },
+            "Hesitant": {
+              "precision": 0.422680412371134,
+              "recall": 0.3942307692307692,
+              "f1-score": 0.4079601990049751,
+              "support": 104.0
+            },
+            "Frustrated": {
+              "precision": 0.38666666666666666,
+              "recall": 0.27884615384615385,
+              "f1-score": 0.3240223463687151,
+              "support": 104.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                75,
+                0,
+                9,
+                20
+              ],
+              [
+                69,
+                0,
+                21,
+                14
+              ],
+              [
+                51,
+                0,
+                41,
+                12
+              ],
+              [
+                49,
+                0,
+                26,
+                29
+              ]
+            ]
+          },
+          "n": 416,
+          "reachable_tones": [
+            "Enthusiastic",
+            "Frustrated",
+            "Hesitant"
+          ],
+          "by_style": {
+            "clean": {
+              "n": 208,
+              "accuracy": 0.34615384615384615,
+              "macro_f1": 0.2863101500097409,
+              "weighted_f1": 0.28631015000974086,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.304,
+                  "recall": 0.7307692307692307,
+                  "f1-score": 0.4293785310734463,
+                  "support": 52.0
+                },
+                "Neutral": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 52.0
+                },
+                "Hesitant": {
+                  "precision": 0.4583333333333333,
+                  "recall": 0.4230769230769231,
+                  "f1-score": 0.44,
+                  "support": 52.0
+                },
+                "Frustrated": {
+                  "precision": 0.34285714285714286,
+                  "recall": 0.23076923076923078,
+                  "f1-score": 0.27586206896551724,
+                  "support": 52.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    38,
+                    0,
+                    3,
+                    11
+                  ],
+                  [
+                    36,
+                    0,
+                    10,
+                    6
+                  ],
+                  [
+                    24,
+                    0,
+                    22,
+                    6
+                  ],
+                  [
+                    27,
+                    0,
+                    13,
+                    12
+                  ]
+                ]
+              }
+            },
+            "messy": {
+              "n": 208,
+              "accuracy": 0.35096153846153844,
+              "macro_f1": 0.29463784479134414,
+              "weighted_f1": 0.29463784479134414,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.31092436974789917,
+                  "recall": 0.7115384615384616,
+                  "f1-score": 0.4327485380116959,
+                  "support": 52.0
+                },
+                "Neutral": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 52.0
+                },
+                "Hesitant": {
+                  "precision": 0.3877551020408163,
+                  "recall": 0.36538461538461536,
+                  "f1-score": 0.37623762376237624,
+                  "support": 52.0
+                },
+                "Frustrated": {
+                  "precision": 0.425,
+                  "recall": 0.3269230769230769,
+                  "f1-score": 0.3695652173913043,
+                  "support": 52.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    37,
+                    0,
+                    6,
+                    9
+                  ],
+                  [
+                    33,
+                    0,
+                    11,
+                    8
+                  ],
+                  [
+                    27,
+                    0,
+                    19,
+                    6
+                  ],
+                  [
+                    22,
+                    0,
+                    13,
+                    17
+                  ]
+                ]
+              }
+            }
+          },
+          "by_register": {
+            "code-mixed": {
+              "n": 128,
+              "accuracy": 0.296875,
+              "macro_f1": 0.24534313725490198,
+              "weighted_f1": 0.24534313725490198,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.3125,
+                  "recall": 0.625,
+                  "f1-score": 0.4166666666666667,
+                  "support": 32.0
+                },
+                "Neutral": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 32.0
+                },
+                "Hesitant": {
+                  "precision": 0.25,
+                  "recall": 0.28125,
+                  "f1-score": 0.2647058823529412,
+                  "support": 32.0
+                },
+                "Frustrated": {
+                  "precision": 0.32142857142857145,
+                  "recall": 0.28125,
+                  "f1-score": 0.3,
+                  "support": 32.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    20,
+                    0,
+                    4,
+                    8
+                  ],
+                  [
+                    18,
+                    0,
+                    10,
+                    4
+                  ],
+                  [
+                    16,
+                    0,
+                    9,
+                    7
+                  ],
+                  [
+                    10,
+                    0,
+                    13,
+                    9
+                  ]
+                ]
+              }
+            },
+            "english": {
+              "n": 288,
+              "accuracy": 0.3715277777777778,
+              "macro_f1": 0.3134613494520615,
+              "weighted_f1": 0.3134613494520615,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.3055555555555556,
+                  "recall": 0.7638888888888888,
+                  "f1-score": 0.4365079365079365,
+                  "support": 72.0
+                },
+                "Neutral": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 72.0
+                },
+                "Hesitant": {
+                  "precision": 0.5245901639344263,
+                  "recall": 0.4444444444444444,
+                  "f1-score": 0.48120300751879697,
+                  "support": 72.0
+                },
+                "Frustrated": {
+                  "precision": 0.425531914893617,
+                  "recall": 0.2777777777777778,
+                  "f1-score": 0.33613445378151263,
+                  "support": 72.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    55,
+                    0,
+                    5,
+                    12
+                  ],
+                  [
+                    51,
+                    0,
+                    11,
+                    10
+                  ],
+                  [
+                    35,
+                    0,
+                    32,
+                    5
+                  ],
+                  [
+                    39,
+                    0,
+                    13,
+                    20
+                  ]
+                ]
+              }
+            }
+          }
+        }
+      },
+      "fitted": {
+        "seen_idea_test": {
+          "accuracy": 0.2916666666666667,
+          "macro_f1": 0.24298025777414076,
+          "weighted_f1": 0.24298025777414078,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.28125,
+              "recall": 0.6,
+              "f1-score": 0.3829787234042553,
+              "support": 30.0
+            },
+            "Neutral": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 30.0
+            },
+            "Hesitant": {
+              "precision": 0.36363636363636365,
+              "recall": 0.26666666666666666,
+              "f1-score": 0.3076923076923077,
+              "support": 30.0
+            },
+            "Frustrated": {
+              "precision": 0.2647058823529412,
+              "recall": 0.3,
+              "f1-score": 0.28125,
+              "support": 30.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                18,
+                0,
+                6,
+                6
+              ],
+              [
+                20,
+                0,
+                1,
+                9
+              ],
+              [
+                12,
+                0,
+                8,
+                10
+              ],
+              [
+                14,
+                0,
+                7,
+                9
+              ]
+            ]
+          },
+          "n": 120,
+          "reachable_tones": [
+            "Enthusiastic",
+            "Frustrated",
+            "Hesitant"
+          ],
+          "by_style": {
+            "clean": {
+              "n": 71,
+              "accuracy": 0.30985915492957744,
+              "macro_f1": 0.24765512265512266,
+              "weighted_f1": 0.25022864459484173,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.28888888888888886,
+                  "recall": 0.7222222222222222,
+                  "f1-score": 0.4126984126984127,
+                  "support": 18.0
+                },
+                "Neutral": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 18.0
+                },
+                "Hesitant": {
+                  "precision": 0.42857142857142855,
+                  "recall": 0.3157894736842105,
+                  "f1-score": 0.36363636363636365,
+                  "support": 19.0
+                },
+                "Frustrated": {
+                  "precision": 0.25,
+                  "recall": 0.1875,
+                  "f1-score": 0.21428571428571427,
+                  "support": 16.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    13,
+                    0,
+                    3,
+                    2
+                  ],
+                  [
+                    14,
+                    0,
+                    1,
+                    3
+                  ],
+                  [
+                    9,
+                    0,
+                    6,
+                    4
+                  ],
+                  [
+                    9,
+                    0,
+                    4,
+                    3
+                  ]
+                ]
+              }
+            },
+            "messy": {
+              "n": 49,
+              "accuracy": 0.2653061224489796,
+              "macro_f1": 0.2166100735710243,
+              "weighted_f1": 0.22149844657727266,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.2631578947368421,
+                  "recall": 0.4166666666666667,
+                  "f1-score": 0.3225806451612903,
+                  "support": 12.0
+                },
+                "Neutral": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 12.0
+                },
+                "Hesitant": {
+                  "precision": 0.25,
+                  "recall": 0.18181818181818182,
+                  "f1-score": 0.21052631578947367,
+                  "support": 11.0
+                },
+                "Frustrated": {
+                  "precision": 0.2727272727272727,
+                  "recall": 0.42857142857142855,
+                  "f1-score": 0.3333333333333333,
+                  "support": 14.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    5,
+                    0,
+                    3,
+                    4
+                  ],
+                  [
+                    6,
+                    0,
+                    0,
+                    6
+                  ],
+                  [
+                    3,
+                    0,
+                    2,
+                    6
+                  ],
+                  [
+                    5,
+                    0,
+                    3,
+                    6
+                  ]
+                ]
+              }
+            }
+          },
+          "by_register": {
+            "code-mixed": {
+              "n": 47,
+              "accuracy": 0.2553191489361702,
+              "macro_f1": 0.2278295376121463,
+              "weighted_f1": 0.21162797527274863,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.21739130434782608,
+                  "recall": 0.38461538461538464,
+                  "f1-score": 0.2777777777777778,
+                  "support": 13.0
+                },
+                "Neutral": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 14.0
+                },
+                "Hesitant": {
+                  "precision": 0.2727272727272727,
+                  "recall": 0.3,
+                  "f1-score": 0.2857142857142857,
+                  "support": 10.0
+                },
+                "Frustrated": {
+                  "precision": 0.3076923076923077,
+                  "recall": 0.4,
+                  "f1-score": 0.34782608695652173,
+                  "support": 10.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    5,
+                    0,
+                    5,
+                    3
+                  ],
+                  [
+                    9,
+                    0,
+                    1,
+                    4
+                  ],
+                  [
+                    5,
+                    0,
+                    3,
+                    2
+                  ],
+                  [
+                    4,
+                    0,
+                    2,
+                    4
+                  ]
+                ]
+              }
+            },
+            "english": {
+              "n": 73,
+              "accuracy": 0.3150684931506849,
+              "macro_f1": 0.2536897365636615,
+              "weighted_f1": 0.2595938539573428,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.3170731707317073,
+                  "recall": 0.7647058823529411,
+                  "f1-score": 0.4482758620689655,
+                  "support": 17.0
+                },
+                "Neutral": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 16.0
+                },
+                "Hesitant": {
+                  "precision": 0.45454545454545453,
+                  "recall": 0.25,
+                  "f1-score": 0.3225806451612903,
+                  "support": 20.0
+                },
+                "Frustrated": {
+                  "precision": 0.23809523809523808,
+                  "recall": 0.25,
+                  "f1-score": 0.24390243902439024,
+                  "support": 20.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    13,
+                    0,
+                    1,
+                    3
+                  ],
+                  [
+                    11,
+                    0,
+                    0,
+                    5
+                  ],
+                  [
+                    7,
+                    0,
+                    5,
+                    8
+                  ],
+                  [
+                    10,
+                    0,
+                    5,
+                    5
+                  ]
+                ]
+              }
+            }
+          }
+        },
+        "unseen_idea_test": {
+          "accuracy": 0.3485576923076923,
+          "macro_f1": 0.2907542570330777,
+          "weighted_f1": 0.2907542570330777,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.3073770491803279,
+              "recall": 0.7211538461538461,
+              "f1-score": 0.43103448275862066,
+              "support": 104.0
+            },
+            "Neutral": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 104.0
+            },
+            "Hesitant": {
+              "precision": 0.422680412371134,
+              "recall": 0.3942307692307692,
+              "f1-score": 0.4079601990049751,
+              "support": 104.0
+            },
+            "Frustrated": {
+              "precision": 0.38666666666666666,
+              "recall": 0.27884615384615385,
+              "f1-score": 0.3240223463687151,
+              "support": 104.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                75,
+                0,
+                9,
+                20
+              ],
+              [
+                69,
+                0,
+                21,
+                14
+              ],
+              [
+                51,
+                0,
+                41,
+                12
+              ],
+              [
+                49,
+                0,
+                26,
+                29
+              ]
+            ]
+          },
+          "n": 416,
+          "reachable_tones": [
+            "Enthusiastic",
+            "Frustrated",
+            "Hesitant"
+          ],
+          "by_style": {
+            "clean": {
+              "n": 208,
+              "accuracy": 0.34615384615384615,
+              "macro_f1": 0.2863101500097409,
+              "weighted_f1": 0.28631015000974086,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.304,
+                  "recall": 0.7307692307692307,
+                  "f1-score": 0.4293785310734463,
+                  "support": 52.0
+                },
+                "Neutral": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 52.0
+                },
+                "Hesitant": {
+                  "precision": 0.4583333333333333,
+                  "recall": 0.4230769230769231,
+                  "f1-score": 0.44,
+                  "support": 52.0
+                },
+                "Frustrated": {
+                  "precision": 0.34285714285714286,
+                  "recall": 0.23076923076923078,
+                  "f1-score": 0.27586206896551724,
+                  "support": 52.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    38,
+                    0,
+                    3,
+                    11
+                  ],
+                  [
+                    36,
+                    0,
+                    10,
+                    6
+                  ],
+                  [
+                    24,
+                    0,
+                    22,
+                    6
+                  ],
+                  [
+                    27,
+                    0,
+                    13,
+                    12
+                  ]
+                ]
+              }
+            },
+            "messy": {
+              "n": 208,
+              "accuracy": 0.35096153846153844,
+              "macro_f1": 0.29463784479134414,
+              "weighted_f1": 0.29463784479134414,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.31092436974789917,
+                  "recall": 0.7115384615384616,
+                  "f1-score": 0.4327485380116959,
+                  "support": 52.0
+                },
+                "Neutral": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 52.0
+                },
+                "Hesitant": {
+                  "precision": 0.3877551020408163,
+                  "recall": 0.36538461538461536,
+                  "f1-score": 0.37623762376237624,
+                  "support": 52.0
+                },
+                "Frustrated": {
+                  "precision": 0.425,
+                  "recall": 0.3269230769230769,
+                  "f1-score": 0.3695652173913043,
+                  "support": 52.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    37,
+                    0,
+                    6,
+                    9
+                  ],
+                  [
+                    33,
+                    0,
+                    11,
+                    8
+                  ],
+                  [
+                    27,
+                    0,
+                    19,
+                    6
+                  ],
+                  [
+                    22,
+                    0,
+                    13,
+                    17
+                  ]
+                ]
+              }
+            }
+          },
+          "by_register": {
+            "code-mixed": {
+              "n": 128,
+              "accuracy": 0.296875,
+              "macro_f1": 0.24534313725490198,
+              "weighted_f1": 0.24534313725490198,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.3125,
+                  "recall": 0.625,
+                  "f1-score": 0.4166666666666667,
+                  "support": 32.0
+                },
+                "Neutral": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 32.0
+                },
+                "Hesitant": {
+                  "precision": 0.25,
+                  "recall": 0.28125,
+                  "f1-score": 0.2647058823529412,
+                  "support": 32.0
+                },
+                "Frustrated": {
+                  "precision": 0.32142857142857145,
+                  "recall": 0.28125,
+                  "f1-score": 0.3,
+                  "support": 32.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    20,
+                    0,
+                    4,
+                    8
+                  ],
+                  [
+                    18,
+                    0,
+                    10,
+                    4
+                  ],
+                  [
+                    16,
+                    0,
+                    9,
+                    7
+                  ],
+                  [
+                    10,
+                    0,
+                    13,
+                    9
+                  ]
+                ]
+              }
+            },
+            "english": {
+              "n": 288,
+              "accuracy": 0.3715277777777778,
+              "macro_f1": 0.3134613494520615,
+              "weighted_f1": 0.3134613494520615,
+              "per_class": {
+                "Enthusiastic": {
+                  "precision": 0.3055555555555556,
+                  "recall": 0.7638888888888888,
+                  "f1-score": 0.4365079365079365,
+                  "support": 72.0
+                },
+                "Neutral": {
+                  "precision": 0.0,
+                  "recall": 0.0,
+                  "f1-score": 0.0,
+                  "support": 72.0
+                },
+                "Hesitant": {
+                  "precision": 0.5245901639344263,
+                  "recall": 0.4444444444444444,
+                  "f1-score": 0.48120300751879697,
+                  "support": 72.0
+                },
+                "Frustrated": {
+                  "precision": 0.425531914893617,
+                  "recall": 0.2777777777777778,
+                  "f1-score": 0.33613445378151263,
+                  "support": 72.0
+                }
+              },
+              "confusion_matrix": {
+                "labels": [
+                  "Enthusiastic",
+                  "Neutral",
+                  "Hesitant",
+                  "Frustrated"
+                ],
+                "rows_are_true": true,
+                "matrix": [
+                  [
+                    55,
+                    0,
+                    5,
+                    12
+                  ],
+                  [
+                    51,
+                    0,
+                    11,
+                    10
+                  ],
+                  [
+                    35,
+                    0,
+                    32,
+                    5
+                  ],
+                  [
+                    39,
+                    0,
+                    13,
+                    20
+                  ]
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

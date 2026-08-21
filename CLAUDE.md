@@ -333,3 +333,6 @@ documented improvement over the rule-based baseline.
 - **Confirmed (stage-1 corpus):** SST-2 (`stanfordnlp/sst2`). Chosen over IMDB because its sentences are short and conversational (mean ~10 words), which is far closer to a call-transcript utterance than a multi-paragraph movie review. **Caveat:** SST-2's `test` split is unlabeled (GLUE held-out, all labels `-1`) — use `validation` (872 rows) for stage-1 eval, or carve a dev split from `train`.
 - **Bootstrap labeling risk (Phase 4):** since there's no real conversion history at project start, the initial lead-scoring ground truth is a documented heuristic on synthetic data. Call this out explicitly in the final report as a limitation, with real agent-marked outcomes (Phase 7 status updates) as the path to a truer model post-launch.
 - **Not yet decided:** exact deployment host for Phase 9 (Render vs Railway vs EC2) — revisit once Phase 8 is complete and budget/time is clearer.
+TO RUN THE SEENTIMENT MODEL DEMO
+cd C:\Users\Parth\FYP_EstateIQ\backend
+python -m sentiment_intent.demo_set --set mentor --no-context-run

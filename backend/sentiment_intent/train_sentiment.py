@@ -21,7 +21,12 @@ BACKEND_DIR = Path(__file__).resolve().parents[1]
 if str(BACKEND_DIR) not in sys.path:
     sys.path.insert(0, str(BACKEND_DIR))
 
-from sentiment_intent.data import SEED, SENTIMENT_CLASSES  # noqa: E402
+from sentiment_intent.data import (  # noqa: E402
+    NAMED_CORPORA,
+    SEED,
+    SENTIMENT_CLASSES,
+    resolve_corpus,
+)
 from sentiment_intent.domain_adapt import (  # noqa: E402
     WARMSTART_DIR,
     Stage2Config,
@@ -49,14 +54,38 @@ def main() -> int:
         action="store_true",
         help="Skip stage 1 and fine-tune stock DistilBERT — the transfer ablation.",
     )
+    parser.add_argument(
+        "--corpus",
+        default="v3",
+        help=f"Named corpus ({', '.join(sorted(NAMED_CORPORA))}) or a path to a JSONL "
+             "corpus. 'pilot' is the Phase 2b situational-emotion pilot; it carries its "
+             "own phrase pools and its own split file.",
+    )
+    parser.add_argument(
+        "--base-model",
+        default=None,
+        help="Encoder to start from instead of DistilBERT + the SST-2 warm-start, e.g. "
+             "a pretrained emotion checkpoint. Its head is discarded and a fresh "
+             "4-class one is trained.",
+    )
     parser.add_argument("--warmstart-dir", type=Path, default=WARMSTART_DIR)
     parser.add_argument("--output-dir", type=Path, default=None)
+    parser.add_argument(
+        "--no-pointer",
+        action="store_true",
+        help="Save the artifact but leave sentiment_latest.json alone, so the "
+             "run can be reviewed before predict.py starts serving it.",
+    )
     args = parser.parse_args()
 
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     logging.basicConfig(level=logging.INFO, format="%(message)s", stream=sys.stdout)
 
+    corpus_path, pools, split_path = resolve_corpus(args.corpus)
+    # A pretrained encoder brings its own adaptation, so the DistilBERT-only
+    # SST-2 warm-start is both meaningless and shape-incompatible for it.
+    hybrid = args.base_model is not None
     config = Stage2Config(
         task="sentiment",
         classes=SENTIMENT_CLASSES,
@@ -66,9 +95,16 @@ def main() -> int:
         max_length=args.max_length,
         seed=args.seed,
         text_field=args.text_field,
-        warmstart_dir=None if args.no_warmstart else str(args.warmstart_dir),
+        base_model=args.base_model or Stage2Config.base_model,
+        warmstart_dir=(
+            None if (hybrid or args.no_warmstart) else str(args.warmstart_dir)
+        ),
+        ignore_mismatched_sizes=hybrid,
+        corpus_path=str(corpus_path),
+        split_path=str(split_path),
+        pools=pools,
     )
-    fine_tune(config, args.output_dir)
+    fine_tune(config, args.output_dir, update_pointer=not args.no_pointer)
     return 0
 
 

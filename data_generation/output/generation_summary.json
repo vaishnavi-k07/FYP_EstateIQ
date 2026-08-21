@@ -1,13 +1,27 @@
 {
-  "total": 700,
+  "total": 1000,
   "city_counts": {
-    "Pune": 282,
-    "Nashik": 400
+    "Pune": 395,
+    "Nashik": 591
   },
-  "negation_count": 132,
-  "code_mixed_count": 143,
-  "multi_city_count": 75,
-  "telegraphic_count": 67,
+  "sentiment_counts": {
+    "Enthusiastic": 250,
+    "Neutral": 250,
+    "Hesitant": 250,
+    "Frustrated": 250
+  },
+  "intent_counts": {
+    "Buy": 171,
+    "Rent": 149,
+    "Investment": 156,
+    "Inquiry": 165,
+    "Schedule Visit": 193,
+    "Request Callback": 166
+  },
+  "negation_count": 191,
+  "code_mixed_count": 213,
+  "multi_city_count": 106,
+  "telegraphic_count": 110,
   "rare_type_counts": {
     "Warehouse": 45,
     "Farm House": 45,
@@ -16,17 +30,17 @@
     "Residential Plot": 45
   },
   "budget_form_counts": {
-    "exact": 73,
-    "spelled_out": 67,
-    "range": 62,
-    "lakh": 125,
-    "crore": 38,
-    "cr": 49
+    "crore": 62,
+    "spelled_out": 95,
+    "cr": 86,
+    "range": 87,
+    "lakh": 179,
+    "exact": 80
   },
   "bhk_form_counts": {
-    "bare": 40,
-    "1rk": 17,
-    "worded": 23,
-    "spaced": 53
+    "worded": 21,
+    "spaced": 106,
+    "bare": 74,
+    "1rk": 15
   }
 }

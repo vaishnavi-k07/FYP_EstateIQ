@@ -1,0 +1,132 @@
+{
+  "n": 1504,
+  "sentiment_counts": {
+    "Enthusiastic": 352,
+    "Frustrated": 352,
+    "Hesitant": 352,
+    "Neutral": 448
+  },
+  "intent_counts": {
+    "Buy": 251,
+    "Inquiry": 251,
+    "Investment": 250,
+    "Rent": 251,
+    "Request Callback": 250,
+    "Schedule Visit": 251
+  },
+  "style_counts": {
+    "clean": 752,
+    "messy": 752
+  },
+  "messy_rate_by_tone": {
+    "Enthusiastic": 0.5,
+    "Frustrated": 0.5,
+    "Hesitant": 0.5,
+    "Neutral": 0.5
+  },
+  "messy_rate_by_family": {
+    "opener": 0.5,
+    "deflection": 0.5
+  },
+  "messy_rate_by_register": {
+    "english": 0.5,
+    "code-mixed": 0.5
+  },
+  "tone_x_intent": {
+    "Enthusiastic|Buy": 61,
+    "Enthusiastic|Inquiry": 60,
+    "Enthusiastic|Investment": 50,
+    "Enthusiastic|Rent": 53,
+    "Enthusiastic|Request Callback": 60,
+    "Enthusiastic|Schedule Visit": 68,
+    "Frustrated|Buy": 59,
+    "Frustrated|Inquiry": 54,
+    "Frustrated|Investment": 70,
+    "Frustrated|Rent": 57,
+    "Frustrated|Request Callback": 58,
+    "Frustrated|Schedule Visit": 54,
+    "Hesitant|Buy": 60,
+    "Hesitant|Inquiry": 53,
+    "Hesitant|Investment": 57,
+    "Hesitant|Rent": 64,
+    "Hesitant|Request Callback": 58,
+    "Hesitant|Schedule Visit": 60,
+    "Neutral|Buy": 71,
+    "Neutral|Inquiry": 84,
+    "Neutral|Investment": 73,
+    "Neutral|Rent": 77,
+    "Neutral|Request Callback": 74,
+    "Neutral|Schedule Visit": 69
+  },
+  "family_counts": {
+    "deflection": 384,
+    "none": 96,
+    "opener": 1024
+  },
+  "register_counts": {
+    "code-mixed": 480,
+    "english": 928,
+    "none": 96
+  },
+  "tone_free_neutral": 96,
+  "ideas_used": 177,
+  "transcripts_per_idea": {
+    "8": 176,
+    "96": 1
+  },
+  "messy_op_counts": {
+    "casual_grammar": 434,
+    "code_switch": 454,
+    "false_start": 435,
+    "filler": 401,
+    "ramble": 432,
+    "self_correction": 420,
+    "trail_off": 442
+  },
+  "words": {
+    "mean": 77.4,
+    "min": 42,
+    "max": 118
+  },
+  "pool_checks": {
+    "ideas_per_tone": {
+      "Enthusiastic": {
+        "opener": 32,
+        "deflection": 12,
+        "opener_code_mixed": 11,
+        "deflection_code_mixed": 4,
+        "phrases": 164
+      },
+      "Neutral": {
+        "opener": 32,
+        "deflection": 12,
+        "opener_code_mixed": 11,
+        "deflection_code_mixed": 4,
+        "phrases": 164
+      },
+      "Hesitant": {
+        "opener": 32,
+        "deflection": 12,
+        "opener_code_mixed": 11,
+        "deflection_code_mixed": 4,
+        "phrases": 164
+      },
+      "Frustrated": {
+        "opener": 32,
+        "deflection": 12,
+        "opener_code_mixed": 11,
+        "deflection_code_mixed": 4,
+        "phrases": 164
+      }
+    },
+    "affect_word_leaks": {},
+    "strandable_tokens": {},
+    "weakly_shared_token_count": 226,
+    "substring_collisions": {},
+    "guard_coverage": {
+      "tokens_policed": 1064,
+      "tokens_policed_in_more_than_one_tone": 255,
+      "stopwords": 538
+    }
+  }
+}

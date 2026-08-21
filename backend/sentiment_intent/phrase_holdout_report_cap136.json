@@ -1,0 +1,1201 @@
+{
+  "sentiment": {
+    "task": "sentiment",
+    "corpus": "C:\\Users\\Parth\\FYP_EstateIQ\\data_generation\\output\\synthetic_transcripts.jsonl",
+    "pools": "v3",
+    "held_out_phrases": {
+      "Enthusiastic": [
+        "Hi, matlab bahut excited hain hum, thoda jaldi shuru karna hai, so",
+        "Hello, matlab bahut excited hain hum, thoda jaldi shuru karna hai, so",
+        "Hi there, matlab bahut excited hain hum, thoda jaldi shuru karna hai, so",
+        "Hey there, matlab bahut excited hain hum, thoda jaldi shuru karna hai, so",
+        "Yeah, hi. Matlab bahut excited hain hum, thoda jaldi shuru karna hai, so",
+        "Um, hi. Matlab bahut excited hain hum, thoda jaldi shuru karna hai, so",
+        "Hello! Yes, matlab bahut excited hain hum, thoda jaldi shuru karna hai, so",
+        "Oh, hi. Matlab bahut excited hain hum, thoda jaldi shuru karna hai, so",
+        "Hi, thanks for picking up. Matlab bahut excited hain hum, thoda jaldi shuru karna hai, so",
+        "Haan, hello. Matlab bahut excited hain hum, thoda jaldi shuru karna hai, so",
+        "Hi, honestly this is the best news we've had all week, so",
+        "Hello, honestly this is the best news we've had all week, so",
+        "Hi there, honestly this is the best news we've had all week, so",
+        "Hey there, honestly this is the best news we've had all week, so",
+        "Yeah, hi. Honestly this is the best news we've had all week, so",
+        "Um, hi. Honestly this is the best news we've had all week, so",
+        "Hello! Yes, honestly this is the best news we've had all week, so",
+        "Oh, hi. Honestly this is the best news we've had all week, so",
+        "Hi, thanks for picking up. Honestly this is the best news we've had all week, so",
+        "Haan, hello. Honestly this is the best news we've had all week, so",
+        "Hi, I don't have much time today, so quickly, though I'm thrilled we're finally doing this,",
+        "Hello, I don't have much time today, so quickly, though I'm thrilled we're finally doing this,",
+        "Hi there, I don't have much time today, so quickly, though I'm thrilled we're finally doing this,",
+        "Hey there, I don't have much time today, so quickly, though I'm thrilled we're finally doing this,",
+        "Yeah, hi. I don't have much time today, so quickly, though I'm thrilled we're finally doing this,",
+        "Um, hi. I don't have much time today, so quickly, though I'm thrilled we're finally doing this,",
+        "Hello! Yes, I don't have much time today, so quickly, though I'm thrilled we're finally doing this,",
+        "Oh, hi. I don't have much time today, so quickly, though I'm thrilled we're finally doing this,",
+        "Hi, thanks for picking up. I don't have much time today, so quickly, though I'm thrilled we're finally doing this,",
+        "Haan, hello. I don't have much time today, so quickly, though I'm thrilled we're finally doing this,",
+        "Hi, we're quite keen to get going, so",
+        "Hello, we're quite keen to get going, so",
+        "Hi there, we're quite keen to get going, so",
+        "Hey there, we're quite keen to get going, so",
+        "Yeah, hi. We're quite keen to get going, so",
+        "Um, hi. We're quite keen to get going, so",
+        "Hello! Yes, we're quite keen to get going, so",
+        "Oh, hi. We're quite keen to get going, so",
+        "Hi, thanks for picking up. We're quite keen to get going, so",
+        "Haan, hello. We're quite keen to get going, so",
+        "Hi, it's great to finally be doing this, so",
+        "Hello, it's great to finally be doing this, so",
+        "Hi there, it's great to finally be doing this, so",
+        "Hey there, it's great to finally be doing this, so",
+        "Yeah, hi. It's great to finally be doing this, so",
+        "Um, hi. It's great to finally be doing this, so",
+        "Hello! Yes, it's great to finally be doing this, so",
+        "Oh, hi. It's great to finally be doing this, so",
+        "Hi, thanks for picking up. It's great to finally be doing this, so",
+        "Haan, hello. It's great to finally be doing this, so",
+        "Hi, we've finally decided to go ahead, so",
+        "Hello, we've finally decided to go ahead, so",
+        "Hi there, we've finally decided to go ahead, so",
+        "Hey there, we've finally decided to go ahead, so",
+        "Yeah, hi. We've finally decided to go ahead, so",
+        "Um, hi. We've finally decided to go ahead, so",
+        "Hello! Yes, we've finally decided to go ahead, so",
+        "Oh, hi. We've finally decided to go ahead, so",
+        "Hi, thanks for picking up. We've finally decided to go ahead, so",
+        "Haan, hello. We've finally decided to go ahead, so",
+        "Hi, we're really excited about this, so",
+        "Hello, we're really excited about this, so",
+        "Hi there, we're really excited about this, so",
+        "Hey there, we're really excited about this, so",
+        "Yeah, hi. We're really excited about this, so",
+        "Um, hi. We're really excited about this, so",
+        "Hello! Yes, we're really excited about this, so",
+        "Oh, hi. We're really excited about this, so",
+        "Hi, thanks for picking up. We're really excited about this, so",
+        "Haan, hello. We're really excited about this, so",
+        "Customer: Can someone call me back on that? I'd really enjoy talking it through.",
+        "Customer: Honestly, can someone call me back on that? I'd really enjoy talking it through.",
+        "Customer: Hmm, can someone call me back on that? I'd really enjoy talking it through.",
+        "Customer: Look, can someone call me back on that? I'd really enjoy talking it through.",
+        "Customer: Well, can someone call me back on that? I'd really enjoy talking it through.",
+        "Customer: I've already explained most of what matters, and I'm happy to go over it again!",
+        "Customer: Honestly, I've already explained most of what matters, and I'm happy to go over it again!",
+        "Customer: Hmm, I've already explained most of what matters, and I'm happy to go over it again!",
+        "Customer: Look, I've already explained most of what matters, and I'm happy to go over it again!",
+        "Customer: Well, I've already explained most of what matters, and I'm happy to go over it again!",
+        "Customer: Not sure yet, and honestly that's half the fun of it!",
+        "Customer: Honestly, not sure yet, and honestly that's half the fun of it!",
+        "Customer: Hmm, not sure yet, and honestly that's half the fun of it!",
+        "Customer: Look, not sure yet, and honestly that's half the fun of it!",
+        "Customer: Well, not sure yet, and honestly that's half the fun of it!",
+        "Customer: That one's up in the air, but we'll sort it out!",
+        "Customer: Honestly, that one's up in the air, but we'll sort it out!",
+        "Customer: Hmm, that one's up in the air, but we'll sort it out!",
+        "Customer: Look, that one's up in the air, but we'll sort it out!",
+        "Customer: Well, that one's up in the air, but we'll sort it out!"
+      ],
+      "Neutral": [
+        "Hi, seedha seedha bataata hoon, matlab abhi bahut clear hai,",
+        "Hello, seedha seedha bataata hoon, matlab abhi bahut clear hai,",
+        "Hi there, seedha seedha bataata hoon, matlab abhi bahut clear hai,",
+        "Hey there, seedha seedha bataata hoon, matlab abhi bahut clear hai,",
+        "Yeah, hi. Seedha seedha bataata hoon, matlab abhi bahut clear hai,",
+        "Um, hi. Seedha seedha bataata hoon, matlab abhi bahut clear hai,",
+        "Hello! Yes, seedha seedha bataata hoon, matlab abhi bahut clear hai,",
+        "Oh, hi. Seedha seedha bataata hoon, matlab abhi bahut clear hai,",
+        "Hi, thanks for picking up. Seedha seedha bataata hoon, matlab abhi bahut clear hai,",
+        "Haan, hello. Seedha seedha bataata hoon, matlab abhi bahut clear hai,",
+        "Hi, we're in no rush, so I'll just give you the facts,",
+        "Hello, we're in no rush, so I'll just give you the facts,",
+        "Hi there, we're in no rush, so I'll just give you the facts,",
+        "Hey there, we're in no rush, so I'll just give you the facts,",
+        "Yeah, hi. We're in no rush, so I'll just give you the facts,",
+        "Um, hi. We're in no rush, so I'll just give you the facts,",
+        "Hello! Yes, we're in no rush, so I'll just give you the facts,",
+        "Oh, hi. We're in no rush, so I'll just give you the facts,",
+        "Hi, thanks for picking up. We're in no rush, so I'll just give you the facts,",
+        "Haan, hello. We're in no rush, so I'll just give you the facts,",
+        "Hi, here's what we need,",
+        "Hello, here's what we need,",
+        "Hi there, here's what we need,",
+        "Hey there, here's what we need,",
+        "Yeah, hi. Here's what we need,",
+        "Um, hi. Here's what we need,",
+        "Hello! Yes, here's what we need,",
+        "Oh, hi. Here's what we need,",
+        "Hi, thanks for picking up. Here's what we need,",
+        "Haan, hello. Here's what we need,",
+        "Hi, I don't have much time, so quickly, let me just list it out,",
+        "Hello, I don't have much time, so quickly, let me just list it out,",
+        "Hi there, I don't have much time, so quickly, let me just list it out,",
+        "Hey there, I don't have much time, so quickly, let me just list it out,",
+        "Yeah, hi. I don't have much time, so quickly, let me just list it out,",
+        "Um, hi. I don't have much time, so quickly, let me just list it out,",
+        "Hello! Yes, I don't have much time, so quickly, let me just list it out,",
+        "Oh, hi. I don't have much time, so quickly, let me just list it out,",
+        "Hi, thanks for picking up. I don't have much time, so quickly, let me just list it out,",
+        "Haan, hello. I don't have much time, so quickly, let me just list it out,",
+        "Hi, we're keen enough to be calling, but I'll stick to the details,",
+        "Hello, we're keen enough to be calling, but I'll stick to the details,",
+        "Hi there, we're keen enough to be calling, but I'll stick to the details,",
+        "Hey there, we're keen enough to be calling, but I'll stick to the details,",
+        "Yeah, hi. We're keen enough to be calling, but I'll stick to the details,",
+        "Um, hi. We're keen enough to be calling, but I'll stick to the details,",
+        "Hello! Yes, we're keen enough to be calling, but I'll stick to the details,",
+        "Oh, hi. We're keen enough to be calling, but I'll stick to the details,",
+        "Hi, thanks for picking up. We're keen enough to be calling, but I'll stick to the details,",
+        "Haan, hello. We're keen enough to be calling, but I'll stick to the details,",
+        "Hi, just to state it plainly,",
+        "Hello, just to state it plainly,",
+        "Hi there, just to state it plainly,",
+        "Hey there, just to state it plainly,",
+        "Yeah, hi. Just to state it plainly,",
+        "Um, hi. Just to state it plainly,",
+        "Hello! Yes, just to state it plainly,",
+        "Oh, hi. Just to state it plainly,",
+        "Hi, thanks for picking up. Just to state it plainly,",
+        "Haan, hello. Just to state it plainly,",
+        "Hi, to give you the details,",
+        "Hello, to give you the details,",
+        "Hi there, to give you the details,",
+        "Hey there, to give you the details,",
+        "Yeah, hi. To give you the details,",
+        "Um, hi. To give you the details,",
+        "Hello! Yes, to give you the details,",
+        "Oh, hi. To give you the details,",
+        "Hi, thanks for picking up. To give you the details,",
+        "Haan, hello. To give you the details,",
+        "Customer: Not decided yet, we'll figure that out later.",
+        "Customer: Honestly, not decided yet, we'll figure that out later.",
+        "Customer: Hmm, not decided yet, we'll figure that out later.",
+        "Customer: Look, not decided yet, we'll figure that out later.",
+        "Customer: Well, not decided yet, we'll figure that out later.",
+        "Customer: Still working that out, I'll send it across later.",
+        "Customer: Honestly, still working that out, I'll send it across later.",
+        "Customer: Hmm, still working that out, I'll send it across later.",
+        "Customer: Look, still working that out, I'll send it across later.",
+        "Customer: Well, still working that out, I'll send it across later.",
+        "Customer: I'd have to check with my family, then I'll confirm it.",
+        "Customer: Honestly, I'd have to check with my family, then I'll confirm it.",
+        "Customer: Hmm, I'd have to check with my family, then I'll confirm it.",
+        "Customer: Look, I'd have to check with my family, then I'll confirm it.",
+        "Customer: Well, I'd have to check with my family, then I'll confirm it.",
+        "Customer: We'll come back to that once the rest is clear.",
+        "Customer: Honestly, we'll come back to that once the rest is clear.",
+        "Customer: Hmm, we'll come back to that once the rest is clear.",
+        "Customer: Look, we'll come back to that once the rest is clear.",
+        "Customer: Well, we'll come back to that once the rest is clear."
+      ],
+      "Hesitant": [
+        "Hi, abhi pakka decide nahi kiya hai, hum thoda unsure hain, but",
+        "Hello, abhi pakka decide nahi kiya hai, hum thoda unsure hain, but",
+        "Hi there, abhi pakka decide nahi kiya hai, hum thoda unsure hain, but",
+        "Hey there, abhi pakka decide nahi kiya hai, hum thoda unsure hain, but",
+        "Yeah, hi. Abhi pakka decide nahi kiya hai, hum thoda unsure hain, but",
+        "Um, hi. Abhi pakka decide nahi kiya hai, hum thoda unsure hain, but",
+        "Hello! Yes, abhi pakka decide nahi kiya hai, hum thoda unsure hain, but",
+        "Oh, hi. Abhi pakka decide nahi kiya hai, hum thoda unsure hain, but",
+        "Hi, thanks for picking up. Abhi pakka decide nahi kiya hai, hum thoda unsure hain, but",
+        "Haan, hello. Abhi pakka decide nahi kiya hai, hum thoda unsure hain, but",
+        "Hi, we're only at the thinking stage and probably waiting a bit, but",
+        "Hello, we're only at the thinking stage and probably waiting a bit, but",
+        "Hi there, we're only at the thinking stage and probably waiting a bit, but",
+        "Hey there, we're only at the thinking stage and probably waiting a bit, but",
+        "Yeah, hi. We're only at the thinking stage and probably waiting a bit, but",
+        "Um, hi. We're only at the thinking stage and probably waiting a bit, but",
+        "Hello! Yes, we're only at the thinking stage and probably waiting a bit, but",
+        "Oh, hi. We're only at the thinking stage and probably waiting a bit, but",
+        "Hi, thanks for picking up. We're only at the thinking stage and probably waiting a bit, but",
+        "Haan, hello. We're only at the thinking stage and probably waiting a bit, but",
+        "Hi, we haven't fully decided, but",
+        "Hello, we haven't fully decided, but",
+        "Hi there, we haven't fully decided, but",
+        "Hey there, we haven't fully decided, but",
+        "Yeah, hi. We haven't fully decided, but",
+        "Um, hi. We haven't fully decided, but",
+        "Hello! Yes, we haven't fully decided, but",
+        "Oh, hi. We haven't fully decided, but",
+        "Hi, thanks for picking up. We haven't fully decided, but",
+        "Haan, hello. We haven't fully decided, but",
+        "Hi, we're still weighing things up, but",
+        "Hello, we're still weighing things up, but",
+        "Hi there, we're still weighing things up, but",
+        "Hey there, we're still weighing things up, but",
+        "Yeah, hi. We're still weighing things up, but",
+        "Um, hi. We're still weighing things up, but",
+        "Hello! Yes, we're still weighing things up, but",
+        "Oh, hi. We're still weighing things up, but",
+        "Hi, thanks for picking up. We're still weighing things up, but",
+        "Haan, hello. We're still weighing things up, but",
+        "Hi, we're a bit unclear ourselves, but",
+        "Hello, we're a bit unclear ourselves, but",
+        "Hi there, we're a bit unclear ourselves, but",
+        "Hey there, we're a bit unclear ourselves, but",
+        "Yeah, hi. We're a bit unclear ourselves, but",
+        "Um, hi. We're a bit unclear ourselves, but",
+        "Hello! Yes, we're a bit unclear ourselves, but",
+        "Oh, hi. We're a bit unclear ourselves, but",
+        "Hi, thanks for picking up. We're a bit unclear ourselves, but",
+        "Haan, hello. We're a bit unclear ourselves, but",
+        "Hi, quickly, we're keen but we've not decided, so",
+        "Hello, quickly, we're keen but we've not decided, so",
+        "Hi there, quickly, we're keen but we've not decided, so",
+        "Hey there, quickly, we're keen but we've not decided, so",
+        "Yeah, hi. Quickly, we're keen but we've not decided, so",
+        "Um, hi. Quickly, we're keen but we've not decided, so",
+        "Hello! Yes, quickly, we're keen but we've not decided, so",
+        "Oh, hi. Quickly, we're keen but we've not decided, so",
+        "Hi, thanks for picking up. Quickly, we're keen but we've not decided, so",
+        "Haan, hello. Quickly, we're keen but we've not decided, so",
+        "Hi, I almost didn't make this call, honestly, but",
+        "Hello, I almost didn't make this call, honestly, but",
+        "Hi there, I almost didn't make this call, honestly, but",
+        "Hey there, I almost didn't make this call, honestly, but",
+        "Yeah, hi. I almost didn't make this call, honestly, but",
+        "Um, hi. I almost didn't make this call, honestly, but",
+        "Hello! Yes, I almost didn't make this call, honestly, but",
+        "Oh, hi. I almost didn't make this call, honestly, but",
+        "Hi, thanks for picking up. I almost didn't make this call, honestly, but",
+        "Haan, hello. I almost didn't make this call, honestly, but",
+        "Customer: I'd have to check with my family on that one.",
+        "Customer: Honestly, I'd have to check with my family on that one.",
+        "Customer: Hmm, I'd have to check with my family on that one.",
+        "Customer: Look, I'd have to check with my family on that one.",
+        "Customer: Well, I'd have to check with my family on that one.",
+        "Customer: No idea yet, and that worries me a little honestly.",
+        "Customer: Honestly, no idea yet, and that worries me a little honestly.",
+        "Customer: Hmm, no idea yet, and that worries me a little honestly.",
+        "Customer: Look, no idea yet, and that worries me a little honestly.",
+        "Customer: Well, no idea yet, and that worries me a little honestly.",
+        "Customer: Haven't decided, and I'd rather not guess at it.",
+        "Customer: Honestly, haven't decided, and I'd rather not guess at it.",
+        "Customer: Hmm, haven't decided, and I'd rather not guess at it.",
+        "Customer: Look, haven't decided, and I'd rather not guess at it.",
+        "Customer: Well, haven't decided, and I'd rather not guess at it.",
+        "Customer: Can someone call me back about that? I'd like to think it over first.",
+        "Customer: Honestly, can someone call me back about that? I'd like to think it over first.",
+        "Customer: Hmm, can someone call me back about that? I'd like to think it over first.",
+        "Customer: Look, can someone call me back about that? I'd like to think it over first.",
+        "Customer: Well, can someone call me back about that? I'd like to think it over first."
+      ],
+      "Frustrated": [
+        "Hi, abhi tak kuch nahi hua, bahut time waste ho gaya, main thak gaya hoon, dekhiye thoda serious lijiye, so",
+        "Hello, abhi tak kuch nahi hua, bahut time waste ho gaya, main thak gaya hoon, dekhiye thoda serious lijiye, so",
+        "Hi there, abhi tak kuch nahi hua, bahut time waste ho gaya, main thak gaya hoon, dekhiye thoda serious lijiye, so",
+        "Hey there, abhi tak kuch nahi hua, bahut time waste ho gaya, main thak gaya hoon, dekhiye thoda serious lijiye, so",
+        "Yeah, hi. Abhi tak kuch nahi hua, bahut time waste ho gaya, main thak gaya hoon, dekhiye thoda serious lijiye, so",
+        "Um, hi. Abhi tak kuch nahi hua, bahut time waste ho gaya, main thak gaya hoon, dekhiye thoda serious lijiye, so",
+        "Hello! Yes, abhi tak kuch nahi hua, bahut time waste ho gaya, main thak gaya hoon, dekhiye thoda serious lijiye, so",
+        "Oh, hi. Abhi tak kuch nahi hua, bahut time waste ho gaya, main thak gaya hoon, dekhiye thoda serious lijiye, so",
+        "Hi, thanks for picking up. Abhi tak kuch nahi hua, bahut time waste ho gaya, main thak gaya hoon, dekhiye thoda serious lijiye, so",
+        "Haan, hello. Abhi tak kuch nahi hua, bahut time waste ho gaya, main thak gaya hoon, dekhiye thoda serious lijiye, so",
+        "Hi, I've been waiting a week for someone to call, so",
+        "Hello, I've been waiting a week for someone to call, so",
+        "Hi there, I've been waiting a week for someone to call, so",
+        "Hey there, I've been waiting a week for someone to call, so",
+        "Yeah, hi. I've been waiting a week for someone to call, so",
+        "Um, hi. I've been waiting a week for someone to call, so",
+        "Hello! Yes, I've been waiting a week for someone to call, so",
+        "Oh, hi. I've been waiting a week for someone to call, so",
+        "Hi, thanks for picking up. I've been waiting a week for someone to call, so",
+        "Haan, hello. I've been waiting a week for someone to call, so",
+        "Hi, let me repeat what I told the last person I was waiting on,",
+        "Hello, let me repeat what I told the last person I was waiting on,",
+        "Hi there, let me repeat what I told the last person I was waiting on,",
+        "Hey there, let me repeat what I told the last person I was waiting on,",
+        "Yeah, hi. Let me repeat what I told the last person I was waiting on,",
+        "Um, hi. Let me repeat what I told the last person I was waiting on,",
+        "Hello! Yes, let me repeat what I told the last person I was waiting on,",
+        "Oh, hi. Let me repeat what I told the last person I was waiting on,",
+        "Hi, thanks for picking up. Let me repeat what I told the last person I was waiting on,",
+        "Haan, hello. Let me repeat what I told the last person I was waiting on,",
+        "Hi, I was excited and quite keen at the start and much less so now, so",
+        "Hello, I was excited and quite keen at the start and much less so now, so",
+        "Hi there, I was excited and quite keen at the start and much less so now, so",
+        "Hey there, I was excited and quite keen at the start and much less so now, so",
+        "Yeah, hi. I was excited and quite keen at the start and much less so now, so",
+        "Um, hi. I was excited and quite keen at the start and much less so now, so",
+        "Hello! Yes, I was excited and quite keen at the start and much less so now, so",
+        "Oh, hi. I was excited and quite keen at the start and much less so now, so",
+        "Hi, thanks for picking up. I was excited and quite keen at the start and much less so now, so",
+        "Haan, hello. I was excited and quite keen at the start and much less so now, so",
+        "Hi, to give you the details yet again,",
+        "Hello, to give you the details yet again,",
+        "Hi there, to give you the details yet again,",
+        "Hey there, to give you the details yet again,",
+        "Yeah, hi. To give you the details yet again,",
+        "Um, hi. To give you the details yet again,",
+        "Hello! Yes, to give you the details yet again,",
+        "Oh, hi. To give you the details yet again,",
+        "Hi, thanks for picking up. To give you the details yet again,",
+        "Haan, hello. To give you the details yet again,",
+        "Hi, we're still exploring options only because nobody here has helped, so",
+        "Hello, we're still exploring options only because nobody here has helped, so",
+        "Hi there, we're still exploring options only because nobody here has helped, so",
+        "Hey there, we're still exploring options only because nobody here has helped, so",
+        "Yeah, hi. We're still exploring options only because nobody here has helped, so",
+        "Um, hi. We're still exploring options only because nobody here has helped, so",
+        "Hello! Yes, we're still exploring options only because nobody here has helped, so",
+        "Oh, hi. We're still exploring options only because nobody here has helped, so",
+        "Hi, thanks for picking up. We're still exploring options only because nobody here has helped, so",
+        "Haan, hello. We're still exploring options only because nobody here has helped, so",
+        "Hi, this is my second time calling, so",
+        "Hello, this is my second time calling, so",
+        "Hi there, this is my second time calling, so",
+        "Hey there, this is my second time calling, so",
+        "Yeah, hi. This is my second time calling, so",
+        "Um, hi. This is my second time calling, so",
+        "Hello! Yes, this is my second time calling, so",
+        "Oh, hi. This is my second time calling, so",
+        "Hi, thanks for picking up. This is my second time calling, so",
+        "Haan, hello. This is my second time calling, so",
+        "Customer: Haven't decided, and I'm not deciding on this call!",
+        "Customer: Honestly, haven't decided, and I'm not deciding on this call!",
+        "Customer: Hmm, haven't decided, and I'm not deciding on this call!",
+        "Customer: Look, haven't decided, and I'm not deciding on this call!",
+        "Customer: Well, haven't decided, and I'm not deciding on this call!",
+        "Customer: Still working that out, same as the last time somebody asked.",
+        "Customer: Honestly, still working that out, same as the last time somebody asked.",
+        "Customer: Hmm, still working that out, same as the last time somebody asked.",
+        "Customer: Look, still working that out, same as the last time somebody asked.",
+        "Customer: Well, still working that out, same as the last time somebody asked.",
+        "Customer: Not decided, can someone just call me back about this?",
+        "Customer: Honestly, not decided, can someone just call me back about this?",
+        "Customer: Hmm, not decided, can someone just call me back about this?",
+        "Customer: Look, not decided, can someone just call me back about this?",
+        "Customer: Well, not decided, can someone just call me back about this?",
+        "Customer: Does this really need answering right now?",
+        "Customer: Honestly, does this really need answering right now?",
+        "Customer: Hmm, does this really need answering right now?",
+        "Customer: Look, does this really need answering right now?",
+        "Customer: Well, does this really need answering right now?"
+      ]
+    },
+    "partition": {
+      "train_eligible": 460,
+      "held_out": 175,
+      "dropped_mixed": 255,
+      "train": 136,
+      "validation": 69,
+      "test_in_distribution": 69,
+      "held_out_class_counts": {
+        "Neutral": 44,
+        "Enthusiastic": 45,
+        "Hesitant": 46,
+        "Frustrated": 40
+      }
+    },
+    "model_dir": "C:\\Users\\Parth\\FYP_EstateIQ\\backend\\models_store\\sentiment_intent\\holdout\\sentiment_cap136",
+    "in_distribution_metrics": {
+      "accuracy": 0.43478260869565216,
+      "macro_f1": 0.43696589033559513,
+      "weighted_f1": 0.43369505417839405,
+      "per_class": {
+        "Enthusiastic": {
+          "precision": 0.35294117647058826,
+          "recall": 0.3333333333333333,
+          "f1-score": 0.34285714285714286,
+          "support": 18.0
+        },
+        "Neutral": {
+          "precision": 0.4583333333333333,
+          "recall": 0.6470588235294118,
+          "f1-score": 0.5365853658536586,
+          "support": 17.0
+        },
+        "Hesitant": {
+          "precision": 0.75,
+          "recall": 0.375,
+          "f1-score": 0.5,
+          "support": 16.0
+        },
+        "Frustrated": {
+          "precision": 0.35,
+          "recall": 0.3888888888888889,
+          "f1-score": 0.3684210526315789,
+          "support": 18.0
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "Enthusiastic",
+          "Neutral",
+          "Hesitant",
+          "Frustrated"
+        ],
+        "rows_are_true": true,
+        "matrix": [
+          [
+            6,
+            6,
+            0,
+            6
+          ],
+          [
+            1,
+            11,
+            1,
+            4
+          ],
+          [
+            4,
+            3,
+            6,
+            3
+          ],
+          [
+            6,
+            4,
+            1,
+            7
+          ]
+        ]
+      }
+    },
+    "held_out_metrics": {
+      "accuracy": 0.25142857142857145,
+      "macro_f1": 0.24406907700686162,
+      "weighted_f1": 0.24839306138306974,
+      "per_class": {
+        "Enthusiastic": {
+          "precision": 0.2765957446808511,
+          "recall": 0.28888888888888886,
+          "f1-score": 0.2826086956521739,
+          "support": 45.0
+        },
+        "Neutral": {
+          "precision": 0.3157894736842105,
+          "recall": 0.4090909090909091,
+          "f1-score": 0.3564356435643564,
+          "support": 44.0
+        },
+        "Hesitant": {
+          "precision": 0.3333333333333333,
+          "recall": 0.21739130434782608,
+          "f1-score": 0.2631578947368421,
+          "support": 46.0
+        },
+        "Frustrated": {
+          "precision": 0.07317073170731707,
+          "recall": 0.075,
+          "f1-score": 0.07407407407407407,
+          "support": 40.0
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "Enthusiastic",
+          "Neutral",
+          "Hesitant",
+          "Frustrated"
+        ],
+        "rows_are_true": true,
+        "matrix": [
+          [
+            13,
+            12,
+            7,
+            13
+          ],
+          [
+            7,
+            18,
+            7,
+            12
+          ],
+          [
+            13,
+            10,
+            10,
+            13
+          ],
+          [
+            14,
+            17,
+            6,
+            3
+          ]
+        ]
+      }
+    },
+    "generalisation_gap_macro_f1": 0.1928968133287335,
+    "comparable_gap": {
+      "telegraphic_excluded_from_corpus": true,
+      "in_distribution_n": 69,
+      "in_distribution_telegraphic_n": 0,
+      "held_out_telegraphic_n": 0,
+      "in_distribution_metrics_excluding_telegraphic": {
+        "accuracy": 0.43478260869565216,
+        "macro_f1": 0.43696589033559513,
+        "weighted_f1": 0.43369505417839405,
+        "per_class": {
+          "Enthusiastic": {
+            "precision": 0.35294117647058826,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.34285714285714286,
+            "support": 18.0
+          },
+          "Neutral": {
+            "precision": 0.4583333333333333,
+            "recall": 0.6470588235294118,
+            "f1-score": 0.5365853658536586,
+            "support": 17.0
+          },
+          "Hesitant": {
+            "precision": 0.75,
+            "recall": 0.375,
+            "f1-score": 0.5,
+            "support": 16.0
+          },
+          "Frustrated": {
+            "precision": 0.35,
+            "recall": 0.3888888888888889,
+            "f1-score": 0.3684210526315789,
+            "support": 18.0
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "Enthusiastic",
+            "Neutral",
+            "Hesitant",
+            "Frustrated"
+          ],
+          "rows_are_true": true,
+          "matrix": [
+            [
+              6,
+              6,
+              0,
+              6
+            ],
+            [
+              1,
+              11,
+              1,
+              4
+            ],
+            [
+              4,
+              3,
+              6,
+              3
+            ],
+            [
+              6,
+              4,
+              1,
+              7
+            ]
+          ]
+        }
+      },
+      "generalisation_gap_macro_f1": 0.1928968133287335
+    },
+    "negated_phrasing_metrics": {
+      "in_distribution": {
+        "n": 8,
+        "accuracy": 0.25,
+        "macro_f1": 0.1625,
+        "weighted_f1": 0.21250000000000002,
+        "per_class": {
+          "Enthusiastic": {
+            "precision": 0.16666666666666666,
+            "recall": 0.5,
+            "f1-score": 0.25,
+            "support": 2.0
+          },
+          "Neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "Hesitant": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 2.0
+          },
+          "Frustrated": {
+            "precision": 0.5,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.4,
+            "support": 3.0
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "Enthusiastic",
+            "Neutral",
+            "Hesitant",
+            "Frustrated"
+          ],
+          "rows_are_true": true,
+          "matrix": [
+            [
+              1,
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0,
+              1
+            ]
+          ]
+        }
+      },
+      "held_out": {
+        "n": 27,
+        "accuracy": 0.25925925925925924,
+        "macro_f1": 0.1997354497354497,
+        "weighted_f1": 0.21555947481873405,
+        "per_class": {
+          "Enthusiastic": {
+            "precision": 0.2631578947368421,
+            "recall": 0.625,
+            "f1-score": 0.37037037037037035,
+            "support": 8.0
+          },
+          "Neutral": {
+            "precision": 0.5,
+            "recall": 0.2,
+            "f1-score": 0.2857142857142857,
+            "support": 5.0
+          },
+          "Hesitant": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 4.0
+          },
+          "Frustrated": {
+            "precision": 0.25,
+            "recall": 0.1,
+            "f1-score": 0.14285714285714285,
+            "support": 10.0
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "Enthusiastic",
+            "Neutral",
+            "Hesitant",
+            "Frustrated"
+          ],
+          "rows_are_true": true,
+          "matrix": [
+            [
+              5,
+              0,
+              0,
+              3
+            ],
+            [
+              4,
+              1,
+              0,
+              0
+            ],
+            [
+              3,
+              1,
+              0,
+              0
+            ],
+            [
+              7,
+              0,
+              2,
+              1
+            ]
+          ]
+        }
+      }
+    },
+    "confusion_pairs": {
+      "in_distribution": {
+        "cells": {
+          "Enthusiastic->Neutral": {
+            "n": 6,
+            "share_of_true_class": 0.3333
+          },
+          "Enthusiastic->Hesitant": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Enthusiastic->Frustrated": {
+            "n": 6,
+            "share_of_true_class": 0.3333
+          },
+          "Neutral->Enthusiastic": {
+            "n": 1,
+            "share_of_true_class": 0.0588
+          },
+          "Neutral->Hesitant": {
+            "n": 1,
+            "share_of_true_class": 0.0588
+          },
+          "Neutral->Frustrated": {
+            "n": 4,
+            "share_of_true_class": 0.2353
+          },
+          "Hesitant->Enthusiastic": {
+            "n": 4,
+            "share_of_true_class": 0.25
+          },
+          "Hesitant->Neutral": {
+            "n": 3,
+            "share_of_true_class": 0.1875
+          },
+          "Hesitant->Frustrated": {
+            "n": 3,
+            "share_of_true_class": 0.1875
+          },
+          "Frustrated->Enthusiastic": {
+            "n": 6,
+            "share_of_true_class": 0.3333
+          },
+          "Frustrated->Neutral": {
+            "n": 4,
+            "share_of_true_class": 0.2222
+          },
+          "Frustrated->Hesitant": {
+            "n": 1,
+            "share_of_true_class": 0.0556
+          }
+        },
+        "polarity_inversion": {
+          "enthusiastic_called_frustrated": 6,
+          "frustrated_called_enthusiastic": 6,
+          "n_enthusiastic_or_frustrated": 36,
+          "rate": 0.3333
+        }
+      },
+      "held_out": {
+        "cells": {
+          "Enthusiastic->Neutral": {
+            "n": 12,
+            "share_of_true_class": 0.2667
+          },
+          "Enthusiastic->Hesitant": {
+            "n": 7,
+            "share_of_true_class": 0.1556
+          },
+          "Enthusiastic->Frustrated": {
+            "n": 13,
+            "share_of_true_class": 0.2889
+          },
+          "Neutral->Enthusiastic": {
+            "n": 7,
+            "share_of_true_class": 0.1591
+          },
+          "Neutral->Hesitant": {
+            "n": 7,
+            "share_of_true_class": 0.1591
+          },
+          "Neutral->Frustrated": {
+            "n": 12,
+            "share_of_true_class": 0.2727
+          },
+          "Hesitant->Enthusiastic": {
+            "n": 13,
+            "share_of_true_class": 0.2826
+          },
+          "Hesitant->Neutral": {
+            "n": 10,
+            "share_of_true_class": 0.2174
+          },
+          "Hesitant->Frustrated": {
+            "n": 13,
+            "share_of_true_class": 0.2826
+          },
+          "Frustrated->Enthusiastic": {
+            "n": 14,
+            "share_of_true_class": 0.35
+          },
+          "Frustrated->Neutral": {
+            "n": 17,
+            "share_of_true_class": 0.425
+          },
+          "Frustrated->Hesitant": {
+            "n": 6,
+            "share_of_true_class": 0.15
+          }
+        },
+        "polarity_inversion": {
+          "enthusiastic_called_frustrated": 13,
+          "frustrated_called_enthusiastic": 14,
+          "n_enthusiastic_or_frustrated": 85,
+          "rate": 0.3176
+        }
+      }
+    },
+    "style_breakdown": {
+      "in_distribution": {
+        "note": "corpus has no clean/messy axis"
+      },
+      "held_out": {
+        "note": "corpus has no clean/messy axis"
+      }
+    },
+    "baselines": {
+      "in_distribution": {
+        "majority": {
+          "accuracy": 0.2608695652173913,
+          "macro_f1": 0.10344827586206896,
+          "weighted_f1": 0.10794602698650674,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.2608695652173913,
+              "recall": 1.0,
+              "f1-score": 0.41379310344827586,
+              "support": 18.0
+            },
+            "Neutral": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 17.0
+            },
+            "Hesitant": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 16.0
+            },
+            "Frustrated": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 18.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                18,
+                0,
+                0,
+                0
+              ],
+              [
+                17,
+                0,
+                0,
+                0
+              ],
+              [
+                16,
+                0,
+                0,
+                0
+              ],
+              [
+                18,
+                0,
+                0,
+                0
+              ]
+            ]
+          },
+          "majority_class": "Enthusiastic"
+        },
+        "template_visible_only": {
+          "accuracy": 0.9565217391304348,
+          "macro_f1": 0.9559202059202059,
+          "weighted_f1": 0.9571111484154962,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 18.0
+            },
+            "Neutral": {
+              "precision": 0.85,
+              "recall": 1.0,
+              "f1-score": 0.918918918918919,
+              "support": 17.0
+            },
+            "Hesitant": {
+              "precision": 1.0,
+              "recall": 0.875,
+              "f1-score": 0.9333333333333333,
+              "support": 16.0
+            },
+            "Frustrated": {
+              "precision": 1.0,
+              "recall": 0.9444444444444444,
+              "f1-score": 0.9714285714285714,
+              "support": 18.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                18,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                17,
+                0,
+                0
+              ],
+              [
+                0,
+                2,
+                14,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                17
+              ]
+            ]
+          },
+          "template_hit_rate": 1.0
+        }
+      },
+      "held_out": {
+        "majority": {
+          "accuracy": 0.2571428571428571,
+          "macro_f1": 0.10227272727272728,
+          "weighted_f1": 0.1051948051948052,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.2571428571428571,
+              "recall": 1.0,
+              "f1-score": 0.4090909090909091,
+              "support": 45.0
+            },
+            "Neutral": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 44.0
+            },
+            "Hesitant": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 46.0
+            },
+            "Frustrated": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 40.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                45,
+                0,
+                0,
+                0
+              ],
+              [
+                44,
+                0,
+                0,
+                0
+              ],
+              [
+                46,
+                0,
+                0,
+                0
+              ],
+              [
+                40,
+                0,
+                0,
+                0
+              ]
+            ]
+          },
+          "majority_class": "Enthusiastic"
+        },
+        "template_visible_only": {
+          "accuracy": 0.26285714285714284,
+          "macro_f1": 0.10747663551401869,
+          "weighted_f1": 0.11300400534045395,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 45.0
+            },
+            "Neutral": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 44.0
+            },
+            "Hesitant": {
+              "precision": 0.27380952380952384,
+              "recall": 1.0,
+              "f1-score": 0.42990654205607476,
+              "support": 46.0
+            },
+            "Frustrated": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 40.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                0,
+                0,
+                45,
+                0
+              ],
+              [
+                0,
+                0,
+                37,
+                7
+              ],
+              [
+                0,
+                0,
+                46,
+                0
+              ],
+              [
+                0,
+                0,
+                40,
+                0
+              ]
+            ]
+          },
+          "template_hit_rate": 0.04
+        },
+        "template_full_pool": {
+          "accuracy": 0.9714285714285714,
+          "macro_f1": 0.9698924731182796,
+          "weighted_f1": 0.9712442396313364,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 45.0
+            },
+            "Neutral": {
+              "precision": 0.8979591836734694,
+              "recall": 1.0,
+              "f1-score": 0.946236559139785,
+              "support": 44.0
+            },
+            "Hesitant": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 46.0
+            },
+            "Frustrated": {
+              "precision": 1.0,
+              "recall": 0.875,
+              "f1-score": 0.9333333333333333,
+              "support": 40.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                45,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                44,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                46,
+                0
+              ],
+              [
+                0,
+                5,
+                0,
+                35
+              ]
+            ]
+          },
+          "template_hit_rate": 1.0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,353 @@
+{
+  "rows": [
+    {
+      "candidate": "v4 baseline (DistilBERT + SST-2)",
+      "kind": "synthetic",
+      "base_model": "distilbert-base-uncased",
+      "seen_idea_macro_f1": 0.839764471294322,
+      "unseen_idea_macro_f1": 0.40682127003355195,
+      "unseen_idea_accuracy": 0.41586538461538464,
+      "gap": 0.43294320126077,
+      "enthusiastic_recall": 0.21153846153846154,
+      "enthusiastic_precision": 0.3055555555555556,
+      "enthusiastic_f1": 0.25,
+      "polarity": {
+        "enth_to_frus": 32,
+        "enth_to_frus_rate": 0.3076923076923077,
+        "frus_to_enth": 18,
+        "frus_to_enth_rate": 0.17307692307692307
+      },
+      "per_class_f1": {
+        "Enthusiastic": 0.25,
+        "Neutral": 0.4470588235294118,
+        "Hesitant": 0.48760330578512395,
+        "Frustrated": 0.4426229508196721
+      },
+      "english_macro_f1": 0.40550978900321366,
+      "code_mixed_macro_f1": 0.3961482558139535,
+      "register_delta": 0.00936153318926014
+    },
+    {
+      "candidate": "hybrid: emotion-distilroberta",
+      "kind": "hybrid",
+      "base_model": "j-hartmann/emotion-english-distilroberta-base",
+      "seen_idea_macro_f1": 0.8585022844993713,
+      "unseen_idea_macro_f1": 0.49306567477056007,
+      "unseen_idea_accuracy": 0.49278846153846156,
+      "gap": 0.3654366097288112,
+      "enthusiastic_recall": 0.6057692307692307,
+      "enthusiastic_precision": 0.5384615384615384,
+      "enthusiastic_f1": 0.5701357466063348,
+      "polarity": {
+        "enth_to_frus": 19,
+        "enth_to_frus_rate": 0.18269230769230768,
+        "frus_to_enth": 21,
+        "frus_to_enth_rate": 0.20192307692307693
+      },
+      "per_class_f1": {
+        "Enthusiastic": 0.5701357466063348,
+        "Neutral": 0.519774011299435,
+        "Hesitant": 0.42857142857142855,
+        "Frustrated": 0.453781512605042
+      },
+      "english_macro_f1": 0.5348069441421871,
+      "code_mixed_macro_f1": 0.372917463824742,
+      "register_delta": 0.1618894803174451
+    },
+    {
+      "candidate": "hybrid: goemotions-roberta",
+      "kind": "hybrid",
+      "base_model": "SamLowe/roberta-base-go_emotions",
+      "seen_idea_macro_f1": 0.8042057820746346,
+      "unseen_idea_macro_f1": 0.498352871929178,
+      "unseen_idea_accuracy": 0.49759615384615385,
+      "gap": 0.30585291014545657,
+      "enthusiastic_recall": 0.5096153846153846,
+      "enthusiastic_precision": 0.452991452991453,
+      "enthusiastic_f1": 0.4796380090497738,
+      "polarity": {
+        "enth_to_frus": 35,
+        "enth_to_frus_rate": 0.33653846153846156,
+        "frus_to_enth": 20,
+        "frus_to_enth_rate": 0.19230769230769232
+      },
+      "per_class_f1": {
+        "Enthusiastic": 0.4796380090497738,
+        "Neutral": 0.5113636363636364,
+        "Hesitant": 0.5253456221198156,
+        "Frustrated": 0.47706422018348627
+      },
+      "english_macro_f1": 0.5396554834054834,
+      "code_mixed_macro_f1": 0.40320935520800777,
+      "register_delta": 0.13644612819747565
+    },
+    {
+      "candidate": "hybrid: xlm-emo (multilingual)",
+      "kind": "hybrid",
+      "base_model": "MilaNLProc/xlm-emo-t",
+      "seen_idea_macro_f1": 0.8829848897148292,
+      "unseen_idea_macro_f1": 0.4310164589095262,
+      "unseen_idea_accuracy": 0.4326923076923077,
+      "gap": 0.451968430805303,
+      "enthusiastic_recall": 0.33653846153846156,
+      "enthusiastic_precision": 0.33980582524271846,
+      "enthusiastic_f1": 0.33816425120772947,
+      "polarity": {
+        "enth_to_frus": 18,
+        "enth_to_frus_rate": 0.17307692307692307,
+        "frus_to_enth": 21,
+        "frus_to_enth_rate": 0.20192307692307693
+      },
+      "per_class_f1": {
+        "Enthusiastic": 0.33816425120772947,
+        "Neutral": 0.45161290322580644,
+        "Hesitant": 0.38317757009345793,
+        "Frustrated": 0.5511111111111111
+      },
+      "english_macro_f1": 0.4179046169312861,
+      "code_mixed_macro_f1": 0.4568457422845079,
+      "register_delta": -0.038941125353221806
+    },
+    {
+      "candidate": "zero-shot: emotion-distilroberta (apriori fold)",
+      "kind": "zero-shot",
+      "base_model": "j-hartmann/emotion-english-distilroberta-base",
+      "seen_idea_macro_f1": 0.1222943722943723,
+      "unseen_idea_macro_f1": 0.1744403348257738,
+      "unseen_idea_accuracy": 0.2764423076923077,
+      "gap": -0.05214596253140151,
+      "enthusiastic_recall": 0.04807692307692308,
+      "enthusiastic_precision": 0.8333333333333334,
+      "enthusiastic_f1": 0.09090909090909091,
+      "polarity": {
+        "enth_to_frus": 0,
+        "enth_to_frus_rate": 0.0,
+        "frus_to_enth": 1,
+        "frus_to_enth_rate": 0.009615384615384616
+      },
+      "per_class_f1": {
+        "Enthusiastic": 0.09090909090909091,
+        "Neutral": 0.4068522483940043,
+        "Hesitant": 0.2,
+        "Frustrated": 0.0
+      },
+      "english_macro_f1": 0.19743995521746582,
+      "code_mixed_macro_f1": 0.12323366645175156,
+      "register_delta": 0.07420628876571427
+    },
+    {
+      "candidate": "zero-shot: emotion-distilroberta (fitted fold)",
+      "kind": "zero-shot",
+      "base_model": "j-hartmann/emotion-english-distilroberta-base",
+      "seen_idea_macro_f1": 0.1535443722943723,
+      "unseen_idea_macro_f1": 0.15920223958767857,
+      "unseen_idea_accuracy": 0.2644230769230769,
+      "gap": -0.005657867293306279,
+      "enthusiastic_recall": 0.04807692307692308,
+      "enthusiastic_precision": 0.8333333333333334,
+      "enthusiastic_f1": 0.09090909090909091,
+      "polarity": {
+        "enth_to_frus": 13,
+        "enth_to_frus_rate": 0.125,
+        "frus_to_enth": 1,
+        "frus_to_enth_rate": 0.009615384615384616
+      },
+      "per_class_f1": {
+        "Enthusiastic": 0.09090909090909091,
+        "Neutral": 0.4068522483940043,
+        "Hesitant": 0.01904761904761905,
+        "Frustrated": 0.12
+      },
+      "english_macro_f1": 0.18001742562576478,
+      "code_mixed_macro_f1": 0.11259536857941113,
+      "register_delta": 0.06742205704635365
+    },
+    {
+      "candidate": "zero-shot: goemotions-roberta (apriori fold)",
+      "kind": "zero-shot",
+      "base_model": "SamLowe/roberta-base-go_emotions",
+      "seen_idea_macro_f1": 0.185940872648782,
+      "unseen_idea_macro_f1": 0.2367918639392086,
+      "unseen_idea_accuracy": 0.2932692307692308,
+      "gap": -0.050850991290426584,
+      "enthusiastic_recall": 0.20192307692307693,
+      "enthusiastic_precision": 0.3333333333333333,
+      "enthusiastic_f1": 0.25149700598802394,
+      "polarity": {
+        "enth_to_frus": 0,
+        "enth_to_frus_rate": 0.0,
+        "frus_to_enth": 19,
+        "frus_to_enth_rate": 0.18269230769230768
+      },
+      "per_class_f1": {
+        "Enthusiastic": 0.25149700598802394,
+        "Neutral": 0.3879781420765027,
+        "Hesitant": 0.3076923076923077,
+        "Frustrated": 0.0
+      },
+      "english_macro_f1": 0.2626944136392844,
+      "code_mixed_macro_f1": 0.17546296296296293,
+      "register_delta": 0.08723145067632149
+    },
+    {
+      "candidate": "zero-shot: goemotions-roberta (fitted fold)",
+      "kind": "zero-shot",
+      "base_model": "SamLowe/roberta-base-go_emotions",
+      "seen_idea_macro_f1": 0.1974939029518123,
+      "unseen_idea_macro_f1": 0.2436420318236342,
+      "unseen_idea_accuracy": 0.28846153846153844,
+      "gap": -0.0461481288718219,
+      "enthusiastic_recall": 0.20192307692307693,
+      "enthusiastic_precision": 0.35,
+      "enthusiastic_f1": 0.25609756097560976,
+      "polarity": {
+        "enth_to_frus": 19,
+        "enth_to_frus_rate": 0.18269230769230768,
+        "frus_to_enth": 19,
+        "frus_to_enth_rate": 0.18269230769230768
+      },
+      "per_class_f1": {
+        "Enthusiastic": 0.25609756097560976,
+        "Neutral": 0.3879781420765027,
+        "Hesitant": 0.09090909090909091,
+        "Frustrated": 0.23958333333333334
+      },
+      "english_macro_f1": 0.28767548978632435,
+      "code_mixed_macro_f1": 0.13762023677395485,
+      "register_delta": 0.1500552530123695
+    },
+    {
+      "candidate": "zero-shot: xlmr-sentiment (apriori fold)",
+      "kind": "zero-shot",
+      "base_model": "cardiffnlp/twitter-xlm-roberta-base-sentiment",
+      "seen_idea_macro_f1": 0.18644878982633667,
+      "unseen_idea_macro_f1": 0.2616725997007687,
+      "unseen_idea_accuracy": 0.32211538461538464,
+      "gap": -0.07522380987443206,
+      "enthusiastic_recall": 0.20192307692307693,
+      "enthusiastic_precision": 0.5526315789473685,
+      "enthusiastic_f1": 0.29577464788732394,
+      "polarity": {
+        "enth_to_frus": 26,
+        "enth_to_frus_rate": 0.25,
+        "frus_to_enth": 4,
+        "frus_to_enth_rate": 0.038461538461538464
+      },
+      "per_class_f1": {
+        "Enthusiastic": 0.29577464788732394,
+        "Neutral": 0.4175824175824176,
+        "Hesitant": 0.0,
+        "Frustrated": 0.3333333333333333
+      },
+      "english_macro_f1": 0.23616756291174895,
+      "code_mixed_macro_f1": 0.3059486157890413,
+      "register_delta": -0.06978105287729236
+    },
+    {
+      "candidate": "zero-shot: xlmr-sentiment (fitted fold)",
+      "kind": "zero-shot",
+      "base_model": "cardiffnlp/twitter-xlm-roberta-base-sentiment",
+      "seen_idea_macro_f1": 0.18644878982633667,
+      "unseen_idea_macro_f1": 0.2616725997007687,
+      "unseen_idea_accuracy": 0.32211538461538464,
+      "gap": -0.07522380987443206,
+      "enthusiastic_recall": 0.20192307692307693,
+      "enthusiastic_precision": 0.5526315789473685,
+      "enthusiastic_f1": 0.29577464788732394,
+      "polarity": {
+        "enth_to_frus": 26,
+        "enth_to_frus_rate": 0.25,
+        "frus_to_enth": 4,
+        "frus_to_enth_rate": 0.038461538461538464
+      },
+      "per_class_f1": {
+        "Enthusiastic": 0.29577464788732394,
+        "Neutral": 0.4175824175824176,
+        "Hesitant": 0.0,
+        "Frustrated": 0.3333333333333333
+      },
+      "english_macro_f1": 0.23616756291174895,
+      "code_mixed_macro_f1": 0.3059486157890413,
+      "register_delta": -0.06978105287729236
+    },
+    {
+      "candidate": "zero-shot: xlm-emo (apriori fold)",
+      "kind": "zero-shot",
+      "base_model": "MilaNLProc/xlm-emo-t",
+      "seen_idea_macro_f1": 0.24298025777414076,
+      "unseen_idea_macro_f1": 0.2907542570330777,
+      "unseen_idea_accuracy": 0.3485576923076923,
+      "gap": -0.04777399925893697,
+      "enthusiastic_recall": 0.7211538461538461,
+      "enthusiastic_precision": 0.3073770491803279,
+      "enthusiastic_f1": 0.43103448275862066,
+      "polarity": {
+        "enth_to_frus": 20,
+        "enth_to_frus_rate": 0.19230769230769232,
+        "frus_to_enth": 49,
+        "frus_to_enth_rate": 0.47115384615384615
+      },
+      "per_class_f1": {
+        "Enthusiastic": 0.43103448275862066,
+        "Neutral": 0.0,
+        "Hesitant": 0.4079601990049751,
+        "Frustrated": 0.3240223463687151
+      },
+      "english_macro_f1": 0.3134613494520615,
+      "code_mixed_macro_f1": 0.24534313725490198,
+      "register_delta": 0.06811821219715952
+    },
+    {
+      "candidate": "zero-shot: xlm-emo (fitted fold)",
+      "kind": "zero-shot",
+      "base_model": "MilaNLProc/xlm-emo-t",
+      "seen_idea_macro_f1": 0.24298025777414076,
+      "unseen_idea_macro_f1": 0.2907542570330777,
+      "unseen_idea_accuracy": 0.3485576923076923,
+      "gap": -0.04777399925893697,
+      "enthusiastic_recall": 0.7211538461538461,
+      "enthusiastic_precision": 0.3073770491803279,
+      "enthusiastic_f1": 0.43103448275862066,
+      "polarity": {
+        "enth_to_frus": 20,
+        "enth_to_frus_rate": 0.19230769230769232,
+        "frus_to_enth": 49,
+        "frus_to_enth_rate": 0.47115384615384615
+      },
+      "per_class_f1": {
+        "Enthusiastic": 0.43103448275862066,
+        "Neutral": 0.0,
+        "Hesitant": 0.4079601990049751,
+        "Frustrated": 0.3240223463687151
+      },
+      "english_macro_f1": 0.3134613494520615,
+      "code_mixed_macro_f1": 0.24534313725490198,
+      "register_delta": 0.06811821219715952
+    }
+  ],
+  "verdict": {
+    "baseline_unseen_idea_macro_f1": 0.40682127003355195,
+    "baseline_enthusiastic_recall": 0.21153846153846154,
+    "candidates_beating_baseline_on_unseen_ideas": [
+      {
+        "candidate": "hybrid: goemotions-roberta",
+        "unseen_idea_macro_f1": 0.498352871929178,
+        "delta": 0.09153160189562604,
+        "enthusiastic_recall_delta": 0.298076923076923
+      },
+      {
+        "candidate": "hybrid: emotion-distilroberta",
+        "unseen_idea_macro_f1": 0.49306567477056007,
+        "delta": 0.08624440473700812,
+        "enthusiastic_recall_delta": 0.39423076923076916
+      },
+      {
+        "candidate": "hybrid: xlm-emo (multilingual)",
+        "unseen_idea_macro_f1": 0.4310164589095262,
+        "delta": 0.02419518887597427,
+        "enthusiastic_recall_delta": 0.12500000000000003
+      }
+    ],
+    "best_challenger": "hybrid: goemotions-roberta"
+  }
+}

@@ -40,8 +40,12 @@ if str(BACKEND_DIR) not in sys.path:
 
 from sentiment_intent.data import (  # noqa: E402
     DEFAULT_MAX_LENGTH,
+    DEFAULT_POOLS,
+    EXCLUDE_TELEGRAPHIC,
     MODELS_STORE,
     SEED,
+    SPLIT_PATH,
+    SYNTHETIC_PATH,
     TextClassificationDataset,
     build_split,
     classification_metrics,
@@ -98,10 +102,41 @@ class Stage2Config:
     base_model: str = BASE_MODEL
     warmstart_dir: Optional[str] = None
     classes: Tuple[str, ...] = field(default_factory=tuple)
+    # Which corpus to fine-tune on, where its split lives, and which phrase
+    # pools the template baseline should be built from. Defaulted to the v3
+    # synthetic corpus so every existing call site is unchanged.
+    corpus_path: str = str(SYNTHETIC_PATH)
+    split_path: str = str(SPLIT_PATH)
+    pools: str = DEFAULT_POOLS
+    # Set when ``base_model`` is a published classifier whose head is a
+    # different width than ours — every pretrained emotion checkpoint is. The
+    # encoder transfers; the head is discarded and reinitialised at 4 classes,
+    # which is the same contract as the SST-2 warm-start.
+    ignore_mismatched_sizes: bool = False
 
 
 def _device() -> torch.device:
     return torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+
+def load_classifier(model_id: str, **kwargs: Any) -> Any:
+    """``AutoModelForSequenceClassification.from_pretrained`` with a .bin fallback.
+
+    Several of the published emotion checkpoints we compare against predate
+    safetensors and ship only ``pytorch_model.bin``, which transformers 5
+    declines to load by default. Retrying with ``use_safetensors=False`` is the
+    documented escape hatch; the alternative is excluding exactly the models
+    that make the comparison worth running.
+    """
+    from transformers import AutoModelForSequenceClassification  # noqa: PLC0415
+
+    try:
+        return AutoModelForSequenceClassification.from_pretrained(model_id, **kwargs)
+    except OSError:
+        logger.info("%s has no safetensors checkpoint; loading pytorch_model.bin.", model_id)
+        return AutoModelForSequenceClassification.from_pretrained(
+            model_id, use_safetensors=False, **kwargs
+        )
 
 
 def _optimizer(model: Any, learning_rate: float, weight_decay: float) -> torch.optim.Optimizer:
@@ -340,8 +375,8 @@ def fine_tune(
     logger.info("Stage 2 — %s (%d classes) on device %s", config.task, len(classes), device)
 
     if splits is None:
-        records = load_corpus()
-        assignment = build_split(records, seed=config.seed)
+        records = load_corpus(Path(config.corpus_path))
+        assignment = build_split(records, seed=config.seed, path=Path(config.split_path))
         splits = split_records(records, assignment)
     else:
         records = [r for split in splits.values() for r in split]
@@ -350,11 +385,17 @@ def fine_tune(
                 len(splits["train"]), len(splits["validation"]), len(splits["test"]))
 
     tokenizer = AutoTokenizer.from_pretrained(config.base_model)
-    model = AutoModelForSequenceClassification.from_pretrained(
+    model = load_classifier(
         config.base_model,
         num_labels=len(classes),
         id2label={index: name for index, name in enumerate(classes)},
         label2id={name: index for index, name in enumerate(classes)},
+        ignore_mismatched_sizes=config.ignore_mismatched_sizes,
+        # Pinned rather than inherited. Our four tones are mutually exclusive,
+        # but a pretrained checkpoint carries its own training regime in its
+        # config — GoEmotions is multi-label, which would silently switch the
+        # loss to BCE against one-hot targets we do not build.
+        problem_type="single_label_classification",
     )
 
     warmstart_used: Optional[str] = None
@@ -415,7 +456,9 @@ def fine_tune(
 
     baselines = {
         "majority": majority_baseline(splits["train"], splits["test"], config.task, classes),
-        "template_match": template_baseline(splits["test"], config.task, classes),
+        "template_match": template_baseline(
+            splits["test"], config.task, classes, pools=config.pools
+        ),
     }
     logger.info("")
     logger.info("TEST baselines — majority acc %.4f / macro-F1 %.4f | template acc %.4f / "
@@ -452,8 +495,15 @@ def fine_tune(
                 "warmstart_encoder": warmstart_used,
                 "classes": classes,
                 "dataset": {
-                    "source": "data_generation/output/synthetic_transcripts.jsonl",
+                    "source": config.corpus_path,
+                    "pools": config.pools,
                     "text_field": config.text_field,
+                    # Pinned in the artifact so a future reader can tell whether
+                    # a metric was computed over the noisy telegraphic rows.
+                    "telegraphic_excluded": EXCLUDE_TELEGRAPHIC,
+                    "telegraphic_present": sum(
+                        1 for r in records if r.get("is_telegraphic")
+                    ),
                     "train": len(splits["train"]),
                     "validation": len(splits["validation"]),
                     "test": len(splits["test"]),

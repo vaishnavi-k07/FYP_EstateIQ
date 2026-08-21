@@ -1,0 +1,1582 @@
+{
+  "sentiment": {
+    "task": "sentiment",
+    "corpus": "C:\\Users\\Parth\\FYP_EstateIQ\\data_generation\\output\\sentiment_v5.jsonl",
+    "pools": "pilot",
+    "held_out_phrases": {
+      "Enthusiastic": [
+        "Main Mumbai se sirf yeh site dekhne aaya tha pichhle Sunday.",
+        "Chaar ghante gaadi chala kar sirf yeh dekhne pahuncha tha.",
+        "Train pakad ke aaya tha, do din mein se ek din yahi lag gaya.",
+        "Itni door se aaya hoon, isi se andaaza laga lijiye.",
+        "Aapka brochure teen baar padh chuka hoon.",
+        "Website ki har photo dekh chuki hoon main.",
+        "Specification wala page toh zubaani yaad ho gaya hai.",
+        "Poora plan padh liya hai, ab bas dekhna baaki hai.",
+        "Yaar humko toh dekhte hi pasand aa gaya tha.",
+        "Pehli baar dekha tabhi lag gaya tha ki yahi hai.",
+        "Ghar mein sabko pasand aaya hai, sab bol rahe hain aage badho.",
+        "Photo dekh ke hi mann bana liya tha humne.",
+        "We've been counting down to this call all week.",
+        "I've had this in my calendar since Monday and here we are.",
+        "I've been ticking off the days until we could do this.",
+        "We marked this one in the diary a fortnight ago.",
+        "If it lines up we could wrap this whole thing up this month.",
+        "We could sign something tomorrow if it fits.",
+        "Give me the right place and we'll act on it straight away.",
+        "Show me something that works and I'll not sit on it.",
+        "We drove past your site on Sunday and haven't stopped talking about it since.",
+        "My wife and I talked about nothing else at dinner last night.",
+        "We've mentioned it to everyone we know since we saw it.",
+        "It came up three times over the weekend at home.",
+        "I know it's barely nine, I've been awake since five over this.",
+        "I've been sitting with the phone since your office opened.",
+        "Apologies for calling the moment you opened, I couldn't sit still.",
+        "I dialled at nine on the dot, if that tells you anything.",
+        "We've been saving for four years, so today feels like a big day.",
+        "This is the call we've been building up to for a long time.",
+        "After a decade of renting we finally get to do this.",
+        "My father did this at my age and I've wanted it ever since.",
+        "Can I bring my parents along? They want to see it as much as I do.",
+        "There'll be four of us coming, if that's alright.",
+        "My brother is flying in for the weekend so he can come too.",
+        "Half the family wants to be there when we look round.",
+        "Aap hi bata dijiye kya better rahega, hum maan lenge.",
+        "Isme aap ki salah chahiye, jo aap bologe wahi karenge.",
+        "Aap expert hain, aap jo suggest karenge hum wahi lenge.",
+        "Let me check with my wife and I'll ring you back within the hour.",
+        "I'll confirm that tonight and call you first thing tomorrow.",
+        "Give me ten minutes and I'll have an answer for you.",
+        "Completely blank on that one, ask me an easier question.",
+        "Not a clue, and I'm rather enjoying how much I don't know.",
+        "No answer for you there, but keep them coming.",
+        "I'll know the moment I walk in, I think.",
+        "That's one I'll settle when I'm standing there.",
+        "Show me two options and I'll point at one."
+      ],
+      "Neutral": [
+        "Main apne bhai ke liye poochh raha hoon.",
+        "Mummy papa ke liye dekh raha hoon, unki requirement bata deta hoon.",
+        "Apne liye nahi, ek rishtedaar ke liye poochh raha hoon.",
+        "Behen ke liye dekhna hai, uska message aaya tha.",
+        "Ek form bhar raha hoon, usi ke liye jaankari chahiye.",
+        "Company ke record ke liye poochh raha hoon.",
+        "Register mein entry karni hai, isliye detail le raha hoon.",
+        "Ek application likh raha hoon, usme yeh sab bharna hai.",
+        "Do minute hain mere paas, jaldi bata deta hoon.",
+        "Abhi office mein hoon, short mein bata deta hoon.",
+        "Meeting ke beech mein hoon, jaldi se list kara deta hoon.",
+        "Nikal raha hoon abhi, isliye chhota rakhta hoon.",
+        "I've written the requirement down, so I'll read it out.",
+        "I have it all in a note here, one second.",
+        "I made a list before calling, so here goes.",
+        "It's typed out in front of me, I'll just go down the page.",
+        "Before I start, what do you need from me?",
+        "Tell me which fields you want and I'll give them in order.",
+        "What's on your form? I'll fill it in verbally.",
+        "You lead and I'll answer.",
+        "I'm calling on behalf of my brother, so I'll pass on what he told me.",
+        "I'm noting this down for a family member, so I'll relay the requirement.",
+        "I'm doing this for my parents, so these are their details.",
+        "This is for a cousin who's abroad, I'm just the messenger.",
+        "We rented for six years, so we know what we do and don't need.",
+        "Having lived in three of these, I know what to ask.",
+        "We've been through two moves already, so the list is short.",
+        "Experience has narrowed what we care about.",
+        "We're moving cities in September, so this is one item on a long list.",
+        "There's a school admission and a job start to fit around this.",
+        "It's one of about nine things I'm organising for the move.",
+        "This is a relocation, so the requirement is driven by logistics.",
+        "I spoke to your desk a week ago, so I'll recap what I said then.",
+        "This follows an earlier call, so I'll go over the same ground.",
+        "I've been through this once with a colleague of yours, so briefly again.",
+        "To repeat what's already been noted, and then the new bit.",
+        "Abhi mere paas us baare mein kuch nahi hai.",
+        "Woh maine note nahi kiya tha, baad mein bata dunga.",
+        "Woh figure yaad nahi hai, ek minute dijiye, dekh kar bataunga.",
+        "I don't have that in front of me at the moment.",
+        "That's not something I noted down before calling.",
+        "I'd be guessing, so leave it blank for now.",
+        "I'll email that across once I've checked.",
+        "I'll send that detail over later today.",
+        "I'll confirm that in writing instead of guessing now.",
+        "No preference either way on that.",
+        "Doesn't make a difference to us.",
+        "Either works, it's not a factor."
+      ],
+      "Hesitant": [
+        "Ghar walon se baat kiye bina main kuch keh nahi sakta.",
+        "Papa se poochhna padega, unke bina decide nahi hoga.",
+        "Pehle ghar mein discuss karunga, phir hi kuch bataunga.",
+        "Akela faisla nahi kar sakta, sabki raay leni padegi.",
+        "Jab tak apna wala bik na jaye, hum aage nahi badh sakte.",
+        "Purana ghar atka hua hai, sab usi par ruka hai.",
+        "Teen mahine se listing padi hai, do hi log aaye.",
+        "Pehle woh nikle tab hi yeh ho payega.",
+        "Itni jagah dekh li ki ab sab ek jaisi lagne lagi hain.",
+        "Dasvi property ke baad sab gadd-madd ho gaya.",
+        "Ab yaad hi nahi rehta kaunsi kaunsi thi.",
+        "Sabki tasveerein ek jaisi lagti hain ab mujhe.",
+        "One day we want the centre, the next day we want the outskirts.",
+        "We change our minds about location every week.",
+        "Half of us want to be central, half want space.",
+        "We've flipped on where twice this month already.",
+        "We nearly bought two years ago and pulled out at the last minute.",
+        "We've been this close once before and didn't go through with it.",
+        "Last time we got as far as the paperwork and stopped.",
+        "There's a history of us not following through on this.",
+        "We can't move until our own place sells, and it's been listed a while.",
+        "Everything is stuck behind selling the old flat.",
+        "Until someone buys ours, this is all theoretical.",
+        "Our sale has had two viewings in three months, so.",
+        "I'm not sure what we can afford until the bank says.",
+        "The number depends on someone else's decision, not ours.",
+        "Our range is whatever gets approved, and we don't know yet.",
+        "Until the loan comes back, any figure I give you is invented.",
+        "Is it alright if I ask some very basic questions first?",
+        "You'll have to forgive me if these questions are obvious.",
+        "Can I ask something that might sound silly?",
+        "Do you mind if I go slowly through this?",
+        "It might be a poor year to be doing this, from what I read.",
+        "Everyone tells me to wait and I don't know if that's true.",
+        "The market talk makes me want to sit on my hands.",
+        "I keep reading that prices will shift and nobody agrees in which direction.",
+        "Aam taur par log kya bolte hain isme?",
+        "Koi normal jawab hota hai iska? Wahi maan lijiye.",
+        "Doosre log kya karte hain yahan par?",
+        "Sorry, I know I should have an answer for that.",
+        "I feel a bit silly not knowing, but I don't.",
+        "That's the question I was hoping you wouldn't ask.",
+        "Whatever I say there will probably move.",
+        "That's the bit most likely to change, so I'd rather not fix it.",
+        "Ask me next week and you'll get a different answer.",
+        "That depends on the loan, and I don't know yet.",
+        "Someone else decides that for us, effectively.",
+        "I'll know that when the bank tells me."
+      ],
+      "Frustrated": [
+        "Mera pura Sunday barbaad ho gaya wahan jaake.",
+        "Chutti leke gaya tha, koi mila hi nahi site par.",
+        "Do baar chakkar laga chuka hoon, kuch nahi hua.",
+        "Petrol jala ke gaya tha, gate hi band tha.",
+        "Number diya tha, aaj tak kisi ka phone nahi aaya.",
+        "Do hafte ho gaye, abhi tak koi jawab nahi aaya.",
+        "Bola tha call karenge, aaj tak kuch nahi kiya.",
+        "Message bhi kiye hain, unka bhi koi reply nahi.",
+        "Ab likhit mein shikayat karni padegi lagta hai.",
+        "Ek email likh rakhi hai, abhi bheji nahi hai.",
+        "Har call ka record rakhna shuru kar diya hai maine.",
+        "Upar tak baat le jaani padegi ab.",
+        "Yeah, whatever, let's just go through it again.",
+        "Fine. Ask me the same questions and I'll give the same answers.",
+        "Sure, why not, let's do the whole thing from the top.",
+        "Go on then. I've got nothing better to do apparently.",
+        "I've paid a booking amount and still can't get a straight answer.",
+        "You have my money and I have nothing in writing.",
+        "The deposit cleared six weeks ago. That's the last thing that happened.",
+        "I paid, and since then, silence.",
+        "This is the third department I've been put through to.",
+        "I've explained myself to two people before reaching you.",
+        "I keep getting handed on and starting from scratch.",
+        "Nobody I reach seems to be the right person.",
+        "You said the brochure would be emailed. It never arrived.",
+        "I was told the paperwork would come by Friday. It's Wednesday.",
+        "Somebody promised me the layout drawings a month ago.",
+        "The follow-up I was guaranteed simply did not happen.",
+        "The previous person quoted me a completely different figure.",
+        "I've now been given three versions of the same thing.",
+        "What your colleague said contradicts your own website.",
+        "Every person here tells me something else.",
+        "Is anyone actually working on this, or should I assume not?",
+        "Does my file exist, or has it sat untouched?",
+        "Has a single person looked at this since March?",
+        "I'd like to know whether this is being handled at all.",
+        "Aap batayiye aapke paas kya hai, main phir bolunga.",
+        "Pehle aap kuch dikhaiye, phir sawaal poochhiye.",
+        "Aap apni baat rakhiye, mera jawab uske baad.",
+        "You've got two minutes left, use them better than that.",
+        "I'm giving this call five more minutes.",
+        "Ask me something useful, the clock is going.",
+        "I gave you that answer already, it should be on your file.",
+        "That's in the notes from last time, if anyone kept them.",
+        "I gave that to the last person I spoke to.",
+        "I'm not going through all that a second time.",
+        "No. Next, please.",
+        "Skip it. Next question."
+      ]
+    },
+    "partition": {
+      "train_eligible": 896,
+      "held_out": 416,
+      "dropped_mixed": 0,
+      "train": 627,
+      "validation": 134,
+      "test_in_distribution": 135,
+      "held_out_class_counts": {
+        "Neutral": 104,
+        "Hesitant": 104,
+        "Frustrated": 104,
+        "Enthusiastic": 104
+      }
+    },
+    "model_dir": "C:\\Users\\Parth\\FYP_EstateIQ\\backend\\models_store\\sentiment_intent\\holdout\\sentiment_v5_hybrid-emodistilroberta",
+    "in_distribution_metrics": {
+      "accuracy": 0.9259259259259259,
+      "macro_f1": 0.9250459541583824,
+      "weighted_f1": 0.9261278046625235,
+      "per_class": {
+        "Enthusiastic": {
+          "precision": 0.9032258064516129,
+          "recall": 0.9333333333333333,
+          "f1-score": 0.9180327868852459,
+          "support": 30.0
+        },
+        "Neutral": {
+          "precision": 0.9148936170212766,
+          "recall": 0.9555555555555556,
+          "f1-score": 0.9347826086956522,
+          "support": 45.0
+        },
+        "Hesitant": {
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1-score": 0.9473684210526315,
+          "support": 30.0
+        },
+        "Frustrated": {
+          "precision": 0.9,
+          "recall": 0.9,
+          "f1-score": 0.9,
+          "support": 30.0
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "Enthusiastic",
+          "Neutral",
+          "Hesitant",
+          "Frustrated"
+        ],
+        "rows_are_true": true,
+        "matrix": [
+          [
+            28,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            43,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            27,
+            1
+          ],
+          [
+            1,
+            2,
+            0,
+            27
+          ]
+        ]
+      }
+    },
+    "held_out_metrics": {
+      "accuracy": 0.5264423076923077,
+      "macro_f1": 0.524553217392587,
+      "weighted_f1": 0.524553217392587,
+      "per_class": {
+        "Enthusiastic": {
+          "precision": 0.4957983193277311,
+          "recall": 0.5673076923076923,
+          "f1-score": 0.5291479820627802,
+          "support": 104.0
+        },
+        "Neutral": {
+          "precision": 0.5686274509803921,
+          "recall": 0.5576923076923077,
+          "f1-score": 0.5631067961165048,
+          "support": 104.0
+        },
+        "Hesitant": {
+          "precision": 0.6212121212121212,
+          "recall": 0.3942307692307692,
+          "f1-score": 0.4823529411764706,
+          "support": 104.0
+        },
+        "Frustrated": {
+          "precision": 0.4728682170542636,
+          "recall": 0.5865384615384616,
+          "f1-score": 0.5236051502145923,
+          "support": 104.0
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "Enthusiastic",
+          "Neutral",
+          "Hesitant",
+          "Frustrated"
+        ],
+        "rows_are_true": true,
+        "matrix": [
+          [
+            59,
+            20,
+            4,
+            21
+          ],
+          [
+            16,
+            58,
+            7,
+            23
+          ],
+          [
+            26,
+            13,
+            41,
+            24
+          ],
+          [
+            18,
+            11,
+            14,
+            61
+          ]
+        ]
+      }
+    },
+    "generalisation_gap_macro_f1": 0.40049273676579544,
+    "comparable_gap": {
+      "telegraphic_excluded_from_corpus": true,
+      "in_distribution_n": 135,
+      "in_distribution_telegraphic_n": 0,
+      "held_out_telegraphic_n": 0,
+      "in_distribution_metrics_excluding_telegraphic": {
+        "accuracy": 0.9259259259259259,
+        "macro_f1": 0.9250459541583824,
+        "weighted_f1": 0.9261278046625235,
+        "per_class": {
+          "Enthusiastic": {
+            "precision": 0.9032258064516129,
+            "recall": 0.9333333333333333,
+            "f1-score": 0.9180327868852459,
+            "support": 30.0
+          },
+          "Neutral": {
+            "precision": 0.9148936170212766,
+            "recall": 0.9555555555555556,
+            "f1-score": 0.9347826086956522,
+            "support": 45.0
+          },
+          "Hesitant": {
+            "precision": 1.0,
+            "recall": 0.9,
+            "f1-score": 0.9473684210526315,
+            "support": 30.0
+          },
+          "Frustrated": {
+            "precision": 0.9,
+            "recall": 0.9,
+            "f1-score": 0.9,
+            "support": 30.0
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "Enthusiastic",
+            "Neutral",
+            "Hesitant",
+            "Frustrated"
+          ],
+          "rows_are_true": true,
+          "matrix": [
+            [
+              28,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              43,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              27,
+              1
+            ],
+            [
+              1,
+              2,
+              0,
+              27
+            ]
+          ]
+        }
+      },
+      "generalisation_gap_macro_f1": 0.40049273676579544
+    },
+    "negated_phrasing_metrics": {
+      "in_distribution": {
+        "n": 10,
+        "accuracy": 0.9,
+        "macro_f1": 0.8809523809523809,
+        "weighted_f1": 0.8904761904761905,
+        "per_class": {
+          "Enthusiastic": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 2.0
+          },
+          "Neutral": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "Hesitant": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1-score": 0.6666666666666666,
+            "support": 2.0
+          },
+          "Frustrated": {
+            "precision": 0.75,
+            "recall": 1.0,
+            "f1-score": 0.8571428571428571,
+            "support": 3.0
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "Enthusiastic",
+            "Neutral",
+            "Hesitant",
+            "Frustrated"
+          ],
+          "rows_are_true": true,
+          "matrix": [
+            [
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              3
+            ]
+          ]
+        }
+      },
+      "held_out": {
+        "n": 64,
+        "accuracy": 0.609375,
+        "macro_f1": 0.6086486486486486,
+        "weighted_f1": 0.6054391891891893,
+        "per_class": {
+          "Enthusiastic": {
+            "precision": 0.5454545454545454,
+            "recall": 0.8571428571428571,
+            "f1-score": 0.6666666666666666,
+            "support": 14.0
+          },
+          "Neutral": {
+            "precision": 0.6153846153846154,
+            "recall": 0.47058823529411764,
+            "f1-score": 0.5333333333333333,
+            "support": 17.0
+          },
+          "Hesitant": {
+            "precision": 0.8888888888888888,
+            "recall": 0.5,
+            "f1-score": 0.64,
+            "support": 16.0
+          },
+          "Frustrated": {
+            "precision": 0.55,
+            "recall": 0.6470588235294118,
+            "f1-score": 0.5945945945945946,
+            "support": 17.0
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "Enthusiastic",
+            "Neutral",
+            "Hesitant",
+            "Frustrated"
+          ],
+          "rows_are_true": true,
+          "matrix": [
+            [
+              12,
+              1,
+              0,
+              1
+            ],
+            [
+              3,
+              8,
+              0,
+              6
+            ],
+            [
+              5,
+              1,
+              8,
+              2
+            ],
+            [
+              2,
+              3,
+              1,
+              11
+            ]
+          ]
+        }
+      }
+    },
+    "confusion_pairs": {
+      "in_distribution": {
+        "cells": {
+          "Enthusiastic->Neutral": {
+            "n": 1,
+            "share_of_true_class": 0.0333
+          },
+          "Enthusiastic->Hesitant": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Enthusiastic->Frustrated": {
+            "n": 1,
+            "share_of_true_class": 0.0333
+          },
+          "Neutral->Enthusiastic": {
+            "n": 1,
+            "share_of_true_class": 0.0222
+          },
+          "Neutral->Hesitant": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Neutral->Frustrated": {
+            "n": 1,
+            "share_of_true_class": 0.0222
+          },
+          "Hesitant->Enthusiastic": {
+            "n": 1,
+            "share_of_true_class": 0.0333
+          },
+          "Hesitant->Neutral": {
+            "n": 1,
+            "share_of_true_class": 0.0333
+          },
+          "Hesitant->Frustrated": {
+            "n": 1,
+            "share_of_true_class": 0.0333
+          },
+          "Frustrated->Enthusiastic": {
+            "n": 1,
+            "share_of_true_class": 0.0333
+          },
+          "Frustrated->Neutral": {
+            "n": 2,
+            "share_of_true_class": 0.0667
+          },
+          "Frustrated->Hesitant": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          }
+        },
+        "polarity_inversion": {
+          "enthusiastic_called_frustrated": 1,
+          "frustrated_called_enthusiastic": 1,
+          "n_enthusiastic_or_frustrated": 60,
+          "rate": 0.0333
+        }
+      },
+      "held_out": {
+        "cells": {
+          "Enthusiastic->Neutral": {
+            "n": 20,
+            "share_of_true_class": 0.1923
+          },
+          "Enthusiastic->Hesitant": {
+            "n": 4,
+            "share_of_true_class": 0.0385
+          },
+          "Enthusiastic->Frustrated": {
+            "n": 21,
+            "share_of_true_class": 0.2019
+          },
+          "Neutral->Enthusiastic": {
+            "n": 16,
+            "share_of_true_class": 0.1538
+          },
+          "Neutral->Hesitant": {
+            "n": 7,
+            "share_of_true_class": 0.0673
+          },
+          "Neutral->Frustrated": {
+            "n": 23,
+            "share_of_true_class": 0.2212
+          },
+          "Hesitant->Enthusiastic": {
+            "n": 26,
+            "share_of_true_class": 0.25
+          },
+          "Hesitant->Neutral": {
+            "n": 13,
+            "share_of_true_class": 0.125
+          },
+          "Hesitant->Frustrated": {
+            "n": 24,
+            "share_of_true_class": 0.2308
+          },
+          "Frustrated->Enthusiastic": {
+            "n": 18,
+            "share_of_true_class": 0.1731
+          },
+          "Frustrated->Neutral": {
+            "n": 11,
+            "share_of_true_class": 0.1058
+          },
+          "Frustrated->Hesitant": {
+            "n": 14,
+            "share_of_true_class": 0.1346
+          }
+        },
+        "polarity_inversion": {
+          "enthusiastic_called_frustrated": 21,
+          "frustrated_called_enthusiastic": 18,
+          "n_enthusiastic_or_frustrated": 208,
+          "rate": 0.1875
+        }
+      }
+    },
+    "style_breakdown": {
+      "in_distribution": {
+        "clean": {
+          "n": 77,
+          "accuracy": 0.922077922077922,
+          "macro_f1": 0.9187266573295985,
+          "weighted_f1": 0.921945747996168,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.9411764705882353,
+              "recall": 0.8888888888888888,
+              "f1-score": 0.9142857142857143,
+              "support": 18.0
+            },
+            "Neutral": {
+              "precision": 0.8888888888888888,
+              "recall": 1.0,
+              "f1-score": 0.9411764705882353,
+              "support": 24.0
+            },
+            "Hesitant": {
+              "precision": 1.0,
+              "recall": 0.8947368421052632,
+              "f1-score": 0.9444444444444444,
+              "support": 19.0
+            },
+            "Frustrated": {
+              "precision": 0.875,
+              "recall": 0.875,
+              "f1-score": 0.875,
+              "support": 16.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                16,
+                1,
+                0,
+                1
+              ],
+              [
+                0,
+                24,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                17,
+                1
+              ],
+              [
+                0,
+                2,
+                0,
+                14
+              ]
+            ]
+          }
+        },
+        "messy": {
+          "n": 58,
+          "accuracy": 0.9310344827586207,
+          "macro_f1": 0.9327146430804969,
+          "weighted_f1": 0.9313194515044809,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.8571428571428571,
+              "recall": 1.0,
+              "f1-score": 0.9230769230769231,
+              "support": 12.0
+            },
+            "Neutral": {
+              "precision": 0.95,
+              "recall": 0.9047619047619048,
+              "f1-score": 0.926829268292683,
+              "support": 21.0
+            },
+            "Hesitant": {
+              "precision": 1.0,
+              "recall": 0.9090909090909091,
+              "f1-score": 0.9523809523809523,
+              "support": 11.0
+            },
+            "Frustrated": {
+              "precision": 0.9285714285714286,
+              "recall": 0.9285714285714286,
+              "f1-score": 0.9285714285714286,
+              "support": 14.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                12,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                19,
+                0,
+                1
+              ],
+              [
+                0,
+                1,
+                10,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                13
+              ]
+            ]
+          }
+        },
+        "macro_f1_delta_clean_minus_messy": -0.013987985750898435,
+        "accuracy_delta_clean_minus_messy": -0.008956560680698611
+      },
+      "held_out": {
+        "clean": {
+          "n": 208,
+          "accuracy": 0.5144230769230769,
+          "macro_f1": 0.5151570341675108,
+          "weighted_f1": 0.5151570341675108,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.5,
+              "recall": 0.5769230769230769,
+              "f1-score": 0.5357142857142857,
+              "support": 52.0
+            },
+            "Neutral": {
+              "precision": 0.5510204081632653,
+              "recall": 0.5192307692307693,
+              "f1-score": 0.5346534653465347,
+              "support": 52.0
+            },
+            "Hesitant": {
+              "precision": 0.6470588235294118,
+              "recall": 0.4230769230769231,
+              "f1-score": 0.5116279069767442,
+              "support": 52.0
+            },
+            "Frustrated": {
+              "precision": 0.4307692307692308,
+              "recall": 0.5384615384615384,
+              "f1-score": 0.47863247863247865,
+              "support": 52.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                30,
+                7,
+                2,
+                13
+              ],
+              [
+                10,
+                27,
+                3,
+                12
+              ],
+              [
+                10,
+                8,
+                22,
+                12
+              ],
+              [
+                10,
+                7,
+                7,
+                28
+              ]
+            ]
+          }
+        },
+        "messy": {
+          "n": 208,
+          "accuracy": 0.5384615384615384,
+          "macro_f1": 0.5335862956552612,
+          "weighted_f1": 0.5335862956552613,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.4915254237288136,
+              "recall": 0.5576923076923077,
+              "f1-score": 0.5225225225225225,
+              "support": 52.0
+            },
+            "Neutral": {
+              "precision": 0.5849056603773585,
+              "recall": 0.5961538461538461,
+              "f1-score": 0.5904761904761905,
+              "support": 52.0
+            },
+            "Hesitant": {
+              "precision": 0.59375,
+              "recall": 0.36538461538461536,
+              "f1-score": 0.4523809523809524,
+              "support": 52.0
+            },
+            "Frustrated": {
+              "precision": 0.515625,
+              "recall": 0.6346153846153846,
+              "f1-score": 0.5689655172413793,
+              "support": 52.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                29,
+                13,
+                2,
+                8
+              ],
+              [
+                6,
+                31,
+                4,
+                11
+              ],
+              [
+                16,
+                5,
+                19,
+                12
+              ],
+              [
+                8,
+                4,
+                7,
+                33
+              ]
+            ]
+          }
+        },
+        "macro_f1_delta_clean_minus_messy": -0.01842926148775037,
+        "accuracy_delta_clean_minus_messy": -0.024038461538461564
+      }
+    },
+    "register_breakdown": {
+      "in_distribution": {
+        "english": {
+          "n": 74,
+          "accuracy": 0.9054054054054054,
+          "macro_f1": 0.9053658922079975,
+          "weighted_f1": 0.9054844318002213,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.85,
+              "recall": 1.0,
+              "f1-score": 0.918918918918919,
+              "support": 17.0
+            },
+            "Neutral": {
+              "precision": 0.8421052631578947,
+              "recall": 0.9411764705882353,
+              "f1-score": 0.8888888888888888,
+              "support": 17.0
+            },
+            "Hesitant": {
+              "precision": 1.0,
+              "recall": 0.85,
+              "f1-score": 0.918918918918919,
+              "support": 20.0
+            },
+            "Frustrated": {
+              "precision": 0.9444444444444444,
+              "recall": 0.85,
+              "f1-score": 0.8947368421052632,
+              "support": 20.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                17,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                16,
+                0,
+                0
+              ],
+              [
+                1,
+                1,
+                17,
+                1
+              ],
+              [
+                1,
+                2,
+                0,
+                17
+              ]
+            ]
+          }
+        },
+        "code-mixed": {
+          "n": 42,
+          "accuracy": 0.9285714285714286,
+          "macro_f1": 0.9286616161616161,
+          "weighted_f1": 0.9287518037518036,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 1.0,
+              "recall": 0.8461538461538461,
+              "f1-score": 0.9166666666666666,
+              "support": 13.0
+            },
+            "Neutral": {
+              "precision": 0.8888888888888888,
+              "recall": 0.8888888888888888,
+              "f1-score": 0.8888888888888888,
+              "support": 9.0
+            },
+            "Hesitant": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 10.0
+            },
+            "Frustrated": {
+              "precision": 0.8333333333333334,
+              "recall": 1.0,
+              "f1-score": 0.9090909090909091,
+              "support": 10.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                11,
+                1,
+                0,
+                1
+              ],
+              [
+                0,
+                8,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                10,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                10
+              ]
+            ]
+          }
+        },
+        "macro_f1_delta_english_minus_code-mixed": -0.023295723953618674,
+        "accuracy_delta_english_minus_code-mixed": -0.02316602316602323
+      },
+      "held_out": {
+        "english": {
+          "n": 288,
+          "accuracy": 0.5868055555555556,
+          "macro_f1": 0.5842781005714734,
+          "weighted_f1": 0.5842781005714734,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.5942028985507246,
+              "recall": 0.5694444444444444,
+              "f1-score": 0.5815602836879432,
+              "support": 72.0
+            },
+            "Neutral": {
+              "precision": 0.5604395604395604,
+              "recall": 0.7083333333333334,
+              "f1-score": 0.6257668711656442,
+              "support": 72.0
+            },
+            "Hesitant": {
+              "precision": 0.7021276595744681,
+              "recall": 0.4583333333333333,
+              "f1-score": 0.5546218487394958,
+              "support": 72.0
+            },
+            "Frustrated": {
+              "precision": 0.5432098765432098,
+              "recall": 0.6111111111111112,
+              "f1-score": 0.5751633986928104,
+              "support": 72.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                41,
+                19,
+                4,
+                8
+              ],
+              [
+                8,
+                51,
+                2,
+                11
+              ],
+              [
+                9,
+                12,
+                33,
+                18
+              ],
+              [
+                11,
+                9,
+                8,
+                44
+              ]
+            ]
+          }
+        },
+        "code-mixed": {
+          "n": 128,
+          "accuracy": 0.390625,
+          "macro_f1": 0.37583281894720455,
+          "weighted_f1": 0.37583281894720455,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.36,
+              "recall": 0.5625,
+              "f1-score": 0.43902439024390244,
+              "support": 32.0
+            },
+            "Neutral": {
+              "precision": 0.6363636363636364,
+              "recall": 0.21875,
+              "f1-score": 0.32558139534883723,
+              "support": 32.0
+            },
+            "Hesitant": {
+              "precision": 0.42105263157894735,
+              "recall": 0.25,
+              "f1-score": 0.3137254901960784,
+              "support": 32.0
+            },
+            "Frustrated": {
+              "precision": 0.3541666666666667,
+              "recall": 0.53125,
+              "f1-score": 0.425,
+              "support": 32.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                18,
+                1,
+                0,
+                13
+              ],
+              [
+                8,
+                7,
+                5,
+                12
+              ],
+              [
+                17,
+                1,
+                8,
+                6
+              ],
+              [
+                7,
+                2,
+                6,
+                17
+              ]
+            ]
+          }
+        },
+        "macro_f1_delta_english_minus_code-mixed": 0.2084452816242689,
+        "accuracy_delta_english_minus_code-mixed": 0.19618055555555558
+      }
+    },
+    "base_model": "j-hartmann/emotion-english-distilroberta-base",
+    "baselines": {
+      "in_distribution": {
+        "majority": {
+          "accuracy": 0.3333333333333333,
+          "macro_f1": 0.125,
+          "weighted_f1": 0.16666666666666666,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 30.0
+            },
+            "Neutral": {
+              "precision": 0.3333333333333333,
+              "recall": 1.0,
+              "f1-score": 0.5,
+              "support": 45.0
+            },
+            "Hesitant": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 30.0
+            },
+            "Frustrated": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 30.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                0,
+                30,
+                0,
+                0
+              ],
+              [
+                0,
+                45,
+                0,
+                0
+              ],
+              [
+                0,
+                30,
+                0,
+                0
+              ],
+              [
+                0,
+                30,
+                0,
+                0
+              ]
+            ]
+          },
+          "majority_class": "Neutral"
+        },
+        "template_visible_only": {
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "weighted_f1": 1.0,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 30.0
+            },
+            "Neutral": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 45.0
+            },
+            "Hesitant": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 30.0
+            },
+            "Frustrated": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 30.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                30,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                45,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                30,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                30
+              ]
+            ]
+          },
+          "template_hit_rate": 0.8593
+        }
+      },
+      "held_out": {
+        "majority": {
+          "accuracy": 0.25,
+          "macro_f1": 0.1,
+          "weighted_f1": 0.1,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 104.0
+            },
+            "Neutral": {
+              "precision": 0.25,
+              "recall": 1.0,
+              "f1-score": 0.4,
+              "support": 104.0
+            },
+            "Hesitant": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 104.0
+            },
+            "Frustrated": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 104.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                0,
+                104,
+                0,
+                0
+              ],
+              [
+                0,
+                104,
+                0,
+                0
+              ],
+              [
+                0,
+                104,
+                0,
+                0
+              ],
+              [
+                0,
+                104,
+                0,
+                0
+              ]
+            ]
+          },
+          "majority_class": "Neutral"
+        },
+        "template_visible_only": {
+          "accuracy": 0.25,
+          "macro_f1": 0.1,
+          "weighted_f1": 0.1,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 104.0
+            },
+            "Neutral": {
+              "precision": 0.25,
+              "recall": 1.0,
+              "f1-score": 0.4,
+              "support": 104.0
+            },
+            "Hesitant": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 104.0
+            },
+            "Frustrated": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 104.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                0,
+                104,
+                0,
+                0
+              ],
+              [
+                0,
+                104,
+                0,
+                0
+              ],
+              [
+                0,
+                104,
+                0,
+                0
+              ],
+              [
+                0,
+                104,
+                0,
+                0
+              ]
+            ]
+          },
+          "template_hit_rate": 0.0
+        },
+        "template_full_pool": {
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "weighted_f1": 1.0,
+          "per_class": {
+            "Enthusiastic": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 104.0
+            },
+            "Neutral": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 104.0
+            },
+            "Hesitant": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 104.0
+            },
+            "Frustrated": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 104.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Enthusiastic",
+              "Neutral",
+              "Hesitant",
+              "Frustrated"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                104,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                104,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                104,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                104
+              ]
+            ]
+          },
+          "template_hit_rate": 1.0
+        }
+      }
+    }
+  }
+}
