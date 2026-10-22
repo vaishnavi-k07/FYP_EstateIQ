@@ -1,0 +1,1299 @@
+{
+  "info": {
+    "which": "DistilBERT 6-class intent head (sentiment_intent.predict)",
+    "artifact": "C:\\Users\\VAISHNAVI KANKAREJ\\EstateIQ_FYP\\backend\\models_store\\sentiment_intent\\distilbert_intent_v1_20260928_163707",
+    "degraded": false,
+    "device": "cpu"
+  },
+  "corpus": "C:\\Users\\VAISHNAVI KANKAREJ\\EstateIQ_FYP\\data_generation\\output\\intent_v1.jsonl",
+  "overlap": {
+    "B01": 4,
+    "B02": 3,
+    "B03": 3,
+    "B04": 3,
+    "B05": 3,
+    "B06": 3,
+    "B07": 0,
+    "B08": 0,
+    "B09": 0,
+    "B10": 0,
+    "R01": 4,
+    "R02": 3,
+    "R03": 3,
+    "R04": 4,
+    "R05": 3,
+    "R06": 3,
+    "R07": 4,
+    "R08": 0,
+    "R09": 0,
+    "R10": 0,
+    "Q01": 4,
+    "Q02": 0,
+    "Q03": 3,
+    "Q04": 3,
+    "Q05": 3,
+    "Q06": 3,
+    "Q07": 3,
+    "Q08": 3,
+    "Q09": 0,
+    "Q10": 3,
+    "V01": 3,
+    "V02": 4,
+    "V03": 3,
+    "V04": 0,
+    "V05": 0,
+    "V06": 3,
+    "V07": 3,
+    "V08": 0,
+    "V09": 3,
+    "V10": 0,
+    "I01": 3,
+    "I02": 0,
+    "I03": 3,
+    "I04": 3,
+    "I05": 0,
+    "I06": 3,
+    "I07": 0,
+    "I08": 0,
+    "I09": 0,
+    "I10": 0,
+    "C01": 3,
+    "C02": 3,
+    "C03": 3,
+    "C04": 0,
+    "C05": 3,
+    "C06": 3,
+    "C07": 3,
+    "C08": 0,
+    "C09": 0,
+    "C10": 0
+  },
+  "rows": [
+    {
+      "id": "B01",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: My father retires in March and we want the registry done in his name before then. A 3 BHK in Baner, up to 1.3 crore.\nAgent: Sure. Anything else I should note down?\nCustomer: It has to be something that stays in the family for good.",
+      "expected": "Buy",
+      "predicted": "Buy",
+      "confidence": 0.9192,
+      "probabilities": {
+        "Buy": 0.9192,
+        "Rent": 0.0047,
+        "Inquiry": 0.0043,
+        "Schedule Visit": 0.0072,
+        "Investment": 0.0548,
+        "Request Callback": 0.0097
+      },
+      "correct": true
+    },
+    {
+      "id": "B02",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Our PF withdrawal came through and my wife's gold is going towards the down payment. 2 BHK in Wakad, around 80 lakh all in.",
+      "expected": "Buy",
+      "predicted": "Buy",
+      "confidence": 0.9774,
+      "probabilities": {
+        "Buy": 0.9774,
+        "Rent": 0.0015,
+        "Inquiry": 0.0028,
+        "Schedule Visit": 0.0029,
+        "Investment": 0.0086,
+        "Request Callback": 0.0068
+      },
+      "correct": true
+    },
+    {
+      "id": "B03",
+      "register": "english",
+      "style": "messy",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Right so, um, I've budgeted stamp duty and registration separately, on top of the ninety lakh. College Road, Nashik, 3 BHK.\nAgent: Sure. Anything else I should note down?\nCustomer: Oh and covered parking.",
+      "expected": "Buy",
+      "predicted": "Buy",
+      "confidence": 0.9035,
+      "probabilities": {
+        "Buy": 0.9035,
+        "Rent": 0.0023,
+        "Inquiry": 0.041,
+        "Schedule Visit": 0.0045,
+        "Investment": 0.0407,
+        "Request Callback": 0.008
+      },
+      "correct": true
+    },
+    {
+      "id": "B04",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: I want a home nobody can ever ask us to vacate again. We have moved four times in six years. 2 BHK in Kothrud, 95 lakh.",
+      "expected": "Buy",
+      "predicted": "Buy",
+      "confidence": 0.957,
+      "probabilities": {
+        "Buy": 0.957,
+        "Rent": 0.0018,
+        "Inquiry": 0.0059,
+        "Schedule Visit": 0.0058,
+        "Investment": 0.0237,
+        "Request Callback": 0.0057
+      },
+      "correct": true
+    },
+    {
+      "id": "B05",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Is the title clear, and does the builder handle the conveyance deed? My lawyer will ask before we sign the agreement for sale.\nAgent: Sure. Anything else I should note down?\nCustomer: 3 BHK, Hadapsar, 1.1 crore.",
+      "expected": "Buy",
+      "predicted": "Inquiry",
+      "confidence": 0.9462,
+      "probabilities": {
+        "Buy": 0.0109,
+        "Rent": 0.0041,
+        "Inquiry": 0.9462,
+        "Schedule Visit": 0.0061,
+        "Investment": 0.0292,
+        "Request Callback": 0.0035
+      },
+      "correct": false
+    },
+    {
+      "id": "B06",
+      "register": "english",
+      "style": "messy",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: What's the payment plan — is it construction-linked? We'd want to block a unit with the token amount, sorry, the, uh, booking amount. Undri, 2 BHK.",
+      "expected": "Buy",
+      "predicted": "Buy",
+      "confidence": 0.9055,
+      "probabilities": {
+        "Buy": 0.9055,
+        "Rent": 0.0025,
+        "Inquiry": 0.0587,
+        "Schedule Visit": 0.0069,
+        "Investment": 0.0059,
+        "Request Callback": 0.0204
+      },
+      "correct": true
+    },
+    {
+      "id": "B07",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Once the possession letter comes, my mother moves in and the flat is hers. Gangapur Road, 2 BHK, up to 70 lakh.",
+      "expected": "Buy",
+      "predicted": "Buy",
+      "confidence": 0.9424,
+      "probabilities": {
+        "Buy": 0.9424,
+        "Rent": 0.0026,
+        "Inquiry": 0.0039,
+        "Schedule Visit": 0.0062,
+        "Investment": 0.0332,
+        "Request Callback": 0.0116
+      },
+      "correct": true
+    },
+    {
+      "id": "B08",
+      "register": "code-mixed",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Apna ghar chahiye jisme koi makaan-malik na ho. Registry mere naam pe honi chahiye. Chinchwad mein 2 BHK, 75 lakh.",
+      "expected": "Buy",
+      "predicted": "Investment",
+      "confidence": 0.8794,
+      "probabilities": {
+        "Buy": 0.016,
+        "Rent": 0.0551,
+        "Inquiry": 0.0247,
+        "Schedule Visit": 0.0171,
+        "Investment": 0.8794,
+        "Request Callback": 0.0077
+      },
+      "correct": false
+    },
+    {
+      "id": "B09",
+      "register": "code-mixed",
+      "style": "messy",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Down payment ke liye FD tod di hai, pachees lakh ready hai, baaki bank se. Umm, Pimple Saudagar, 2 BHK.",
+      "expected": "Buy",
+      "predicted": "Buy",
+      "confidence": 0.9722,
+      "probabilities": {
+        "Buy": 0.9722,
+        "Rent": 0.0012,
+        "Inquiry": 0.0055,
+        "Schedule Visit": 0.0027,
+        "Investment": 0.0078,
+        "Request Callback": 0.0106
+      },
+      "correct": true
+    },
+    {
+      "id": "B10",
+      "register": "code-mixed",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Stamp duty ka hisaab bhi laga liya hai. Possession 2027 tak chahiye, Nashik Road pe 3 BHK, ek crore tak.",
+      "expected": "Buy",
+      "predicted": "Investment",
+      "confidence": 0.9195,
+      "probabilities": {
+        "Buy": 0.0251,
+        "Rent": 0.005,
+        "Inquiry": 0.0215,
+        "Schedule Visit": 0.025,
+        "Investment": 0.9195,
+        "Request Callback": 0.0039
+      },
+      "correct": false
+    },
+    {
+      "id": "R01",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: My company has put me on a two-year project here and HR reimburses up to 35,000 a month for housing. 2 BHK near Hinjewadi.",
+      "expected": "Rent",
+      "predicted": "Rent",
+      "confidence": 0.9849,
+      "probabilities": {
+        "Buy": 0.0014,
+        "Rent": 0.9849,
+        "Inquiry": 0.0018,
+        "Schedule Visit": 0.0033,
+        "Investment": 0.0064,
+        "Request Callback": 0.0022
+      },
+      "correct": true
+    },
+    {
+      "id": "R02",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: What is the deposit — two months or three? And is maintenance included in the monthly amount? 1 BHK in Viman Nagar, fully furnished.",
+      "expected": "Rent",
+      "predicted": "Inquiry",
+      "confidence": 0.8449,
+      "probabilities": {
+        "Buy": 0.0124,
+        "Rent": 0.0058,
+        "Inquiry": 0.8449,
+        "Schedule Visit": 0.01,
+        "Investment": 0.1227,
+        "Request Callback": 0.0042
+      },
+      "correct": false
+    },
+    {
+      "id": "R03",
+      "register": "english",
+      "style": "messy",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: We're, uh, three students sharing, and each of us can do about nine thousand a month. Near the university, Aundh side. Furnished please.",
+      "expected": "Rent",
+      "predicted": "Rent",
+      "confidence": 0.9881,
+      "probabilities": {
+        "Buy": 0.0012,
+        "Rent": 0.9881,
+        "Inquiry": 0.0019,
+        "Schedule Visit": 0.0036,
+        "Investment": 0.0028,
+        "Request Callback": 0.0024
+      },
+      "correct": true
+    },
+    {
+      "id": "R04",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: I'm only here until my posting ends next June, then we go back to Delhi. 2 BHK in Kharadi, under 30,000 a month.",
+      "expected": "Rent",
+      "predicted": "Rent",
+      "confidence": 0.9879,
+      "probabilities": {
+        "Buy": 0.0012,
+        "Rent": 0.9879,
+        "Inquiry": 0.002,
+        "Schedule Visit": 0.0038,
+        "Investment": 0.0027,
+        "Request Callback": 0.0024
+      },
+      "correct": true
+    },
+    {
+      "id": "R05",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Does the owner allow a small dog? I can pay 18,000 every month and move in on the first. 1 BHK, Baner.",
+      "expected": "Rent",
+      "predicted": "Rent",
+      "confidence": 0.9553,
+      "probabilities": {
+        "Buy": 0.0022,
+        "Rent": 0.9553,
+        "Inquiry": 0.0033,
+        "Schedule Visit": 0.0066,
+        "Investment": 0.0297,
+        "Request Callback": 0.0029
+      },
+      "correct": true
+    },
+    {
+      "id": "R06",
+      "register": "english",
+      "style": "messy",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Our building is being redeveloped, and the builder pays us a monthly allowance for thirty months while it's — while it goes up again. So we need somewhere temporary in Erandwane, 3 BHK.",
+      "expected": "Rent",
+      "predicted": "Investment",
+      "confidence": 0.8934,
+      "probabilities": {
+        "Buy": 0.0351,
+        "Rent": 0.0509,
+        "Inquiry": 0.0042,
+        "Schedule Visit": 0.0102,
+        "Investment": 0.8934,
+        "Request Callback": 0.0062
+      },
+      "correct": false
+    },
+    {
+      "id": "R07",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: My wife's hospital posting here is for eighteen months and her allowance covers 25,000 a month. Furnished 2 BHK near Deccan.",
+      "expected": "Rent",
+      "predicted": "Rent",
+      "confidence": 0.9883,
+      "probabilities": {
+        "Buy": 0.0011,
+        "Rent": 0.9883,
+        "Inquiry": 0.0018,
+        "Schedule Visit": 0.0033,
+        "Investment": 0.0031,
+        "Request Callback": 0.0024
+      },
+      "correct": true
+    },
+    {
+      "id": "R08",
+      "register": "code-mixed",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Deposit kitna lagega? Mahine ka 20 hazaar se zyada nahi de paunga. Owner family ko dega na? Wanowrie mein 1 BHK.",
+      "expected": "Rent",
+      "predicted": "Inquiry",
+      "confidence": 0.8744,
+      "probabilities": {
+        "Buy": 0.0061,
+        "Rent": 0.0063,
+        "Inquiry": 0.8744,
+        "Schedule Visit": 0.0683,
+        "Investment": 0.0406,
+        "Request Callback": 0.0043
+      },
+      "correct": false
+    },
+    {
+      "id": "R09",
+      "register": "code-mixed",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Office ne do saal ke liye yahan bheja hai, company har mahine 30 hazaar tak deti hai. Magarpatta ke paas 2 BHK.",
+      "expected": "Rent",
+      "predicted": "Investment",
+      "confidence": 0.5236,
+      "probabilities": {
+        "Buy": 0.041,
+        "Rent": 0.0238,
+        "Inquiry": 0.0964,
+        "Schedule Visit": 0.2995,
+        "Investment": 0.5236,
+        "Request Callback": 0.0156
+      },
+      "correct": false
+    },
+    {
+      "id": "R10",
+      "register": "code-mixed",
+      "style": "messy",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Hostel chhodna hai, matlab, do dost milke rahenge, har mahine aath-aath hazaar. Katraj side, furnished.",
+      "expected": "Rent",
+      "predicted": "Rent",
+      "confidence": 0.508,
+      "probabilities": {
+        "Buy": 0.0061,
+        "Rent": 0.508,
+        "Inquiry": 0.0222,
+        "Schedule Visit": 0.0381,
+        "Investment": 0.4186,
+        "Request Callback": 0.007
+      },
+      "correct": true
+    },
+    {
+      "id": "Q01",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: We're two years away from doing anything. I'd just like a sense of where prices are in Baner right now for a 3 BHK.",
+      "expected": "Inquiry",
+      "predicted": "Investment",
+      "confidence": 0.9013,
+      "probabilities": {
+        "Buy": 0.0105,
+        "Rent": 0.0054,
+        "Inquiry": 0.0723,
+        "Schedule Visit": 0.0075,
+        "Investment": 0.9013,
+        "Request Callback": 0.003
+      },
+      "correct": false
+    },
+    {
+      "id": "Q02",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Is your Bavdhan project RERA-registered, and what is the ratio of carpet area to super built-up?\nAgent: Sure. Anything else I should note down?\nCustomer: No requirement as such, I'm noting it down.",
+      "expected": "Inquiry",
+      "predicted": "Inquiry",
+      "confidence": 0.9815,
+      "probabilities": {
+        "Buy": 0.0041,
+        "Rent": 0.0022,
+        "Inquiry": 0.9815,
+        "Schedule Visit": 0.004,
+        "Investment": 0.0062,
+        "Request Callback": 0.0021
+      },
+      "correct": true
+    },
+    {
+      "id": "Q03",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: My cousin asked me to find out roughly what a 2 BHK goes for in Wakad these days. There's no plan on my side.",
+      "expected": "Inquiry",
+      "predicted": "Inquiry",
+      "confidence": 0.977,
+      "probabilities": {
+        "Buy": 0.0077,
+        "Rent": 0.0017,
+        "Inquiry": 0.977,
+        "Schedule Visit": 0.0053,
+        "Investment": 0.0059,
+        "Request Callback": 0.0024
+      },
+      "correct": true
+    },
+    {
+      "id": "Q04",
+      "register": "english",
+      "style": "messy",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Could you, um, email me the price list and the floor plans? I'll go through them later, no rush on anything.",
+      "expected": "Inquiry",
+      "predicted": "Request Callback",
+      "confidence": 0.5131,
+      "probabilities": {
+        "Buy": 0.0223,
+        "Rent": 0.0101,
+        "Inquiry": 0.2236,
+        "Schedule Visit": 0.2225,
+        "Investment": 0.0084,
+        "Request Callback": 0.5131
+      },
+      "correct": false
+    },
+    {
+      "id": "Q05",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Is Pimple Saudagar better value than Wakad at the moment? I'm only trying to get a feel for the market.",
+      "expected": "Inquiry",
+      "predicted": "Inquiry",
+      "confidence": 0.9597,
+      "probabilities": {
+        "Buy": 0.0039,
+        "Rent": 0.0024,
+        "Inquiry": 0.9597,
+        "Schedule Visit": 0.0216,
+        "Investment": 0.0103,
+        "Request Callback": 0.0021
+      },
+      "correct": true
+    },
+    {
+      "id": "Q06",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: I'm writing a piece on housing in Nashik. What's the going rate per square foot on College Road?",
+      "expected": "Inquiry",
+      "predicted": "Inquiry",
+      "confidence": 0.9734,
+      "probabilities": {
+        "Buy": 0.0033,
+        "Rent": 0.0035,
+        "Inquiry": 0.9734,
+        "Schedule Visit": 0.0061,
+        "Investment": 0.0118,
+        "Request Callback": 0.002
+      },
+      "correct": true
+    },
+    {
+      "id": "Q07",
+      "register": "english",
+      "style": "messy",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: What amenities come as standard in your projects, and what are the maintenance charges, roughly? No decision on my end, I'm, yeah, just noting it.",
+      "expected": "Inquiry",
+      "predicted": "Inquiry",
+      "confidence": 0.983,
+      "probabilities": {
+        "Buy": 0.0034,
+        "Rent": 0.002,
+        "Inquiry": 0.983,
+        "Schedule Visit": 0.0039,
+        "Investment": 0.0059,
+        "Request Callback": 0.0018
+      },
+      "correct": true
+    },
+    {
+      "id": "Q08",
+      "register": "code-mixed",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Sirf rate jaanna tha. Kharadi mein 3 BHK kitne ka chal raha hai aajkal?",
+      "expected": "Inquiry",
+      "predicted": "Schedule Visit",
+      "confidence": 0.787,
+      "probabilities": {
+        "Buy": 0.0064,
+        "Rent": 0.0055,
+        "Inquiry": 0.1817,
+        "Schedule Visit": 0.787,
+        "Investment": 0.0123,
+        "Request Callback": 0.007
+      },
+      "correct": false
+    },
+    {
+      "id": "Q09",
+      "register": "code-mixed",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Brochure aur price list WhatsApp kar dijiye, aaram se padh lunga. Abhi koi jaldi nahi hai.",
+      "expected": "Inquiry",
+      "predicted": "Inquiry",
+      "confidence": 0.8482,
+      "probabilities": {
+        "Buy": 0.0194,
+        "Rent": 0.0061,
+        "Inquiry": 0.8482,
+        "Schedule Visit": 0.0116,
+        "Investment": 0.1099,
+        "Request Callback": 0.0049
+      },
+      "correct": true
+    },
+    {
+      "id": "Q10",
+      "register": "code-mixed",
+      "style": "messy",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Abhi koi plan nahi hai, bas, woh, pata karna tha ki Nashik Road pe square foot ka kya rate hai.",
+      "expected": "Inquiry",
+      "predicted": "Investment",
+      "confidence": 0.6767,
+      "probabilities": {
+        "Buy": 0.009,
+        "Rent": 0.2328,
+        "Inquiry": 0.0307,
+        "Schedule Visit": 0.0438,
+        "Investment": 0.6767,
+        "Request Callback": 0.007
+      },
+      "correct": false
+    },
+    {
+      "id": "V01",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Is the sample flat open on Sunday mornings? My parents can only come then. It's the 3 BHK in Balewadi.",
+      "expected": "Schedule Visit",
+      "predicted": "Schedule Visit",
+      "confidence": 0.966,
+      "probabilities": {
+        "Buy": 0.0034,
+        "Rent": 0.0043,
+        "Inquiry": 0.0063,
+        "Schedule Visit": 0.966,
+        "Investment": 0.0025,
+        "Request Callback": 0.0174
+      },
+      "correct": true
+    },
+    {
+      "id": "V02",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Can your site person meet us at the gate around four tomorrow? I'd like to walk through the actual unit, not the brochure.",
+      "expected": "Schedule Visit",
+      "predicted": "Schedule Visit",
+      "confidence": 0.9736,
+      "probabilities": {
+        "Buy": 0.0035,
+        "Rent": 0.0036,
+        "Inquiry": 0.0051,
+        "Schedule Visit": 0.9736,
+        "Investment": 0.0025,
+        "Request Callback": 0.0117
+      },
+      "correct": true
+    },
+    {
+      "id": "V03",
+      "register": "english",
+      "style": "messy",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Before anything else I want to stand on that balcony and, um, check the morning sun myself. When can that happen? Tower B, 2 BHK.",
+      "expected": "Schedule Visit",
+      "predicted": "Schedule Visit",
+      "confidence": 0.9768,
+      "probabilities": {
+        "Buy": 0.0038,
+        "Rent": 0.0037,
+        "Inquiry": 0.0047,
+        "Schedule Visit": 0.9768,
+        "Investment": 0.0028,
+        "Request Callback": 0.0082
+      },
+      "correct": true
+    },
+    {
+      "id": "V04",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Send me the site address and a slot this week — I'll take half a day off work for it. Kharadi, 2 BHK.",
+      "expected": "Schedule Visit",
+      "predicted": "Schedule Visit",
+      "confidence": 0.5205,
+      "probabilities": {
+        "Buy": 0.0212,
+        "Rent": 0.2182,
+        "Inquiry": 0.026,
+        "Schedule Visit": 0.5205,
+        "Investment": 0.0337,
+        "Request Callback": 0.1803
+      },
+      "correct": true
+    },
+    {
+      "id": "V05",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: We're in Nashik only on the 14th and 15th. Can someone show us around the Gangapur Road tower on one of those days?",
+      "expected": "Schedule Visit",
+      "predicted": "Schedule Visit",
+      "confidence": 0.9775,
+      "probabilities": {
+        "Buy": 0.0031,
+        "Rent": 0.0039,
+        "Inquiry": 0.0071,
+        "Schedule Visit": 0.9775,
+        "Investment": 0.0025,
+        "Request Callback": 0.006
+      },
+      "correct": true
+    },
+    {
+      "id": "V06",
+      "register": "english",
+      "style": "messy",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Photos can, you know, lie. I need to physically go inside the seventh-floor unit. Is Saturday at eleven possible?",
+      "expected": "Schedule Visit",
+      "predicted": "Schedule Visit",
+      "confidence": 0.9712,
+      "probabilities": {
+        "Buy": 0.0054,
+        "Rent": 0.0044,
+        "Inquiry": 0.004,
+        "Schedule Visit": 0.9712,
+        "Investment": 0.0033,
+        "Request Callback": 0.0118
+      },
+      "correct": true
+    },
+    {
+      "id": "V07",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Can I bring my contractor along to check the plumbing and wall finishes in person before the weekend? 3 BHK, Wakad.",
+      "expected": "Schedule Visit",
+      "predicted": "Schedule Visit",
+      "confidence": 0.9501,
+      "probabilities": {
+        "Buy": 0.0036,
+        "Rent": 0.0047,
+        "Inquiry": 0.0117,
+        "Schedule Visit": 0.9501,
+        "Investment": 0.0025,
+        "Request Callback": 0.0272
+      },
+      "correct": true
+    },
+    {
+      "id": "V08",
+      "register": "code-mixed",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Sunday ko sample flat khula rehta hai kya? Hum dopahar mein aa jayenge. Baner wala project.",
+      "expected": "Schedule Visit",
+      "predicted": "Schedule Visit",
+      "confidence": 0.5987,
+      "probabilities": {
+        "Buy": 0.0119,
+        "Rent": 0.0068,
+        "Inquiry": 0.353,
+        "Schedule Visit": 0.5987,
+        "Investment": 0.0131,
+        "Request Callback": 0.0164
+      },
+      "correct": true
+    },
+    {
+      "id": "V09",
+      "register": "code-mixed",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Kal shaam paanch baje site pe mil sakte hain? Andar se flat check karna hai.",
+      "expected": "Schedule Visit",
+      "predicted": "Schedule Visit",
+      "confidence": 0.7854,
+      "probabilities": {
+        "Buy": 0.0124,
+        "Rent": 0.0047,
+        "Inquiry": 0.1683,
+        "Schedule Visit": 0.7854,
+        "Investment": 0.0079,
+        "Request Callback": 0.0213
+      },
+      "correct": true
+    },
+    {
+      "id": "V10",
+      "register": "code-mixed",
+      "style": "messy",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Mummy papa ko bhi saath laana hai, toh, haan, weekend pe site pe aapka kab time rahega?",
+      "expected": "Schedule Visit",
+      "predicted": "Schedule Visit",
+      "confidence": 0.9715,
+      "probabilities": {
+        "Buy": 0.0025,
+        "Rent": 0.0055,
+        "Inquiry": 0.0096,
+        "Schedule Visit": 0.9715,
+        "Investment": 0.0028,
+        "Request Callback": 0.0081
+      },
+      "correct": true
+    },
+    {
+      "id": "I01",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: It isn't for living in. I want something that appreciates once the metro line opens, and I'll sell in five or six years.",
+      "expected": "Investment",
+      "predicted": "Rent",
+      "confidence": 0.6599,
+      "probabilities": {
+        "Buy": 0.0047,
+        "Rent": 0.6599,
+        "Inquiry": 0.0061,
+        "Schedule Visit": 0.0104,
+        "Investment": 0.3117,
+        "Request Callback": 0.0072
+      },
+      "correct": false
+    },
+    {
+      "id": "I02",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: What returns are owners getting on units near the IT park? I'd hold it and let a tenant pay for it.",
+      "expected": "Investment",
+      "predicted": "Investment",
+      "confidence": 0.91,
+      "probabilities": {
+        "Buy": 0.0066,
+        "Rent": 0.0051,
+        "Inquiry": 0.0705,
+        "Schedule Visit": 0.0042,
+        "Investment": 0.91,
+        "Request Callback": 0.0035
+      },
+      "correct": true
+    },
+    {
+      "id": "I03",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: I've money sitting in fixed deposits at six percent. I'd rather it grew in bricks. A 1 BHK anywhere in Hinjewadi Phase 2.",
+      "expected": "Investment",
+      "predicted": "Investment",
+      "confidence": 0.8954,
+      "probabilities": {
+        "Buy": 0.0717,
+        "Rent": 0.0034,
+        "Inquiry": 0.0176,
+        "Schedule Visit": 0.0064,
+        "Investment": 0.8954,
+        "Request Callback": 0.0055
+      },
+      "correct": true
+    },
+    {
+      "id": "I04",
+      "register": "english",
+      "style": "messy",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: A shop that already has a tenant paying would be ideal — I live in Dubai, so, uh, I won't ever use it myself. Budget 60 lakh.",
+      "expected": "Investment",
+      "predicted": "Buy",
+      "confidence": 0.8488,
+      "probabilities": {
+        "Buy": 0.8488,
+        "Rent": 0.0027,
+        "Inquiry": 0.0333,
+        "Schedule Visit": 0.0049,
+        "Investment": 0.0964,
+        "Request Callback": 0.0139
+      },
+      "correct": false
+    },
+    {
+      "id": "I05",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Pre-launch pricing, then exit at possession — how much did the last phase go up between launch and handover?",
+      "expected": "Investment",
+      "predicted": "Inquiry",
+      "confidence": 0.7244,
+      "probabilities": {
+        "Buy": 0.2347,
+        "Rent": 0.0033,
+        "Inquiry": 0.7244,
+        "Schedule Visit": 0.0084,
+        "Investment": 0.0205,
+        "Request Callback": 0.0087
+      },
+      "correct": false
+    },
+    {
+      "id": "I06",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: My CA says I should move some money out of equities. Land near the new ring road seems the obvious place for it.",
+      "expected": "Investment",
+      "predicted": "Buy",
+      "confidence": 0.7384,
+      "probabilities": {
+        "Buy": 0.7384,
+        "Rent": 0.0041,
+        "Inquiry": 0.0113,
+        "Schedule Visit": 0.0063,
+        "Investment": 0.2292,
+        "Request Callback": 0.0107
+      },
+      "correct": false
+    },
+    {
+      "id": "I07",
+      "register": "english",
+      "style": "messy",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: I already own the flat I live in. This one would be purely for capital growth — which, um, which micro-market has appreciated most?",
+      "expected": "Investment",
+      "predicted": "Investment",
+      "confidence": 0.6154,
+      "probabilities": {
+        "Buy": 0.0165,
+        "Rent": 0.0094,
+        "Inquiry": 0.3451,
+        "Schedule Visit": 0.0085,
+        "Investment": 0.6154,
+        "Request Callback": 0.0051
+      },
+      "correct": true
+    },
+    {
+      "id": "I08",
+      "register": "code-mixed",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Rehne ke liye nahi hai. Paisa aisi jagah lagana hai jahan value badhe, metro aane ke baad bech denge.",
+      "expected": "Investment",
+      "predicted": "Rent",
+      "confidence": 0.7776,
+      "probabilities": {
+        "Buy": 0.0032,
+        "Rent": 0.7776,
+        "Inquiry": 0.0093,
+        "Schedule Visit": 0.0116,
+        "Investment": 0.193,
+        "Request Callback": 0.0052
+      },
+      "correct": false
+    },
+    {
+      "id": "I09",
+      "register": "code-mixed",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Main Singapore mein rehta hoon, wahan se use nahi karunga. Bas aage chalke achha return mile, Kharadi side.",
+      "expected": "Investment",
+      "predicted": "Investment",
+      "confidence": 0.6613,
+      "probabilities": {
+        "Buy": 0.0113,
+        "Rent": 0.1884,
+        "Inquiry": 0.0142,
+        "Schedule Visit": 0.1104,
+        "Investment": 0.6613,
+        "Request Callback": 0.0144
+      },
+      "correct": true
+    },
+    {
+      "id": "I10",
+      "register": "code-mixed",
+      "style": "messy",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Plot le ke rakhna hai, das saal baad, matlab, jab rate double ho jaye tab bachchon ke kaam aayega.",
+      "expected": "Investment",
+      "predicted": "Investment",
+      "confidence": 0.736,
+      "probabilities": {
+        "Buy": 0.0492,
+        "Rent": 0.0182,
+        "Inquiry": 0.1399,
+        "Schedule Visit": 0.037,
+        "Investment": 0.736,
+        "Request Callback": 0.0198
+      },
+      "correct": true
+    },
+    {
+      "id": "C01",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: I'm driving right now. Can one of your people ring me this evening after seven?",
+      "expected": "Request Callback",
+      "predicted": "Request Callback",
+      "confidence": 0.9774,
+      "probabilities": {
+        "Buy": 0.0028,
+        "Rent": 0.003,
+        "Inquiry": 0.004,
+        "Schedule Visit": 0.0103,
+        "Investment": 0.0026,
+        "Request Callback": 0.9774
+      },
+      "correct": true
+    },
+    {
+      "id": "C02",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: I'm about to go into a meeting. Please have a senior executive phone me tomorrow morning on this same number.",
+      "expected": "Request Callback",
+      "predicted": "Request Callback",
+      "confidence": 0.9831,
+      "probabilities": {
+        "Buy": 0.0038,
+        "Rent": 0.0025,
+        "Inquiry": 0.0035,
+        "Schedule Visit": 0.0049,
+        "Investment": 0.0021,
+        "Request Callback": 0.9831
+      },
+      "correct": true
+    },
+    {
+      "id": "C03",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: My husband handles all this. He's free around lunch — get someone to phone him on the number I gave on the form.",
+      "expected": "Request Callback",
+      "predicted": "Request Callback",
+      "confidence": 0.9833,
+      "probabilities": {
+        "Buy": 0.0035,
+        "Rent": 0.0023,
+        "Inquiry": 0.003,
+        "Schedule Visit": 0.0058,
+        "Investment": 0.0022,
+        "Request Callback": 0.9833
+      },
+      "correct": true
+    },
+    {
+      "id": "C04",
+      "register": "english",
+      "style": "messy",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: The network here is, sorry, I can barely hear you. Better someone dials me again when I'm home, say after eight.",
+      "expected": "Request Callback",
+      "predicted": "Request Callback",
+      "confidence": 0.9831,
+      "probabilities": {
+        "Buy": 0.0042,
+        "Rent": 0.0023,
+        "Inquiry": 0.0027,
+        "Schedule Visit": 0.0052,
+        "Investment": 0.0025,
+        "Request Callback": 0.9831
+      },
+      "correct": true
+    },
+    {
+      "id": "C05",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Could your manager get in touch with me before Friday? I'd rather go through the details with someone senior on the phone.",
+      "expected": "Request Callback",
+      "predicted": "Request Callback",
+      "confidence": 0.9676,
+      "probabilities": {
+        "Buy": 0.0036,
+        "Rent": 0.0027,
+        "Inquiry": 0.0051,
+        "Schedule Visit": 0.0192,
+        "Investment": 0.0018,
+        "Request Callback": 0.9676
+      },
+      "correct": true
+    },
+    {
+      "id": "C06",
+      "register": "english",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: I'm at the hospital with my father. Please try me again tomorrow, any time after ten.",
+      "expected": "Request Callback",
+      "predicted": "Request Callback",
+      "confidence": 0.9764,
+      "probabilities": {
+        "Buy": 0.0037,
+        "Rent": 0.0026,
+        "Inquiry": 0.0038,
+        "Schedule Visit": 0.011,
+        "Investment": 0.0024,
+        "Request Callback": 0.9764
+      },
+      "correct": true
+    },
+    {
+      "id": "C07",
+      "register": "english",
+      "style": "messy",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: It's a bad moment — I'm, uh, about to board. Could someone from your team get back to me on this number on Monday?",
+      "expected": "Request Callback",
+      "predicted": "Request Callback",
+      "confidence": 0.9638,
+      "probabilities": {
+        "Buy": 0.0061,
+        "Rent": 0.0023,
+        "Inquiry": 0.0051,
+        "Schedule Visit": 0.0209,
+        "Investment": 0.0019,
+        "Request Callback": 0.9638
+      },
+      "correct": true
+    },
+    {
+      "id": "C08",
+      "register": "code-mixed",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Abhi office mein hoon, shaam ko saat baje ke baad phone kar dena please.",
+      "expected": "Request Callback",
+      "predicted": "Request Callback",
+      "confidence": 0.985,
+      "probabilities": {
+        "Buy": 0.0033,
+        "Rent": 0.0021,
+        "Inquiry": 0.0032,
+        "Schedule Visit": 0.0043,
+        "Investment": 0.0021,
+        "Request Callback": 0.985
+      },
+      "correct": true
+    },
+    {
+      "id": "C09",
+      "register": "code-mixed",
+      "style": "clean",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Mere pati se baat kar lijiye, unka number note kar lo. Raat aath baje ke baad free rehte hain.",
+      "expected": "Request Callback",
+      "predicted": "Schedule Visit",
+      "confidence": 0.8035,
+      "probabilities": {
+        "Buy": 0.0196,
+        "Rent": 0.0866,
+        "Inquiry": 0.0107,
+        "Schedule Visit": 0.8035,
+        "Investment": 0.0233,
+        "Request Callback": 0.0563
+      },
+      "correct": false
+    },
+    {
+      "id": "C10",
+      "register": "code-mixed",
+      "style": "messy",
+      "transcript": "Agent: Good afternoon, thank you for calling. How can I help you today?\nCustomer: Abhi gaadi chala raha hoon, toh, kal subah kisi ko bolo mujhe phone karne ko.",
+      "expected": "Request Callback",
+      "predicted": "Request Callback",
+      "confidence": 0.9842,
+      "probabilities": {
+        "Buy": 0.0034,
+        "Rent": 0.0022,
+        "Inquiry": 0.0034,
+        "Schedule Visit": 0.0047,
+        "Investment": 0.002,
+        "Request Callback": 0.9842
+      },
+      "correct": true
+    }
+  ],
+  "metrics": {
+    "accuracy": 0.7166666666666667,
+    "correct": 43,
+    "total": 60,
+    "macro_precision": 0.7192760942760943,
+    "macro_recall": 0.7166666666666667,
+    "macro_f1": 0.7147983595352017,
+    "averaged_over": [
+      "Buy",
+      "Rent",
+      "Inquiry",
+      "Schedule Visit",
+      "Investment",
+      "Request Callback"
+    ],
+    "per_class": {
+      "Buy": {
+        "support": 10,
+        "tp": 7,
+        "fp": 2,
+        "fn": 3,
+        "precision": 0.7777777777777778,
+        "recall": 0.7,
+        "f1": 0.7368421052631577
+      },
+      "Rent": {
+        "support": 10,
+        "tp": 6,
+        "fp": 2,
+        "fn": 4,
+        "precision": 0.75,
+        "recall": 0.6,
+        "f1": 0.6666666666666665
+      },
+      "Inquiry": {
+        "support": 10,
+        "tp": 6,
+        "fp": 4,
+        "fn": 4,
+        "precision": 0.6,
+        "recall": 0.6,
+        "f1": 0.6
+      },
+      "Schedule Visit": {
+        "support": 10,
+        "tp": 10,
+        "fp": 2,
+        "fn": 0,
+        "precision": 0.8333333333333334,
+        "recall": 1.0,
+        "f1": 0.9090909090909091
+      },
+      "Investment": {
+        "support": 10,
+        "tp": 5,
+        "fp": 6,
+        "fn": 5,
+        "precision": 0.45454545454545453,
+        "recall": 0.5,
+        "f1": 0.47619047619047616
+      },
+      "Request Callback": {
+        "support": 10,
+        "tp": 9,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.9,
+        "recall": 0.9,
+        "f1": 0.9
+      }
+    },
+    "confusion": {
+      "Buy": {
+        "Buy": 7,
+        "Rent": 0,
+        "Inquiry": 1,
+        "Schedule Visit": 0,
+        "Investment": 2,
+        "Request Callback": 0
+      },
+      "Rent": {
+        "Buy": 0,
+        "Rent": 6,
+        "Inquiry": 2,
+        "Schedule Visit": 0,
+        "Investment": 2,
+        "Request Callback": 0
+      },
+      "Inquiry": {
+        "Buy": 0,
+        "Rent": 0,
+        "Inquiry": 6,
+        "Schedule Visit": 1,
+        "Investment": 2,
+        "Request Callback": 1
+      },
+      "Schedule Visit": {
+        "Buy": 0,
+        "Rent": 0,
+        "Inquiry": 0,
+        "Schedule Visit": 10,
+        "Investment": 0,
+        "Request Callback": 0
+      },
+      "Investment": {
+        "Buy": 2,
+        "Rent": 2,
+        "Inquiry": 1,
+        "Schedule Visit": 0,
+        "Investment": 5,
+        "Request Callback": 0
+      },
+      "Request Callback": {
+        "Buy": 0,
+        "Rent": 0,
+        "Inquiry": 0,
+        "Schedule Visit": 1,
+        "Investment": 0,
+        "Request Callback": 9
+      }
+    },
+    "by_register": {
+      "english": {
+        "cases": 42,
+        "accuracy": 0.7857142857142857,
+        "macro_f1": 0.7782051282051281
+      },
+      "code-mixed": {
+        "cases": 18,
+        "accuracy": 0.5555555555555556,
+        "macro_f1": 0.549074074074074
+      }
+    },
+    "by_style": {
+      "clean": {
+        "cases": 42,
+        "accuracy": 0.6904761904761905,
+        "macro_f1": 0.6889499389499391
+      },
+      "messy": {
+        "cases": 18,
+        "accuracy": 0.7777777777777778,
+        "macro_f1": 0.7642857142857142
+      }
+    }
+  }
+}

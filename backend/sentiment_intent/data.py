@@ -66,6 +66,15 @@ SENTIMENT_V5_PATH = REPO_ROOT / "data_generation" / "output" / "sentiment_v5.jso
 # inverted to Frustrated at 0.99. v6 adds backstory enthusiasm, and matching
 # breadth to the other three tones so the holdout stays balanced.
 SENTIMENT_V6_PATH = REPO_ROOT / "data_generation" / "output" / "sentiment_v6.jsonl"
+# Intent-only corpus built by data_generation/intent_context.py. The v6-trained
+# intent head memorised stock intent phrases (1.000 on its test split, 12% on
+# the unseen-50 set), so intent now trains on transcripts where the intent is
+# implied by situation and never named. Sentiment keeps training on v6.
+INTENT_V1_PATH = REPO_ROOT / "data_generation" / "output" / "intent_v1.jsonl"
+# v2 = v1 with Buy vs Investment separated by end use (own use vs returns). The
+# v1 holdout read 60% of unseen Buy ideas as Investment, because v1's Buy money
+# ideas never said who would live in the place.
+INTENT_V2_PATH = REPO_ROOT / "data_generation" / "output" / "intent_v2.jsonl"
 MODULE_DIR = Path(__file__).resolve().parent
 SPLIT_PATH = MODULE_DIR / "split.json"
 # Its own split file: build_split rewrites whatever path it is given whenever
@@ -75,6 +84,8 @@ PILOT_SPLIT_PATH = MODULE_DIR / "split_pilot.json"
 V4_SPLIT_PATH = MODULE_DIR / "split_v4.json"
 V5_SPLIT_PATH = MODULE_DIR / "split_v5.json"
 V6_SPLIT_PATH = MODULE_DIR / "split_v6.json"
+INTENT_V1_SPLIT_PATH = MODULE_DIR / "split_intent_v1.json"
+INTENT_V2_SPLIT_PATH = MODULE_DIR / "split_intent_v2.json"
 MODELS_STORE = BACKEND_DIR / "models_store" / "sentiment_intent"
 
 # Which phrase pools a corpus was generated from. The template baseline and the
@@ -84,6 +95,7 @@ MODELS_STORE = BACKEND_DIR / "models_store" / "sentiment_intent"
 POOL_MODULES: Dict[str, str] = {
     "v3": "data_generation.phrase_pools",
     "pilot": "data_generation.pilot_emotion_pools",
+    "intent": "data_generation.intent_context_pools",
 }
 DEFAULT_POOLS = "v3"
 
@@ -95,6 +107,8 @@ NAMED_CORPORA: Dict[str, Dict[str, Any]] = {
     "v4": {"path": SENTIMENT_V4_PATH, "pools": "pilot", "split": V4_SPLIT_PATH},
     "v5": {"path": SENTIMENT_V5_PATH, "pools": "pilot", "split": V5_SPLIT_PATH},
     "v6": {"path": SENTIMENT_V6_PATH, "pools": "pilot", "split": V6_SPLIT_PATH},
+    "intent_v1": {"path": INTENT_V1_PATH, "pools": "intent", "split": INTENT_V1_SPLIT_PATH},
+    "intent_v2": {"path": INTENT_V2_PATH, "pools": "intent", "split": INTENT_V2_SPLIT_PATH},
 }
 
 # The agreed Phase 2 label spaces (see CLAUDE.md section 8, Phase 2). Order is

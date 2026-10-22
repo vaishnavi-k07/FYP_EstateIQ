@@ -1,0 +1,971 @@
+"""Intent pools — intent carried by situation, not by a stock intent phrase.
+
+Separate from :mod:`phrase_pools` (the v3 pools the NER corpus and the old intent
+head were built on) and from :mod:`pilot_emotion_pools` (sentiment). Nothing
+here feeds either of those corpora.
+
+Why a new pool set exists
+-------------------------
+The intent head trained on v6 reached 1.000 test macro-F1 and a phrase matcher
+over the generator's own pools reached the same 1.000. On the unseen-50 set it
+scored 57% where the caller stated an intent and 2.6% where the intent had to
+be inferred: "We want to buy a 2 BHK" came back Buy at 0.98, the same sentence
+with "want to buy" removed came back Inquiry at 0.32. 1456 of the 1504 v6
+transcripts carry a stock phrase for their own intent, so the model learned
+those phrases and nothing else — the same failure v3 sentiment had with affect
+words, fixed the same way:
+
+1. **No stock intent vocabulary.** No phrase here says buy, purchase, rent,
+   invest, visit, call back, enquiry or information. The intent is in the
+   situation — a sanctioned loan, a deposit question, "nobody in my family
+   will live there". :func:`stated_intent_leaks` enforces the ban.
+
+2. **A group is an idea, not a phrasing.** ``{intent: {idea: [surface forms]}}``,
+   three forms per idea. The phrase-holdout diagnostic withholds whole ideas,
+   so a held-out transcript expresses an intent through a situation the model
+   has never seen at all.
+
+3. **Cue words are shared across intents on purpose.** A monthly figure is not
+   Rent: it is also an EMI (Buy) and a tenant's payment (Investment). "Loan"
+   is Buy, but also Inquiry (which banks are tied up) and Investment (the EMI
+   the tenant covers). "Saturday" is Visit and Callback; "phone" is Callback
+   and Inquiry; "owner" is Rent and Buy. Each intent also carries *contrast*
+   ideas that mention a rival intent's vocabulary to rule it out ("owning is
+   too big a step for us right now" is Rent). :func:`lopsided_tokens` reports
+   any content word that stays exclusive to one intent across several ideas.
+
+4. **Written after the test set, around it.** ``backend/eval/
+   intent_unseen_cases.py`` was fixed first. These ideas cover the same six
+   intents through different situations, and ``eval.run_intent_unseen``
+   measures the overlap rather than assuming it away.
+
+Sentiment pools are re-exported so ``sentiment_intent.data._phrase_pools``
+keeps working when handed this module; they are not used to label anything.
+"""
+
+from __future__ import annotations
+
+import collections
+import re
+from typing import Dict, List, Tuple
+
+from data_generation.pilot_emotion_pools import (  # noqa: F401  (re-exported)
+    DEFLECTIONS,
+    DEFLECTION_GROUPS,
+    OPENER_IDEAS,
+    SENTIMENT_CLASSES,
+    SENTIMENT_OPENER_GROUPS,
+    SENTIMENT_OPENERS,
+    _HINDI_MARKERS,
+)
+
+INTENT_CLASSES: Tuple[str, ...] = (
+    "Buy",
+    "Rent",
+    "Inquiry",
+    "Schedule Visit",
+    "Investment",
+    "Request Callback",
+)
+
+# The stock words the v3 generator used to *name* each intent. Banned here.
+# "rental" (as in rental yield) and "visiting" (relatives visiting) are allowed
+# deliberately: they sit under Investment and Rent respectively, which is
+# exactly the kind of cross-intent sharing that stops a token shortcut.
+STOCK_INTENT_PATTERNS: Tuple[str, ...] = (
+    r"\bbuy", r"\bbought\b", r"\bpurchas", r"\brent\b", r"\brenting\b",
+    r"\blease", r"\binvest", r"\bvisit\b", r"\bvisits\b", r"call ?back",
+    r"\bcall me\b", r"\benquir", r"\binquir", r"\binformation\b",
+    r"\bexplore\b", r"\bkhareed", r"\bjaankari\b", r"\bviewing\b",
+)
+
+
+INTENT_IDEAS: Dict[str, Dict[str, List[str]]] = {
+    # ------------------------------------------------------------------ #
+    "Buy": {
+        "loan-sanctioned": [
+            "The bank sanctioned our home loan on Thursday, so we can move in as soon as we pick one.",
+            "Our home loan came through last week, for the flat we'll be living in.",
+            "The home loan approval is in my inbox, and this will be our family home.",
+        ],
+        "ready-to-finalise": [
+            "We're ready to finalise as soon as the right unit turns up.",
+            "We'd like the agreement registered within the month.",
+            "Once we like one, we could sign tomorrow.",
+        ],
+        "budget-set": [
+            "Our budget for the home we'll live in is set and it won't move.",
+            "We've fixed the all-in figure for our own home with our bank manager.",
+            "The number we can spend on a place for the family is final now.",
+        ],
+        "emi-planned": [
+            "We can carry a home loan EMI of about forty thousand a month while we live there.",
+            "Our home loan instalment can go up to 45,000, and we'll be staying in it ourselves.",
+            "My salary covers an EMI of up to fifty thousand on the house we move into.",
+        ],
+        "done-paying-landlord": [
+            "Eleven years of paying a landlord is enough, we want to live somewhere that's ours.",
+            "We're tired of handing someone else a cheque every month for the place we live in.",
+            "Every month the money goes to the owner of our flat, and we want our own roof instead.",
+        ],
+        "papers-in-own-name": [
+            "This time I want the property papers in my own name.",
+            "It should be ours on paper, nobody else's.",
+            "The ownership has to be in both our names.",
+        ],
+        "selling-old-place": [
+            "We're selling our old flat in Satara to move into a bigger one here.",
+            "The money from my village land sale goes into a home for us to live in.",
+            "Once our current place is sold, we'll move the family into the new one.",
+        ],
+        "last-move": [
+            "This is where we plan to grow old.",
+            "We want the place our kids grow up in and keep coming back to.",
+            "This is meant to be the last move of our lives.",
+        ],
+        "wedding-gift": [
+            "It's for my daughter, a wedding gift that will be in her name.",
+            "My son is getting married and this will be his home.",
+            "We want to hand it over to my daughter after her wedding.",
+        ],
+        "ready-built-only": [
+            "It has to be complete already, we can't wait three years for construction.",
+            "Only something with its occupancy certificate in hand.",
+            "A finished flat suits us, no under-construction projects.",
+        ],
+        "loan-eligibility": [
+            "The bank says we're eligible for about sixty lakh towards a home for ourselves.",
+            "Our combined income qualifies us for a decent home loan on the place we'll live in.",
+            "My credit score is good and the bank has confirmed our eligibility for our own house.",
+        ],
+        "first-home-together": [
+            "It'll be our first home together, we both work.",
+            "This will be the first place we actually own.",
+            "First home for us, so we want to get it right.",
+        ],
+        "pooling-with-sibling": [
+            "My brother and I are pooling our savings into one flat that Mum and Dad will live in.",
+            "Two of us are splitting the cost so our parents have a home of their own to stay in.",
+            "My sister and I are putting our money together for a flat the family will live in.",
+        ],
+        "home-loan-tax-benefit": [
+            "The tax benefit on the home loan is part of why we're doing it now.",
+            "The deduction on the principal makes sense for us this year.",
+            "Our tax consultant says the interest deduction helps us this financial year.",
+        ],
+        "interiors-after-keys": [
+            "We'll redo the kitchen and flooring to our taste once it's ours.",
+            "We plan to knock down a wall and redo the interiors after we get the keys.",
+            "Once it's ours, the interiors will be completely redone.",
+        ],
+        "closing-discount": [
+            "What's the best you can do on price if we close quickly?",
+            "Is there any discount for deciding early?",
+            "If we agree this month, can you do better on the figure?",
+        ],
+        "near-the-kids-school": [
+            "It has to be near our kids' school, they'll walk there every day.",
+            "Somewhere the children can switch schools without a long commute.",
+            "The school run matters more to us than the outlook.",
+        ],
+        "in-laws-living-with-us": [
+            "My in-laws will live with us, so we need a room with an attached bath for them.",
+            "An extra bedroom for my father-in-law, he stays with us permanently.",
+            "Three generations under one roof, so every bedroom will be used.",
+        ],
+        "room-for-home-office": [
+            "I work from home, so one room becomes my office in the new place.",
+            "We both work from home, so we need a study once we move.",
+            "A spare room for my work, since I'll be at home all day.",
+        ],
+        "close-to-our-work": [
+            "My wife works near Satpur, so we want to live close by.",
+            "Twenty minutes to our offices at most, we'll be driving from there every day.",
+            "We'd like to stop commuting two hours a day, so the home should be near work.",
+        ],
+        "cm-loan-pass": [
+            "Home loan pass ho gaya hai, ab bas rehne ke liye flat final karna hai.",
+            "Loan sanction ho chuka hai, jaldi shift hona hai.",
+            "Home loan approve ho gaya, ab apne ghar mein shift hona hai.",
+        ],
+        "cm-hamara-apna": [
+            "Is baar kaagaz pe hum dono ka naam hoga.",
+            "Property hamari khud ki ho, bas yahi chahiye.",
+            "Ghar hamesha ke liye hamara ho.",
+        ],
+        "cm-bachchon-ka-school": [
+            "Bachchon ka school paas mein hona chahiye, hum wahin rahenge.",
+            "Ghar school ke paas ho, bachche paidal jayenge.",
+            "Bachchon ke liye achha area chahiye, hum yahin basna chahte hain.",
+        ],
+        "cm-sab-saath-rahenge": [
+            "Sasur ji saath rahenge, ground floor pe ek kamra chahiye.",
+            "Maa baap saath rehte hain, isliye teen kamre chahiye.",
+            "Parivaar bada hai, sab ek saath rahenge.",
+        ],
+        "cm-emi": [
+            "Home loan ki EMI chaalees hazaar tak chal jayegi, hum wahin rahenge.",
+            "Mahine ki kisht pachaas hazaar tak, ghar hamare rehne ke liye hai.",
+            "Salary se EMI nikal jayegi, bas parivaar ke rehne layak ho.",
+        ],
+        "cm-final-karna": [
+            "Achha laga toh isi mahine final kar denge.",
+            "Hum sign karne ke liye taiyaar hain, bas sahi flat mile.",
+            "Pasand aaya toh turant deal pakki.",
+        ],
+        "cm-purana-bechna": [
+            "Gaon wali zameen bech di hai, woh paisa isi mein jayega.",
+            "Purana flat bik gaya, ab naya lena hai.",
+            "Apna purana ghar bech ke yeh lenge.",
+        ],
+        "cm-kiraya-bahut-hua": [
+            "Das saal kiraya bhar liya, ab apna chahiye.",
+            "Har mahine owner ko paisa dene se thak gaye hain.",
+            "Kiraye ka ghar bahut ho gaya.",
+        ],
+        "cm-shaadi-tohfa": [
+            "Beti ki shaadi ke baad usko dena hai, uske naam pe.",
+            "Bete ki shaadi hai, uske liye ghar lena hai.",
+            "Shaadi ka tohfa hai yeh, beti ke naam.",
+        ],
+        "cm-budget-tay": [
+            "Rehne ke ghar ka budget fix hai, ek rupaya upar nahi jayega.",
+            "Apne rehne ke liye humne total amount tay kar liya hai.",
+            "Jahan hum rahenge uska budget final ho gaya hai.",
+        ],
+    },
+    # ------------------------------------------------------------------ #
+    "Rent": {
+        "eleven-month-agreement": [
+            "We'd want an eleven-month agreement to start with.",
+            "The agreement should be for eleven months, renewable.",
+            "Something on an eleven-month term, then we'll see.",
+        ],
+        "relocating-for-job": [
+            "I'm relocating here for a new job next month and need a place to stay.",
+            "My job moves me to Pune in three weeks, so I need somewhere to live.",
+            "My new job starts on the 5th and I just need a roof near the office.",
+        ],
+        "advance-amount": [
+            "How much advance does the owner usually take?",
+            "I can give three months' advance, not more.",
+            "The advance should be refundable when I leave.",
+        ],
+        "monthly-limit": [
+            "My limit is twenty-two thousand a month, all in.",
+            "Anything up to 30k per month works.",
+            "I can manage about 15,000 each month.",
+        ],
+        "not-ready-to-own": [
+            "We're not ready to own anything yet, maybe in five years.",
+            "Owning is too big a step for us right now.",
+            "Tying up money in a flat of our own doesn't make sense yet.",
+        ],
+        "until-school-year-ends": [
+            "It's only while our kids finish this school year.",
+            "We need somewhere just until the school year ends.",
+            "Only till the children's exams are done next April.",
+        ],
+        "arriving-with-suitcases": [
+            "I'm arriving with two suitcases, so it has to come with furniture.",
+            "I don't own a single piece of furniture, it must be fully fitted.",
+            "I just want to walk in with my bags and live.",
+        ],
+        "society-rules": [
+            "Would the society mind a working couple coming home late?",
+            "Are there society rules against friends sharing a flat?",
+            "Does the society allow non-vegetarian tenants?",
+        ],
+        "tenant-paperwork": [
+            "I can give police verification and an office contact straight away.",
+            "My documents for the agreement, Aadhaar and pay slips, are ready.",
+            "Tell me what paperwork the owner needs from me and I'll send it tonight.",
+        ],
+        "relatives-visiting": [
+            "My parents are visiting from Canada for six months and need a separate place.",
+            "My in-laws are coming for half a year and need their own flat nearby.",
+            "Family is here from abroad for six months, we need a second place for them.",
+        ],
+        "near-office-for-a-year": [
+            "Something I can walk to from my office in Yerawada, for the year I'm posted here.",
+            "Anything that lets me reach the Yerawada office quickly, I'll be here about a year.",
+            "Ten minutes from work is enough, I'm only on this assignment for a year.",
+        ],
+        "staff-housing": [
+            "Our firm needs a flat for two of our engineers for the season.",
+            "It's staff housing for three of our field engineers.",
+            "The company needs a place to put up two site supervisors.",
+        ],
+        "current-owner-notice": [
+            "I have to leave my current place by the 10th, the owner gave notice.",
+            "Our current owner is selling, so we must move out this month.",
+            "We got a vacate notice and have three weeks.",
+        ],
+        "trying-the-city-first": [
+            "I don't want to commit to anything long-term in a city I don't know yet.",
+            "Let me live in the area a year before thinking about anything permanent.",
+            "I'd like to try the neighbourhood first before settling here.",
+        ],
+        "for-the-treatment": [
+            "My father's treatment here runs eight months, so we need to stay near Ruby Hall.",
+            "We'll be here for Dad's chemotherapy course, around eight months.",
+            "It's for the length of my mother's treatment, most of a year.",
+        ],
+        "brokerage": [
+            "Is there a brokerage, or is it one month's amount?",
+            "What do you charge as brokerage on this?",
+            "Will there be a broker fee equal to a month?",
+        ],
+        "cm-gyarah-mahine": [
+            "Gyarah mahine ka agreement chahiye.",
+            "Agreement gyarah mahine ka hi karna hai.",
+            "Pehle gyarah mahine ke liye, phir dekhenge.",
+        ],
+        "cm-naukri-shift": [
+            "Nayi naukri ke liye Pune shift ho raha hoon, rehne ki jagah chahiye.",
+            "Job ki wajah se yahan aana pada, ek flat chahiye rehne ko.",
+            "Transfer hua hai, yahan rehne ka intezaam karna hai.",
+        ],
+        "cm-mahine-ka-budget": [
+            "Mahine ka pandrah hazaar tak chalega.",
+            "Har mahine bees hazaar se upar nahi.",
+            "Mahine ke pachees hazaar max.",
+        ],
+        "cm-advance": [
+            "Advance kitna dena padega?",
+            "Teen mahine ka advance de sakta hoon.",
+            "Advance wapas milega na jaate waqt?",
+        ],
+        "cm-apna-abhi-nahi": [
+            "Abhi apna ghar lene ki haisiyat nahi hai.",
+            "Khud ka lena abhi mumkin nahi, baad mein dekhenge.",
+            "Apna flat abhi nahi, pehle settle ho jayein.",
+        ],
+        "cm-saman-nahi": [
+            "Mere paas koi furniture nahi hai, sab laga hua chahiye.",
+            "Sirf bag leke aaunga, baaki sab wahan ho.",
+            "Saman kuch nahi hai, poora saja hua hi chahiye.",
+        ],
+        "cm-khaali-karna": [
+            "Purane owner ne ghar khaali karne bola hai.",
+            "Is mahine ke end tak abhi wala khaali karna hai.",
+            "Owner bech raha hai, isliye shift karna pad raha hai.",
+        ],
+        "cm-ghar-wale-aa-rahe": [
+            "Mummy papa chhe mahine ke liye aa rahe hain, alag flat chahiye.",
+            "Sasural wale kuch mahine rukenge, unke liye jagah chahiye.",
+            "Ghar wale baahar se chhe mahine ke liye aa rahe hain.",
+        ],
+    },
+    # ------------------------------------------------------------------ #
+    "Investment": {
+        "rental-yield": [
+            "I'm looking at rental yield more than anything.",
+            "What sort of yield do owners get there each year?",
+            "If it gives three to four percent yield, I'm interested.",
+        ],
+        "second-property": [
+            "It'd be our second property, we already live in our own place.",
+            "We have a home already, this is an additional one.",
+            "This would sit alongside the flat we live in now.",
+        ],
+        "infrastructure-upside": [
+            "With the new airport coming up, prices there should climb.",
+            "The expressway will change that area and I want in before it does.",
+            "Once the IT corridor extends, that land will be worth a lot more.",
+        ],
+        "move-savings-into-property": [
+            "I've kept everything in gold so far and want some of it in property.",
+            "My savings are all in mutual funds, property would balance things out.",
+            "Half my savings are sitting idle and I'd like them working in real estate.",
+        ],
+        "pays-its-own-emi": [
+            "The flat should pay its own EMI through whoever lives in it.",
+            "I want monthly income from it, not a home.",
+            "Whoever occupies it should cover the instalment each month.",
+        ],
+        "retirement-corpus": [
+            "It's part of my retirement planning, I'll cash out in fifteen years.",
+            "Think of it as my pension, I'll sell when I stop working.",
+            "I'm building a nest egg, not a home.",
+        ],
+        "nobody-moving-in": [
+            "Nobody from my family is going to stay in it.",
+            "I've no intention of moving in myself.",
+            "My own house is in Mumbai, this one is just an asset.",
+        ],
+        "commercial-returns": [
+            "A small office unit let to a clinic would suit me.",
+            "Commercial space gives better returns than residential, from what I've seen.",
+            "A shop on a busy road will always find someone to run it.",
+        ],
+        "multiple-units": [
+            "I'd take two units if the price per square foot is right.",
+            "Would you give a better rate on three flats together?",
+            "I'm looking to pick up a number of units in the same tower.",
+        ],
+        "managed-for-absentee": [
+            "Does the builder offer property management for owners who aren't around?",
+            "I'll need someone to manage it since I won't be around.",
+            "Can your team find occupants and collect the payments for me?",
+        ],
+        "growth-corridor-land": [
+            "Industrial land near MIDC always goes up, I'd like a piece of that to sell later.",
+            "A plot in the growth corridor, just to sit on until it's worth much more.",
+            "Land near the logistics park is where the money will be, and I'll exit when it rises.",
+        ],
+        "track-record-of-gains": [
+            "Property has done better for me than the stock market over ten years.",
+            "My last flat has almost doubled, so I'm doing it again.",
+            "My last two properties did well and I want a third.",
+        ],
+        "holiday-home-that-earns": [
+            "A holiday flat in Lonavala that earns when we're not using it.",
+            "Something near the hills we can give out on Airbnb.",
+            "A weekend place that pays for itself through short stays.",
+        ],
+        "capital-gains-tax": [
+            "I have capital gains to park under Section 54 before March.",
+            "My tax consultant wants the capital gains moved into property.",
+            "There's a tax saving if the sale proceeds go into property this year.",
+        ],
+        "asset-for-children": [
+            "Something for my son's future, he can decide what to do with it at 25.",
+            "An asset for the children, not somewhere we'll live.",
+            "It's for my daughter's future, to sell or keep as she likes.",
+        ],
+        "steady-demand-location": [
+            "Near the university, where there's always demand from students.",
+            "Something the college crowd will always want to stay in.",
+            "A place near the hospital, doctors on rotation always need flats.",
+        ],
+        "loan-only-if-it-pays": [
+            "Borrowing makes sense only if the returns beat the loan interest.",
+            "If the appreciation outpaces the interest, a loan on it is worth taking.",
+            "I'd take a loan against it only if the numbers show a profit after interest.",
+        ],
+        "proceeds-into-something-that-earns": [
+            "I sold some shares and want the money in a flat I can let out.",
+            "The bonus goes into a unit that someone else will occupy and pay for.",
+            "Profits from my business go into property that earns, not one I use.",
+        ],
+        "friends-pooling-to-resell": [
+            "Three of us friends are pooling money to pick up a plot and resell it.",
+            "A group of colleagues want to put money together into one unit and split the profit.",
+            "My cousins and I are co-owning a flat purely to sell later at a gain.",
+        ],
+        "budget-for-returns": [
+            "I've set aside forty lakh purely for property that grows in value.",
+            "My budget for this is fixed, and it's money I won't need for fifteen years.",
+            "Whatever I spend here has to come back with a profit.",
+        ],
+        "cm-return-chahiye": [
+            "Achha return milna chahiye bas.",
+            "Isse har saal kuch kamai honi chahiye.",
+            "Paise pe munafa chahiye, rehna nahi hai.",
+        ],
+        "cm-doosri-property": [
+            "Rehne ka ghar pehle se hai, yeh doosri sirf kamai ke liye hogi.",
+            "Ek flat already hai, yeh extra wala munafe ke liye chahiye.",
+            "Apna ghar hai, yeh sirf kamai ke liye.",
+        ],
+        "cm-airport-aayega": [
+            "Naya airport aa raha hai, wahan bhaav badhenge.",
+            "Highway banne ke baad us area ka bhaav upar jayega.",
+            "Us taraf IT park aa raha hai, pehle se le lena chahiye.",
+        ],
+        "cm-kiraye-se-emi": [
+            "Kiraye se EMI nikal jaye, bas.",
+            "Har mahine kiraye ki income aani chahiye.",
+            "Jo rahega woh EMI bhar dega.",
+        ],
+        "cm-kai-unit": [
+            "Do flat saath mein lenge agar rate sahi ho.",
+            "Teen unit ek saath lene pe discount milega?",
+            "Ek se zyada flat chahiye same building mein.",
+        ],
+        "cm-doston-ke-saath": [
+            "Teen dost milke plot le rahe hain, baad mein bech denge.",
+            "Hum doston ne paise milaaye hain, munafe pe bechenge.",
+            "Mil ke flat lenge aur rate badhne pe bech denge.",
+        ],
+        "cm-loan-tabhi": [
+            "Munafa byaaj se zyada ho tabhi loan lena theek hai.",
+            "Byaaj se zyada kamai honi chahiye, tabhi loan.",
+            "Ismein daala paisa badhna chahiye, tabhi matlab hai.",
+        ],
+        "cm-retirement": [
+            "Retirement ke liye asset bana raha hoon.",
+            "Budhape ka sahara yahi hoga, tab bech denge.",
+            "Pension ki jagah yeh property kaam aayegi.",
+        ],
+        "cm-bachat-property-mein": [
+            "Sona bahut rakha hai, ab kuch property mein daalna hai.",
+            "Share market se nikaal ke zameen mein daalna hai.",
+            "Bachat ka kuch hissa property mein daal dete hain.",
+        ],
+        "cm-khud-nahi-rahenge": [
+            "Hum khud wahan kabhi shift nahi honge.",
+            "Main wahan kabhi rehne nahi jaunga.",
+            "Humara ghar Mumbai mein hai, yeh sirf asset hai.",
+        ],
+    },
+    # ------------------------------------------------------------------ #
+    "Schedule Visit": {
+        "come-see-saturday": [
+            "Can we come and see it on Saturday?",
+            "Is Saturday morning okay for us to come round?",
+            "We could drop by this Saturday if someone's there.",
+        ],
+        "when-can-we-go-inside": [
+            "When can the flat be shown to us?",
+            "What days can we actually go inside?",
+            "When is someone free to take us through it?",
+        ],
+        "site-office-hours": [
+            "What are the site office timings?",
+            "Is the site office open on weekends?",
+            "Till what time can we come to the site in the evening?",
+        ],
+        "not-signing-unseen": [
+            "We won't decide anything until we've stood in the rooms ourselves.",
+            "I'm not signing on a floor plan, I need to walk it.",
+            "Numbers can come later, first I need to be inside it.",
+        ],
+        "spouse-wants-to-check": [
+            "My wife wants to check the kitchen herself, she can come on Tuesday.",
+            "My husband has to see it too, he's free on Thursday afternoon.",
+            "Can my wife and I come together after office hours?",
+        ],
+        "pickup-arrangement": [
+            "Do you arrange a cab from the station to the site?",
+            "Is there a pickup from Swargate to the project?",
+            "Can your team send a car to bring us out there?",
+        ],
+        "check-it-for-myself": [
+            "I want to hear how much traffic noise reaches the bedroom, standing there.",
+            "I'd like to see the outlook from the twelfth floor with my own eyes.",
+            "I need to check the water pressure on the top floor for myself.",
+        ],
+        "arrival-logistics": [
+            "Where exactly do we park when we get there?",
+            "Which gate do we use, and do we ring the site office when we arrive?",
+            "How long does it take to reach your site from Swargate?",
+        ],
+        "model-unit": [
+            "Is the show apartment furnished so we can get a feel?",
+            "Is there a model unit we can walk around?",
+            "Can we go through the demo flat?",
+        ],
+        "nearby-right-now": [
+            "We're nearby right now, can we come over in half an hour?",
+            "I'm ten minutes from your site, is anyone there?",
+            "Could we swing by this evening on our way home?",
+        ],
+        "coming-as-a-group": [
+            "We're four friends looking at the same tower, can we all come together?",
+            "My whole family wants to come, that's six people.",
+            "My uncle wants to inspect the construction, so the two of us will come together.",
+        ],
+        "lunch-hour-only": [
+            "I can only step out at lunch, is 1 pm possible at the site?",
+            "Weekday lunch is the only window I have to go there.",
+            "Can someone be at the site around one tomorrow?",
+        ],
+        "several-units-one-trip": [
+            "Can we see both the east- and west-facing units on the same trip?",
+            "I'd like to go through two or three floors while we're there.",
+            "Show us the corner unit and the middle one in one go.",
+        ],
+        "confirm-a-slot": [
+            "Please book us a slot and send a confirmation.",
+            "Put us down for 4 pm and message me the details.",
+            "Can you fix a time and confirm it on WhatsApp?",
+        ],
+        "construction-progress": [
+            "I want to go and check how far the construction has actually got.",
+            "Can we go up and look at the progress on the tower?",
+            "I'd like to inspect the work done so far, on site.",
+        ],
+        "enough-pdfs": [
+            "Enough PDFs, I'd like to go out there in person.",
+            "I've seen the layouts online already, now I want to be inside it.",
+            "Stop sending me floor plans, just tell me when I can come.",
+        ],
+        "cm-shanivar": [
+            "Shanivar ko aa sakte hain kya?",
+            "Is Saturday ko aake dekh lenge.",
+            "Shanivar subah aana chalega?",
+        ],
+        "cm-kab-aayein": [
+            "Kab aa sakte hain site pe?",
+            "Kaunse din aana theek rahega?",
+            "Shaam ko kitne baje tak aa sakte hain aapke yahan?",
+        ],
+        "cm-khud-dekhe-bina-nahi": [
+            "Flat andar se dekhe bina kuch decide nahi karenge.",
+            "Jab tak khud jaake nahi dekhte, haan nahi bolenge.",
+            "Pehle jagah pe khade hoke dekhna hai.",
+        ],
+        "cm-gaadi-milegi": [
+            "Station se site tak gaadi milegi kya?",
+            "Humein lene koi aa sakta hai?",
+            "Pick-up ka intezaam hai kya?",
+        ],
+        "cm-paas-hi-hain": [
+            "Hum paas hi hain, aadhe ghante mein aa jayein?",
+            "Das minute mein pahunch sakte hain, koi hai wahan?",
+            "Raste mein hain, abhi aa jayein kya?",
+        ],
+        "cm-slot-book": [
+            "Ek time fix kijiye, main aa jaunga.",
+            "Chaar baje ka slot book kar do.",
+            "Time pakka karke message kar dena.",
+        ],
+        "cm-ghar-wali-ko-dikhana": [
+            "Wife ko bhi dikhana hai, woh Tuesday free hai.",
+            "Ghar wali ko kitchen khud dekhna hai.",
+            "Pati ke saath aana hai, woh Thursday ko free hain.",
+        ],
+        "cm-kaam-kitna-hua": [
+            "Construction kitna hua, woh jaake dekhna hai.",
+            "Site pe jaake kaam check karna hai.",
+            "Building kahan tak bani, khud dekhna chahta hoon.",
+        ],
+    },
+    # ------------------------------------------------------------------ #
+    "Inquiry": {
+        "comparing-options": [
+            "I'm just comparing options across a few builders.",
+            "We're lining up a few projects side by side, nothing decided.",
+            "I'm putting together a comparison, that's all for now.",
+        ],
+        "whats-available": [
+            "What do you have available in Kothrud at the moment?",
+            "What's on offer around Aundh right now?",
+            "Which of your projects are still open in Pune West?",
+        ],
+        "starting-range": [
+            "What range do your projects fall in, roughly?",
+            "Roughly what's the starting price in your projects?",
+            "What's the ballpark for a two-bedroom with you?",
+        ],
+        "approvals-and-clearances": [
+            "Can I check whether the project has environmental clearance?",
+            "Who's the architect, and what construction technology do you use?",
+            "Has the project received its OC, or is it still pending?",
+        ],
+        "nothing-fixed": [
+            "No budget fixed, no timeline, just curious.",
+            "Nothing's decided on money or dates, I'll think about all that later.",
+            "Nothing is final, I'm only asking.",
+        ],
+        "asking-for-a-friend-abroad": [
+            "A friend abroad wants to know what the market's like here and I said I'd ask.",
+            "A relative in the Gulf is curious, so I said I'd speak to a few builders.",
+            "A colleague is curious what the market looks like here, so I offered to ring round.",
+        ],
+        "fittings-and-specs": [
+            "What's the specification, vitrified tiles, which brand of fittings?",
+            "What kind of flooring and fittings do your flats come with?",
+            "What floor finishes and sanitary ware do you use?",
+        ],
+        "bank-tieups": [
+            "Which banks have tie-ups with your projects?",
+            "What interest rates are the banks giving on these?",
+            "Do you have approved lenders for the project?",
+        ],
+        "upcoming-launches": [
+            "Are there any new launches coming in the next few months?",
+            "Anything new being announced this year?",
+            "What's in the pipeline for next year?",
+        ],
+        "delivery-track-record": [
+            "How many projects has your company delivered on time?",
+            "What's the track record on handovers?",
+            "Have any of your past projects been delayed?",
+        ],
+        "curious-passer-by": [
+            "A new tower is going up behind my house and I was curious what it's about.",
+            "I pass your site every day and wondered what's being built.",
+            "I saw your hoarding on the highway and wondered what it was.",
+        ],
+        "neighbourhood-questions": [
+            "What's the neighbourhood like around Gangapur Road for schools?",
+            "Is Satpur mostly industrial, or are there homes too?",
+            "Is Hadapsar well connected by public transport?",
+        ],
+        "completion-schedule": [
+            "When is the next tower expected to be completed?",
+            "What's the expected handover date for phase two?",
+            "Is the project on schedule?",
+        ],
+        "no-need-to-show-me": [
+            "No need to show me around, I'm only after some numbers.",
+            "I won't come to the site, just tell me the basics on this call.",
+            "Don't book me any slot, I only have a couple of questions.",
+        ],
+        "how-it-works": [
+            "This is my first time looking at property, what should I know?",
+            "How does the process usually work for a first-timer?",
+            "What are the steps involved, start to finish?",
+        ],
+        "parking-policy": [
+            "Is parking included, or charged separately in your projects?",
+            "Do flats come with one parking or two?",
+            "How do you allot parking?",
+        ],
+        "cm-tulna": [
+            "Bas alag alag builders ko compare kar raha hoon.",
+            "Teen chaar builders ke saath milaake dekh raha hoon.",
+            "Abhi sirf tulna kar rahe hain.",
+        ],
+        "cm-kya-available": [
+            "Aundh mein abhi kya kya available hai?",
+            "Aapke paas Kothrud mein kya hai abhi?",
+            "Kaunse project abhi chal rahe hain aapke?",
+        ],
+        "cm-shuruaat-kitne-se": [
+            "Shuruaat kitne se hoti hai aapke projects mein?",
+            "Do BHK ka andaaz kya hai?",
+            "Minimum kitne ka flat hai?",
+        ],
+        "cm-bas-sawaal": [
+            "Abhi kuch lena dena nahi hai, bas poochh raha hoon.",
+            "Paisa ya tareekh kuch tay nahi, bas jigyasa hai.",
+            "Bas kisi se do baat poochhni thi, faisla kuch nahi.",
+        ],
+        "cm-bank-tieup": [
+            "Kaunse bank ka tie-up hai?",
+            "Loan ke liye kaunse bank approved hain?",
+            "Interest rate kitna chal raha hai in projects pe?",
+        ],
+        "cm-builder-record": [
+            "Aapki company ne pehle ke project time pe diye the?",
+            "Delivery mein kabhi delay hua hai?",
+            "Pichle projects ka record kaisa hai?",
+        ],
+        "cm-area-kaisa": [
+            "Hadapsar mein schools kaise hain?",
+            "Satpur rehne layak area hai kya?",
+            "Wahan transport ki suvidha kaisi hai?",
+        ],
+        "cm-aana-nahi": [
+            "Site pe aane ki zarurat nahi, bas phone pe bata dijiye.",
+            "Main aaunga nahi, bas do sawaal hain.",
+            "Koi slot mat book karo, bas thodi baatein poochhni hain.",
+        ],
+    },
+    # ------------------------------------------------------------------ #
+    "Request Callback": {
+        "have-someone-phone": [
+            "Please have someone from your side phone me.",
+            "Get one of your executives to ring me.",
+            "Ask a person from sales to contact me.",
+        ],
+        "free-after-six": [
+            "I'll be free after six, try me then.",
+            "After 6 pm is best for me, have someone phone then.",
+            "Anytime after six this evening works for a chat.",
+        ],
+        "teaching-right-now": [
+            "I'm teaching a class right now, could someone ring me when the period's over?",
+            "I'm in the middle of a factory shift, have someone phone me in the evening.",
+            "I'm at my kid's school event, please get someone to ring me later.",
+        ],
+        "talk-not-text": [
+            "I'd rather talk this through on a call later than over messages.",
+            "Messages confuse me, please have someone speak to me later.",
+            "Rather than texting details, have someone phone me in the evening.",
+        ],
+        "office-manager-decides": [
+            "Our office manager handles this, have someone reach her tomorrow.",
+            "The admin head decides, please get your team to contact him.",
+            "Speak to our facilities person instead, she'll take it from there.",
+        ],
+        "tuesday-slot": [
+            "Tuesday between 2 and 3 is the only slot, have someone try then.",
+            "I'm only reachable on Tuesday afternoon.",
+            "Put me down for a ring on Tuesday at 2.",
+        ],
+        "language-preference": [
+            "Can someone who speaks Marathi phone me later?",
+            "Please get a Hindi-speaking person to reach me.",
+            "I'd like someone who speaks Marathi to get in touch.",
+        ],
+        "project-head-personally": [
+            "I want the project head to speak to me personally.",
+            "Have your sales head contact me directly.",
+            "I'd like someone who can actually decide to ring me.",
+        ],
+        "missed-your-call": [
+            "I saw a missed call from your number, please try again.",
+            "Someone from your office rang while I was out, have them ring again.",
+            "I missed your team's call this morning, can they retry?",
+        ],
+        "battery-dying": [
+            "My battery is about to die, have someone reach me in an hour.",
+            "Phone's almost dead, try me after I've charged it.",
+            "I'm on two percent, get someone to ring in a bit.",
+        ],
+        "use-other-number": [
+            "Take my alternate number, that's the one to use after work.",
+            "Use my office line tomorrow, not this mobile.",
+            "Please try my wife's number tonight, mine will be switched off.",
+        ],
+        "weekend-only-chat": [
+            "I'm only free on Sunday, have someone phone then.",
+            "Weekdays are impossible, Saturday afternoon works for a chat.",
+            "Reach me at the weekend, not before.",
+        ],
+        "no-site-just-phone": [
+            "I can't come to the site, but I'd like someone to talk me through it on the phone later.",
+            "No trip to the site for now, just have someone explain it on a call.",
+            "I won't make it over there, so a phone conversation later would help.",
+        ],
+        "landline-please": [
+            "My hearing isn't great on the mobile, please phone the landline instead.",
+            "Please reach my son on his number, he'll speak for me.",
+            "Can someone try the landline this evening, the mobile is poor for me.",
+        ],
+        "night-shift-worker": [
+            "I work nights, so reach me around noon.",
+            "I'm on night shift, the best time to ring is midday.",
+            "Please try around lunchtime, I sleep in the mornings.",
+        ],
+        "explain-payment-on-a-call": [
+            "I'd prefer someone to go over the payment options with me on a call tomorrow.",
+            "Could someone explain the offer properly to me on a call later?",
+            "Have someone walk me through the pricing on the phone tomorrow.",
+        ],
+        "cm-kisi-ko-bolo": [
+            "Kisi ko boliye mujhe phone kare.",
+            "Aapke kisi aadmi se phone karwa dijiye.",
+            "Koi sales wala baad mein mujhse baat kar le.",
+        ],
+        "cm-dopahar-mein": [
+            "Dopahar do se teen ke beech phone kijiye.",
+            "Lunch time pe phone karna.",
+            "Dopahar ko baat ho sakti hai, tab try karna.",
+        ],
+        "cm-abhi-class-mein": [
+            "Abhi class le raha hoon, baad mein phone karna.",
+            "Shift chal rahi hai, aap baad mein phone kar lena.",
+            "Bachche ke school function mein hoon, baad mein phone kijiye.",
+        ],
+        "cm-landline-pe": [
+            "Mobile pe aawaz nahi aati, landline pe phone kijiye.",
+            "Mere bete ke number pe phone kar lena.",
+            "Ghar ke phone pe shaam ko try kijiye.",
+        ],
+        "cm-missed-call": [
+            "Aapke number se missed call aaya tha, dobara kar lijiye.",
+            "Kisi ne phone kiya tha, main utha nahi paya, phir se kar dijiye.",
+            "Subah ka call miss ho gaya, dubara karwa dijiye.",
+        ],
+        "cm-marathi-wala": [
+            "Marathi bolne wale kisi ko phone karne boliye.",
+            "Koi Hindi mein baat karne wala phone kare.",
+            "Marathi mein samjhane wala koi baat kar le.",
+        ],
+        "cm-site-nahi-aa-sakta": [
+            "Site pe nahi aa sakta, baad mein phone pe samjha dijiye.",
+            "Wahan aana mushkil hai, koi phone pe bata de.",
+            "Aane ka time nahi hai, baad mein phone pe baat karte hain.",
+        ],
+        "cm-doosra-number": [
+            "Mera doosra number likh lijiye, usi pe phone karna.",
+            "Office ka number le lijiye, kal usi pe baat karna.",
+            "Is number pe mat karna, doosre wale pe raat ko phone karna.",
+        ],
+    },
+}
+
+# Standalone sentences that appear under every intent in the same proportion.
+# They carry no label information by construction; their job is to make the
+# sentence *around* the intent idea uninformative, so position and framing
+# cannot become a cue.
+SHARED_FRAMES_EN: Tuple[str, ...] = (
+    "Let me tell you where we are with it.",
+    "Here's the situation.",
+    "One thing before the details.",
+    "I'll keep this quick.",
+    "So, a bit of background.",
+)
+SHARED_FRAMES_CM: Tuple[str, ...] = (
+    "Ek baat pehle bata doon.",
+    "Seedhi baat karta hoon.",
+    "Thoda background de deta hoon.",
+)
+
+# Emotion openers from the sentiment pools that also imply an intent. They are
+# excluded from the intent corpus: "the loan came through" under a Rent label
+# would teach the model a contradiction.
+TONE_IDEAS_EXCLUDED = frozenset({
+    "could-sign-tomorrow", "funds-ready", "long-time-coming", "cm-paisa-taiyaar",
+    "cant-stop-talking", "travelled-to-see-it", "bringing-others", "cleared-the-diary",
+    "cm-door-se-aaya", "cm-parivaar-laana", "cm-token-de-doon", "repeat-customer",
+    "family-history-here", "cm-pehle-bhi-liya", "on-behalf-of", "comparing-market",
+    "relocation-logistics", "will-decide-after-seeing-all", "experienced-renter",
+    "cm-bhai-ke-liye", "cm-form-bhar-raha", "cm-shift-ho-rahe", "cm-kiraye-par-the",
+    "comparing-two-shortlisted", "checking-a-specific-fact", "acting-as-broker",
+    "budget-decides-it", "cm-do-project-compare", "cm-ek-hi-sawaal",
+    "pulled-out-before", "waiting-on-own-sale", "bank-decides", "bad-year-to-buy",
+    "cm-apna-bikna-baaki", "cm-bank-batayega", "one-small-step",
+    "nobody-called-back", "cm-koi-jawab-nahi", "cm-chakkar-lagaye",
+    "money-already-paid", "others-respond-faster", "cm-paisa-jama-kiya",
+    "cm-chakkar-kaat-raha",
+})
+
+INTENT_PHRASE_GROUPS: Dict[str, Dict[str, List[str]]] = INTENT_IDEAS
+INTENT_PHRASES: Dict[str, List[str]] = {
+    label: [form for forms in ideas.values() for form in forms]
+    for label, ideas in INTENT_IDEAS.items()
+}
+
+
+def phrase_register(text: str) -> str:
+    """'code-mixed' or 'english' — for an idea key (``cm-`` prefix) or a phrase."""
+    if " " not in text.strip():
+        return "code-mixed" if text.startswith("cm-") else "english"
+    tokens = set(re.findall(r"[a-z]+", text.lower()))
+    return "code-mixed" if tokens & set(_HINDI_MARKERS) else "english"
+
+
+def stated_intent_leaks() -> List[Tuple[str, str, str]]:
+    """(intent, idea, phrase) for every phrase that names an intent outright."""
+    leaks = []
+    for label, ideas in INTENT_IDEAS.items():
+        for idea, forms in ideas.items():
+            for form in forms:
+                if any(re.search(p, form.lower()) for p in STOCK_INTENT_PATTERNS):
+                    leaks.append((label, idea, form))
+    return leaks
+
+
+_STOP = frozenset(
+    "a an the and or but so if of to in on at for with from by is are was be it its "
+    "i we you me my our us your this that these those there here what which who when "
+    "how can could would will i'm we're it's don't i'd i'll we'd we'll just about "
+    "not no yes one two three all any some more than then now up out as do does".split()
+)
+
+
+def lopsided_tokens(min_ideas: int = 3) -> Dict[str, Tuple[str, int]]:
+    """Content words that appear in ``min_ideas``+ ideas of one intent and no other.
+
+    Those are the candidate shortcuts: a model can score them without reading
+    the situation. Some are legitimate (a monthly advance really is Rent), so
+    this is reported, not enforced.
+    """
+    ideas_with: Dict[str, collections.Counter] = collections.defaultdict(collections.Counter)
+    for label, ideas in INTENT_IDEAS.items():
+        for forms in ideas.values():
+            tokens = set(re.findall(r"[a-z']+", " ".join(forms).lower())) - _STOP
+            for token in tokens:
+                ideas_with[token][label] += 1
+    return {
+        token: next(iter(counts.items()))
+        for token, counts in ideas_with.items()
+        if len(counts) == 1 and next(iter(counts.values())) >= min_ideas
+    }

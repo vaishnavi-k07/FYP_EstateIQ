@@ -1,0 +1,86 @@
+{
+  "total": 1440,
+  "intent_counts": {
+    "Rent": 240,
+    "Request Callback": 240,
+    "Inquiry": 240,
+    "Investment": 240,
+    "Buy": 240,
+    "Schedule Visit": 240
+  },
+  "sentiment_counts": {
+    "Hesitant": 210,
+    "Neutral": 876,
+    "Frustrated": 204,
+    "Enthusiastic": 150
+  },
+  "messy_rate_by_intent": {
+    "Buy": 0.5,
+    "Inquiry": 0.5,
+    "Investment": 0.5,
+    "Rent": 0.5,
+    "Request Callback": 0.5,
+    "Schedule Visit": 0.5
+  },
+  "tone_line_rate_by_intent": {
+    "Buy": 0.5,
+    "Inquiry": 0.5,
+    "Investment": 0.5,
+    "Rent": 0.5,
+    "Request Callback": 0.5,
+    "Schedule Visit": 0.5
+  },
+  "code_mixed_rate_by_intent": {
+    "Buy": 0.333,
+    "Inquiry": 0.333,
+    "Investment": 0.333,
+    "Rent": 0.333,
+    "Request Callback": 0.333,
+    "Schedule Visit": 0.333
+  },
+  "transcripts_with_stock_intent_word": 0,
+  "pool_checks": {
+    "stated_intent_leaks": [],
+    "lopsided_tokens": {
+      "asset": [
+        "Investment",
+        4
+      ],
+      "always": [
+        "Investment",
+        3
+      ],
+      "inside": [
+        "Schedule Visit",
+        3
+      ],
+      "dekhna": [
+        "Schedule Visit",
+        3
+      ],
+      "few": [
+        "Inquiry",
+        3
+      ],
+      "builders": [
+        "Inquiry",
+        3
+      ],
+      "curious": [
+        "Inquiry",
+        3
+      ],
+      "sales": [
+        "Request Callback",
+        3
+      ],
+      "mobile": [
+        "Request Callback",
+        3
+      ]
+    }
+  },
+  "words": {
+    "mean": 75.5
+  }
+}

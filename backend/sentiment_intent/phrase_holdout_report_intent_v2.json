@@ -1,0 +1,1958 @@
+{
+  "intent": {
+    "task": "intent",
+    "corpus": "C:\\Users\\VAISHNAVI KANKAREJ\\EstateIQ_FYP\\data_generation\\output\\intent_v2.jsonl",
+    "pools": "intent",
+    "held_out_phrases": {
+      "Buy": [
+        "Rehne ke ghar ka budget fix hai, ek rupaya upar nahi jayega.",
+        "Apne rehne ke liye humne total amount tay kar liya hai.",
+        "Jahan hum rahenge uska budget final ho gaya hai.",
+        "Bachchon ka school paas mein hona chahiye, hum wahin rahenge.",
+        "Ghar school ke paas ho, bachche paidal jayenge.",
+        "Bachchon ke liye achha area chahiye, hum yahin basna chahte hain.",
+        "Is baar kaagaz pe hum dono ka naam hoga.",
+        "Property hamari khud ki ho, bas yahi chahiye.",
+        "Ghar hamesha ke liye hamara ho.",
+        "My in-laws will live with us, so we need a room with an attached bath for them.",
+        "An extra bedroom for my father-in-law, he stays with us permanently.",
+        "Three generations under one roof, so every bedroom will be used.",
+        "It's for my daughter, a wedding gift that will be in her name.",
+        "My son is getting married and this will be his home.",
+        "We want to hand it over to my daughter after her wedding.",
+        "We can carry a home loan EMI of about forty thousand a month while we live there.",
+        "Our home loan instalment can go up to 45,000, and we'll be staying in it ourselves.",
+        "My salary covers an EMI of up to fifty thousand on the house we move into.",
+        "Eleven years of paying a landlord is enough, we want to live somewhere that's ours.",
+        "We're tired of handing someone else a cheque every month for the place we live in.",
+        "Every month the money goes to the owner of our flat, and we want our own roof instead.",
+        "What's the best you can do on price if we close quickly?",
+        "Is there any discount for deciding early?",
+        "If we agree this month, can you do better on the figure?",
+        "This is where we plan to grow old.",
+        "We want the place our kids grow up in and keep coming back to.",
+        "This is meant to be the last move of our lives.",
+        "The tax benefit on the home loan is part of why we're doing it now.",
+        "The deduction on the principal makes sense for us this year.",
+        "Our tax consultant says the interest deduction helps us this financial year."
+      ],
+      "Rent": [
+        "Advance kitna dena padega?",
+        "Teen mahine ka advance de sakta hoon.",
+        "Advance wapas milega na jaate waqt?",
+        "Mere paas koi furniture nahi hai, sab laga hua chahiye.",
+        "Sirf bag leke aaunga, baaki sab wahan ho.",
+        "Saman kuch nahi hai, poora saja hua hi chahiye.",
+        "Nayi naukri ke liye Pune shift ho raha hoon, rehne ki jagah chahiye.",
+        "Job ki wajah se yahan aana pada, ek flat chahiye rehne ko.",
+        "Transfer hua hai, yahan rehne ka intezaam karna hai.",
+        "My limit is twenty-two thousand a month, all in.",
+        "Anything up to 30k per month works.",
+        "I can manage about 15,000 each month.",
+        "I have to leave my current place by the 10th, the owner gave notice.",
+        "Our current owner is selling, so we must move out this month.",
+        "We got a vacate notice and have three weeks.",
+        "We're not ready to own anything yet, maybe in five years.",
+        "Owning is too big a step for us right now.",
+        "Tying up money in a flat of our own doesn't make sense yet.",
+        "My parents are visiting from Canada for six months and need a separate place.",
+        "My in-laws are coming for half a year and need their own flat nearby.",
+        "Family is here from abroad for six months, we need a second place for them.",
+        "How much advance does the owner usually take?",
+        "I can give three months' advance, not more.",
+        "The advance should be refundable when I leave."
+      ],
+      "Inquiry": [
+        "Abhi kuch lena dena nahi hai, bas poochh raha hoon.",
+        "Paisa ya tareekh kuch tay nahi, bas jigyasa hai.",
+        "Bas kisi se do baat poochhni thi, faisla kuch nahi.",
+        "Aundh mein abhi kya kya available hai?",
+        "Aapke paas Kothrud mein kya hai abhi?",
+        "Kaunse project abhi chal rahe hain aapke?",
+        "Shuruaat kitne se hoti hai aapke projects mein?",
+        "Do BHK ka andaaz kya hai?",
+        "Minimum kitne ka flat hai?",
+        "What range do your projects fall in, roughly?",
+        "Roughly what's the starting price in your projects?",
+        "What's the ballpark for a two-bedroom with you?",
+        "I'm just comparing options across a few builders.",
+        "We're lining up a few projects side by side, nothing decided.",
+        "I'm putting together a comparison, that's all for now.",
+        "What's the specification, vitrified tiles, which brand of fittings?",
+        "What kind of flooring and fittings do your flats come with?",
+        "What floor finishes and sanitary ware do you use?",
+        "What's the neighbourhood like around Gangapur Road for schools?",
+        "Is Satpur mostly industrial, or are there homes too?",
+        "Is Hadapsar well connected by public transport?",
+        "When is the next tower expected to be completed?",
+        "What's the expected handover date for phase two?",
+        "Is the project on schedule?"
+      ],
+      "Schedule Visit": [
+        "Station se site tak gaadi milegi kya?",
+        "Humein lene koi aa sakta hai?",
+        "Pick-up ka intezaam hai kya?",
+        "Shanivar ko aa sakte hain kya?",
+        "Is Saturday ko aake dekh lenge.",
+        "Shanivar subah aana chalega?",
+        "Wife ko bhi dikhana hai, woh Tuesday free hai.",
+        "Ghar wali ko kitchen khud dekhna hai.",
+        "Pati ke saath aana hai, woh Thursday ko free hain.",
+        "What are the site office timings?",
+        "Is the site office open on weekends?",
+        "Till what time can we come to the site in the evening?",
+        "I want to go and check how far the construction has actually got.",
+        "Can we go up and look at the progress on the tower?",
+        "I'd like to inspect the work done so far, on site.",
+        "Please book us a slot and send a confirmation.",
+        "Put us down for 4 pm and message me the details.",
+        "Can you fix a time and confirm it on WhatsApp?",
+        "Can we come and see it on Saturday?",
+        "Is Saturday morning okay for us to come round?",
+        "We could drop by this Saturday if someone's there.",
+        "We're four friends looking at the same tower, can we all come together?",
+        "My whole family wants to come, that's six people.",
+        "My uncle wants to inspect the construction, so the two of us will come together."
+      ],
+      "Investment": [
+        "Hum khud wahan kabhi shift nahi honge.",
+        "Main wahan kabhi rehne nahi jaunga.",
+        "Humara ghar Mumbai mein hai, yeh sirf asset hai.",
+        "Sona bahut rakha hai, ab kuch property mein daalna hai.",
+        "Share market se nikaal ke zameen mein daalna hai.",
+        "Bachat ka kuch hissa property mein daal dete hain.",
+        "Retirement ke liye asset bana raha hoon.",
+        "Budhape ka sahara yahi hoga, tab bech denge.",
+        "Pension ki jagah yeh property kaam aayegi.",
+        "Nobody from my family is going to stay in it.",
+        "I've no intention of moving in myself.",
+        "My own house is in Mumbai, this one is just an asset.",
+        "A small office unit let to a clinic would suit me.",
+        "Commercial space gives better returns than residential, from what I've seen.",
+        "A shop on a busy road will always find someone to run it.",
+        "I'd take two units if the price per square foot is right.",
+        "Would you give a better rate on three flats together?",
+        "I'm looking to pick up a number of units in the same tower.",
+        "It'd be our second property, we already live in our own place.",
+        "We have a home already, this is an additional one.",
+        "This would sit alongside the flat we live in now.",
+        "Borrowing makes sense only if the returns beat the loan interest.",
+        "If the appreciation outpaces the interest, a loan on it is worth taking.",
+        "I'd take a loan against it only if the numbers show a profit after interest.",
+        "Property has done better for me than the stock market over ten years.",
+        "My last flat has almost doubled, so I'm doing it again.",
+        "My last two properties did well and I want a third.",
+        "Something for my son's future, he can decide what to do with it at 25.",
+        "An asset for the children, not somewhere we'll live.",
+        "It's for my daughter's future, to sell or keep as she likes."
+      ],
+      "Request Callback": [
+        "Site pe nahi aa sakta, baad mein phone pe samjha dijiye.",
+        "Wahan aana mushkil hai, koi phone pe bata de.",
+        "Aane ka time nahi hai, baad mein phone pe baat karte hain.",
+        "Mobile pe aawaz nahi aati, landline pe phone kijiye.",
+        "Mere bete ke number pe phone kar lena.",
+        "Ghar ke phone pe shaam ko try kijiye.",
+        "Abhi class le raha hoon, baad mein phone karna.",
+        "Shift chal rahi hai, aap baad mein phone kar lena.",
+        "Bachche ke school function mein hoon, baad mein phone kijiye.",
+        "I'm teaching a class right now, could someone ring me when the period's over?",
+        "I'm in the middle of a factory shift, have someone phone me in the evening.",
+        "I'm at my kid's school event, please get someone to ring me later.",
+        "I'd prefer someone to go over the payment options with me on a call tomorrow.",
+        "Could someone explain the offer properly to me on a call later?",
+        "Have someone walk me through the pricing on the phone tomorrow.",
+        "I can't come to the site, but I'd like someone to talk me through it on the phone later.",
+        "No trip to the site for now, just have someone explain it on a call.",
+        "I won't make it over there, so a phone conversation later would help.",
+        "My hearing isn't great on the mobile, please phone the landline instead.",
+        "Please reach my son on his number, he'll speak for me.",
+        "Can someone try the landline this evening, the mobile is poor for me.",
+        "I want the project head to speak to me personally.",
+        "Have your sales head contact me directly.",
+        "I'd like someone who can actually decide to ring me."
+      ]
+    },
+    "partition": {
+      "train_eligible": 960,
+      "held_out": 480,
+      "dropped_mixed": 0,
+      "train": 672,
+      "validation": 144,
+      "test_in_distribution": 144,
+      "held_out_class_counts": {
+        "Request Callback": 80,
+        "Rent": 80,
+        "Schedule Visit": 80,
+        "Inquiry": 80,
+        "Investment": 80,
+        "Buy": 80
+      }
+    },
+    "model_dir": "C:\\Users\\VAISHNAVI KANKAREJ\\EstateIQ_FYP\\backend\\models_store\\sentiment_intent\\holdout\\intent_intent_v2",
+    "in_distribution_metrics": {
+      "accuracy": 0.9305555555555556,
+      "macro_f1": 0.931346544530005,
+      "weighted_f1": 0.9313465445300051,
+      "per_class": {
+        "Buy": {
+          "precision": 0.9130434782608695,
+          "recall": 0.875,
+          "f1-score": 0.8936170212765957,
+          "support": 24.0
+        },
+        "Rent": {
+          "precision": 1.0,
+          "recall": 0.8333333333333334,
+          "f1-score": 0.9090909090909091,
+          "support": 24.0
+        },
+        "Inquiry": {
+          "precision": 0.9230769230769231,
+          "recall": 1.0,
+          "f1-score": 0.96,
+          "support": 24.0
+        },
+        "Schedule Visit": {
+          "precision": 1.0,
+          "recall": 0.9583333333333334,
+          "f1-score": 0.9787234042553191,
+          "support": 24.0
+        },
+        "Investment": {
+          "precision": 0.7931034482758621,
+          "recall": 0.9583333333333334,
+          "f1-score": 0.8679245283018868,
+          "support": 24.0
+        },
+        "Request Callback": {
+          "precision": 1.0,
+          "recall": 0.9583333333333334,
+          "f1-score": 0.9787234042553191,
+          "support": 24.0
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "Buy",
+          "Rent",
+          "Inquiry",
+          "Schedule Visit",
+          "Investment",
+          "Request Callback"
+        ],
+        "rows_are_true": true,
+        "matrix": [
+          [
+            21,
+            0,
+            0,
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            20,
+            1,
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            24,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            23,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            23,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            23
+          ]
+        ]
+      }
+    },
+    "held_out_metrics": {
+      "accuracy": 0.5916666666666667,
+      "macro_f1": 0.5896125589833985,
+      "weighted_f1": 0.5896125589833985,
+      "per_class": {
+        "Buy": {
+          "precision": 0.3108108108108108,
+          "recall": 0.2875,
+          "f1-score": 0.2987012987012987,
+          "support": 80.0
+        },
+        "Rent": {
+          "precision": 0.85,
+          "recall": 0.6375,
+          "f1-score": 0.7285714285714285,
+          "support": 80.0
+        },
+        "Inquiry": {
+          "precision": 0.5673076923076923,
+          "recall": 0.7375,
+          "f1-score": 0.6413043478260869,
+          "support": 80.0
+        },
+        "Schedule Visit": {
+          "precision": 0.603448275862069,
+          "recall": 0.4375,
+          "f1-score": 0.5072463768115942,
+          "support": 80.0
+        },
+        "Investment": {
+          "precision": 0.4489795918367347,
+          "recall": 0.55,
+          "f1-score": 0.4943820224719101,
+          "support": 80.0
+        },
+        "Request Callback": {
+          "precision": 0.8372093023255814,
+          "recall": 0.9,
+          "f1-score": 0.8674698795180723,
+          "support": 80.0
+        }
+      },
+      "confusion_matrix": {
+        "labels": [
+          "Buy",
+          "Rent",
+          "Inquiry",
+          "Schedule Visit",
+          "Investment",
+          "Request Callback"
+        ],
+        "rows_are_true": true,
+        "matrix": [
+          [
+            23,
+            6,
+            9,
+            2,
+            40,
+            0
+          ],
+          [
+            9,
+            51,
+            3,
+            4,
+            13,
+            0
+          ],
+          [
+            6,
+            1,
+            59,
+            13,
+            1,
+            0
+          ],
+          [
+            9,
+            1,
+            21,
+            35,
+            0,
+            14
+          ],
+          [
+            27,
+            1,
+            6,
+            2,
+            44,
+            0
+          ],
+          [
+            0,
+            0,
+            6,
+            2,
+            0,
+            72
+          ]
+        ]
+      }
+    },
+    "generalisation_gap_macro_f1": 0.3417339855466065,
+    "comparable_gap": {
+      "telegraphic_excluded_from_corpus": true,
+      "in_distribution_n": 144,
+      "in_distribution_telegraphic_n": 0,
+      "held_out_telegraphic_n": 0,
+      "in_distribution_metrics_excluding_telegraphic": {
+        "accuracy": 0.9305555555555556,
+        "macro_f1": 0.931346544530005,
+        "weighted_f1": 0.9313465445300051,
+        "per_class": {
+          "Buy": {
+            "precision": 0.9130434782608695,
+            "recall": 0.875,
+            "f1-score": 0.8936170212765957,
+            "support": 24.0
+          },
+          "Rent": {
+            "precision": 1.0,
+            "recall": 0.8333333333333334,
+            "f1-score": 0.9090909090909091,
+            "support": 24.0
+          },
+          "Inquiry": {
+            "precision": 0.9230769230769231,
+            "recall": 1.0,
+            "f1-score": 0.96,
+            "support": 24.0
+          },
+          "Schedule Visit": {
+            "precision": 1.0,
+            "recall": 0.9583333333333334,
+            "f1-score": 0.9787234042553191,
+            "support": 24.0
+          },
+          "Investment": {
+            "precision": 0.7931034482758621,
+            "recall": 0.9583333333333334,
+            "f1-score": 0.8679245283018868,
+            "support": 24.0
+          },
+          "Request Callback": {
+            "precision": 1.0,
+            "recall": 0.9583333333333334,
+            "f1-score": 0.9787234042553191,
+            "support": 24.0
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "Buy",
+            "Rent",
+            "Inquiry",
+            "Schedule Visit",
+            "Investment",
+            "Request Callback"
+          ],
+          "rows_are_true": true,
+          "matrix": [
+            [
+              21,
+              0,
+              0,
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              20,
+              1,
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              0,
+              24,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              23,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              23,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              23
+            ]
+          ]
+        }
+      },
+      "generalisation_gap_macro_f1": 0.3417339855466065
+    },
+    "negated_phrasing_metrics": {
+      "in_distribution": {
+        "n": 4,
+        "accuracy": 0.75,
+        "macro_f1": 0.6,
+        "weighted_f1": 0.8500000000000001,
+        "per_class": {
+          "Buy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "Rent": {
+            "precision": 1.0,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.8,
+            "support": 3.0
+          },
+          "Inquiry": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "Schedule Visit": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "Investment": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "Request Callback": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "Buy",
+            "Rent",
+            "Inquiry",
+            "Schedule Visit",
+            "Investment",
+            "Request Callback"
+          ],
+          "rows_are_true": true,
+          "matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              2,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          ]
+        }
+      },
+      "held_out": {
+        "n": 9,
+        "accuracy": 0.6666666666666666,
+        "macro_f1": 0.6493506493506493,
+        "weighted_f1": 0.658008658008658,
+        "per_class": {
+          "Buy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "Rent": {
+            "precision": 0.6666666666666666,
+            "recall": 0.5,
+            "f1-score": 0.5714285714285714,
+            "support": 4.0
+          },
+          "Inquiry": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "Schedule Visit": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "Investment": {
+            "precision": 0.6666666666666666,
+            "recall": 0.8,
+            "f1-score": 0.7272727272727273,
+            "support": 5.0
+          },
+          "Request Callback": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "Buy",
+            "Rent",
+            "Inquiry",
+            "Schedule Visit",
+            "Investment",
+            "Request Callback"
+          ],
+          "rows_are_true": true,
+          "matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              2,
+              0,
+              0,
+              2,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              4,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      }
+    },
+    "confusion_pairs": {
+      "in_distribution": {
+        "cells": {
+          "Buy->Rent": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Buy->Inquiry": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Buy->Schedule Visit": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Buy->Investment": {
+            "n": 3,
+            "share_of_true_class": 0.125
+          },
+          "Buy->Request Callback": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Rent->Buy": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Rent->Inquiry": {
+            "n": 1,
+            "share_of_true_class": 0.0417
+          },
+          "Rent->Schedule Visit": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Rent->Investment": {
+            "n": 3,
+            "share_of_true_class": 0.125
+          },
+          "Rent->Request Callback": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Inquiry->Buy": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Inquiry->Rent": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Inquiry->Schedule Visit": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Inquiry->Investment": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Inquiry->Request Callback": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Schedule Visit->Buy": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Schedule Visit->Rent": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Schedule Visit->Inquiry": {
+            "n": 1,
+            "share_of_true_class": 0.0417
+          },
+          "Schedule Visit->Investment": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Schedule Visit->Request Callback": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Investment->Buy": {
+            "n": 1,
+            "share_of_true_class": 0.0417
+          },
+          "Investment->Rent": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Investment->Inquiry": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Investment->Schedule Visit": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Investment->Request Callback": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Request Callback->Buy": {
+            "n": 1,
+            "share_of_true_class": 0.0417
+          },
+          "Request Callback->Rent": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Request Callback->Inquiry": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Request Callback->Schedule Visit": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Request Callback->Investment": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          }
+        },
+        "polarity_inversion": {
+          "enthusiastic_called_frustrated": 0,
+          "frustrated_called_enthusiastic": 0,
+          "n_enthusiastic_or_frustrated": 0,
+          "rate": null
+        }
+      },
+      "held_out": {
+        "cells": {
+          "Buy->Rent": {
+            "n": 6,
+            "share_of_true_class": 0.075
+          },
+          "Buy->Inquiry": {
+            "n": 9,
+            "share_of_true_class": 0.1125
+          },
+          "Buy->Schedule Visit": {
+            "n": 2,
+            "share_of_true_class": 0.025
+          },
+          "Buy->Investment": {
+            "n": 40,
+            "share_of_true_class": 0.5
+          },
+          "Buy->Request Callback": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Rent->Buy": {
+            "n": 9,
+            "share_of_true_class": 0.1125
+          },
+          "Rent->Inquiry": {
+            "n": 3,
+            "share_of_true_class": 0.0375
+          },
+          "Rent->Schedule Visit": {
+            "n": 4,
+            "share_of_true_class": 0.05
+          },
+          "Rent->Investment": {
+            "n": 13,
+            "share_of_true_class": 0.1625
+          },
+          "Rent->Request Callback": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Inquiry->Buy": {
+            "n": 6,
+            "share_of_true_class": 0.075
+          },
+          "Inquiry->Rent": {
+            "n": 1,
+            "share_of_true_class": 0.0125
+          },
+          "Inquiry->Schedule Visit": {
+            "n": 13,
+            "share_of_true_class": 0.1625
+          },
+          "Inquiry->Investment": {
+            "n": 1,
+            "share_of_true_class": 0.0125
+          },
+          "Inquiry->Request Callback": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Schedule Visit->Buy": {
+            "n": 9,
+            "share_of_true_class": 0.1125
+          },
+          "Schedule Visit->Rent": {
+            "n": 1,
+            "share_of_true_class": 0.0125
+          },
+          "Schedule Visit->Inquiry": {
+            "n": 21,
+            "share_of_true_class": 0.2625
+          },
+          "Schedule Visit->Investment": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Schedule Visit->Request Callback": {
+            "n": 14,
+            "share_of_true_class": 0.175
+          },
+          "Investment->Buy": {
+            "n": 27,
+            "share_of_true_class": 0.3375
+          },
+          "Investment->Rent": {
+            "n": 1,
+            "share_of_true_class": 0.0125
+          },
+          "Investment->Inquiry": {
+            "n": 6,
+            "share_of_true_class": 0.075
+          },
+          "Investment->Schedule Visit": {
+            "n": 2,
+            "share_of_true_class": 0.025
+          },
+          "Investment->Request Callback": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Request Callback->Buy": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Request Callback->Rent": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          },
+          "Request Callback->Inquiry": {
+            "n": 6,
+            "share_of_true_class": 0.075
+          },
+          "Request Callback->Schedule Visit": {
+            "n": 2,
+            "share_of_true_class": 0.025
+          },
+          "Request Callback->Investment": {
+            "n": 0,
+            "share_of_true_class": 0.0
+          }
+        },
+        "polarity_inversion": {
+          "enthusiastic_called_frustrated": 0,
+          "frustrated_called_enthusiastic": 0,
+          "n_enthusiastic_or_frustrated": 0,
+          "rate": null
+        }
+      }
+    },
+    "style_breakdown": {
+      "in_distribution": {
+        "clean": {
+          "n": 70,
+          "accuracy": 0.9571428571428572,
+          "macro_f1": 0.9576021080368906,
+          "weighted_f1": 0.9576894409937888,
+          "per_class": {
+            "Buy": {
+              "precision": 0.9090909090909091,
+              "recall": 0.9090909090909091,
+              "f1-score": 0.9090909090909091,
+              "support": 11.0
+            },
+            "Rent": {
+              "precision": 1.0,
+              "recall": 0.9166666666666666,
+              "f1-score": 0.9565217391304348,
+              "support": 12.0
+            },
+            "Inquiry": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 10.0
+            },
+            "Schedule Visit": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 15.0
+            },
+            "Investment": {
+              "precision": 0.8461538461538461,
+              "recall": 0.9166666666666666,
+              "f1-score": 0.88,
+              "support": 12.0
+            },
+            "Request Callback": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 10.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Buy",
+              "Rent",
+              "Inquiry",
+              "Schedule Visit",
+              "Investment",
+              "Request Callback"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                10,
+                0,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                11,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                10,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                15,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                0,
+                11,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                10
+              ]
+            ]
+          }
+        },
+        "messy": {
+          "n": 74,
+          "accuracy": 0.9054054054054054,
+          "macro_f1": 0.9052930801950408,
+          "weighted_f1": 0.9058130399306868,
+          "per_class": {
+            "Buy": {
+              "precision": 0.9166666666666666,
+              "recall": 0.8461538461538461,
+              "f1-score": 0.88,
+              "support": 13.0
+            },
+            "Rent": {
+              "precision": 1.0,
+              "recall": 0.75,
+              "f1-score": 0.8571428571428571,
+              "support": 12.0
+            },
+            "Inquiry": {
+              "precision": 0.875,
+              "recall": 1.0,
+              "f1-score": 0.9333333333333333,
+              "support": 14.0
+            },
+            "Schedule Visit": {
+              "precision": 1.0,
+              "recall": 0.8888888888888888,
+              "f1-score": 0.9411764705882353,
+              "support": 9.0
+            },
+            "Investment": {
+              "precision": 0.75,
+              "recall": 1.0,
+              "f1-score": 0.8571428571428571,
+              "support": 12.0
+            },
+            "Request Callback": {
+              "precision": 1.0,
+              "recall": 0.9285714285714286,
+              "f1-score": 0.9629629629629629,
+              "support": 14.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Buy",
+              "Rent",
+              "Inquiry",
+              "Schedule Visit",
+              "Investment",
+              "Request Callback"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                11,
+                0,
+                0,
+                0,
+                2,
+                0
+              ],
+              [
+                0,
+                9,
+                1,
+                0,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                14,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                8,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                12,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                0,
+                0,
+                13
+              ]
+            ]
+          }
+        },
+        "macro_f1_delta_clean_minus_messy": 0.052309027841849765,
+        "accuracy_delta_clean_minus_messy": 0.05173745173745181
+      },
+      "held_out": {
+        "clean": {
+          "n": 240,
+          "accuracy": 0.6,
+          "macro_f1": 0.5996323704207115,
+          "weighted_f1": 0.5996323704207114,
+          "per_class": {
+            "Buy": {
+              "precision": 0.3611111111111111,
+              "recall": 0.325,
+              "f1-score": 0.34210526315789475,
+              "support": 40.0
+            },
+            "Rent": {
+              "precision": 0.8214285714285714,
+              "recall": 0.575,
+              "f1-score": 0.6764705882352942,
+              "support": 40.0
+            },
+            "Inquiry": {
+              "precision": 0.56,
+              "recall": 0.7,
+              "f1-score": 0.6222222222222222,
+              "support": 40.0
+            },
+            "Schedule Visit": {
+              "precision": 0.6111111111111112,
+              "recall": 0.55,
+              "f1-score": 0.5789473684210527,
+              "support": 40.0
+            },
+            "Investment": {
+              "precision": 0.4583333333333333,
+              "recall": 0.55,
+              "f1-score": 0.5,
+              "support": 40.0
+            },
+            "Request Callback": {
+              "precision": 0.8571428571428571,
+              "recall": 0.9,
+              "f1-score": 0.8780487804878049,
+              "support": 40.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Buy",
+              "Rent",
+              "Inquiry",
+              "Schedule Visit",
+              "Investment",
+              "Request Callback"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                13,
+                3,
+                5,
+                1,
+                18,
+                0
+              ],
+              [
+                4,
+                23,
+                2,
+                3,
+                8,
+                0
+              ],
+              [
+                3,
+                1,
+                28,
+                8,
+                0,
+                0
+              ],
+              [
+                3,
+                1,
+                8,
+                22,
+                0,
+                6
+              ],
+              [
+                13,
+                0,
+                3,
+                2,
+                22,
+                0
+              ],
+              [
+                0,
+                0,
+                4,
+                0,
+                0,
+                36
+              ]
+            ]
+          }
+        },
+        "messy": {
+          "n": 240,
+          "accuracy": 0.5833333333333334,
+          "macro_f1": 0.5765248478357606,
+          "weighted_f1": 0.5765248478357606,
+          "per_class": {
+            "Buy": {
+              "precision": 0.2631578947368421,
+              "recall": 0.25,
+              "f1-score": 0.2564102564102564,
+              "support": 40.0
+            },
+            "Rent": {
+              "precision": 0.875,
+              "recall": 0.7,
+              "f1-score": 0.7777777777777778,
+              "support": 40.0
+            },
+            "Inquiry": {
+              "precision": 0.5740740740740741,
+              "recall": 0.775,
+              "f1-score": 0.6595744680851063,
+              "support": 40.0
+            },
+            "Schedule Visit": {
+              "precision": 0.5909090909090909,
+              "recall": 0.325,
+              "f1-score": 0.41935483870967744,
+              "support": 40.0
+            },
+            "Investment": {
+              "precision": 0.44,
+              "recall": 0.55,
+              "f1-score": 0.4888888888888889,
+              "support": 40.0
+            },
+            "Request Callback": {
+              "precision": 0.8181818181818182,
+              "recall": 0.9,
+              "f1-score": 0.8571428571428571,
+              "support": 40.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Buy",
+              "Rent",
+              "Inquiry",
+              "Schedule Visit",
+              "Investment",
+              "Request Callback"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                10,
+                3,
+                4,
+                1,
+                22,
+                0
+              ],
+              [
+                5,
+                28,
+                1,
+                1,
+                5,
+                0
+              ],
+              [
+                3,
+                0,
+                31,
+                5,
+                1,
+                0
+              ],
+              [
+                6,
+                0,
+                13,
+                13,
+                0,
+                8
+              ],
+              [
+                14,
+                1,
+                3,
+                0,
+                22,
+                0
+              ],
+              [
+                0,
+                0,
+                2,
+                2,
+                0,
+                36
+              ]
+            ]
+          }
+        },
+        "macro_f1_delta_clean_minus_messy": 0.023107522584950857,
+        "accuracy_delta_clean_minus_messy": 0.016666666666666607
+      }
+    },
+    "register_breakdown": {
+      "in_distribution": {
+        "note": "corpus has no emotion_register axis"
+      },
+      "held_out": {
+        "note": "corpus has no emotion_register axis"
+      }
+    },
+    "base_model": "distilbert-base-uncased",
+    "baselines": {
+      "in_distribution": {
+        "majority": {
+          "accuracy": 0.16666666666666666,
+          "macro_f1": 0.047619047619047616,
+          "weighted_f1": 0.047619047619047616,
+          "per_class": {
+            "Buy": {
+              "precision": 0.16666666666666666,
+              "recall": 1.0,
+              "f1-score": 0.2857142857142857,
+              "support": 24.0
+            },
+            "Rent": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 24.0
+            },
+            "Inquiry": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 24.0
+            },
+            "Schedule Visit": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 24.0
+            },
+            "Investment": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 24.0
+            },
+            "Request Callback": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 24.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Buy",
+              "Rent",
+              "Inquiry",
+              "Schedule Visit",
+              "Investment",
+              "Request Callback"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                24,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                24,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                24,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                24,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                24,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                24,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ]
+          },
+          "majority_class": "Buy"
+        },
+        "template_visible_only": {
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "weighted_f1": 1.0,
+          "per_class": {
+            "Buy": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 24.0
+            },
+            "Rent": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 24.0
+            },
+            "Inquiry": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 24.0
+            },
+            "Schedule Visit": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 24.0
+            },
+            "Investment": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 24.0
+            },
+            "Request Callback": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 24.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Buy",
+              "Rent",
+              "Inquiry",
+              "Schedule Visit",
+              "Investment",
+              "Request Callback"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                24,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                24,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                24,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                24,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                24,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                24
+              ]
+            ]
+          },
+          "template_hit_rate": 1.0
+        }
+      },
+      "held_out": {
+        "majority": {
+          "accuracy": 0.16666666666666666,
+          "macro_f1": 0.047619047619047616,
+          "weighted_f1": 0.04761904761904761,
+          "per_class": {
+            "Buy": {
+              "precision": 0.16666666666666666,
+              "recall": 1.0,
+              "f1-score": 0.2857142857142857,
+              "support": 80.0
+            },
+            "Rent": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 80.0
+            },
+            "Inquiry": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 80.0
+            },
+            "Schedule Visit": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 80.0
+            },
+            "Investment": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 80.0
+            },
+            "Request Callback": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 80.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Buy",
+              "Rent",
+              "Inquiry",
+              "Schedule Visit",
+              "Investment",
+              "Request Callback"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                80,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                80,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                80,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                80,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                80,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                80,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ]
+          },
+          "majority_class": "Buy"
+        },
+        "template_visible_only": {
+          "accuracy": 0.16666666666666666,
+          "macro_f1": 0.047619047619047616,
+          "weighted_f1": 0.04761904761904761,
+          "per_class": {
+            "Buy": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 80.0
+            },
+            "Rent": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 80.0
+            },
+            "Inquiry": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 80.0
+            },
+            "Schedule Visit": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 80.0
+            },
+            "Investment": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 80.0
+            },
+            "Request Callback": {
+              "precision": 0.16666666666666666,
+              "recall": 1.0,
+              "f1-score": 0.2857142857142857,
+              "support": 80.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Buy",
+              "Rent",
+              "Inquiry",
+              "Schedule Visit",
+              "Investment",
+              "Request Callback"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                80
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                80
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                80
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                80
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                80
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                80
+              ]
+            ]
+          },
+          "template_hit_rate": 0.0
+        },
+        "template_full_pool": {
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "weighted_f1": 1.0,
+          "per_class": {
+            "Buy": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 80.0
+            },
+            "Rent": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 80.0
+            },
+            "Inquiry": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 80.0
+            },
+            "Schedule Visit": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 80.0
+            },
+            "Investment": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 80.0
+            },
+            "Request Callback": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1-score": 1.0,
+              "support": 80.0
+            }
+          },
+          "confusion_matrix": {
+            "labels": [
+              "Buy",
+              "Rent",
+              "Inquiry",
+              "Schedule Visit",
+              "Investment",
+              "Request Callback"
+            ],
+            "rows_are_true": true,
+            "matrix": [
+              [
+                80,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                80,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                80,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                80,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                80,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                80
+              ]
+            ]
+          },
+          "template_hit_rate": 1.0
+        }
+      }
+    }
+  }
+}
